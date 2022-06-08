@@ -8,7 +8,7 @@ padding-left: 0;
 ${mediaQueries.desktop}{
     margin-top: 80px;
     padding-top: 50px;
-    padding-left: 100px;
+
   }
 `;
 
@@ -18,9 +18,11 @@ export const CoursesTitle = styled.h2`
   z-index: 60;
   margin: 0 0 35px;
   font-size: 3rem;
+  text-align: center;
+  color: #fff;
   ${mediaQueries.desktop}{
     margin: 0 0 75px;
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 `;
 

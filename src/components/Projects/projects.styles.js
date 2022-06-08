@@ -7,8 +7,9 @@ export const SectionProjects = styled.section`
   z-index: 40;
   color: var(--colorPrimary);
   & > h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 80px;
+    text-align: center;
   }
   ${mediaQueries.projects} {
     & > h2 {

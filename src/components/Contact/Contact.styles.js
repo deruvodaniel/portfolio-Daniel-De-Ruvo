@@ -6,12 +6,12 @@ export const ContactTitle = styled.h2`
   padding-top: 100px;
   color: var(--colorPrimary);
   z-index: 55;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  text-align: center;
   ${mediaQueries.desktop} {
-    padding-top: 150px;
     margin-top: 100px;
     font-size: 3.5rem;
-    padding-left: 100px;
+
   }
 `;
 
@@ -23,7 +23,7 @@ export const SectionContact = styled.section`
   flex-flow: row wrap;
   justify-content: space-around;
   ${mediaQueries.desktop} {
-    padding-left: 100px;
+
   }
 `;
 

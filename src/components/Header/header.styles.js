@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 export const Main = styled(motion.header)`
   position: fixed;
   display: flex;
+  left: 0;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  width: 95%;
+  width: 100%;
   max-width: 1400px;
   transition: 0.5s ease all;
   &.withBackground {

@@ -13,7 +13,6 @@ align-items: center;
   ${mediaQueries.tablet} {
     grid-template-columns: repeat(auto-fill, minmax(275px, 2fr));
     gap: 30px;
-    padding-left: 30px;
   }
   ${mediaQueries.desktop}{
     grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
@@ -77,7 +76,7 @@ export const AboutMeBoxImg = styled.div`
   ${mediaQueries.desktop} {
     width: 400px;
     height: 357px;
-    margin: 75px 0 0 50px;
+    margin: 75px 0px;
     & > div {
       width: 395px;
       height: 357px;
@@ -125,14 +124,14 @@ export const AboutMeTitle = styled.h2`
   font-weigth: 600;
   z-index: 50;
   margin: 0 0 20px;
-  font-size: 2.5rem;
+  font-size: 3rem;
   ${mediaQueries.tablet}{
     margin: 0 0 20px;
     font-size: 3.2rem;
   }
   ${mediaQueries.desktop}{
     margin: 0;
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 `;
 

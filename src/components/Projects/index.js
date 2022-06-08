@@ -24,7 +24,7 @@ export const Projects = () => {
   return (
     <>
       <SectionProjects ref={refProjects}>
-        <h2>PROJECTS</h2>
+        <h2>Projects</h2>
         <ContainerProjects>
           {projects.map(
             ({ id, img, title, subtitle, text, link, github, disabled = false }) => {

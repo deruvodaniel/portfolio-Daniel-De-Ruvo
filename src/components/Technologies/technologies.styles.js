@@ -11,7 +11,7 @@ export const SectionTechnologies = styled.section`
   justify-content: center;
   color: var(--colorPrimary);
   & > h2 {
-    font-size: 2.3rem;
+    font-size: 3rem;
     z-index: 50;
     margin-bottom: 100px;
   }
@@ -19,7 +19,7 @@ export const SectionTechnologies = styled.section`
     margin: 50px 0 150px;
     align-items: center;
     & > h2 {
-      font-size: 4rem;
+      font-size: 3.5rem;
     }
   }
 `;

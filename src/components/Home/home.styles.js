@@ -14,7 +14,6 @@ export const ContainerHome = styled.div`
     margin: 0px auto;
     padding-top: 180px;
     align-content: start;
-    padding-left: 100px;
   }
 `;
 

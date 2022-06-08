@@ -47,7 +47,7 @@ export const Contact = () => {
       transition={{ type: "spring", duration: 2 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <ContactTitle ref={refContact}>CONTACT</ContactTitle>
+      <ContactTitle ref={refContact}>Contact</ContactTitle>
       <SectionContact>
         <BoxContactInfo>
           <ContactText>Do you have a project in mind? Let's talk!</ContactText>
