@@ -9,8 +9,9 @@ export const Main = styled(motion.header)`
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  width: 100%;
+  min-width: 100%;
   max-width: 1400px;
+  padding: 0 30px;
   transition: 0.5s ease all;
   &.withBackground {
     transition: 0.5s ease all;
@@ -18,7 +19,6 @@ export const Main = styled(motion.header)`
     background: var(--background);
   }
   & > img {
-    padding-left: 20px;
     color: var(--colorPrimary);
     cursor: pointer;
     transition: 0.3s ease all;
@@ -33,7 +33,7 @@ export const ListLinks = styled.ul`
   display: flex;
   flex-flow: row wrap;
   list-style: none;
-  padding: 0;
+  padding: 0 40px;
   &.active {
     color: var(--colorSecondary);
     border: 2px solid var(--colorSecondary);
