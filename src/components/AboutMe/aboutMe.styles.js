@@ -3,7 +3,7 @@ import { mediaQueries } from "styles";
 
 export const SectionAboutMe = styled.section`
 margin: 0 0 50px;
-padding-top: 250px;
+padding-top: 150px;
 z-index: 50;
 display: grid;
 align-items: center;
@@ -11,12 +11,14 @@ align-items: center;
   gap: 30px;
   padding-left: 0px;
   ${mediaQueries.tablet} {
-    grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(275px, 2fr));
     gap: 30px;
-    padding-left: 100px;
+    padding-left: 30px;
   }
   ${mediaQueries.desktop}{
-    margin: 0 0 300px;
+    grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
+    gap: 30px;
+    margin: 0 0 100px;
     align-items: start;
     justify-items: start;
   }

@@ -23,7 +23,6 @@ export const FooterStyle = styled.footer`
     text-align: center;
   }
   ${mediaQueries.desktop} {
-    margin-top: 450px;
     & > img {
       margin-bottom: 50px;
     }

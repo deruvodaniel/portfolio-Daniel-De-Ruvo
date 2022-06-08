@@ -51,7 +51,7 @@ export const ContactInfo = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
   justify-content: center;
   align-items: center;
-  margin: 80px 0px;
+  margin: 50px 0px;
   gap: 20px;
   & > a {
     text-align: center;

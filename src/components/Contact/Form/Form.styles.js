@@ -73,6 +73,7 @@ export const BoxInput = styled.div`
 export const ContainerTextArea = styled.div`
   grid-area: message;
   display: flex;
+  width: 100%
   flex-flow: column wrap;
 `;
 

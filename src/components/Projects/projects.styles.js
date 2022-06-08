@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 export const SectionProjects = styled.section`
   margin: 0px;
-  padding-top: 150px;
   z-index: 40;
   color: var(--colorPrimary);
   & > h2 {
@@ -12,7 +11,6 @@ export const SectionProjects = styled.section`
     margin-bottom: 80px;
   }
   ${mediaQueries.projects} {
-    margin: 100px 0;
     & > h2 {
       font-size: 3.5rem;
     }

@@ -11,7 +11,7 @@ export const ContainerHome = styled.div`
   align-content: center;
   padding-left: 0;
   ${mediaQueries.desktop} {
-    margin: 0px 0 30px;
+    margin: 0px auto;
     padding-top: 180px;
     align-content: start;
     padding-left: 100px;

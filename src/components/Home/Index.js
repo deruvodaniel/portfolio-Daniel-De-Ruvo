@@ -30,13 +30,10 @@ export const Home = () => {
           <TextHome>Hi, my name is</TextHome>
           <TitleHome>DANIEL DE RUVO</TitleHome>
           <DescriptionHome>
-            I'm autodidact Frontend Developer, technology lover and Graphic
-            Designer.  <br></br>I'm thoughtful, enterprising and charismatic person.I
-            would always get on with my colleagues, and take my challenges in a
-            very enthusiastic way and most important of all: desiring to learn!
+            Hardworking Frontend Developer with proven experience in Vue.js and Javascript. Helping companies create and maintain a better code base for reusability. Capable of continuous learning from senior developers. Adept in creating Web apps design, installation, testing and maintenance of software systems.Ready to apply my passion for coding to a talented engineering team to develop quality solutions.
           </DescriptionHome>
           <ButtonHome onClick={() => scrollToSection(refContact)}>
-            GET STARTED
+            CONTACT
           </ButtonHome>
         </ContainerHome>
       </motion.div>
