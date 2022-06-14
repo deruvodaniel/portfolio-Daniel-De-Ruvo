@@ -60,7 +60,7 @@ export const Container = styled(motion.div)`
 
 export const Img = styled.img`
   width: 100%;
-  height: 100%;
+  object-fit: cover;
   z-index: 45;
   border-radius: 9px 9px 0 0;
 `;

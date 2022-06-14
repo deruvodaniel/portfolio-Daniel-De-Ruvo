@@ -46,7 +46,7 @@ export const AboutMeBoxImg = styled.div`
     cursor: pointer;
     position: absolute;
     width: 93%;
-    height: 140%;
+    height: auto;
     left: 28px;
     z-index: 50;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.8));
@@ -68,7 +68,7 @@ export const AboutMeBoxImg = styled.div`
     }
     & > img {
       width: 312px;
-      height: 397px;
+      height: auto;
       left: 45px;
       bottom: 0px;
     }
@@ -85,7 +85,7 @@ export const AboutMeBoxImg = styled.div`
     }
     & > img {
       width: 382px;
-      height: 488px;
+      height: auto;
       left: 45px;
       bottom: 0px;
     }
