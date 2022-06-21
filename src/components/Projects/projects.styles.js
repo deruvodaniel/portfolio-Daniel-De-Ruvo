@@ -40,6 +40,7 @@ ${mediaQueries.projects}{
 
 export const Container = styled(motion.div)`
   display: flex;
+  width: fit-content;
   flex-flow: column wrap;
   align-items: center;
   z-index: 50;
@@ -60,7 +61,7 @@ export const Container = styled(motion.div)`
 
 export const Img = styled.img`
   width: 100%;
-  object-fit: cover;
+  height: 100%;
   z-index: 45;
   border-radius: 9px 9px 0 0;
 `;

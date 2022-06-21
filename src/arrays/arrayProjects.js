@@ -4,8 +4,8 @@ export const projects = [
     img: "https://i.postimg.cc/jdrLHr4J/Screenshot-7.png",
     title: "Forkify app",
     subtitle: "Search all over 10000+ recipes",
-    text: "Practice - Recipes app using vainilla Javascript, fetch, OOP",
-    link: "https://forkify-v2.netlify.app/",
+    text: "Recipes app using vainilla Javascript, fetch, OOP",
+    link: "https://forkify-olive.vercel.app/",
     github: "https://github.com/deruvodaniel/forkify",
   },
   {
@@ -23,7 +23,7 @@ export const projects = [
     title: "Vue Landing page (IbisDev)",
     subtitle: "Vue, SASS, Responsive",
     text: "Landing page developed for challenge in Vue.js",
-    link: "https://www.example.com",
+    link: "https://ibis-dev-challenge.vercel.app/",
     github: "https://github.com/deruvodaniel/ibisDev-Challenge",
   },
   {
@@ -32,7 +32,7 @@ export const projects = [
     title: "Vue Users table (NewCombin)",
     subtitle: "Users form, data table components, API, Sass",
     text: "Practice challenge for NewCombine",
-    link: "https://www.example.com",
+    link: "https://new-combin-challenge.vercel.app/",
     github: "https://github.com/deruvodaniel/NewCombinChallenge",
   },
   {
