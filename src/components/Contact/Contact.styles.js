@@ -11,7 +11,6 @@ export const ContactTitle = styled.h2`
   ${mediaQueries.desktop} {
     margin-top: 100px;
     font-size: 3.5rem;
-
   }
 `;
 

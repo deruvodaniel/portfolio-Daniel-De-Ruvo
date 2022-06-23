@@ -80,7 +80,7 @@ export const ContainerImg = styled.div`
   ${mediaQueries.projects} {
     box-sizing: border-box;
     position: absolute;
-    width: 475px;
+    width: fit-content;
     height: 427px;
     left: 30px;
     top: 30px;
@@ -90,6 +90,7 @@ export const ContainerImg = styled.div`
     & > img {
       width: 100.1%;
       height: 100.1%;
+      vertical-align: middle;
       filter: brightness(0.9);
     }
   }
