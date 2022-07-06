@@ -69,8 +69,8 @@ export const Img = styled.img`
 export const ContainerBoxImg = styled.div`
   ${mediaQueries.projects} {
     position: relative;
-    width: 475px;
-    height: 427px;
+    width: 480px;
+    height: 422px;
     grid-area: img;
     background: rgba(89, 201, 165, 0.34);
   }
@@ -80,8 +80,8 @@ export const ContainerImg = styled.div`
   ${mediaQueries.projects} {
     box-sizing: border-box;
     position: absolute;
-    width: fit-content;
-    height: 427px;
+    width: 475px;
+    height: 430px;
     left: 30px;
     top: 30px;
     border: 4px solid #56e39f;

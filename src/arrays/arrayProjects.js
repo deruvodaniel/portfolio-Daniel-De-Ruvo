@@ -28,6 +28,15 @@ export const projects = [
   },
   {
     id: 4,
+    img: "https://i.postimg.cc/JhjVVWdq/Screenshot-9.png",
+    title: "Social Media Dashboard",
+    subtitle: "Html, Sass, Javascript",
+    text: "Practice challenge for Making Sense",
+    link: "https://cheerful-macaron-52607c.netlify.app/",
+    github: "https://github.com/deruvodaniel/MakingSenseChallenge",
+  },
+  {
+    id: 5,
     img: "https://i.postimg.cc/Z54vSh9h/Screenshot-5.png",
     title: "Vue Users table (NewCombin)",
     subtitle: "Users form, data table components, API, Sass",
@@ -37,6 +46,15 @@ export const projects = [
   },
   {
     id: 5,
+    img: "https://i.postimg.cc/nrMTzWz4/Screenshot-10.png",
+    title: "Music Store",
+    subtitle: "React E-commerce",
+    text: "App developed with React, MUI, Firebase",
+    link: "https://deruvodaniel.github.io/GDLWEBCAMP/",
+    github: "https://github.com/deruvodaniel/e-commerce-React",
+  },
+  {
+    id: 8,
     img: "https://i.postimg.cc/yx0xMfsd/Screenshot-2.png",
     title: "Tejas Verdes",
     subtitle: "Landing Page for nursing home",

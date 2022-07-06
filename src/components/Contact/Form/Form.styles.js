@@ -13,17 +13,19 @@ export const Form = styled.form`
   display: grid;
   gap: 20px;
   grid-template-areas:
-      "name name"
-      "phone phone"
-      "email email"
-      "subject subject"
-      "message message"
-      "button button";
-  ${mediaQueries.tablet}{
+    "name name"
+    "phone phone"
+    "email email"
+    "subject subject"
+    "message message"
+    "errorTA errorTA"
+    "button button";
+  ${mediaQueries.tablet} {
     grid-template-areas:
       "name phone"
       "email subject"
       "message message"
+      "errorTA errorTA"
       "button button";
   }
 `;
@@ -59,6 +61,9 @@ export const BoxInput = styled.div`
     }
     &:focus {
       background-color: #3a5856;
+    }
+    &:hover{
+      filter: brightness(0.90);
     }
     &.input__error {
       border: 2px solid red;
@@ -130,8 +135,7 @@ export const Btn = styled.button`
   }
 `;
 
-export const ErrorMessage = styled.div`
-  display: block;
+export const ErrorMessage = styled.span`
   color: red;
   font-size: 13px;
   margin: 0 0 0 20px;

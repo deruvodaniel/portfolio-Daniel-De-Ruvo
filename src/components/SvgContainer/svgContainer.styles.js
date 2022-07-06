@@ -6,6 +6,7 @@ import VectorFour from "assets/VectorFour";
 import VectorOne from "assets/VectorOne";
 import VectorThree from "assets/VectorThree";
 import VectorTwo from "assets/VectorTwo";
+import { mediaQueries } from "styles";
 
 export const SvgVectorHome = styled(VectorOne)`
   position: absolute;
@@ -40,6 +41,9 @@ export const SvgVectorProjects = styled(VectorThree)`
   top: 500%;
   right: 0;
   pointer-events:none;
+  ${mediaQueries.bigScreen}{
+    display: none;
+  }
 `;
 
 export const TrianglesVectorProjects = styled(TrianglesThree)`
@@ -47,11 +51,18 @@ export const TrianglesVectorProjects = styled(TrianglesThree)`
   top: 300%;
   right: 0;
   pointer-events:none;
+  ${mediaQueries.bigScreen}{
+    display: none;
+  }
 `;
 
 export const SvgVectorFooter = styled(VectorFour)`
   position: absolute;
-  top: 740%;
+  top: 640%;
   right: 0;
   pointer-events:none;
+  ${mediaQueries.bigScreen}{
+    display: none;
+  }
 `;
+

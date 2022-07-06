@@ -20,7 +20,7 @@ const dataEmailer = {
 };
 
 const MyForm = () => {
-  const {serviceId, templateId, publicKey} = dataEmailer
+  const { serviceId, templateId, publicKey } = dataEmailer;
   const { showModal, ModalMessage, setShowModal } = ModalMessageForm();
   const [showLoading, setShowLoading] = useState(false);
   const form = useRef(null);
@@ -30,16 +30,11 @@ const MyForm = () => {
     formState: { errors },
     reset,
   } = useForm();
-  
+
   const onSubmit = () => {
     setShowLoading(true);
     emailjs
-      .sendForm(
-        serviceId,
-        templateId,
-        form.current,
-        publicKey
-      )
+      .sendForm(serviceId, templateId, form.current, publicKey)
       .then(() => {
         reset();
         setShowLoading(false);
@@ -63,6 +58,7 @@ const MyForm = () => {
           <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <BoxInput className="input__name">
               <input
+                autocomplete="off"
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -90,6 +86,7 @@ const MyForm = () => {
             </BoxInput>
             <BoxInput className="input__phone">
               <input
+                autocomplete="off"
                 type="tel"
                 name="phone"
                 className={errors.phone && "input__error"}
@@ -113,6 +110,7 @@ const MyForm = () => {
             </BoxInput>
             <BoxInput className="input__email">
               <input
+                autocomplete="off"
                 className={errors.email && "input__error"}
                 type="email"
                 name="email"
@@ -140,6 +138,7 @@ const MyForm = () => {
             </BoxInput>
             <BoxInput className="input__subject">
               <input
+                autoComplete="off"
                 type="text"
                 name="subject"
                 placeholder="Subject"
@@ -186,8 +185,8 @@ const MyForm = () => {
                   },
                 })}
               />
-              <ErrorMessage> {errors?.message?.message} </ErrorMessage>
             </ContainerTextArea>
+            <ErrorMessage> {errors?.message?.message} </ErrorMessage>
             <Btn type="submit">SEND MESSAGE</Btn>
           </Form>
         )}
