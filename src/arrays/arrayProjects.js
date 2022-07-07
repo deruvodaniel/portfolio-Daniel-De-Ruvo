@@ -50,7 +50,7 @@ export const projects = [
     title: "Music Store",
     subtitle: "React E-commerce",
     text: "App developed with React, MUI, Firebase",
-    link: "https://deruvodaniel.github.io/GDLWEBCAMP/",
+    link: "https://e-commerce-react-liard.vercel.app/",
     github: "https://github.com/deruvodaniel/e-commerce-React",
   },
   {
