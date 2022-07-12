@@ -38,7 +38,7 @@ export const projects = [
   {
     id: 5,
     img: "https://i.postimg.cc/Z54vSh9h/Screenshot-5.png",
-    title: "Vue Users table (NewCombin)",
+    title: "Vue Users table",
     subtitle: "Users form, data table components, API, Sass",
     text: "Practice challenge for NewCombine",
     link: "https://new-combin-challenge.vercel.app/",
@@ -46,9 +46,9 @@ export const projects = [
   },
   {
     id: 5,
-    img: "https://i.postimg.cc/nrMTzWz4/Screenshot-10.png",
+    img: "https://i.postimg.cc/yN0F29pv/Screenshot-10.png",
     title: "Music Store",
-    subtitle: "React E-commerce",
+    subtitle: "React E-commerce (In progress)",
     text: "App developed with React, MUI, Firebase",
     link: "https://e-commerce-react-liard.vercel.app/",
     github: "https://github.com/deruvodaniel/e-commerce-React",

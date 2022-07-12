@@ -55,19 +55,22 @@ export const ButtonHome = styled.button`
 margin-top: 40px;
 background: transparent;
   z-index: 50;
-  width: fit-content;
-  border: 1px solid var(--colorPrimary);
-  color: var(--colorPrimary);
+  width: 200px;
   transition: 0.3s ease all;
-  padding: 10px 15px 8px;
+  padding: 10px 25px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: var(--colorSecondary);
+  border: 2px solid var(--colorSecondary);
   &:hover {
+    color: var(--background);
+    background-color: var(--colorSecondary);
+    border: 2px solid var(--colorSecondary);
+    filter: drop-shadow(0 2px 5px rgba(86, 227, 159, 0.8));
     z-index: 50;
     transition: 0.3s ease all;
-    color: var(--colorSecondary);
-    border: 1px solid var(--colorSecondary);
   }
   ${mediaQueries.desktop}{
     font-size: 1.2rem;

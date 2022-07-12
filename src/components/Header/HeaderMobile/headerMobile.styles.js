@@ -52,7 +52,7 @@ export const Links = styled.li`
   padding: 3px 15px;
   margin-bottom: 20px;
   margin-right: 0px;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: 0.3s ease all;
   &:hover {
     transition: 0.3s ease all;

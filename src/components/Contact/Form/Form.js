@@ -187,7 +187,7 @@ const MyForm = () => {
               />
             </ContainerTextArea>
             <ErrorMessage> {errors?.message?.message} </ErrorMessage>
-            <Btn type="submit">SEND MESSAGE</Btn>
+            <Btn type="submit">SEND</Btn>
           </Form>
         )}
       </SectionForm>

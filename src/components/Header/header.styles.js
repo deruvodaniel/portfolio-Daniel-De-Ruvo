@@ -46,7 +46,7 @@ export const Links = styled.li`
   margin-right: 15px;
   color: var(--colorPrimary);
   text-transform: uppercase;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 2px solid transparent;
   padding: 3px 20px;
   transition: 0.3s ease all;

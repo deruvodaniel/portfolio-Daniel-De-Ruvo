@@ -7,11 +7,16 @@ export const SectionForm = styled.section`
   flex-flow: column;
   z-index: 11;
   margin-top: 0px;
+  width: 100%;
+  ${mediaQueries.tablet} {
+    width: 50%;
+  }
 `;
 
 export const Form = styled.form`
   display: grid;
   gap: 20px;
+  width: 100%;
   grid-template-areas:
     "name name"
     "phone phone"
@@ -21,6 +26,7 @@ export const Form = styled.form`
     "errorTA errorTA"
     "button button";
   ${mediaQueries.tablet} {
+    width: unset;
     grid-template-areas:
       "name phone"
       "email subject"
@@ -113,7 +119,8 @@ export const Textarea = styled.textarea`
 export const Btn = styled.button`
   margin-top: 40px;
   grid-area: button;
-  border-radius: 20px;
+  width: 100%;
+  border-radius: 10px;
   background-color: transparent;
   color: var(--colorSecondary);
   border: 2px solid var(--colorSecondary);
@@ -126,12 +133,12 @@ export const Btn = styled.button`
   &:hover {
     transition: 0.3s ease all;
     background-color: var(--colorSecondary);
-    color: var(--ColorPrimary);
+    color: var(--background);
     filter: drop-shadow(0 2px 5px rgba(86, 227, 159, 0.3));
   }
-  ${mediaQueries.desktop} {
-    width: fit-content;
+  ${mediaQueries.tablet} {
     padding: 12px 15px;
+    width: 150px;
   }
 `;
 

@@ -63,8 +63,8 @@ export const ContainerCourseName = styled.div`
     display: inline-block;
     width: 20px;
     height: 20px;
-    margin: 0 8px 10px 0;
-    border-radius: 50%;
+    margin: 0 10px 15px 0;
+    border-radius: 10%;
     background: var(--colorSecondary);
     color: var(--colorSecondary);
   }

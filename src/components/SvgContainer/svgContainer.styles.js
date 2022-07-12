@@ -11,19 +11,17 @@ import VectorOne from "assets/VectorOne";
 export const SvgVectorHome = styled(VectorOne)`
   position: fixed;
   top: 0;
-  left: 0;
+  left: -20%;
   min-width:fit-content;
   transform: 
   pointer-events:none;
-  transform: scaleX(-1);
 `;
 
 export const TrianglesVectorHome = styled(TrianglesOne)`
   position: fixed;
   top: 0;
-  left: 0;
+  left: -20%;
   pointer-events:none;
-  transform: scaleX(-1);
   min-width:fit-content;
 `;
 

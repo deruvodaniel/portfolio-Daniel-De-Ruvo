@@ -45,11 +45,14 @@ export const Container = styled(motion.div)`
   flex-flow: column wrap;
   align-items: center;
   z-index: 50;
-  margin: 0 0 50px;
+  margin: 0 0 30px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   ${mediaQueries.projects} {
     display: flex;
     width: 100%;
     flex-flow: row;
+    margin: 0 0 30px;
+    box-shadow: unset;
     gap: 0;
     & > div:last-child {
       text-align: start;
@@ -70,10 +73,11 @@ export const Img = styled.img`
 export const ContainerBoxImg = styled.div`
   ${mediaQueries.projects} {
     position: relative;
-    width: 910px;
-    height: 422px;
+    width: 700px;
+    height: 322px;
     grid-area: img;
     background: rgba(89, 201, 165, 0.34);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 `;
 
@@ -81,13 +85,14 @@ export const ContainerImg = styled.div`
   ${mediaQueries.projects} {
     box-sizing: border-box;
     position: absolute;
-    width: 910px;
-    height: 430px;
+    width: 700px;
+    height: 350px;
     left: 30px;
     top: 30px;
     border: 4px solid #56e39f;
     transition: 0.5s ease all;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
     & > img {
       width: 100%;
       height: 100%;
@@ -113,14 +118,15 @@ export const ContainerTexts = styled.div`
     border-radius: 0;
     padding: 20px 50px;
     grid-area: text;
-    margin-top: 70px;
+    margin-top: 100px;
     align-items: start;
     display: flex;
     z-index: 2;
     flex-flow: column wrap;
     justify-content: space-between;
-    width: 475px;
-    height: 300px;
+    width: 375px;
+    height: 240px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   }
 `;
 
@@ -170,25 +176,26 @@ export const ContainerButtons = styled.div`
 export const ProjectButton = styled.a`
   ${(props) => props.disabled === true && "display: none;"};
   font-weigth: 600;
-  color: var(--colorPrimary);
+  color: var(--colorSecondary);
   text-transform: uppercase;
   margin: 20px 20px 0;
   font-size: 0.7rem;
   text-align: center; 
   width: 100%;
   text-decoration: none;
-  background: transparent;
   z-index: 55;
-  border-radius: 33px;
-  border: 1px solid var(--colorPrimary);
+  border-radius: 10px;
+  border: 2px solid var(--colorSecondary);
   cursor: pointer;
   padding: 10px 40px;
   transition: 0.3s ease all;
   &:hover {
     z-index: 55;
-    color: var(--colorSecondary);
+    color: var(--background);
     transition: 0.3s ease all;
-    border: 1px solid var(--colorSecondary);
+    background-color: var(--colorSecondary);
+    border: 2px solid var(--colorSecondary);
+    filter: drop-shadow(0 2px 5px rgba(86, 227, 159, 0.8));
   }
   ${mediaQueries.tablet}{
     margin: 20px 15px 0 0;
