@@ -6,7 +6,7 @@ import TrianglesOne from "assets/TrianglesOne";
 import VectorOne from "assets/VectorOne";
 // import VectorThree from "assets/VectorThree";
 // import VectorTwo from "assets/VectorTwo";
-// import { mediaQueries } from "styles";
+import { mediaQueries } from "styles";
 
 export const SvgVectorHome = styled(VectorOne)`
   position: fixed;
@@ -15,6 +15,10 @@ export const SvgVectorHome = styled(VectorOne)`
   min-width:fit-content;
   transform: 
   pointer-events:none;
+  transform: scaleX(-1);
+  ${mediaQueries.tablet}{
+    transform: scaleX(1);
+  }
 `;
 
 export const TrianglesVectorHome = styled(TrianglesOne)`
@@ -23,6 +27,9 @@ export const TrianglesVectorHome = styled(TrianglesOne)`
   left: -20%;
   pointer-events:none;
   min-width:fit-content;
+  ${mediaQueries.tablet}{
+    transform: scaleX(1);
+  }
 `;
 
 // export const SvgVectorCourses = styled(VectorTwo)`
