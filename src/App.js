@@ -9,10 +9,10 @@ import { Technologies } from "components/Technologies";
 import { Contact } from "components/Contact/Contact";
 import { Footer } from "components/Footer/Footer";
 import { SvgContainer } from "components/SvgContainer/SvgContainer";
-import useWidth from "hooks/useWidth";
+// import useWidth from "hooks/useWidth";
 
 const App = () => {
-  const { width } = useWidth();
+  // const { width } = useWidth();
 
   return (
     <>
@@ -30,7 +30,8 @@ const App = () => {
           </ContainerSections>
         </ContainerApp>
       </RefsContextProvider>
-      {width > 1035 && <SvgContainer />}
+      <SvgContainer />
+      {/* {width > 1035 && <SvgContainer />} */}
     </>
   );
 };

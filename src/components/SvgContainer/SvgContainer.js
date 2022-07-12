@@ -1,11 +1,11 @@
 import {
-  SvgVectorCourses,
-  SvgVectorFooter,
+  // SvgVectorCourses,
+  // SvgVectorFooter,
   SvgVectorHome,
-  SvgVectorProjects,
-  TrianglesVectorCourses,
+  // SvgVectorProjects,
+  // TrianglesVectorCourses,
   TrianglesVectorHome,
-  TrianglesVectorProjects,
+  // TrianglesVectorProjects,
 } from "./svgContainer.styles";
 
 export const SvgContainer = () => {
@@ -13,11 +13,11 @@ export const SvgContainer = () => {
     <>
       <SvgVectorHome />
       <TrianglesVectorHome />
-      <SvgVectorCourses />
+      {/* <SvgVectorCourses />
       <TrianglesVectorCourses />
       <SvgVectorProjects />
       <TrianglesVectorProjects />
-      <SvgVectorFooter />
+      <SvgVectorFooter /> */}
     </>
   );
 };

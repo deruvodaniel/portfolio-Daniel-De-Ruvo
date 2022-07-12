@@ -22,6 +22,7 @@ export const ContainerProjects = styled.div`
   display: flex;
   justify-content: center;
   flex-flow: column wrap;
+  align-items: center;
   row-gap: 50px;
   z-index: 40;
 ${mediaQueries.projects}{
@@ -48,7 +49,7 @@ export const Container = styled(motion.div)`
   ${mediaQueries.projects} {
     display: flex;
     width: 100%;
-    flex-flow: row wrap;
+    flex-flow: row;
     gap: 0;
     & > div:last-child {
       text-align: start;
@@ -69,7 +70,7 @@ export const Img = styled.img`
 export const ContainerBoxImg = styled.div`
   ${mediaQueries.projects} {
     position: relative;
-    width: 480px;
+    width: 910px;
     height: 422px;
     grid-area: img;
     background: rgba(89, 201, 165, 0.34);
@@ -80,7 +81,7 @@ export const ContainerImg = styled.div`
   ${mediaQueries.projects} {
     box-sizing: border-box;
     position: absolute;
-    width: 475px;
+    width: 910px;
     height: 430px;
     left: 30px;
     top: 30px;
@@ -88,8 +89,8 @@ export const ContainerImg = styled.div`
     transition: 0.5s ease all;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     & > img {
-      width: 100.1%;
-      height: 100.1%;
+      width: 100%;
+      height: 100%;
       vertical-align: middle;
       filter: brightness(0.9);
     }

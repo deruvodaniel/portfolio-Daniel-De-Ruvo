@@ -39,8 +39,12 @@ export const ContactText = styled.h3`
   color: var(--colorSecondary);
   font-size: 1.5rem;
   z-index: 50;
+  text-align: center;
   ${mediaQueries.tablet} {
     font-size: 2rem;
+  }
+  ${mediaQueries.desktop} {
+    text-align: left;
   }
 `;
 
