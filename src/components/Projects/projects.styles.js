@@ -10,6 +10,8 @@ export const SectionProjects = styled.section`
     font-size: 3rem;
     margin-bottom: 80px;
     text-align: center;
+    z-index: 60;
+    position: relative;
   }
   ${mediaQueries.projects} {
     & > h2 {

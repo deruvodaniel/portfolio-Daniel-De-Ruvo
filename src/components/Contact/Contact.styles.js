@@ -7,8 +7,10 @@ export const ContactTitle = styled.h2`
   color: var(--colorPrimary);
   z-index: 55;
   font-size: 3rem;
+  position: relative;
   text-align: center;
   ${mediaQueries.desktop} {
+    margin-top: 100px;
     font-size: 3.5rem;
   }
 `;
@@ -39,7 +41,6 @@ export const ContactText = styled.h3`
   font-size: 1.5rem;
   z-index: 50;
   text-align: center;
-  margin-top: 8px;
   ${mediaQueries.tablet} {
     font-size: 2rem;
   }
@@ -66,7 +67,7 @@ export const ContactInfo = styled.div`
     margin: 10px 0;
   }
   ${mediaQueries.desktop} {
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 `;
 
@@ -93,19 +94,15 @@ export const ButtonCopy = styled.p`
   z-index: 50;
   text-align: center;
   cursor: pointer;
-  border: 2px solid var(--colorSecondary);
+  border: 1px solid var(--colorSecondary);
   padding: 15px 30px;
   color: var(--colorSecondary);
   transition: 0.3s ease all;
-  text-transform: uppercase;
   &:hover {
-    color: var(--background);
-    background-color: var(--colorSecondary);
-    border: 2px solid var(--colorSecondary);
-    filter: drop-shadow(0 2px 5px rgba(86, 227, 159, 0.8));
-    z-index: 50;
     transition: 0.3s ease all;
-    text-transform: uppercase;
+    z-index: 50;
+    background: var(--colorSecondary);
+    color: var(--colorPrimary);
   }
   ${mediaQueries.desktop} {
     margin: 0;

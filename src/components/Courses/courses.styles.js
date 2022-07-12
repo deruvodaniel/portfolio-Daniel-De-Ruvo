@@ -15,9 +15,10 @@ ${mediaQueries.desktop}{
 export const CoursesTitle = styled.h2`
   color: var(--colorSecondary);
   font-weigth: 600;
-  z-index: 60;
+  z-index: 99;
   margin: 0 0 35px;
   font-size: 3rem;
+  position: relative;
   text-align: center;
   color: #fff;
   ${mediaQueries.desktop}{
