@@ -80,6 +80,7 @@ export const ProjectItem = styled.div`
   row-gap: 180px;
   padding: 100px 0;
   
+  
   border-bottom: 1px solid var(--borderColor);
   position: relative;
   
@@ -218,7 +219,6 @@ export const ProjectLinks = styled.div`
   gap: 40px;
   align-items: center;
   row-gap: 80px;
-`;
 
   
   
@@ -249,11 +249,9 @@ export const ProjectLink = styled.a`
     transform: translateX(8px);
   }
   
-  row-gap: 180px;
+  ${mediaQueries.desktop} {
     font-size: 1.2rem;
-  
   }
-          <SecondaryButton onClick={() => scrollToSection(refContact)}>Get In Touch</SecondaryButton>
 `;
 
 // Legacy exports for compatibility
