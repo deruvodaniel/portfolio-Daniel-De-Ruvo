@@ -1,5 +1,6 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Layer = styled(motion.div)`
   position: fixed;
@@ -24,11 +25,19 @@ const Blob2 = styled(Blob)`
 `;
 
 export const ParallaxBackground = () => {
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 800], [0, -60]);
-  const y2 = useTransform(scrollY, [0, 800], [0, 80]);
-  const x1 = useTransform(scrollY, [0, 800], [0, -40]);
-  const x2 = useTransform(scrollY, [0, 800], [0, 40]);
+  const scroll = useMotionValue(0);
+
+  useEffect(() => {
+    const onScroll = () => scroll.set(window.scrollY || window.pageYOffset || 0);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scroll]);
+
+  const y1 = useTransform(scroll, [0, 800], [0, -60]);
+  const y2 = useTransform(scroll, [0, 800], [0, 80]);
+  const x1 = useTransform(scroll, [0, 800], [0, -40]);
+  const x2 = useTransform(scroll, [0, 800], [0, 40]);
 
   return (
     <Layer aria-hidden>
