@@ -12,9 +12,11 @@ import {
   StatItem,
 } from "./home.styles";
 import { useRefs } from "../../context/refsContext";
+import { useI18n } from "context/i18nContext";
 
 export const Home = () => {
   const { refHome, refProjects, refContact } = useRefs();
+  const { t } = useI18n();
 
   const scrollToSection = (section) => {
     if (section !== null && section.current !== null) {
@@ -24,35 +26,34 @@ export const Home = () => {
 
   return (
     <ContainerHome ref={refHome}>
-      <TextHome>Frontend Developer</TextHome>
-      <TitleHome>Daniel De Ruvo</TitleHome>
-      <SubtitleHome>Creating Digital Experiences</SubtitleHome>
+      <TextHome>{t('home.kicker')}</TextHome>
+      <TitleHome>{t('home.name')}</TitleHome>
+      <SubtitleHome>{t('home.subtitle')}</SubtitleHome>
       <DescriptionHome>
-        I craft exceptional digital experiences through clean code, modern design, 
-        and user-centered thinking. Specialized in React, Vue.js, and performance optimization.
+        {t('home.description')}
       </DescriptionHome>
-      
+
       <ButtonsContainer>
         <ButtonHome onClick={() => scrollToSection(refProjects)}>
-          View Projects
+          {t('home.viewProjects')}
         </ButtonHome>
         <SecondaryButton onClick={() => scrollToSection(refContact)}>
-          Get In Touch
+          {t('home.getInTouch')}
         </SecondaryButton>
       </ButtonsContainer>
-      
+
       <StatsContainer>
         <StatItem>
           <span className="number">3+</span>
-          <span className="label">Years Experience</span>
+          <span className="label">{t('home.years')}</span>
         </StatItem>
         <StatItem>
           <span className="number">50+</span>
-          <span className="label">Projects Completed</span>
+          <span className="label">{t('home.projects')}</span>
         </StatItem>
         <StatItem>
           <span className="number">100%</span>
-          <span className="label">Client Satisfaction</span>
+          <span className="label">{t('home.satisfaction')}</span>
         </StatItem>
       </StatsContainer>
     </ContainerHome>
