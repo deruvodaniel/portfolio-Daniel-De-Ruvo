@@ -11,6 +11,7 @@ import { Projects } from './components/Projects';
 import { Courses } from './components/Courses';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
+import { Experience } from './components/Experience';
 import './index.css';
 
 function App() {
