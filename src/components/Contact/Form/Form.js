@@ -12,6 +12,7 @@ import ModalMessageForm from "components/ModalMessageForm";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import ModalLoading from "components/ModalLoading";
+import { useI18n } from "context/i18nContext";
 
 const dataEmailer = {
   serviceId: process.env.REACT_APP_SERVICE_ID,
@@ -24,6 +25,7 @@ const MyForm = () => {
   const { showModal, ModalMessage, setShowModal } = ModalMessageForm();
   const [showLoading, setShowLoading] = useState(false);
   const form = useRef(null);
+  const { t } = useI18n();
   const {
     register,
     handleSubmit,
@@ -38,13 +40,13 @@ const MyForm = () => {
       .then(() => {
         reset();
         setShowLoading(false);
-        setShowModal({ state: "true", text: "Message sent successfully" });
+        setShowModal({ state: "true", text: t('form.sentSuccess') });
       })
       .catch(() => {
         setShowLoading(false);
         setShowModal({
           state: "false",
-          text: "An error occurred while sending the message",
+          text: t('form.sentError'),
         });
       });
   };
