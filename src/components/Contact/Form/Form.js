@@ -92,19 +92,19 @@ const MyForm = () => {
                 type="tel"
                 name="phone"
                 className={errors.phone && "input__error"}
-                placeholder="Cellphone"
+                placeholder={t('form.phone')}
                 {...register("phone", {
                   maxLength: {
                     value: 20,
-                    message: "The maximum number of characters is 20",
+                    message: t('form.maxPhone'),
                   },
                   minLength: {
                     value: 10,
-                    message: "The minimum number of characters is 10",
+                    message: t('form.minPhone'),
                   },
                   pattern: {
                     value: /^\d+$/,
-                    message: "You can only enter numbers",
+                    message: t('form.numbersOnly'),
                   },
                 })}
               />
