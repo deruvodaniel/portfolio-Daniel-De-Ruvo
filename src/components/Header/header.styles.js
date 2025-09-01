@@ -13,11 +13,15 @@ export const Main = styled(motion.header)`
   padding: 0 60px;
   height: 100px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &.withBackground {
     background: rgba(15, 15, 35, 0.95);
     backdrop-filter: blur(30px);
     border-bottom: 1px solid var(--borderColor);
+  }
+
+  &.withBackground ${'' /* enhance link contrast when dark header */} {
+
   }
 `;
 
@@ -76,6 +80,17 @@ export const Links = styled.li`
 
   &:hover::after {
     width: 100%;
+  }
+
+  ${Main}.withBackground & {
+    color: var(--textMuted);
+  }
+  ${Main}.withBackground &:hover {
+    color: var(--colorSecondary);
+  }
+  ${Main}.withBackground &::after {
+    background: var(--gradientPrimary);
+    height: 3px;
   }
 `;
 
