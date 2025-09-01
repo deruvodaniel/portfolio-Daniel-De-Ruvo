@@ -121,39 +121,40 @@ export const DescriptionHome = styled.p`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 16px;
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeInUp 1s ease-out 1s forwards;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
 
   ${mediaQueries.mobile} {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
   }
 
   ${mediaQueries.tablet} {
-    margin-bottom: 80px;
+    margin-bottom: 56px;
   }
 `;
 
 export const ButtonHome = styled.button`
   position: relative;
-  padding: 24px 48px;
+  padding: 14px 24px;
   background: var(--gradientPrimary);
   border: none;
-  border-radius: 60px;
+  border-radius: 40px;
   color: white;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  min-width: 240px;
-  
+  letter-spacing: 1.5px;
+  min-width: 180px;
+
   &::before {
     content: '';
     position: absolute;
@@ -161,45 +162,46 @@ export const ButtonHome = styled.button`
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.8s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.6s;
   }
-  
+
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow:
-      0 20px 40px rgba(100, 255, 218, 0.35),
-      0 0 40px rgba(100, 255, 218, 0.25);
+      0 12px 24px rgba(100, 255, 218, 0.25),
+      0 0 24px rgba(100, 255, 218, 0.2);
   }
-  
+
   &:hover::before {
     left: 100%;
   }
-  
+
   ${mediaQueries.desktop} {
-    font-size: 1.3rem;
-    padding: 28px 56px;
-    min-width: 280px;
+    font-size: 1.05rem;
+    padding: 16px 28px;
+    min-width: 200px;
+    border-radius: 44px;
   }
 `;
 
 export const SecondaryButton = styled.button`
   position: relative;
-  padding: 24px 48px;
+  padding: 14px 24px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
-  border-radius: 60px;
+  border-radius: 40px;
   color: var(--colorSecondary);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  min-width: 240px;
-  
+  letter-spacing: 1.5px;
+  min-width: 180px;
+
   &::before {
     content: '';
     position: absolute;
@@ -208,25 +210,26 @@ export const SecondaryButton = styled.button`
     width: 0;
     height: 100%;
     background: var(--gradientPrimary);
-    transition: width 0.5s ease;
+    transition: width 0.4s ease;
     z-index: -1;
   }
-  
+
   &:hover {
     color: white;
     border-color: transparent;
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: var(--shadowPrimary);
   }
-  
+
   &:hover::before {
     width: 100%;
   }
-  
+
   ${mediaQueries.desktop} {
-    font-size: 1.3rem;
-    padding: 28px 56px;
-    min-width: 280px;
+    font-size: 1.05rem;
+    padding: 16px 28px;
+    min-width: 200px;
+    border-radius: 44px;
   }
 `;
 
