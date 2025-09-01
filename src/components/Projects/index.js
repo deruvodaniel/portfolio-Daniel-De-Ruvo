@@ -19,11 +19,13 @@ import { motion } from "framer-motion";
 import useWidth from "../../hooks/useWidth";
 import { projects } from "../../arrays/arrayProjects";
 import { useRefs } from "../../context/refsContext";
+import { useI18n } from "context/i18nContext";
 
 export const Projects = () => {
   const { refProjects } = useRefs();
   const { width } = useWidth();
   const initial = width > 700 ? 500 : 0;
+  const { t } = useI18n();
 
   const getTechStack = (subtitle) => {
     return subtitle.split(', ').map(tech => tech.trim());
@@ -37,13 +39,13 @@ export const Projects = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <SectionProjects ref={refProjects}>
-        <h2>Selected Work</h2>
+        <h2>{t('projects.title')}</h2>
         <ContainerProjects>
           {projects.map(({ id, title, subtitle, text, link, github }, index) => (
             <ProjectItem key={id} index={index + 1}>
               <ProjectMeta>
-                <ProjectYear>2024</ProjectYear>
-                <ProjectCategory>Web Application</ProjectCategory>
+                <ProjectYear>{t('projects.year')}</ProjectYear>
+                <ProjectCategory>{t('projects.category')}</ProjectCategory>
                 <TechStack>
                   <TechStackTitle>Tech Stack</TechStackTitle>
                   <TechList>
@@ -53,16 +55,16 @@ export const Projects = () => {
                   </TechList>
                 </TechStack>
               </ProjectMeta>
-              
+
               <ProjectContent>
                 <ProjectTitle>{title}</ProjectTitle>
                 <ProjectDescription>{text}</ProjectDescription>
                 <ProjectLinks>
                   <ProjectLink href={link} target="_blank" rel="noopener noreferrer">
-                    Live Site
+                    {t('projects.live')}
                   </ProjectLink>
                   <ProjectLink href={github} target="_blank" rel="noopener noreferrer">
-                    Source Code
+                    {t('projects.source')}
                   </ProjectLink>
                 </ProjectLinks>
               </ProjectContent>
