@@ -12,6 +12,7 @@ import { Courses } from './components/Courses';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
 import { Experience } from './components/Experience';
+import { ParallaxBackground } from './components/Parallax';
 import './index.css';
 
 function App() {
