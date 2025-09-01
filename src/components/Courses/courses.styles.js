@@ -3,29 +3,29 @@ import { mediaQueries } from "styles";
 
 export const SectionCourses = styled.section`
   z-index: 50;
-  padding: 60px 0;
-  margin: 80px 0;
+  padding: 40px 0;
+  margin: 60px 0;
   position: relative;
   scroll-margin-top: 120px;
 
   ${mediaQueries.desktop} {
-    margin: 160px 0;
-    padding: 100px 0;
+    margin: 120px 0;
+    padding: 60px 0;
   }
 `;
 
 export const CoursesTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 5rem;
-  margin-bottom: 100px;
+  font-size: 4rem;
+  margin-bottom: 60px;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
-  
+
   ${mediaQueries.desktop} {
-    font-size: 9rem;
-    margin-bottom: 150px;
+    font-size: 7rem;
+    margin-bottom: 100px;
     letter-spacing: -5px;
   }
 `;
@@ -49,12 +49,13 @@ export const ContainerCourses = styled.div`
 
 export const ContainerCourse = styled.div`
   background: var(--background);
-  padding: 60px 40px;
+  padding: 40px 28px;
   transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  
+  will-change: transform;
+
   &::before {
     content: '';
     position: absolute;
@@ -67,17 +68,17 @@ export const ContainerCourse = styled.div`
     transition: opacity 0.4s ease;
     z-index: -1;
   }
-  
+
   &:hover {
     transform: scale(1.02);
   }
-  
+
   &:hover::before {
     opacity: 0.05;
   }
-  
+
   ${mediaQueries.desktop} {
-    padding: 80px 60px;
+    padding: 56px 40px;
   }
 `;
 
@@ -111,13 +112,13 @@ export const CourseName = styled.h3`
 `;
 
 export const CourseText = styled.p`
-  margin: 24px 0;
-  font-size: 1.1rem;
+  margin: 16px 0;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: var(--textSecondary);
-  
+
   ${mediaQueries.desktop} {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.7;
   }
 `;

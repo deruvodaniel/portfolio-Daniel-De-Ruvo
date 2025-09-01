@@ -2,29 +2,29 @@ import styled from 'styled-components';
 import { mediaQueries } from 'styles';
 
 export const SectionExperience = styled.section`
-  margin: 200px 0;
-  padding: 150px 0;
+  margin: 100px 0;
+  padding: 60px 0;
   position: relative;
   z-index: 50;
 
   ${mediaQueries.desktop} {
-    margin: 300px 0;
-    padding: 200px 0;
+    margin: 160px 0;
+    padding: 100px 0;
   }
 `;
 
 export const ExperienceTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 5rem;
-  margin-bottom: 100px;
+  font-size: 4rem;
+  margin-bottom: 60px;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
 
   ${mediaQueries.desktop} {
-    font-size: 9rem;
-    margin-bottom: 150px;
+    font-size: 7rem;
+    margin-bottom: 100px;
     letter-spacing: -5px;
   }
 `;
@@ -35,24 +35,23 @@ export const Timeline = styled.div`
 `;
 
 export const RoleItem = styled.div`
-  padding: 40px 0;
+  padding: 28px 0;
   border-bottom: 1px solid var(--borderColor);
   position: relative;
 
   &:last-child { border-bottom: none; }
 
-
   h3 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--colorPrimary);
-    margin: 12px 0 16px;
+    margin: 8px 0 12px;
     letter-spacing: -0.5px;
   }
 
   ${mediaQueries.desktop} {
-    padding: 60px 0;
-    &::before { top: 60px; }
-    h3 { font-size: 2.4rem; }
+    padding: 48px 0;
+    &::before { top: 48px; }
+    h3 { font-size: 2rem; }
   }
 `;
 
@@ -84,7 +83,7 @@ export const BulletList = styled.ul`
 `;
 
 export const BulletItem = styled.li`
-  margin: 10px 0;
+  margin: 6px 0;
   line-height: 1.6;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 `;

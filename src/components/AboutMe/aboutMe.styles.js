@@ -2,46 +2,46 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionAboutMe = styled.section`
-  margin: 80px 0;
-  padding: 60px 0;
+  margin: 60px 0;
+  padding: 40px 0;
   z-index: 50;
   position: relative;
   scroll-margin-top: 120px;
 
   ${mediaQueries.desktop} {
-    margin: 160px 0;
-    padding: 100px 0;
+    margin: 120px 0;
+    padding: 60px 0;
   }
 `;
 
 export const AboutMeContent = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 100px;
+  gap: 60px;
   align-items: start;
-  
+
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 1fr;
-    gap: 150px;
+    gap: 100px;
   }
 `;
 
 export const AboutMeTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 5rem;
-  margin-bottom: 60px;
+  font-size: 4rem;
+  margin-bottom: 40px;
   line-height: 0.9;
   letter-spacing: -2px;
-  
+
   ${mediaQueries.tablet} {
-    font-size: 7rem;
+    font-size: 6rem;
     letter-spacing: -3px;
   }
-  
+
   ${mediaQueries.desktop} {
-    font-size: 9rem;
-    margin-bottom: 80px;
+    font-size: 7.5rem;
+    margin-bottom: 60px;
     letter-spacing: -5px;
   }
 `;

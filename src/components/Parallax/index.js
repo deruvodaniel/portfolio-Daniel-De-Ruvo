@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import styled from 'styled-components';
 import { useEffect } from 'react';
 
@@ -15,8 +15,10 @@ const Blob = styled(motion.div)`
   height: 56vmax;
   border-radius: 50%;
   background: radial-gradient(closest-side, rgba(0,229,255,0.22), transparent 70%);
-  filter: blur(40px);
+  filter: blur(28px);
   mix-blend-mode: screen;
+  will-change: transform, filter;
+  transform: translateZ(0);
 `;
 
 const Blob2 = styled(Blob)`
@@ -29,6 +31,7 @@ const Blob3 = styled(Blob)`
 
 export const ParallaxBackground = () => {
   const scroll = useMotionValue(0);
+  const smooth = useSpring(scroll, { stiffness: 70, damping: 20, mass: 0.25 });
 
   useEffect(() => {
     const onScroll = () => scroll.set(window.scrollY || window.pageYOffset || 0);
@@ -37,20 +40,20 @@ export const ParallaxBackground = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [scroll]);
 
-  const y1 = useTransform(scroll, [0, 1200], [0, -140]);
-  const x1 = useTransform(scroll, [0, 1200], [0, -80]);
-  const r1 = useTransform(scroll, [0, 1200], [0, 12]);
-  const s1 = useTransform(scroll, [0, 1200], [1, 1.06]);
+  const y1 = useTransform(smooth, [0, 1200], [0, -140]);
+  const x1 = useTransform(smooth, [0, 1200], [0, -80]);
+  const r1 = useTransform(smooth, [0, 1200], [0, 12]);
+  const s1 = useTransform(smooth, [0, 1200], [1, 1.06]);
 
-  const y2 = useTransform(scroll, [0, 1200], [0, 160]);
-  const x2 = useTransform(scroll, [0, 1200], [0, 90]);
-  const r2 = useTransform(scroll, [0, 1200], [0, -10]);
-  const s2 = useTransform(scroll, [0, 1200], [1, 1.05]);
+  const y2 = useTransform(smooth, [0, 1200], [0, 160]);
+  const x2 = useTransform(smooth, [0, 1200], [0, 90]);
+  const r2 = useTransform(smooth, [0, 1200], [0, -10]);
+  const s2 = useTransform(smooth, [0, 1200], [1, 1.05]);
 
-  const y3 = useTransform(scroll, [0, 1200], [0, -60]);
-  const x3 = useTransform(scroll, [0, 1200], [0, 120]);
-  const r3 = useTransform(scroll, [0, 1200], [0, 8]);
-  const s3 = useTransform(scroll, [0, 1200], [1, 1.04]);
+  const y3 = useTransform(smooth, [0, 1200], [0, -60]);
+  const x3 = useTransform(smooth, [0, 1200], [0, 120]);
+  const r3 = useTransform(smooth, [0, 1200], [0, 8]);
+  const s3 = useTransform(smooth, [0, 1200], [1, 1.04]);
 
   return (
     <Layer aria-hidden>
