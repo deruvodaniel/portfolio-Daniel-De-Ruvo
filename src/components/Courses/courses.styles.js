@@ -6,6 +6,7 @@ export const SectionCourses = styled.section`
   padding: 80px 0;
   margin: 100px 0;
   position: relative;
+  scroll-margin-top: 120px;
 
   ${mediaQueries.desktop} {
     margin: 160px 0;

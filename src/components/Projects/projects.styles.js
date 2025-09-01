@@ -6,6 +6,7 @@ export const SectionProjects = styled.section`
   padding: 80px 0;
   z-index: 40;
   position: relative;
+  scroll-margin-top: 120px;
   
   & > h2 {
     font-size: 5rem;
@@ -79,14 +80,6 @@ export const ProjectItem = styled.div`
       margin: 0 -60px;
     }
     
-    &:nth-child(even) {
-      grid-template-columns: 2fr 1fr;
-      direction: rtl;
-      
-      & > * {
-        direction: ltr;
-      }
-    }
     
     &::before {
       font-size: 1.4rem;
