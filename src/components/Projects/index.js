@@ -16,15 +16,12 @@ import {
   ProjectLink,
 } from "./projects.styles";
 import { motion } from "framer-motion";
-import useWidth from "../../hooks/useWidth";
 import { projects } from "../../arrays/arrayProjects";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
 
 export const Projects = () => {
   const { refProjects } = useRefs();
-  const { width } = useWidth();
-  const initial = width > 700 ? 500 : 0;
   const { t } = useI18n();
 
   const getTechStack = (subtitle) => {
