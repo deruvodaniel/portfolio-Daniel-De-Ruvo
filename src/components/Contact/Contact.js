@@ -30,7 +30,7 @@ export const Contact = () => {
 
   const copyPhone = (e) => {
     e.target.focus();
-    navigator.clipboard.writeText("+541165911732");
+    navigator.clipboard.writeText("+5491165911732");
     setCopyPhoneSuccess(t('contact.copiedPhone'));
   };
 
