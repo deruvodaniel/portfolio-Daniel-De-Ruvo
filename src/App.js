@@ -21,6 +21,7 @@ function App() {
         <RefsContextProvider>
           <ContainerApp>
             <Header />
+            <ParallaxBackground />
             <ContainerSections>
               <Home />
               <AboutMe />
