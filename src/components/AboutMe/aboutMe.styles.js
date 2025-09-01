@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionAboutMe = styled.section`
-  margin: 200px 0;
-  padding: 150px 0;
+  margin: 140px 0;
+  padding: 100px 0;
   z-index: 50;
   position: relative;
-  
+
   ${mediaQueries.desktop} {
-    margin: 300px 0;
-    padding: 200px 0;
+    margin: 220px 0;
+    padding: 140px 0;
   }
 `;
 
