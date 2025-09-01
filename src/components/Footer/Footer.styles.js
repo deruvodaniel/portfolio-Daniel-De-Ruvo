@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const FooterStyle = styled.footer`
-  margin-top: 200px;
-  padding: 150px 0 80px;
+  margin-top: 140px;
+  padding: 100px 0 60px;
   z-index: 50;
   display: flex;
   flex-direction: column;
