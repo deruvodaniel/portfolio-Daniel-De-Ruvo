@@ -64,14 +64,14 @@ export const Contact = () => {
           {width > 1024 && (
             <ContactLinks>
               <a
-                href="https://www.twitter.com"
+                href="https://cdn.builder.io/o/assets%2Feb9edba76d874a5385833a00b6be2b6e%2F44c199474638431da9d1c7d8d0e28707?alt=media&token=1af667d8-3632-4777-b419-39ad015be4eb&apiKey=eb9edba76d874a5385833a00b6be2b6e"
                 target="_blank"
                 rel="noreferrer"
-                className="twitter"
+                title="Resume"
               >
                 <img
-                  alt="Twitter"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logotblanco_pjudi4.svg"
+                  alt="Resume"
+                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653408217/portfolio%20daniel/logog_udsccl.svg"
                   width="45px"
                   height="40px"
                 />
