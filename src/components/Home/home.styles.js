@@ -121,19 +121,18 @@ export const DescriptionHome = styled.p`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
   opacity: 0;
   animation: fadeInUp 1s ease-out 1s forwards;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 
-  ${mediaQueries.mobile} {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-  }
-
-  ${mediaQueries.tablet} {
+  ${mediaQueries.desktop} {
+    flex-direction: row;
+    gap: 16px;
+    width: auto;
     margin-bottom: 56px;
   }
 `;
