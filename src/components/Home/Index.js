@@ -218,6 +218,7 @@ export const ProjectLinks = styled.div`
   gap: 40px;
   align-items: center;
   row-gap: 80px;
+`;
 
   
   
