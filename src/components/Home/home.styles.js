@@ -65,9 +65,9 @@ export const TitleHome = styled.h1`
   }
   
   ${mediaQueries.desktop} {
-    font-size: 9rem;
+    font-size: 10rem;
     margin: 0 0 40px;
-    letter-spacing: -4px;
+    letter-spacing: -5px;
   }
 `;
 

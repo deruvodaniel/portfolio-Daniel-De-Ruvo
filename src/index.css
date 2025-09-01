@@ -6,7 +6,7 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
 
 /* Theme variables */
 :root {
-  --background: radial-gradient(1200px 800px at 10% 10%, rgba(100, 255, 218, 0.05), transparent 60%), radial-gradient(1000px 600px at 90% 20%, rgba(100, 108, 255, 0.06), transparent 60%), #0b0b16;
+  --background: radial-gradient(1200px 800px at 10% 10%, rgba(0, 229, 255, 0.06), transparent 60%), radial-gradient(1000px 600px at 90% 20%, rgba(34, 197, 94, 0.06), transparent 60%), #0b0b16;
   --backgroundCard: rgba(255, 255, 255, 0.02);
   --backgroundCardHover: rgba(255, 255, 255, 0.05);
   --colorPrimary: #e6edf3;
@@ -14,13 +14,13 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
   --textSecondary: #a1a8b3;
   --textMuted: #7b8496;
   --borderColor: rgba(255, 255, 255, 0.08);
-  --gradientPrimary: linear-gradient(90deg, #64ffda, #6c6cff 60%, #b26cff);
-  --shadowPrimary: 0 20px 40px rgba(100, 255, 218, 0.25);
+  --gradientPrimary: linear-gradient(90deg, #00E5FF, #00FFA3 60%, #7CFFCB);
+  --shadowPrimary: 0 20px 40px rgba(0, 229, 255, 0.25);
   --colorError: #ff6b6b;
 }
 
 :root[data-theme='light'] {
-  --background: radial-gradient(1200px 800px at 10% 10%, rgba(100, 108, 255, 0.15), transparent 60%), radial-gradient(1000px 600px at 90% 20%, rgba(100, 255, 218, 0.12), transparent 60%), #f8fafc;
+  --background: radial-gradient(1200px 800px at 10% 10%, rgba(6, 182, 212, 0.18), transparent 60%), radial-gradient(1000px 600px at 90% 20%, rgba(34, 197, 94, 0.12), transparent 60%), #f8fafc;
   --backgroundCard: rgba(0, 0, 0, 0.03);
   --backgroundCardHover: rgba(0, 0, 0, 0.06);
   --colorPrimary: #0f172a;
@@ -28,13 +28,13 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
   --textSecondary: #334155;
   --textMuted: #475569;
   --borderColor: rgba(15, 23, 42, 0.12);
-  --gradientPrimary: linear-gradient(90deg, #0ea5e9, #6366f1 60%, #a855f7);
+  --gradientPrimary: linear-gradient(90deg, #06b6d4, #22c55e 60%, #a7f37d);
   --shadowPrimary: 0 20px 40px rgba(14, 165, 233, 0.25);
   --colorError: #e11d48;
 }
 
 /* Typography */
-h1, h2, h3, h4 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
+h1, h2, h3, h4 { margin: 0; font-family: 'Sora', 'Inter', sans-serif; }
 p { margin: 0; }
 a { color: inherit; }
 

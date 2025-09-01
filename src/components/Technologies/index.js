@@ -27,7 +27,11 @@ export const Technologies = () => {
         <ContainerTechnologies>
           {technologies.map(({ id, img, text }) => (
             <TechCard key={id}>
-              <img className="tech-icon" src={img} alt={text} />
+              {img ? (
+                <img className="tech-icon" src={img} alt={text} />
+              ) : (
+                <div className="tech-fallback" aria-hidden>{text.slice(0,2).toUpperCase()}</div>
+              )}
               <span className="tech-name">{text}</span>
             </TechCard>
           ))}

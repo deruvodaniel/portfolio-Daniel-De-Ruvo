@@ -39,9 +39,9 @@ export const AboutMeTitle = styled.h2`
   }
   
   ${mediaQueries.desktop} {
-    font-size: 8rem;
+    font-size: 9rem;
     margin-bottom: 80px;
-    letter-spacing: -4px;
+    letter-spacing: -5px;
   }
 `;
 

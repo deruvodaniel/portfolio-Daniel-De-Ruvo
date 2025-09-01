@@ -1,42 +1,17 @@
 export const technologies = [
-    {
-      id: 1,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652197835/portfolio%20daniel/Vector-1_obwlvo.png",
-      text: "html5",
-    },
-    {
-      id: 2,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652197835/portfolio%20daniel/Vector_r9q079.png",
-      text: "CSS3",
-    },
-    {
-      id: 3,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652197835/portfolio%20daniel/Vector-3_gwkauk.png",
-      text: "JAVASCRIPT",
-    },
-    {
-      id: 4,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652197835/portfolio%20daniel/Vector-2_faxixr.png",
-      text: "SASS",
-    },
-    {
-      id: 5,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652197835/portfolio%20daniel/Vector-4_j80kk7.png",
-      text: "VUEJS",
-    },
-    {
-      id: 6,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653403406/portfolio%20daniel/logoB_hiikom.svg",
-      text: "BOOTSTRAP",
-    },
-    {
-      id: 7,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652197836/portfolio%20daniel/Vector-5_bgz8l6.png",
-      text: "DOCKER",
-    },
-    {
-      id: 8,
-      img: "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652197836/portfolio%20daniel/Vector-6_yessvx.png",
-      text: "NODEJS",
-    },
-  ];
+  { id: 1, img: null, text: 'React' },
+  { id: 2, img: null, text: 'Next.js' },
+  { id: 3, img: null, text: 'Vue.js' },
+  { id: 4, img: null, text: 'JavaScript' },
+  { id: 5, img: null, text: 'Storybook' },
+  { id: 6, img: null, text: 'MUI' },
+  { id: 7, img: null, text: 'Styled Components' },
+  { id: 8, img: null, text: 'Sass' },
+  { id: 9, img: null, text: 'CSS Modules' },
+  { id: 10, img: null, text: 'Cypress' },
+  { id: 11, img: null, text: 'Jest' },
+  { id: 12, img: null, text: 'Git' },
+  { id: 13, img: null, text: 'Docker' },
+  { id: 14, img: null, text: 'CI/CD' },
+  { id: 15, img: null, text: 'Figma' },
+];

@@ -23,9 +23,9 @@ export const CoursesTitle = styled.h2`
   line-height: 0.9;
   
   ${mediaQueries.desktop} {
-    font-size: 8rem;
+    font-size: 9rem;
     margin-bottom: 150px;
-    letter-spacing: -4px;
+    letter-spacing: -5px;
   }
 `;
 
