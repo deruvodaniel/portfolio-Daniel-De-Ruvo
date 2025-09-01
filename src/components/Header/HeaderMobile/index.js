@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Links, ListLinks, LogoMenu, Main, Controls, ToggleButton } from "./headerMobile.styles";
+import { Links, ListLinks, LogoMenu, Main, Controls, ToggleButton, LogoText } from "./headerMobile.styles";
 import { useTheme } from "context/themeContext";
 import { useI18n } from "context/i18nContext";
 
@@ -37,13 +37,7 @@ export const HeaderMobile = ({ refs }) => {
 
   return (
     <Main ref={menu}>
-      <img
-        src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653404223/portfolio%20daniel/LOGO_DR_six97a.svg"
-        width="65px"
-        onClick={() => scrollToSection(refHome)}
-        height="45px"
-        aria-label="logo Daniel"
-      />
+      <LogoText onClick={() => scrollToSection(refHome)} aria-label="logo Daniel">DR</LogoText>
       <Controls>
         <ToggleButton aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'dark' ? '🌙' : '☀️'}</ToggleButton>
         <ToggleButton aria-label="Switch language" onClick={toggleLang}>{lang.toUpperCase()}</ToggleButton>
