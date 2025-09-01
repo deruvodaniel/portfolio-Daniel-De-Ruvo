@@ -33,7 +33,13 @@ const MyForm = () => {
     reset,
   } = useForm();
 
+  const hasEmailConfig = Boolean(serviceId && templateId && publicKey);
+
   const onSubmit = () => {
+    if (!hasEmailConfig) {
+      setShowModal({ state: "false", text: t('form.sentError') + ' (EmailJS config missing)' });
+      return;
+    }
     setShowLoading(true);
     emailjs
       .sendForm(serviceId, templateId, form.current, publicKey)
@@ -42,12 +48,10 @@ const MyForm = () => {
         setShowLoading(false);
         setShowModal({ state: "true", text: t('form.sentSuccess') });
       })
-      .catch(() => {
+      .catch((err) => {
         setShowLoading(false);
-        setShowModal({
-          state: "false",
-          text: t('form.sentError'),
-        });
+        const reason = err?.text || err?.message || 'EmailJS error';
+        setShowModal({ state: "false", text: `${t('form.sentError')}: ${reason}` });
       });
   };
 
@@ -188,7 +192,7 @@ const MyForm = () => {
               />
             </ContainerTextArea>
             <ErrorMessage> {errors?.message?.message} </ErrorMessage>
-            <Btn type="submit">{t('form.send')}</Btn>
+            <Btn type="submit" disabled={!hasEmailConfig}>{t('form.send')}</Btn>
           </Form>
         )}
       </SectionForm>
