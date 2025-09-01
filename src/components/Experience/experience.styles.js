@@ -41,16 +41,6 @@ export const RoleItem = styled.div`
 
   &:last-child { border-bottom: none; }
 
-  &::before {
-    content: '${(p) => String(p.index).padStart(2, '0')}';
-    position: absolute;
-    top: 40px;
-    left: 0;
-    font-size: 1rem;
-    color: var(--textMuted);
-    letter-spacing: 2px;
-    font-weight: 700;
-  }
 
   h3 {
     font-size: 2rem;

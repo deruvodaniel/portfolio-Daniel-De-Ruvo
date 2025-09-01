@@ -3,13 +3,13 @@ import { mediaQueries } from "styles";
 
 export const SectionCourses = styled.section`
   z-index: 50;
-  padding: 100px 0;
-  margin: 140px 0;
+  padding: 80px 0;
+  margin: 100px 0;
   position: relative;
 
   ${mediaQueries.desktop} {
-    margin: 220px 0;
-    padding: 140px 0;
+    margin: 160px 0;
+    padding: 100px 0;
   }
 `;
 

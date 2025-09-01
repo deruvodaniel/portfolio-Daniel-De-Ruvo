@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const ContactTitle = styled.h2`
-  margin-top: 140px;
-  padding-top: 100px;
+  margin-top: 100px;
+  padding-top: 80px;
   color: var(--colorPrimary);
   font-size: 5rem;
   font-weight: 900;
@@ -21,8 +21,8 @@ export const ContactTitle = styled.h2`
 `;
 
 export const SectionContact = styled.section`
-  margin: 80px 0 140px;
-  padding: 80px 0;
+  margin: 60px 0 100px;
+  padding: 60px 0;
   z-index: 50;
   color: var(--colorPrimary);
   display: grid;
@@ -33,9 +33,9 @@ export const SectionContact = styled.section`
   
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 1fr;
-    gap: 120px;
-    margin: 120px 0 220px;
-    padding: 120px 0;
+    gap: 80px;
+    margin: 100px 0 160px;
+    padding: 80px 0;
   }
 `;
 

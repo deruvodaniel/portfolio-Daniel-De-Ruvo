@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionProjects = styled.section`
-  margin: 140px 0;
-  padding: 100px 0;
+  margin: 100px 0;
+  padding: 80px 0;
   z-index: 40;
   position: relative;
   
@@ -31,8 +31,8 @@ export const SectionProjects = styled.section`
   }
   
   ${mediaQueries.desktop} {
-    margin: 220px 0;
-    padding: 140px 0;
+    margin: 160px 0;
+    padding: 100px 0;
     
     & > h2 {
       font-size: 9rem;
@@ -61,16 +61,6 @@ export const ProjectItem = styled.div`
     border-bottom: none;
   }
   
-  &::before {
-    content: '${props => String(props.index).padStart(2, '0')}';
-    position: absolute;
-    top: 40px;
-    left: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--colorSecondary);
-    letter-spacing: 2px;
-  }
   
   &:hover {
     background: var(--backgroundCard);

@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionTechnologies = styled.section`
-  margin: 140px 0;
-  padding: 100px 0;
+  margin: 100px 0;
+  padding: 80px 0;
   z-index: 50;
   position: relative;
   
@@ -18,8 +18,8 @@ export const SectionTechnologies = styled.section`
   }
   
   ${mediaQueries.desktop} {
-    margin: 220px 0;
-    padding: 140px 0;
+    margin: 160px 0;
+    padding: 100px 0;
     
     & > h2 {
       font-size: 9rem;
@@ -42,7 +42,7 @@ export const ContainerTechnologies = styled.div`
   }
 
   ${mediaQueries.desktop} {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 

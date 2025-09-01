@@ -11,17 +11,18 @@ const Layer = styled(motion.div)`
 
 const Blob = styled(motion.div)`
   position: absolute;
-  width: 40vmax;
-  height: 40vmax;
+  width: 48vmax;
+  height: 48vmax;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(0,229,255,0.10), transparent 70%);
-  filter: blur(30px);
+  background: radial-gradient(closest-side, rgba(0,229,255,0.16), transparent 70%);
+  filter: blur(36px);
+  mix-blend-mode: screen;
 `;
 
 const Blob2 = styled(Blob)`
   right: 10%;
   top: 30%;
-  background: radial-gradient(closest-side, rgba(34,197,94,0.10), transparent 70%);
+  background: radial-gradient(closest-side, rgba(34,197,94,0.14), transparent 70%);
 `;
 
 export const ParallaxBackground = () => {
@@ -34,15 +35,18 @@ export const ParallaxBackground = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [scroll]);
 
-  const y1 = useTransform(scroll, [0, 800], [0, -60]);
-  const y2 = useTransform(scroll, [0, 800], [0, 80]);
-  const x1 = useTransform(scroll, [0, 800], [0, -40]);
-  const x2 = useTransform(scroll, [0, 800], [0, 40]);
+  const y1 = useTransform(scroll, [0, 800], [0, -100]);
+  const y2 = useTransform(scroll, [0, 800], [0, 120]);
+  const x1 = useTransform(scroll, [0, 800], [0, -60]);
+  const x2 = useTransform(scroll, [0, 800], [0, 60]);
+  const y3 = useTransform(scroll, [0, 800], [0, -40]);
+  const x3 = useTransform(scroll, [0, 800], [0, 80]);
 
   return (
     <Layer aria-hidden>
       <Blob style={{ y: y1, x: x1 }} />
       <Blob2 style={{ y: y2, x: x2 }} />
+      <Blob style={{ top: '60%', left: '5%', width: '36vmax', height: '36vmax', y: y3, x: x3 }} />
     </Layer>
   );
 };
