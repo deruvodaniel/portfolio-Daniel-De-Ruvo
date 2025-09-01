@@ -62,25 +62,25 @@ const MyForm = () => {
               <input
                 autocomplete="off"
                 type="text"
-                placeholder="Name"
+                placeholder={t('form.name')}
                 name="name"
                 className={errors.name && "input__error"}
                 {...register("name", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 3,
-                    message: "The name must be at least 3 characters long",
+                    message: t('form.minName'),
                   },
                   maxLength: {
                     value: 20,
-                    message: "Maximum characters reached",
+                    message: t('form.maxName'),
                   },
                   pattern: {
                     value: /^[ a-zA-Z0]+$/,
-                    message: "You can only enter letters",
+                    message: t('form.lettersOnly'),
                   },
                 })}
               />
