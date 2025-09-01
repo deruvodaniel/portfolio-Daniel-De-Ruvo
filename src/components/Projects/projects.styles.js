@@ -6,10 +6,12 @@ export const SectionProjects = styled.section`
   padding: 150px 0;
   z-index: 40;
   color: var(--colorPrimary);
+  
   position: relative;
   
   & > h2 {
-    font-size: 5rem;
+    font-size: 3.5rem;
+    font-weight: 700;
     font-weight: 900;
     margin-bottom: 150px;
     text-align: center;
@@ -20,12 +22,29 @@ export const SectionProjects = styled.section`
   
   ${mediaQueries.desktop} {
     margin: 300px 0;
+    background: linear-gradient(135deg, var(--colorPrimary) 0%, var(--colorSecondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--colorSecondary), #00B9AE);
+      border-radius: 2px;
+    }
     padding: 200px 0;
+  
     
     & > h2 {
       font-size: 8rem;
       margin-bottom: 200px;
-      letter-spacing: -4px;
+      font-size: 4rem;
     }
   }
 `;
@@ -39,8 +58,9 @@ export const ContainerProjects = styled.div`
 export const ProjectItem = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  row-gap: 180px;
   padding: 100px 0;
+  
   border-bottom: 1px solid var(--borderColor);
   position: relative;
   
@@ -178,8 +198,9 @@ export const ProjectLinks = styled.div`
   display: flex;
   gap: 40px;
   align-items: center;
-`;
+  row-gap: 80px;
 
+  
 export const ProjectLink = styled.a`
   color: var(--colorSecondary);
   text-decoration: none;
