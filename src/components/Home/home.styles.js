@@ -12,7 +12,7 @@ export const ContainerHome = styled.div`
   z-index: 50;
   
   ${mediaQueries.desktop} {
-    padding: 250px 0 150px;
+    padding: 180px 0 100px;
   }
 `;
 
