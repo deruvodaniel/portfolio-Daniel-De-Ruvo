@@ -7,18 +7,16 @@ export const Main = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  border-bottom: 3px solid var(--colorSecondary);
   right: 0;
   background: var(--background);
+  border-bottom: 1px solid var(--borderColor);
+  backdrop-filter: blur(20px);
   z-index: 100;
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  & > img:first-child {
-    color: var(--colorPrimary);
-    padding: 0 0 0 20px;
-    cursor: pointer;
-  }
+  padding: 0 16px;
+
   & > nav {
     position: absolute;
     top: 71px;
@@ -26,12 +24,13 @@ export const Main = styled.header`
     left: 0;
     z-index: 20;
     background: var(--background);
+    border-bottom: 1px solid var(--borderColor);
   }
 `;
 
 export const LogoMenu = styled.img`
   color: var(--colorPrimary);
-  padding: 0 20px 0 0;
+  padding: 0 8px 0 0;
   cursor: pointer;
 `;
 
@@ -61,33 +60,45 @@ export const ToggleButton = styled.button`
   &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
 `;
 
+export const LogoText = styled.div`
+  font-size: 2rem;
+  font-weight: 900;
+  background: var(--gradientPrimary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  padding-left: 8px;
+`
+
 export const ListLinks = styled.ul`
-  margin: 30px 0 60vh;
+  margin: 20px 0 24px;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   list-style: none;
   text-align: end;
-  padding: 0;
+  padding: 0 16px;
 `;
 
 export const Links = styled.li`
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  color: var(--colorSecondary);
-  padding: 3px 15px;
-  margin-bottom: 20px;
-  margin-right: 0px;
+  color: var(--textMuted);
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  margin-right: 0;
   border-radius: 10px;
   transition: 0.3s ease all;
+
   &:hover {
-    transition: 0.3s ease all;
-    color: var(--colorSecondary);
+    color: var(--colorPrimary);
   }
+
   ${mediaQueries.tablet} {
-    padding: 3px 25px;
-    margin-bottom: 30px;
-    margin-right: 20px;
-    font-size: 2rem;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    margin-right: 8px;
+    font-size: 1.4rem;
   }
 `;
