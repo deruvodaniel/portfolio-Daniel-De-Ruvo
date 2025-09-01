@@ -54,13 +54,11 @@ export const ProjectItem = styled.div`
   grid-template-columns: 1fr;
   gap: 32px;
   padding: 40px 0;
-  border-bottom: 1px solid var(--borderColor);
+  border-bottom: none;
   position: relative;
   transition: all 0.3s ease;
   
-  &:last-child {
-    border-bottom: none;
-  }
+  &:last-child {}
   
   &:hover {
     background: var(--backgroundCard);
