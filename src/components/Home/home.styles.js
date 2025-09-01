@@ -7,7 +7,7 @@ export const ContainerHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 200px 0 100px;
+  padding: 140px 0 80px;
   position: relative;
   z-index: 50;
   
