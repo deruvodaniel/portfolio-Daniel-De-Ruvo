@@ -59,9 +59,10 @@ export const AboutMe = () => {
                 />
               </a>
               <a
-                href="mailto:deruvodaniel@gmail.com"
+                href="https://cdn.builder.io/o/assets%2Feb9edba76d874a5385833a00b6be2b6e%2F44c199474638431da9d1c7d8d0e28707?alt=media&token=1af667d8-3632-4777-b419-39ad015be4eb&apiKey=eb9edba76d874a5385833a00b6be2b6e"
                 target="_blank"
                 rel="noreferrer"
+                title="Resume"
               >
                 {t('about.resume')}
               </a>
