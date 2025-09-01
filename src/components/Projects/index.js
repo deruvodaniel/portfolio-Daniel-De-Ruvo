@@ -33,10 +33,9 @@ export const Projects = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: initial }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
-      viewport={{ once: true, amount: 0.3 }}
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <SectionProjects ref={refProjects}>
         <h2>{t('projects.title')}</h2>

@@ -131,6 +131,10 @@ export const ButtonsContainer = styled.div`
     flex-direction: column;
     width: 100%;
   }
+
+  ${mediaQueries.tablet} {
+    margin-bottom: 100px;
+  }
 `;
 
 export const ButtonHome = styled.button`
@@ -162,10 +166,10 @@ export const ButtonHome = styled.button`
   }
   
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 
-      0 30px 60px rgba(100, 255, 218, 0.4),
-      0 0 60px rgba(100, 255, 218, 0.3);
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 40px rgba(100, 255, 218, 0.35),
+      0 0 40px rgba(100, 255, 218, 0.25);
   }
   
   &:hover::before {
@@ -211,7 +215,7 @@ export const SecondaryButton = styled.button`
   &:hover {
     color: white;
     border-color: transparent;
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     box-shadow: var(--shadowPrimary);
   }
   

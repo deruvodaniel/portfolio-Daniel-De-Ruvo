@@ -34,7 +34,7 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
 }
 
 /* Typography */
-h1, h2, h3, h4 { margin: 0; }
+h1, h2, h3, h4 { margin: 0; font-family: 'Space Grotesk', 'Inter', sans-serif; }
 p { margin: 0; }
 a { color: inherit; }
 
