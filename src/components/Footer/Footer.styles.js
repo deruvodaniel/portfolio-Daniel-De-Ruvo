@@ -2,28 +2,28 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const FooterStyle = styled.footer`
-  margin-top: 80px;
-  padding: 60px 0 40px;
+  margin-top: 40px;
+  padding: 24px 0 24px;
   z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-top: 1px solid var(--borderColor);
   position: relative;
-  
+
   .logo-container {
     display: flex;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 24px;
     cursor: pointer;
-    transition: all 0.4s ease;
-    
+    transition: all 0.3s ease;
+
     &:hover {
-      transform: translateY(-8px);
+      transform: translateY(-4px);
     }
-    
+
     .logo-text {
-      font-size: 3rem;
+      font-size: 2.2rem;
       font-weight: 900;
       background: var(--gradientPrimary);
       -webkit-background-clip: text;
@@ -32,29 +32,29 @@ export const FooterStyle = styled.footer`
       letter-spacing: -1px;
     }
   }
-  
+
   & > h3 {
     color: var(--textMuted);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 400;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 16px;
   }
-  
+
   ${mediaQueries.desktop} {
-    padding: 200px 0 100px;
-    
+    padding: 36px 0 36px;
+
     .logo-container {
-      margin-bottom: 100px;
-      
+      margin-bottom: 28px;
+
       .logo-text {
-        font-size: 4rem;
+        font-size: 2.6rem;
       }
     }
-    
+
     & > h3 {
-      font-size: 1.2rem;
-      margin-top: 100px;
+      font-size: 1rem;
+      margin-top: 12px;
     }
   }
 `;
@@ -62,51 +62,51 @@ export const FooterStyle = styled.footer`
 export const FooterLinks = styled.div`
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   z-index: 50;
-  
+
   & > a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 44px;
+    height: 44px;
     background: var(--backgroundCard);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(14px);
     border: 1px solid var(--borderColor);
     border-radius: 50%;
-    transition: all 0.4s ease;
-    
+    transition: all 0.3s ease;
+
     &:hover {
-      transform: translateY(-8px);
+      transform: translateY(-4px);
       background: var(--backgroundCardHover);
       border-color: var(--colorSecondary);
       box-shadow: var(--shadowPrimary);
     }
-    
+
     & > img {
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
       filter: brightness(1.2);
       transition: all 0.3s ease;
     }
-    
+
     &:hover > img {
       filter: brightness(1.5);
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
-  
+
   ${mediaQueries.desktop} {
-    gap: 48px;
-    
+    gap: 24px;
+
     & > a {
-      width: 70px;
-      height: 70px;
-      
+      width: 50px;
+      height: 50px;
+
       & > img {
-        width: 28px;
-        height: 28px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
