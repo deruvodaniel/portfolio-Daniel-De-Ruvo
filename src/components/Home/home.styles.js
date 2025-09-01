@@ -4,7 +4,7 @@ import { mediaQueries } from "styles";
 export const ContainerHome = styled.div`
   z-index: 50;
   margin: 0;
-  padding: 120px 0 80px;
+  padding: 140px 0 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,137 +16,137 @@ export const ContainerHome = styled.div`
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
     background: 
-      radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
-    border-radius: 40px;
+      radial-gradient(circle at 30% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 70% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 50%);
+    border-radius: 50%;
     z-index: -1;
+    animation: float 8s ease-in-out infinite;
   }
   
   ${mediaQueries.desktop} {
-    padding: 180px 0 120px;
+    padding: 200px 0 140px;
     align-items: flex-start;
   }
 `;
 
 export const TextHome = styled.p`
   color: var(--colorSecondary);
-  font-size: 1.1rem;
-  font-weight: 500;
-  letter-spacing: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   position: relative;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  animation: slideInLeft 1s ease-out 0.2s forwards;
   
   &::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -12px;
     left: 0;
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--colorSecondary), var(--colorAccent));
+    width: 0;
+    height: 3px;
+    background: var(--gradientPrimary);
     border-radius: 2px;
-    animation: slideInFromLeft 0.8s ease-out 0.8s forwards;
-    transform: scaleX(0);
-    transform-origin: left;
+    animation: slideInLeft 1s ease-out 0.8s forwards;
   }
   
-  @keyframes slideInFromLeft {
+  @keyframes slideInLeft {
     to {
-      transform: scaleX(1);
+      opacity: 1;
+      transform: translateX(0);
     }
   }
   
   ${mediaQueries.desktop} {
-    font-size: 1.3rem;
-    letter-spacing: 4px;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    margin-bottom: 24px;
   }
 `;
 
 export const TitleHome = styled.h1`
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 900;
-  margin: 24px 0 32px;
-  line-height: 1.1;
-  background: linear-gradient(135deg, #ffffff 0%, var(--colorSecondary) 50%, var(--colorAccent) 100%);
+  margin: 32px 0 40px;
+  line-height: 1;
+  background: var(--gradientPrimary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  animation: fadeInUp 1.2s ease-out 0.4s forwards;
   
   &::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 107, 107, 0.1));
-    border-radius: 30px;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    background: var(--gradientPrimary);
+    border-radius: 40px;
     z-index: -1;
     opacity: 0;
-    transition: opacity 0.4s ease;
-    filter: blur(20px);
-  }
-  
-  &:hover::before {
-    opacity: 1;
+    filter: blur(40px);
+    animation: glow 4s ease-in-out 2s infinite;
   }
   
   ${mediaQueries.tablet} {
-    font-size: 4.5rem;
+    font-size: 5.5rem;
   }
   
   ${mediaQueries.desktop} {
-    font-size: 6rem;
-    margin: 32px 0 40px;
+    font-size: 7rem;
+    margin: 40px 0 48px;
   }
 `;
 
 export const SubtitleHome = styled.h2`
   font-size: 1.8rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
   
   ${mediaQueries.desktop} {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    margin-bottom: 40px;
   }
 `;
 
 export const DescriptionHome = styled.p`
   color: rgba(255, 255, 255, 0.7);
-  max-width: 600px;
-  font-size: 1.1rem;
+  max-width: 650px;
+  font-size: 1.2rem;
   line-height: 1.8;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.8s forwards;
+  animation: fadeInUp 1s ease-out 0.8s forwards;
   
   ${mediaQueries.desktop} {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.9;
-    max-width: 700px;
+    max-width: 750px;
+    margin-bottom: 56px;
   }
 `;
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 1s forwards;
+  animation: fadeInUp 1s ease-out 1s forwards;
+  margin-bottom: 80px;
   
   ${mediaQueries.mobile} {
     flex-direction: column;
@@ -156,8 +156,8 @@ export const ButtonsContainer = styled.div`
 
 export const ButtonHome = styled.button`
   position: relative;
-  padding: 18px 36px;
-  background: linear-gradient(135deg, var(--colorSecondary), var(--colorAccent));
+  padding: 20px 40px;
+  background: var(--gradientPrimary);
   border: none;
   border-radius: 50px;
   color: white;
@@ -169,7 +169,7 @@ export const ButtonHome = styled.button`
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  min-width: 200px;
+  min-width: 220px;
   
   &::before {
     content: '';
@@ -196,10 +196,8 @@ export const ButtonHome = styled.button`
   }
   
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 
-      0 20px 40px rgba(0, 212, 255, 0.3),
-      0 0 40px rgba(0, 212, 255, 0.2);
+    transform: translateY(-6px);
+    box-shadow: var(--glowPrimary);
   }
   
   &:hover::before {
@@ -211,20 +209,16 @@ export const ButtonHome = styled.button`
     height: 300px;
   }
   
-  &:active {
-    transform: translateY(-2px);
-  }
-  
   ${mediaQueries.desktop} {
     font-size: 1.2rem;
-    padding: 20px 40px;
-    min-width: 220px;
+    padding: 22px 44px;
+    min-width: 240px;
   }
 `;
 
 export const SecondaryButton = styled.button`
   position: relative;
-  padding: 18px 36px;
+  padding: 20px 40px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
   border-radius: 50px;
@@ -237,7 +231,7 @@ export const SecondaryButton = styled.button`
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  min-width: 200px;
+  min-width: 220px;
   
   &::before {
     content: '';
@@ -246,7 +240,7 @@ export const SecondaryButton = styled.button`
     left: 0;
     width: 0;
     height: 100%;
-    background: linear-gradient(135deg, var(--colorSecondary), var(--colorAccent));
+    background: var(--gradientPrimary);
     transition: width 0.4s ease;
     z-index: -1;
   }
@@ -254,49 +248,80 @@ export const SecondaryButton = styled.button`
   &:hover {
     color: white;
     border-color: var(--colorAccent);
-    transform: translateY(-4px);
-    box-shadow: 
-      0 15px 30px rgba(0, 212, 255, 0.2),
-      0 0 30px rgba(0, 212, 255, 0.1);
+    transform: translateY(-6px);
+    box-shadow: var(--shadowPrimary);
   }
   
   &:hover::before {
     width: 100%;
   }
   
-  &:active {
-    transform: translateY(-2px);
-  }
-  
   ${mediaQueries.desktop} {
     font-size: 1.2rem;
-    padding: 20px 40px;
-    min-width: 220px;
+    padding: 22px 44px;
+    min-width: 240px;
   }
 `;
 
 export const StatsContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 40px;
-  margin-top: 60px;
+  width: 100%;
+  max-width: 600px;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 1.2s forwards;
+  animation: fadeInUp 1s ease-out 1.2s forwards;
   
-  ${mediaQueries.mobile} {
-    flex-direction: column;
-    gap: 24px;
+  ${mediaQueries.desktop} {
+    gap: 60px;
+    max-width: 800px;
   }
 `;
 
 export const StatItem = styled.div`
   text-align: center;
+  padding: 32px 24px;
+  background: var(--backgroundCard);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--borderColor);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gradientPrimary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px);
+    background: var(--backgroundCardHover);
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: var(--shadowPrimary);
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
   
   .number {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 900;
-    color: var(--colorSecondary);
+    background: var(--gradientPrimary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: block;
     line-height: 1;
+    margin-bottom: 12px;
   }
   
   .label {
@@ -304,12 +329,14 @@ export const StatItem = styled.div`
     color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 8px;
+    font-weight: 500;
   }
   
   ${mediaQueries.desktop} {
+    padding: 40px 32px;
+    
     .number {
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
     
     .label {

@@ -11,9 +11,28 @@ export const SectionForm = styled.section`
 
 export const Form = styled.form`
   display: grid;
-  gap: 24px;
+  gap: 32px;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
+  padding: 48px;
+  background: var(--backgroundCard);
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--borderColor);
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradientPrimary);
+    opacity: 0.8;
+  }
+  
   grid-template-areas:
     "name name"
     "phone phone"
@@ -51,40 +70,44 @@ export const BoxInput = styled.div`
   }
   
   & > input {
-    padding: 20px 24px;
-    border-radius: 16px;
+    padding: 24px 28px;
+    border-radius: 20px;
     width: 100%;
     color: var(--colorPrimary);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-family: 'Inter', sans-serif;
+    font-weight: 500;
     background: var(--backgroundCard);
     backdrop-filter: blur(20px);
-    border: 1px solid var(--borderColor);
+    border: 2px solid var(--borderColor);
     outline: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     
     &::placeholder {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.4);
+      font-weight: 400;
     }
     
     &:focus {
       border-color: var(--colorSecondary);
       box-shadow: 
-        0 0 0 3px rgba(0, 212, 255, 0.1),
+        0 0 0 4px rgba(0, 212, 255, 0.1),
         var(--shadowPrimary);
       background: var(--backgroundCardHover);
+      transform: translateY(-2px);
     }
     
     &:hover {
-      border-color: rgba(0, 212, 255, 0.3);
+      border-color: rgba(0, 212, 255, 0.4);
       background: var(--backgroundCardHover);
+      transform: translateY(-2px);
     }
     
     &.input__error {
       border-color: var(--colorError);
       box-shadow: 
-        0 0 0 3px rgba(255, 107, 107, 0.1),
-        0 8px 16px rgba(255, 107, 107, 0.2);
+        0 0 0 4px rgba(255, 107, 107, 0.1),
+        0 8px 16px rgba(255, 107, 107, 0.3);
     }
   }
 `;
@@ -97,59 +120,63 @@ export const ContainerTextArea = styled.div`
 
 export const Textarea = styled.textarea`
   width: 100%;
-  padding: 20px 24px;
+  padding: 24px 28px;
   color: var(--colorPrimary);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
-  min-height: 160px;
-  max-height: 300px;
-  border-radius: 16px;
+  font-weight: 500;
+  min-height: 180px;
+  max-height: 320px;
+  border-radius: 20px;
   outline: none;
   background: var(--backgroundCard);
   backdrop-filter: blur(20px);
-  border: 1px solid var(--borderColor);
+  border: 2px solid var(--borderColor);
   resize: vertical;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
   &::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 400;
   }
   
   &:focus {
     border-color: var(--colorSecondary);
     box-shadow: 
-      0 0 0 3px rgba(0, 212, 255, 0.1),
+      0 0 0 4px rgba(0, 212, 255, 0.1),
       var(--shadowPrimary);
     background: var(--backgroundCardHover);
+    transform: translateY(-2px);
   }
   
   &:hover {
-    border-color: rgba(0, 212, 255, 0.3);
+    border-color: rgba(0, 212, 255, 0.4);
     background: var(--backgroundCardHover);
+    transform: translateY(-2px);
   }
   
   &.input__error {
     border-color: var(--colorError);
     box-shadow: 
-      0 0 0 3px rgba(255, 107, 107, 0.1),
-      0 8px 16px rgba(255, 107, 107, 0.2);
+      0 0 0 4px rgba(255, 107, 107, 0.1),
+      0 8px 16px rgba(255, 107, 107, 0.3);
   }
 `;
 
 export const Btn = styled.button`
   grid-area: button;
-  padding: 20px 40px;
+  padding: 24px 48px;
   border-radius: 50px;
-  background: linear-gradient(135deg, var(--colorSecondary), var(--colorAccent));
+  background: var(--gradientPrimary);
   border: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   position: relative;
   overflow: hidden;
   
@@ -165,18 +192,14 @@ export const Btn = styled.button`
   }
   
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: 
-      0 20px 40px rgba(0, 212, 255, 0.3),
-      0 0 40px rgba(0, 212, 255, 0.2);
+      0 25px 50px rgba(0, 212, 255, 0.4),
+      0 0 50px rgba(0, 212, 255, 0.3);
   }
   
   &:hover::before {
     left: 100%;
-  }
-  
-  &:active {
-    transform: translateY(-2px);
   }
   
   &:disabled {
@@ -188,7 +211,7 @@ export const Btn = styled.button`
 
 export const ErrorMessage = styled.span`
   color: var(--colorError);
-  font-size: 0.9rem;
-  margin-top: 8px;
-  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  font-weight: 600;
 `;
