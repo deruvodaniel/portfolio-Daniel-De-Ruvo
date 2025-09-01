@@ -154,21 +154,13 @@ export const SkillCard = styled.div`
   padding: 0;
 
   .icon {
-    position: relative;
     font-size: 3rem;
     margin-bottom: 16px;
-    color: var(--colorPrimary);
-  }
-
-  .icon::after {
-    content: '';
-    position: absolute;
-    inset: -10px;
-    border-radius: 50%;
+    color: var(--colorSecondary);
     background: var(--gradientPrimary);
-    filter: blur(18px);
-    opacity: 0.6;
-    z-index: -1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .title {
