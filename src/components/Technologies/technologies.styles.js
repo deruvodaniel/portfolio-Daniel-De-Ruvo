@@ -36,13 +36,13 @@ export const ContainerTechnologies = styled.div`
   background: var(--borderColor);
   border-radius: 24px;
   overflow: hidden;
-  
+
   ${mediaQueries.tablet} {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-  
+
   ${mediaQueries.desktop} {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 `;
 
@@ -51,13 +51,13 @@ export const TechCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 40px;
+  padding: 36px 28px;
   background: var(--background);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 160px;
   
   &::before {
     content: '';
