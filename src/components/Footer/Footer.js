@@ -11,8 +11,11 @@ export const Footer = () => {
   const { t } = useI18n();
 
   const goToTop = (section) => {
-    if (section !== null && section.current !== null) {
-      section.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (section && section.current) {
+      const headerOffset = window.innerWidth < 1024 ? 80 : 110;
+      const elementPosition = section.current.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
 
