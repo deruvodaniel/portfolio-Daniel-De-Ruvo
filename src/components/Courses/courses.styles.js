@@ -50,31 +50,30 @@ export const ContainerCourses = styled.div`
 export const ContainerCourse = styled.div`
   background: var(--background);
   padding: 40px 28px;
-  transition: all 0.4s ease;
-  cursor: pointer;
+  transition: background 0.4s ease;
+  cursor: default;
   position: relative;
   overflow: hidden;
-  will-change: transform;
 
-  &::before {
+  /* subtle looping sheen, not hover-based */
+  &::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -120%;
+    width: 40%;
     height: 100%;
-    background: var(--gradientPrimary);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+    transform: skewX(-12deg);
+    animation: sheen 5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    pointer-events: none;
   }
 
-  &:hover {
-    transform: scale(1.02);
-  }
-
-  &:hover::before {
-    opacity: 0.05;
+  @keyframes sheen {
+    0% { left: -120%; }
+    60% { left: 140%; }
+    100% { left: 140%; }
   }
 
   ${mediaQueries.desktop} {
