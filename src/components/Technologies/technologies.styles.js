@@ -89,6 +89,21 @@ export const TechCard = styled.div`
     filter: brightness(1.2);
   }
   
+  .tech-fallback {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--backgroundCard);
+    border: 1px solid var(--borderColor);
+    color: var(--colorSecondary);
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+
   .tech-name {
     font-size: 1rem;
     font-weight: 700;
