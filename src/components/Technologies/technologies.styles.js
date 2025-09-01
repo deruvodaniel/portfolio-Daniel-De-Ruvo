@@ -127,17 +127,17 @@ export const TechCard = styled.div`
   }
   
   ${mediaQueries.desktop} {
-    padding: 80px 60px;
-    min-height: 240px;
-    
+    padding: 48px 36px;
+    min-height: 200px;
+
     .tech-icon {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 32px;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
     }
-    
+
     .tech-name {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
 `;
