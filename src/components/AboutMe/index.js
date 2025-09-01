@@ -14,10 +14,19 @@ import {
 export const AboutMe = () => {
   const { refAboutMe } = useRefs();
 
-  const skills = [
-    { icon: '🚀', title: 'Frontend Development', description: 'React, Next.js, Vue.js' },
-    { icon: '🎨', title: 'UI/UX Design', description: 'Figma, Adobe XD, Design Systems' },
-    { icon: '⚡', title: 'Performance', description: 'Optimization, SEO, Accessibility' }
+  const experiences = [
+    {
+      title: "Frontend Architecture",
+      description: "Building scalable React applications with modern tooling, TypeScript, and performance optimization. Expert in micro-frontends and design systems."
+    },
+    {
+      title: "UX Engineering", 
+      description: "Bridging design and development with user-centered solutions. Specializing in accessibility, responsive design, and interaction patterns."
+    },
+    {
+      title: "Team Leadership",
+      description: "Leading cross-functional teams, mentoring developers, and establishing best practices. Experience with Agile methodologies and code reviews."
+    }
   ];
 
   return (
@@ -29,65 +38,65 @@ export const AboutMe = () => {
     >
       <SectionAboutMe ref={refAboutMe}>
         <AboutMeContent>
-          <AboutMeTitle>About Me</AboutMeTitle>
-          
-          <AboutMeDescription>
-            I'm a <strong>Senior UX Frontend Developer</strong> with over 5 years of experience 
-            creating scalable, high-performance web applications. I specialize in React, 
-            Next.js, and design systems, with a focus on user experience and accessibility.
-          </AboutMeDescription>
-          
-          <AboutMeDescription>
-            I've led frontend development teams for 10+ international clients, 
-            implementing innovative solutions that have improved conversion rates by an 
-            average of 40%. My experience ranges from startups to Fortune 500 companies.
-          </AboutMeDescription>
+          <div>
+            <AboutMeTitle>About</AboutMeTitle>
+            <AboutMeDescription>
+              I'm a <strong>Senior UX Frontend Developer</strong> with over 5 years of experience 
+              creating exceptional digital experiences. I specialize in React, Next.js, and 
+              design systems, with a passion for performance and accessibility.
+            </AboutMeDescription>
+            
+            <AboutMeDescription>
+              Currently, I lead frontend development for international clients, focusing on 
+              scalable architectures and user-centered design. I believe in the power of 
+              clean code, thoughtful UX, and continuous learning.
+            </AboutMeDescription>
+
+            <AboutMeBoxLinks>
+              <a
+                href="https://github.com/deruvodaniel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  alt="GitHub"
+                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logogblanco_imqksz.svg"
+                  width="28"
+                  height="28"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/deruvodaniel/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  alt="LinkedIn"
+                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logoinblanco_isyvzt.svg"
+                  width="28"
+                  height="28"
+                />
+              </a>
+              <a href="#contact">Get In Touch</a>
+            </AboutMeBoxLinks>
+          </div>
 
           <SkillsContainer>
-            {skills.map((skill, index) => (
+            {experiences.map((exp, index) => (
               <motion.div
-                key={skill.title}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={exp.title}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
                 <SkillCard>
-                  <div className="icon">{skill.icon}</div>
-                  <div className="title">{skill.title}</div>
-                  <div className="description">{skill.description}</div>
+                  <div className="title">{exp.title}</div>
+                  <div className="description">{exp.description}</div>
                 </SkillCard>
               </motion.div>
             ))}
           </SkillsContainer>
-
-          <AboutMeBoxLinks>
-            <a
-              href="https://github.com/deruvodaniel"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                alt="GitHub"
-                src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logogblanco_imqksz.svg"
-                width="28"
-                height="28"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/deruvodaniel/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                alt="LinkedIn"
-                src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logoinblanco_isyvzt.svg"
-                width="28"
-                height="28"
-              />
-            </a>
-            <a href="#contact">Contact Me</a>
-          </AboutMeBoxLinks>
         </AboutMeContent>
       </SectionAboutMe>
     </motion.div>

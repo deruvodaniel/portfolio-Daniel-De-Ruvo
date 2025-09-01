@@ -45,19 +45,6 @@ export const Home = () => {
     }
   };
 
-  const statsVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1],
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
     <>
       <motion.div
@@ -73,7 +60,7 @@ export const Home = () => {
           </motion.div>
           
           <motion.div variants={itemVariants}>
-            <TitleHome>DANIEL DE RUVO</TitleHome>
+            <TitleHome>DANIEL<br />DE RUVO</TitleHome>
           </motion.div>
           
           <motion.div variants={itemVariants}>
@@ -82,11 +69,9 @@ export const Home = () => {
           
           <motion.div variants={itemVariants}>
             <DescriptionHome>
-              Senior UX Frontend Developer with 5+ years of experience delivering scalable, 
-              high-performance web applications and intuitive UX for global clients. 
-              Expert in design systems, AI in UI/UX, React, Next.js, and Accessibility (A11y). 
-              Adept at leading Agile teams, mentoring, and driving data-driven solutions. 
-              Known for a positive, collaborative spirit.
+              I design and develop exceptional digital experiences with a focus on 
+              performance, accessibility, and user-centered design. Currently building 
+              scalable solutions for global clients.
             </DescriptionHome>
           </motion.div>
           
@@ -106,39 +91,28 @@ export const Home = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <SecondaryButton onClick={() => scrollToSection(refProjects)}>
-                  View Projects
+                  View Work
                 </SecondaryButton>
               </motion.div>
             </ButtonsContainer>
           </motion.div>
           
-          <motion.div 
-            variants={statsVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
+          <motion.div variants={itemVariants}>
             <StatsContainer>
-              <motion.div variants={itemVariants}>
-                <StatItem>
-                  <span className="number">5+</span>
-                  <span className="label">Years Experience</span>
-                </StatItem>
-              </motion.div>
+              <StatItem>
+                <span className="number">5+</span>
+                <span className="label">Years Experience</span>
+              </StatItem>
               
-              <motion.div variants={itemVariants}>
-                <StatItem>
-                  <span className="number">80+</span>
-                  <span className="label">Projects Completed</span>
-                </StatItem>
-              </motion.div>
+              <StatItem>
+                <span className="number">80+</span>
+                <span className="label">Projects Delivered</span>
+              </StatItem>
               
-              <motion.div variants={itemVariants}>
-                <StatItem>
-                  <span className="number">10+</span>
-                  <span className="label">Global Clients</span>
-                </StatItem>
-              </motion.div>
+              <StatItem>
+                <span className="number">10+</span>
+                <span className="label">Global Clients</span>
+              </StatItem>
             </StatsContainer>
           </motion.div>
         </ContainerHome>

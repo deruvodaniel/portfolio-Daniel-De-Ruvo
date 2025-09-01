@@ -5,15 +5,19 @@ import { projects } from 'arrays/arrayProjects';
 import {
   SectionProjects,
   ContainerProjects,
-  Container,
-  ImageContainer,
-  Img,
-  ContainerTexts,
+  ProjectItem,
+  ProjectMeta,
+  ProjectYear,
+  ProjectCategory,
+  TechStack,
+  TechStackTitle,
+  TechList,
+  TechTag,
+  ProjectContent,
   ProjectTitle,
-  ProjectSubtitle,
   ProjectDescription,
-  ContainerButtons,
-  ProjectButton
+  ProjectLinks,
+  ProjectLink
 } from './projects.styles';
 
 export const Projects = () => {
@@ -25,7 +29,7 @@ export const Projects = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        staggerChildren: 0.2
+        staggerChildren: 0.3
       }
     }
   };
@@ -42,6 +46,11 @@ export const Projects = () => {
     }
   };
 
+  // Extract tech stack from subtitle
+  const extractTechStack = (subtitle) => {
+    return subtitle.split(',').map(tech => tech.trim());
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -50,7 +59,7 @@ export const Projects = () => {
       viewport={{ once: true, amount: 0.1 }}
     >
       <SectionProjects ref={refProjects}>
-        <h2>Featured Projects</h2>
+        <h2>Selected Work</h2>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -58,62 +67,67 @@ export const Projects = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           <ContainerProjects>
-            {projects && projects.map((project, index) => (
-              <Container
+            {projects && projects.slice(0, 6).map((project, index) => (
+              <motion.div
                 key={project.id}
                 variants={projectVariants}
-                whileHover={{ 
-                  scale: 1.02,
-                  transition: { duration: 0.3 }
-                }}
               >
-                <motion.div
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotateY: 5,
-                    transition: { duration: 0.3 }
-                  }}
-                >
-                  <ImageContainer>
-                    <Img src={project.img} alt={project.title} />
-                  </ImageContainer>
-                </motion.div>
-                
-                <ContainerTexts>
-                  <ProjectTitle>{project.title}</ProjectTitle>
-                  <ProjectSubtitle>{project.subtitle}</ProjectSubtitle>
-                  <ProjectDescription>{project.text}</ProjectDescription>
-                  <ContainerButtons>
+                <ProjectItem index={index + 1}>
+                  <ProjectMeta>
+                    <ProjectYear>2024</ProjectYear>
+                    <ProjectCategory>Web Application</ProjectCategory>
+                    <TechStack>
+                      <TechStackTitle>Technologies</TechStackTitle>
+                      <TechList>
+                        {extractTechStack(project.subtitle).map((tech, techIndex) => (
+                          <TechTag key={techIndex}>{tech}</TechTag>
+                        ))}
+                      </TechList>
+                    </TechStack>
+                  </ProjectMeta>
+                  
+                  <ProjectContent>
                     <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ x: 20 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <ProjectButton 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        primary
-                      >
-                        View Live
-                      </ProjectButton>
+                      <ProjectTitle>{project.title}</ProjectTitle>
                     </motion.div>
-                    {project.github && (
+                    
+                    <ProjectDescription>{project.text}</ProjectDescription>
+                    
+                    <ProjectLinks>
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <ProjectButton 
-                          href={project.github} 
+                        <ProjectLink 
+                          href={project.link} 
                           target="_blank" 
                           rel="noopener noreferrer"
                         >
-                          GitHub
-                        </ProjectButton>
+                          View Live
+                        </ProjectLink>
                       </motion.div>
-                    )}
-                  </ContainerButtons>
-                </ContainerTexts>
-              </Container>
+                      
+                      {project.github && (
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <ProjectLink 
+                            href={project.github} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            GitHub
+                          </ProjectLink>
+                        </motion.div>
+                      )}
+                    </ProjectLinks>
+                  </ProjectContent>
+                </ProjectItem>
+              </motion.div>
             ))}
           </ContainerProjects>
         </motion.div>
