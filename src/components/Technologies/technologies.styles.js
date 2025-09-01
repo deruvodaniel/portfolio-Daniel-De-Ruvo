@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionTechnologies = styled.section`
-  margin: 100px 0;
-  padding: 80px 0;
+  margin: 80px 0;
+  padding: 60px 0;
   z-index: 50;
   position: relative;
   scroll-margin-top: 120px;
