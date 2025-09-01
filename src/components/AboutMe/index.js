@@ -1,169 +1,230 @@
-import { useRefs } from "context/refsContext";
+import styled from "styled-components";
+import { mediaQueries } from "styles";
 import { motion } from "framer-motion";
-import useWidth from "hooks/useWidth";
-import {
-  AboutMeContent,
-  AboutMeBoxLinks,
-  AboutMeDescription,
-  AboutMeTitle,
-  SectionAboutMe,
-  SkillsContainer,
-  SkillCard,
-} from "./aboutMe.styles";
 
-export const AboutMe = () => {
-  const { refAboutMe } = useRefs();
-  const { width } = useWidth();
+export const SectionProjects = styled.section`
+  margin: 0px;
+  z-index: 40;
+  color: var(--colorPrimary);
+  
+  & > h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 80px;
+    text-align: center;
+    z-index: 60;
+    position: relative;
+    background: linear-gradient(135deg, var(--colorPrimary) 0%, var(--colorSecondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--colorSecondary), #00B9AE);
+      border-radius: 2px;
+    }
+  }
+  
+  ${mediaQueries.projects} {
+    & > h2 {
+      font-size: 4rem;
+    }
+  }
+`;
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2
+export const ContainerProjects = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  row-gap: 80px;
+  z-index: 40;
+  
+${mediaQueries.projects}{
+  display: grid;
+  justify-content: center;
+  row-gap: 180px;
+  z-index: 40;
+  
+  & > div:nth-child(2n+1){
+    flex-flow: row-reverse wrap;
+    & > div:first-child > div{
+        left: -30px;
+        top: 30px;
+    }
+  }
+`;
+
+export const Container = styled(motion.div)`
+  display: flex;
+  width: fit-content;
+  flex-flow: column wrap;
+  align-items: center;
+  z-index: 50;
+  margin: 0 0 30px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  ${mediaQueries.projects} {
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+    margin: 0 0 30px;
+    box-shadow: unset;
+    gap: 0;
+    & > div:last-child {
+      text-align: start;
+      & > button {
+        align-self: start;
       }
     }
-  };
+  }
+`;
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1]
-      }
+export const Img = styled.img`
+  width: 100%;
+  height: 100%;
+  z-index: 45;
+  border-radius: 9px 9px 0 0;
+`;
+
+export const ContainerBoxImg = styled.div`
+  ${mediaQueries.projects} {
+    position: relative;
+    width: 700px;
+    height: 322px;
+    grid-area: img;
+    background: rgba(89, 201, 165, 0.34);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+`;
+
+export const ContainerImg = styled.div`
+  ${mediaQueries.projects} {
+    box-sizing: border-box;
+    position: absolute;
+    width: 700px;
+    height: 350px;
+    left: 30px;
+    top: 30px;
+    border: 4px solid #56e39f;
+    transition: 0.5s ease all;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
+    & > img {
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      filter: brightness(0.9);
     }
-  };
+  }
+`;
 
-  const skillsVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1
-      }
-    }
-  };
+export const ContainerTexts = styled.div`
+  background: #3b2c35;
+  width: 100%;
+  z-index: 55;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 9px 9px;
+  height: 100%;
+  padding: 15px 0;
+  ${mediaQueries.projects} {
+    border-radius: 0;
+    padding: 20px 50px;
+    grid-area: text;
+    margin-top: 100px;
+    align-items: start;
+    display: flex;
+    z-index: 2;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 375px;
+    height: 240px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+`;
 
-  const skillCardVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
+export const ProjectTitle = styled.h3`
+  z-index: 55;
+  padding: 0 10px;
+  font-weigth: 600;
+  color: var(--colorPrimary);
+  margin: 0 0 5px;
+  font-size: 1.5rem;
+  ${mediaQueries.tablet} {
+    font-size: 1.8rem;
+  }
+`;
 
-  return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <SectionAboutMe ref={refAboutMe}>
-        <AboutMeContent>
-          <motion.div variants={itemVariants}>
-            <AboutMeTitle>About Me</AboutMeTitle>
-          </motion.div>
-          
-          <motion.div variants={itemVariants}>
-            <AboutMeDescription>
-              I'm a passionate Senior UX Frontend Developer with over 5 years of experience 
-              creating exceptional digital experiences. I specialize in React, Next.js, and 
-              modern web technologies, with a strong focus on user experience design and 
-              accessibility. I love solving complex problems and turning ideas into beautiful, 
-              functional applications that make a real impact.
-            </AboutMeDescription>
-          </motion.div>
-          
-          <motion.div variants={itemVariants}>
-            <AboutMeBoxLinks>
-              <a
-                href="https://github.com/deruvodaniel"
-                target="_blank"
-                rel="noreferrer"
-                title="GitHub"
-              >
-                <img
-                  alt="GitHub"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653408217/portfolio%20daniel/logog_udsccl.svg"
-                  width={width > 767 ? "32px" : "28px"}
-                  height={width > 767 ? "32px" : "28px"}
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/deruvodaniel/"
-                target="_blank"
-                rel="noreferrer"
-                title="LinkedIn"
-              >
-                <img
-                  alt="LinkedIn"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653403777/portfolio%20daniel/logoin_brxiyb.svg"
-                  width={width > 767 ? "32px" : "28px"}
-                  height={width > 767 ? "32px" : "28px"}
-                />
-              </a>
-              <a
-                href="https://drive.google.com/uc?id=1lgCyp5BOuSfQFZ3BB9z4hzxt0NApVRdb&export=download"
-                target="_blank"
-                rel="noreferrer"
-                title="Download Resume"
-              >
-                Resume
-              </a>
-            </AboutMeBoxLinks>
-          </motion.div>
-        </AboutMeContent>
+export const ProjectSubtitle = styled.p`
+  font-weigth: 600;
+  z-index: 55;
+  padding: 0 10px;
+  color: var(--colorPrimary);
+  margin: 0 0 5px;
+  font-size: 1.3rem;
+  ${mediaQueries.tablet} {
+    font-size: 1.5rem;
+  }
+`;
 
-        <motion.div
-          variants={skillsVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <SkillsContainer>
-            <motion.div variants={skillCardVariants}>
-              <SkillCard className="hover-lift">
-                <div className="icon">🎨</div>
-                <div className="title">UX/UI Design</div>
-                <div className="description">
-                  Creating intuitive user experiences with modern design systems and accessibility in mind
-                </div>
-              </SkillCard>
-            </motion.div>
-            
-            <motion.div variants={skillCardVariants}>
-              <SkillCard className="hover-lift">
-                <div className="icon">⚡</div>
-                <div className="title">Frontend Development</div>
-                <div className="description">
-                  Building scalable applications with React, Next.js, and cutting-edge web technologies
-                </div>
-              </SkillCard>
-            </motion.div>
-            
-            <motion.div variants={skillCardVariants}>
-              <SkillCard className="hover-lift">
-                <div className="icon">🚀</div>
-                <div className="title">Performance Optimization</div>
-                <div className="description">
-                  Delivering high-performance applications with advanced optimization techniques
-                </div>
-              </SkillCard>
-            </motion.div>
-          </SkillsContainer>
-        </motion.div>
-      </SectionAboutMe>
-    </motion.div>
-  );
-};
+export const ProjectDescription = styled.p`
+  font-weigth: 600;
+  display: none;
+  z-index: 55;
+  font-size: 1rem;
+  padding: 0 10px;
+  color: var(--colorPrimary);
+  margin: 0 0 20px;
+  ${mediaQueries.tablet} {
+    display: block;
+  }
+`;
+
+export const ContainerButtons = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 10px;
+`;
+
+export const ProjectButton = styled.a`
+  ${(props) => props.disabled === true && "display: none;"};
+  font-weigth: 600;
+  color: var(--colorSecondary);
+  text-transform: uppercase;
+  margin: 20px 20px 0;
+  font-size: 0.7rem;
+  text-align: center; 
+  width: 100%;
+  text-decoration: none;
+  z-index: 55;
+  border-radius: 10px;
+  border: 2px solid var(--colorSecondary);
+  cursor: pointer;
+  padding: 10px 40px;
+  transition: 0.3s ease all;
+  &:hover {
+    z-index: 55;
+    color: var(--background);
+    transition: 0.3s ease all;
+    background-color: var(--colorSecondary);
+    border: 2px solid var(--colorSecondary);
+    filter: drop-shadow(0 2px 5px rgba(86, 227, 159, 0.8));
+  }
+  ${mediaQueries.tablet}{
+    margin: 20px 15px 0 0;
+    width: fit-content;
+  }
+  ${mediaQueries.desktop}{
+    font-size: 1rem;
+  }
+`;
