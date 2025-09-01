@@ -116,23 +116,23 @@ const MyForm = () => {
                 className={errors.email && "input__error"}
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder={t('form.email')}
                 {...register("email", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 10,
-                    message: "The minimum number of characters is 10",
+                    message: t('form.minEmail'),
                   },
                   maxLength: {
                     value: 40,
-                    message: "The maximum number of characters is 40",
+                    message: t('form.maxEmail'),
                   },
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "You must enter a valid email address",
+                    message: t('form.invalidEmail'),
                   },
                 })}
               />
