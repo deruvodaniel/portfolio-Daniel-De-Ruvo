@@ -1,48 +1,47 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { RefsContext } from '../../context/refsContext';
-import { technologies } from '../../arrays/arrayTechnologies';
+import { useRefs } from 'context/refsContext';
+import { technologies } from 'arrays/arrayTechnologies';
 import {
-  SectionProjects,
-  ContainerProjects,
-  Container,
-  ImageContainer,
-  Img,
-  ContainerTexts,
-  ProjectTitle,
-  ProjectSubtitle,
-  ProjectDescription,
-  ContainerButtons,
-  ProjectButton,
-  TechStack,
-  TechTag
+  SectionTechnologies,
+  ContainerTechnologies,
+  TechCard
 } from './technologies.styles';
 
 export const Technologies = () => {
-  const { refTechnologies } = useContext(RefsContext);
+  const { refTechnologies } = useRefs();
 
   return (
-    <SectionProjects ref={refTechnologies}>
-      <h2>Technologies</h2>
-      <ContainerProjects>
-        {technologies && technologies.map((tech, index) => (
-          <Container
-            key={index}
-            as={motion.div}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <ImageContainer>
-              <Img src={tech.img} alt={tech.text} />
-            </ImageContainer>
-            <ContainerTexts>
-              <ProjectTitle>{tech.text}</ProjectTitle>
-            </ContainerTexts>
-          </Container>
-        ))}
-      </ContainerProjects>
-    </SectionProjects>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <SectionTechnologies ref={refTechnologies}>
+        <h2>Technologies</h2>
+        <ContainerTechnologies>
+          {technologies && technologies.map((tech) => (
+            <motion.div
+              key={tech.id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: tech.id * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <TechCard>
+                <img 
+                  src={tech.img} 
+                  alt={tech.text}
+                  className="tech-icon"
+                />
+                <div className="tech-name">{tech.text}</div>
+              </TechCard>
+            </motion.div>
+          ))}
+        </ContainerTechnologies>
+      </SectionTechnologies>
+    </motion.div>
   );
 };
