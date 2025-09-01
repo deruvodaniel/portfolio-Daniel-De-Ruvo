@@ -27,9 +27,10 @@ export const Header = () => {
         aria-label="Logo Daniel"
         title="Home"
         src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653404223/portfolio%20daniel/LOGO_DR_six97a.svg"
-        width="120px"
-        height="100px"
+        width="140px"
+        height="120px"
         onClick={() => scrollToSection(refHome)}
+        style={{ filter: 'drop-shadow(0 0 10px rgba(89, 201, 165, 0.3))' }}
       />
       <nav role="main" aria-label="main">
         <ListLinks>

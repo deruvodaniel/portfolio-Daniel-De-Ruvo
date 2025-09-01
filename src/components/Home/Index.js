@@ -17,24 +17,62 @@ export const Home = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.4, 0, 0.2, 1]
+      }
+    }
+  };
+
   return (
     <>
       <motion.div
         style={{ zIndex: 50 }}
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ type: "spring", duration: 3 }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
         viewport={{ once: true }}
       >
         <ContainerHome ref={refHome}>
-          <TextHome>Hi, my name is</TextHome>
-          <TitleHome>DANIEL DE RUVO</TitleHome>
-          <DescriptionHome>
-            Hardworking Frontend Developer with proven experience in Vue.js and Javascript. Helping companies create and maintain a better code base for reusability. Capable of continuous learning from senior developers. Adept in creating Web apps design, installation, testing and maintenance of software systems.Ready to apply my passion for coding to a talented engineering team to develop quality solutions.
-          </DescriptionHome>
-          <ButtonHome onClick={() => scrollToSection(refContact)}>
-            Contact
-          </ButtonHome>
+          <motion.div variants={itemVariants}>
+            <TextHome>Hi, my name is</TextHome>
+          </motion.div>
+          
+          <motion.div variants={itemVariants}>
+            <TitleHome>DANIEL DE RUVO</TitleHome>
+          </motion.div>
+          
+          <motion.div variants={itemVariants}>
+            <DescriptionHome>
+              Passionate Frontend Developer specializing in modern web technologies. I create exceptional digital experiences with React, Vue.js, and cutting-edge tools. Always eager to learn and contribute to innovative projects that make a difference.
+            </DescriptionHome>
+          </motion.div>
+          
+          <motion.div 
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ButtonHome onClick={() => scrollToSection(refContact)}>
+              Let's Connect
+            </ButtonHome>
+          </motion.div>
         </ContainerHome>
       </motion.div>
     </>

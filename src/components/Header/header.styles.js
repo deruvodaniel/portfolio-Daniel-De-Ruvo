@@ -12,19 +12,25 @@ export const Main = styled(motion.header)`
   min-width: 100%;
   max-width: 1400px;
   padding: 0 30px;
-  transition: 0.5s ease all;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  
   &.withBackground {
-    transition: 0.5s ease all;
-    border-bottom: 4px solid var(--colorSecondary);
-    background: var(--background);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 3px solid var(--colorSecondary);
+    background: rgba(42, 31, 45, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
+  
   & > img {
     color: var(--colorPrimary);
     cursor: pointer;
-    transition: 0.3s ease all;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
     &:hover {
-      transition: 0.3s ease all;
-      filter: drop-shadow(0 2px 5px rgba(86, 227, 159, 0.8));
+      transform: scale(1.05);
+      filter: drop-shadow(0 5px 15px rgba(89, 201, 165, 0.6));
     }
   }
 `;
@@ -34,6 +40,8 @@ export const ListLinks = styled.ul`
   flex-flow: row wrap;
   list-style: none;
   padding: 0 40px;
+  gap: 5px;
+  
   &.active {
     color: var(--colorSecondary);
     border: 2px solid var(--colorSecondary);
@@ -42,17 +50,39 @@ export const ListLinks = styled.ul`
 
 export const Links = styled.li`
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   margin-right: 15px;
   color: var(--colorPrimary);
   text-transform: uppercase;
-  border-radius: 10px;
+  letter-spacing: 0.5px;
+  border-radius: 25px;
   border: 2px solid transparent;
-  padding: 3px 20px;
-  transition: 0.3s ease all;
+  padding: 8px 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(89, 201, 165, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
   &:hover {
-    transition: 0.3s ease all;
+    transform: translateY(-2px);
     color: var(--colorSecondary);
-    border: 2px solid var(--colorSecondary);
+    background: rgba(89, 201, 165, 0.1);
+    border: 2px solid rgba(89, 201, 165, 0.5);
+    box-shadow: 0 5px 15px rgba(89, 201, 165, 0.2);
+    
+    &::before {
+      left: 100%;
+    }
   }
 `;
