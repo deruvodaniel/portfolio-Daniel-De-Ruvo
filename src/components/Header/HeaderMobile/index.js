@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
-import { Links, ListLinks, LogoMenu, Main } from "./headerMobile.styles";
+import { Links, ListLinks, LogoMenu, Main, Controls, ToggleButton } from "./headerMobile.styles";
+import { useTheme } from "context/themeContext";
+import { useI18n } from "context/i18nContext";
 
 const iconMenu = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379488/portfolio%20daniel/menu_uw4rjt.png";
 const iconClose = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379624/portfolio%20daniel/cerrar_zhp6o1.png";
@@ -8,6 +10,8 @@ export const HeaderMobile = ({ refs }) => {
   const { refAboutMe, refProjects, refContact, refHome, refTechnologies } = refs;
   const [menuOpen, setMenuOpen] = useState(false);
   const menu = useRef(null);
+  const { toggleTheme, theme } = useTheme();
+  const { t, toggleLang, lang } = useI18n();
 
   const handleMenu = () => {
     if (menu.current.classList.contains("open") === false) {
@@ -36,24 +40,28 @@ export const HeaderMobile = ({ refs }) => {
         height="45px"
         aria-label="logo Daniel"
       />
-      <LogoMenu
-        alt="menu"
-        aria-label="menu"
-        onClick={handleMenu}
-        width="35px"
-        height="35px"
-        src={menuOpen ? iconClose : iconMenu}
-      />
+      <Controls>
+        <ToggleButton aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'dark' ? '🌙' : '☀️'}</ToggleButton>
+        <ToggleButton aria-label="Switch language" onClick={toggleLang}>{lang.toUpperCase()}</ToggleButton>
+        <LogoMenu
+          alt="menu"
+          aria-label="menu"
+          onClick={handleMenu}
+          width="35px"
+          height="35px"
+          src={menuOpen ? iconClose : iconMenu}
+        />
+      </Controls>
       {menuOpen && (
-        <nav role="main" aria-label="main">
+        <nav role="navigation" aria-label="main">
           <ListLinks>
-            <Links onClick={() => scrollToSection(refHome)}>Home</Links>
-            <Links onClick={() => scrollToSection(refAboutMe)}>About Me</Links>
+            <Links onClick={() => scrollToSection(refHome)}>{t('header.home')}</Links>
+            <Links onClick={() => scrollToSection(refAboutMe)}>{t('header.about')}</Links>
             <Links onClick={() => scrollToSection(refTechnologies)}>
-              Technologies
+              {t('header.skills')}
             </Links>
-            <Links onClick={() => scrollToSection(refProjects)}>Projects</Links>
-            <Links onClick={() => scrollToSection(refContact)}>Contact</Links>
+            <Links onClick={() => scrollToSection(refProjects)}>{t('header.projects')}</Links>
+            <Links onClick={() => scrollToSection(refContact)}>{t('header.contact')}</Links>
           </ListLinks>
         </nav>
       )}
