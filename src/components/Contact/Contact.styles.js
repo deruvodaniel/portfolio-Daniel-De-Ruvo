@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const ContactTitle = styled.h2`
-  margin-top: 100px;
-  padding-top: 80px;
+  margin-top: 80px;
+  padding-top: 60px;
   color: var(--colorPrimary);
   font-size: 5rem;
   font-weight: 900;
@@ -21,8 +21,8 @@ export const ContactTitle = styled.h2`
 `;
 
 export const SectionContact = styled.section`
-  margin: 60px 0 100px;
-  padding: 60px 0;
+  margin: 50px 0 80px;
+  padding: 50px 0;
   z-index: 50;
   scroll-margin-top: 120px;
   color: var(--colorPrimary);
