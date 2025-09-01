@@ -14,4 +14,5 @@ export const technologies = [
   { id: 13, img: null, text: 'Docker' },
   { id: 14, img: null, text: 'CI/CD' },
   { id: 15, img: null, text: 'Figma' },
+  { id: 16, img: null, text: 'A11y / SEO / Analytics' },
 ];
