@@ -82,9 +82,9 @@ export const TechCard = styled.div`
   }
   
   .tech-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 24px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 16px;
     transition: all 0.4s ease;
     filter: brightness(1.2);
   }
