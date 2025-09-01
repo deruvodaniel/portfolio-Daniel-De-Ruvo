@@ -30,7 +30,7 @@ export const Courses = () => {
           <ContainerCourses>
             {courses.map(({ id, name, text, academy }) => {
               return (
-                <ContainerCourse key={id}>
+                <ContainerCourse key={id} style={{ ['--delay']: `${(id % 6) * 0.35}s` }}>
                   <ContainerCourseName>
                     <div></div>
                     <CourseName>{name}</CourseName>
