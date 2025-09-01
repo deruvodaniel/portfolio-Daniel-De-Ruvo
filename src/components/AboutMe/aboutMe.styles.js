@@ -152,12 +152,25 @@ export const SkillCard = styled.div`
   flex-direction: column;
   gap: 20px;
   padding: 0;
-  
+
   .icon {
+    position: relative;
     font-size: 3rem;
     margin-bottom: 16px;
+    color: var(--colorPrimary);
   }
-  
+
+  .icon::after {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: var(--gradientPrimary);
+    filter: blur(18px);
+    opacity: 0.6;
+    z-index: -1;
+  }
+
   .title {
     font-size: 2rem;
     font-weight: 700;
@@ -165,22 +178,22 @@ export const SkillCard = styled.div`
     margin-bottom: 16px;
     letter-spacing: -1px;
   }
-  
+
   .description {
     font-size: 1.3rem;
     color: var(--textMuted);
     line-height: 1.7;
   }
-  
+
   ${mediaQueries.desktop} {
     .icon {
       font-size: 3.5rem;
     }
-    
+
     .title {
       font-size: 2.5rem;
     }
-    
+
     .description {
       font-size: 1.5rem;
     }
