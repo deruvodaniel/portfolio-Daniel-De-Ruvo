@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import useWidth from "../../hooks/useWidth";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
+import { FiZap, FiLayout, FiTrendingUp } from "react-icons/fi";
 
 export const AboutMe = () => {
   const { refAboutMe } = useRefs();
