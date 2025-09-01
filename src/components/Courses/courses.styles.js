@@ -2,104 +2,145 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionCourses = styled.section`
-z-index: 50;
-padding-top: 100px;
-padding-left: 0;
-${mediaQueries.desktop}{
-    margin-top: 80px;
-    padding-top: 50px;
-
+  z-index: 50;
+  padding-top: 120px;
+  margin: 120px 0;
+  
+  ${mediaQueries.desktop} {
+    margin: 150px 0;
+    padding-top: 80px;
   }
 `;
 
 export const CoursesTitle = styled.h2`
-  color: var(--colorSecondary);
-  font-weigth: 600;
-  z-index: 99;
-  margin: 0 0 35px;
-  font-size: 3rem;
-  position: relative;
+  color: var(--colorPrimary);
+  font-weight: 800;
+  font-size: 4rem;
+  margin-bottom: 80px;
   text-align: center;
-  color: #fff;
-  ${mediaQueries.desktop}{
-    margin: 0 0 75px;
-    font-size: 3.5rem;
+  background: linear-gradient(135deg, var(--colorPrimary) 0%, var(--colorSecondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--colorSecondary), var(--colorAccent));
+    border-radius: 2px;
+  }
+  
+  ${mediaQueries.desktop} {
+    font-size: 5rem;
+    margin-bottom: 120px;
   }
 `;
 
 export const ContainerCourses = styled.ul`
-  margin-top: 50px;
+  margin: 0;
   padding: 0;
   display: grid;
-  z-index: 50;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  color: var(--colorPrimary);
-  gap: 20px;
-  row-gap: 75px;
+  grid-template-columns: 1fr;
+  gap: 32px;
   list-style: none;
-  ${mediaQueries.desktop}{
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 50px;
+  
+  ${mediaQueries.tablet} {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+  }
+  
+  ${mediaQueries.desktop} {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 48px;
   }
 `;
 
 export const ContainerCourse = styled.li`
-  display: flex;
-  flex-flow: column wrap;
-  align-items: flex-start;
-  width: 99%;
-  z-index: 50;
-  ${mediaQueries.desktop}{
-    width: 100%;
+  background: var(--backgroundCard);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--borderColor);
+  border-radius: 24px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--colorSecondary), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-8px);
+    background: var(--backgroundCardHover);
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: var(--shadowPrimary);
+  }
+  
+  &:hover::before {
+    opacity: 1;
   }
 `;
 
 export const ContainerCourseName = styled.div`
   display: flex;
-  flex-flow: row nowrap;
-  z-index: 50;
   align-items: center;
+  margin-bottom: 16px;
+  
   & > div {
-    z-index: 50;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 0 10px 15px 0;
-    border-radius: 10%;
-    background: var(--colorSecondary);
-    color: var(--colorSecondary);
+    width: 12px;
+    height: 12px;
+    margin-right: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--colorSecondary), var(--colorAccent));
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
   }
 `;
 
-export const CourseName = styled.p`
-  margin: 0 0 15px;
-  z-index: 50;
-  font-weight: 600;
-  width: 100%;
-  font-size: 1.3rem;
-  ${mediaQueries.desktop}{
-    font-size: 2.1rem;
-    width: 100%;
+export const CourseName = styled.h3`
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--colorPrimary);
+  line-height: 1.3;
+  
+  ${mediaQueries.desktop} {
+    font-size: 1.6rem;
   }
 `;
 
 export const CourseText = styled.p`
-  margin: 0;
-  z-index: 50;
-  font-size: 1rem;
-  max-width: 95%;
-  ${mediaQueries.desktop}{
-    max-width: 85%;
-    font-size: 1.3rem;
+  margin: 16px 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  
+  ${mediaQueries.desktop} {
+    font-size: 1.2rem;
+    line-height: 1.7;
   }
 `;
 
 export const CourseAcademy = styled.p`
   margin: 0;
-  z-index: 50;  
   font-size: 1rem;
-  font-weight: 800;
-  ${mediaQueries.desktop}{
-    font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--colorSecondary);
+  
+  ${mediaQueries.desktop} {
+    font-size: 1.1rem;
   }
 `;

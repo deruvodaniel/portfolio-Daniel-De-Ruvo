@@ -2,21 +2,18 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionForm = styled.section`
-  align-items: center;
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
+  align-items: center;
   z-index: 11;
-  margin-top: 0px;
   width: 100%;
-  ${mediaQueries.tablet} {
-    width: 50%;
-  }
 `;
 
 export const Form = styled.form`
   display: grid;
-  gap: 20px;
+  gap: 24px;
   width: 100%;
+  max-width: 600px;
   grid-template-areas:
     "name name"
     "phone phone"
@@ -25,8 +22,8 @@ export const Form = styled.form`
     "message message"
     "errorTA errorTA"
     "button button";
+  
   ${mediaQueries.tablet} {
-    width: unset;
     grid-template-areas:
       "name phone"
       "email subject"
@@ -38,8 +35,8 @@ export const Form = styled.form`
 
 export const BoxInput = styled.div`
   display: flex;
-  flex-flow: column wrap;
-  align-content: center;
+  flex-direction: column;
+  
   &.input__name {
     grid-area: name;
   }
@@ -52,31 +49,42 @@ export const BoxInput = styled.div`
   &.input__subject {
     grid-area: subject;
   }
+  
   & > input {
-    padding: 20px 10px;
-    margin: 10px 20px;
-    border-radius: 5px;
-    width: 90%;
+    padding: 20px 24px;
+    border-radius: 16px;
+    width: 100%;
     color: var(--colorPrimary);
-    font-size: 1rem;
-    border: 2px solid #3a5856;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    background: var(--backgroundCard);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--borderColor);
     outline: none;
-    background-color: #3a5856;
-    ::placeholder {
-      color: var(--colorPrimary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
     }
+    
     &:focus {
-      background-color: #3a5856;
+      border-color: var(--colorSecondary);
+      box-shadow: 
+        0 0 0 3px rgba(0, 212, 255, 0.1),
+        var(--shadowPrimary);
+      background: var(--backgroundCardHover);
     }
-    &:hover{
-      filter: brightness(0.90);
+    
+    &:hover {
+      border-color: rgba(0, 212, 255, 0.3);
+      background: var(--backgroundCardHover);
     }
+    
     &.input__error {
-      border: 2px solid red;
-      outline: none;
-    }
-    ${mediaQueries.desktop} {
-      max-width: 250px;
+      border-color: var(--colorError);
+      box-shadow: 
+        0 0 0 3px rgba(255, 107, 107, 0.1),
+        0 8px 16px rgba(255, 107, 107, 0.2);
     }
   }
 `;
@@ -84,67 +92,103 @@ export const BoxInput = styled.div`
 export const ContainerTextArea = styled.div`
   grid-area: message;
   display: flex;
-  width: 100%
-  flex-flow: column wrap;
+  flex-direction: column;
 `;
 
 export const Textarea = styled.textarea`
-  width: 90%;
-  padding: 20px 20px;
-  margin: 10px 0;
+  width: 100%;
+  padding: 20px 24px;
   color: var(--colorPrimary);
-  font-size: 1rem;
-  border: none;
-  min-height: 150px;
-  max-height: 350px;
-  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  min-height: 160px;
+  max-height: 300px;
+  border-radius: 16px;
   outline: none;
-  background-color: #3a5856;
-  color: var(--colorPrimary);
-  ::placeholder {
-    color: var(--colorPrimary);
+  background: var(--backgroundCard);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--borderColor);
+  resize: vertical;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
   }
+  
   &:focus {
-    background-color: #3a5856;
+    border-color: var(--colorSecondary);
+    box-shadow: 
+      0 0 0 3px rgba(0, 212, 255, 0.1),
+      var(--shadowPrimary);
+    background: var(--backgroundCardHover);
   }
+  
+  &:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    background: var(--backgroundCardHover);
+  }
+  
   &.input__error {
-    border: 1px solid red;
-    outline: 1px solid red;
-  }
-  ${mediaQueries.desktop} {
-    width: 90%;
+    border-color: var(--colorError);
+    box-shadow: 
+      0 0 0 3px rgba(255, 107, 107, 0.1),
+      0 8px 16px rgba(255, 107, 107, 0.2);
   }
 `;
 
 export const Btn = styled.button`
-  margin-top: 40px;
   grid-area: button;
-  width: 100%;
-  border-radius: 10px;
-  background-color: transparent;
-  color: var(--colorSecondary);
-  border: 2px solid var(--colorSecondary);
-  padding: 15px 0px;
-  font-size: 1rem;
-  align-self: flex-start;
+  padding: 20px 40px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--colorSecondary), var(--colorAccent));
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
   cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s ease all;
-  &:hover {
-    transition: 0.3s ease all;
-    background-color: var(--colorSecondary);
-    color: var(--background);
-    filter: drop-shadow(0 2px 5px rgba(86, 227, 159, 0.3));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
   }
-  ${mediaQueries.tablet} {
-    padding: 12px 15px;
-    width: 150px;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 20px 40px rgba(0, 212, 255, 0.3),
+      0 0 40px rgba(0, 212, 255, 0.2);
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:active {
+    transform: translateY(-2px);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
   }
 `;
 
 export const ErrorMessage = styled.span`
-  color: red;
-  font-size: 13px;
-  margin: 0 0 0 20px;
-  text-align: start;
+  color: var(--colorError);
+  font-size: 0.9rem;
+  margin-top: 8px;
+  font-weight: 500;
 `;

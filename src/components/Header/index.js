@@ -1,13 +1,12 @@
 import { useRefs } from "context/refsContext";
 import useHeight from "hooks/useHeight";
 import useWidth from "hooks/useWidth";
-import { ListLinks, Main, Links } from "./header.styles";
+import { ListLinks, Main, Links, LogoContainer } from "./header.styles";
 import { HeaderMobile } from "./HeaderMobile";
 
 export const Header = () => {
   const { refs } = useRefs();
-  const { refAboutMe, refProjects, refContact, refHome, refTechnologies } =
-    refs;
+  const { refAboutMe, refProjects, refContact, refHome, refTechnologies } = refs;
   const { width } = useWidth();
   const { height } = useHeight();
 
@@ -17,55 +16,48 @@ export const Header = () => {
     }
   };
 
-
   if (width < 1024) return <HeaderMobile refs={refs} />;
 
   return (
     <Main className={height > 70 && "withBackground"}>
-      <img
-        alt="Logo Daniel"
-        aria-label="Logo Daniel"
-        title="Home"
-        src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653404223/portfolio%20daniel/LOGO_DR_six97a.svg"
-        width="140px"
-        height="120px"
-        onClick={() => scrollToSection(refHome)}
-        style={{ filter: 'drop-shadow(0 0 10px rgba(89, 201, 165, 0.3))' }}
-      />
+      <LogoContainer onClick={() => scrollToSection(refHome)}>
+        <div className="logo-text">DR</div>
+      </LogoContainer>
+      
       <nav role="main" aria-label="main">
         <ListLinks>
           <Links
             onClick={() => scrollToSection(refHome)}
             role="link"
-            aria-label="link Home"
+            aria-label="Navigate to Home section"
           >
             Home
           </Links>
           <Links
             onClick={() => scrollToSection(refAboutMe)}
             role="link"
-            aria-label="link About me"
+            aria-label="Navigate to About Me section"
           >
-            About Me
+            About
           </Links>
           <Links
             onClick={() => scrollToSection(refTechnologies)}
             role="link"
-            aria-label="link Technologies"
+            aria-label="Navigate to Technologies section"
           >
-            Technologies
+            Skills
           </Links>
           <Links
             onClick={() => scrollToSection(refProjects)}
             role="link"
-            aria-label="link projects"
+            aria-label="Navigate to Projects section"
           >
             Projects
           </Links>
           <Links
             onClick={() => scrollToSection(refContact)}
             role="link"
-            aria-label="link contact"
+            aria-label="Navigate to Contact section"
           >
             Contact
           </Links>
