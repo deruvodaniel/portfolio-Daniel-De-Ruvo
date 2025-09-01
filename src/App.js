@@ -24,6 +24,7 @@ function App() {
             <ContainerSections>
               <Home />
               <AboutMe />
+              <Experience />
               <Technologies />
               <Projects />
               <Courses />
