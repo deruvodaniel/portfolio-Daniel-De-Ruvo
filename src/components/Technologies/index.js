@@ -7,11 +7,13 @@ import { motion } from "framer-motion";
 import useWidth from "../../hooks/useWidth";
 import { technologies } from "../../arrays/arrayTechnologies";
 import { useRefs } from "../../context/refsContext";
+import { useI18n } from "context/i18nContext";
 
 export const Technologies = () => {
   const { refTechnologies } = useRefs();
   const { width } = useWidth();
   const initial = width > 700 ? 500 : 0;
+  const { t } = useI18n();
 
   return (
     <motion.div
@@ -21,7 +23,7 @@ export const Technologies = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <SectionTechnologies ref={refTechnologies}>
-        <h2>Technologies</h2>
+        <h2>{t('tech.title')}</h2>
         <ContainerTechnologies>
           {technologies.map(({ id, img, text }) => (
             <TechCard key={id}>
