@@ -154,13 +154,11 @@ export const SkillCard = styled.div`
   padding: 0;
 
   .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 3rem;
     margin-bottom: 16px;
-    color: var(--colorSecondary);
-    background: var(--gradientPrimary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 
   .title {
