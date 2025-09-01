@@ -232,21 +232,20 @@ export const SecondaryButton = styled.button`
 
 export const StatsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 28px;
   width: 100%;
-  max-width: 800px;
   opacity: 0;
   animation: fadeInUp 1s ease-out 1.2s forwards;
-  
+
   ${mediaQueries.mobile} {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
   }
-  
+
   ${mediaQueries.desktop} {
-    gap: 80px;
-    max-width: 1000px;
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    gap: 40px;
   }
 `;
 
