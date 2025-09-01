@@ -24,10 +24,14 @@ export const HeaderMobile = ({ refs }) => {
   };
 
   const scrollToSection = (section) => {
-    if (section !== null && section.current !== null) {
-      section.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    const el = section?.current;
+    if (el) {
+      const headerOffset = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
-    menu.current.classList.remove("open");
+    if (menu.current) menu.current.classList.remove("open");
     setMenuOpen(false);
   };
 
