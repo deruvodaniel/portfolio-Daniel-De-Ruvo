@@ -143,25 +143,24 @@ const MyForm = () => {
                 autoComplete="off"
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder={t('form.subject')}
                 className={errors.subject && "input__error"}
                 {...register("subject", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 6,
-                    message:
-                      "The subject line must be at least 6 characters long",
+                    message: t('form.minSubject'),
                   },
                   maxLength: {
                     value: 30,
-                    message: "Maximum characters reached",
+                    message: t('form.maxSubject'),
                   },
                   pattern: {
                     value: /^[ a-zA-Z0-9]+$/,
-                    message: "You can only enter letters and numbers",
+                    message: t('form.lettersNumbers'),
                   },
                 })}
               />
