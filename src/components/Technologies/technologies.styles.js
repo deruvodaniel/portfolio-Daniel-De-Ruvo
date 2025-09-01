@@ -54,40 +54,37 @@ export const TechCard = styled.div`
   justify-content: center;
   padding: 28px 20px;
   background: var(--background);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
   position: relative;
   overflow: hidden;
   min-height: 140px;
-  will-change: transform;
 
-  &::before {
+  /* subtle looping sheen */
+  &::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -120%;
+    width: 40%;
     height: 100%;
-    background: var(--gradientPrimary);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    transform: skewX(-12deg);
+    animation: sheen 4.5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    pointer-events: none;
   }
 
-  &:hover {
-    background: var(--backgroundCardHover);
-    transform: scale(1.04);
-  }
-
-  &:hover::before {
-    opacity: 0.08;
+  @keyframes sheen {
+    0% { left: -120%; }
+    60% { left: 140%; }
+    100% { left: 140%; }
   }
 
   .tech-icon {
     width: 40px;
     height: 40px;
     margin-bottom: 14px;
-    transition: all 0.4s ease;
     filter: brightness(1.2);
   }
 
@@ -113,19 +110,6 @@ export const TechCard = styled.div`
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: all 0.3s ease;
-  }
-
-  &:hover .tech-icon {
-    transform: scale(1.12);
-    filter: brightness(1.5) drop-shadow(0 0 20px rgba(100, 255, 218, 0.6));
-  }
-
-  &:hover .tech-name {
-    background: var(--gradientPrimary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 
   ${mediaQueries.desktop} {
