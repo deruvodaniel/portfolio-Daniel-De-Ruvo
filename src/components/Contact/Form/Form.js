@@ -168,27 +168,27 @@ const MyForm = () => {
             </BoxInput>
             <ContainerTextArea>
               <Textarea
-                placeholder="Message"
+                placeholder={t('form.message')}
                 name="message"
                 className={errors.message && "input__error"}
                 {...register("message", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 10,
-                    message: "The message must be at least 10 characters long",
+                    message: t('form.minMessage'),
                   },
                   maxLength: {
                     value: 500,
-                    message: "Maximum characters reached",
+                    message: t('form.maxMessage'),
                   },
                 })}
               />
             </ContainerTextArea>
             <ErrorMessage> {errors?.message?.message} </ErrorMessage>
-            <Btn type="submit">SEND</Btn>
+            <Btn type="submit">{t('form.send')}</Btn>
           </Form>
         )}
       </SectionForm>
