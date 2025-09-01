@@ -5,65 +5,39 @@ export const SectionProjects = styled.section`
   margin: 200px 0;
   padding: 150px 0;
   z-index: 40;
-  color: var(--colorPrimary);
-  
-  
   position: relative;
   
   & > h2 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    font-weight: 700;
+    font-size: 5rem;
     font-weight: 900;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     text-align: center;
     color: var(--colorPrimary);
     letter-spacing: -2px;
     line-height: 0.9;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradientPrimary);
+      border-radius: 2px;
+    }
   }
   
   ${mediaQueries.desktop} {
     margin: 300px 0;
-    background: linear-gradient(135deg, var(--colorPrimary) 0%, var(--colorSecondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--colorSecondary), #00B9AE);
-      border-radius: 2px;
-    }
     padding: 200px 0;
-    background: linear-gradient(135deg, var(--colorPrimary) 0%, var(--colorSecondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--colorSecondary), #00B9AE);
-      border-radius: 2px;
-    }
-  
-  
     
     & > h2 {
       font-size: 8rem;
-      margin-bottom: 200px;
-      font-size: 4rem;
+      margin-bottom: 150px;
+      letter-spacing: -4px;
     }
   }
 `;
@@ -77,12 +51,11 @@ export const ContainerProjects = styled.div`
 export const ProjectItem = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 180px;
-  padding: 100px 0;
-  
-  
+  gap: 60px;
+  padding: 80px 0;
   border-bottom: 1px solid var(--borderColor);
   position: relative;
+  transition: all 0.3s ease;
   
   &:last-child {
     border-bottom: none;
@@ -99,10 +72,22 @@ export const ProjectItem = styled.div`
     letter-spacing: 2px;
   }
   
+  &:hover {
+    background: var(--backgroundCard);
+    border-radius: 24px;
+    padding: 80px 40px;
+    margin: 0 -40px;
+  }
+  
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 2fr;
     gap: 120px;
     padding: 120px 0;
+    
+    &:hover {
+      padding: 120px 60px;
+      margin: 0 -60px;
+    }
     
     &:nth-child(even) {
       grid-template-columns: 2fr 1fr;
@@ -218,10 +203,10 @@ export const ProjectLinks = styled.div`
   display: flex;
   gap: 40px;
   align-items: center;
+  flex-wrap: wrap;
   row-gap: 80px;
+`;
 
-  
-  
 export const ProjectLink = styled.a`
   color: var(--colorSecondary);
   text-decoration: none;
@@ -253,14 +238,3 @@ export const ProjectLink = styled.a`
     font-size: 1.2rem;
   }
 `;
-
-// Legacy exports for compatibility
-export const Container = ProjectItem;
-export const ContainerButtons = ProjectLinks;
-export const ContainerProjects = ContainerProjects;
-export const ContainerTexts = ProjectContent;
-export const ImageContainer = styled.div``;
-export const Img = styled.img``;
-export const ProjectButton = ProjectLink;
-export const ProjectSubtitle = ProjectCategory;
-export const SectionProjects = SectionProjects;
