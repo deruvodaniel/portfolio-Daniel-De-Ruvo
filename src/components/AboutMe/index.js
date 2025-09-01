@@ -10,11 +10,13 @@ import {
 import { motion } from "framer-motion";
 import useWidth from "../../hooks/useWidth";
 import { useRefs } from "../../context/refsContext";
+import { useI18n } from "context/i18nContext";
 
 export const AboutMe = () => {
   const { refAboutMe } = useRefs();
   const { width } = useWidth();
   const initial = width > 700 ? -500 : 0;
+  const { t } = useI18n();
 
   return (
     <motion.div
@@ -26,15 +28,12 @@ export const AboutMe = () => {
       <SectionAboutMe ref={refAboutMe}>
         <AboutMeContent>
           <div>
-            <AboutMeTitle>About</AboutMeTitle>
+            <AboutMeTitle>{t('about.title')}</AboutMeTitle>
             <AboutMeDescription>
-              I'm a <strong>Senior Frontend Developer</strong> with over 3 years of experience 
-              crafting exceptional digital experiences. I specialize in modern JavaScript frameworks, 
-              responsive design, and performance optimization.
+              {t('about.p1')}
             </AboutMeDescription>
             <AboutMeDescription>
-              My passion lies in transforming complex problems into simple, beautiful, and intuitive solutions. 
-              I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.
+              {t('about.p2')}
             </AboutMeDescription>
             <AboutMeBoxLinks>
               <a
@@ -64,36 +63,33 @@ export const AboutMe = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Resume
+                {t('about.resume')}
               </a>
             </AboutMeBoxLinks>
           </div>
-          
+
           <SkillsContainer>
             <SkillCard>
               <div className="icon">⚡</div>
-              <h3 className="title">Frontend Development</h3>
+              <h3 className="title">{t('about.skillFrontend')}</h3>
               <p className="description">
-                Building responsive, performant web applications with modern frameworks 
-                like React, Vue.js, and cutting-edge CSS techniques.
+                {t('about.skillFrontendDesc')}
               </p>
             </SkillCard>
-            
+
             <SkillCard>
               <div className="icon">🎨</div>
-              <h3 className="title">UI/UX Design</h3>
+              <h3 className="title">{t('about.skillDesign')}</h3>
               <p className="description">
-                Creating intuitive user interfaces with attention to detail, 
-                accessibility, and user experience best practices.
+                {t('about.skillDesignDesc')}
               </p>
             </SkillCard>
-            
+
             <SkillCard>
               <div className="icon">🚀</div>
-              <h3 className="title">Performance</h3>
+              <h3 className="title">{t('about.skillPerf')}</h3>
               <p className="description">
-                Optimizing applications for speed, SEO, and scalability using 
-                modern build tools and performance monitoring.
+                {t('about.skillPerfDesc')}
               </p>
             </SkillCard>
           </SkillsContainer>
