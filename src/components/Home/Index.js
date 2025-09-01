@@ -10,6 +10,7 @@ import {
   SecondaryButton,
   StatsContainer,
   StatItem,
+  LocationTag,
 } from "./home.styles";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
@@ -29,6 +30,7 @@ export const Home = () => {
       <TextHome>{t('home.kicker')}</TextHome>
       <TitleHome>{t('home.name')}</TitleHome>
       <SubtitleHome>{t('home.subtitle')}</SubtitleHome>
+      <LocationTag>{t('home.location')}</LocationTag>
       <DescriptionHome>
         {t('home.description')}
       </DescriptionHome>
@@ -44,15 +46,15 @@ export const Home = () => {
 
       <StatsContainer>
         <StatItem>
-          <span className="number">3+</span>
+          <span className="number">{t('home.yearsNumber')}</span>
           <span className="label">{t('home.years')}</span>
         </StatItem>
         <StatItem>
-          <span className="number">50+</span>
+          <span className="number">{t('home.projectsNumber')}</span>
           <span className="label">{t('home.projects')}</span>
         </StatItem>
         <StatItem>
-          <span className="number">100%</span>
+          <span className="number">{t('home.satisfactionNumber')}</span>
           <span className="label">{t('home.satisfaction')}</span>
         </StatItem>
       </StatsContainer>
