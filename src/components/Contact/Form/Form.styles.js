@@ -42,29 +42,37 @@ export const BoxInput = styled.div`
   &.input__subject { grid-area: subject; }
   
   & > input {
-    padding: 24px 0;
+    padding: 16px 12px;
     border: none;
-    border-bottom: 1px solid var(--borderColor);
-    background: transparent;
+    border-bottom: 2px solid var(--borderColor);
+    background: var(--backgroundCard);
+    border-radius: 10px;
     color: var(--colorPrimary);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     outline: none;
-    transition: all 0.3s ease;
-    
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+
     &::placeholder {
       color: var(--textMuted);
       font-weight: 400;
     }
-    
+
     &:focus {
       border-bottom-color: var(--colorSecondary);
-      color: var(--colorSecondary);
+      box-shadow: inset 0 -2px 0 0 var(--colorSecondary), 0 6px 24px rgba(0,0,0,0.25);
+      background: var(--backgroundCardHover);
     }
-    
+
+    &:not(:placeholder-shown) {
+      border-bottom-color: var(--colorSecondary);
+      background: var(--backgroundCardHover);
+    }
+
     &.input__error {
       border-bottom-color: var(--colorError);
+      box-shadow: inset 0 -2px 0 0 var(--colorError);
     }
   }
 `;
@@ -77,55 +85,63 @@ export const ContainerTextArea = styled.div`
 
 export const Textarea = styled.textarea`
   width: 100%;
-  padding: 24px 0;
+  padding: 16px 12px;
   color: var(--colorPrimary);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   min-height: 150px;
   border: none;
-  border-bottom: 1px solid var(--borderColor);
-  background: transparent;
+  border-bottom: 2px solid var(--borderColor);
+  background: var(--backgroundCard);
+  border-radius: 10px;
   outline: none;
   resize: vertical;
-  transition: all 0.3s ease;
-  
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+
   &::placeholder {
     color: var(--textMuted);
     font-weight: 400;
   }
-  
+
   &:focus {
     border-bottom-color: var(--colorSecondary);
-    color: var(--colorSecondary);
+    box-shadow: inset 0 -2px 0 0 var(--colorSecondary), 0 6px 24px rgba(0,0,0,0.25);
+    background: var(--backgroundCardHover);
   }
-  
+
+  &:not(:placeholder-shown) {
+    border-bottom-color: var(--colorSecondary);
+    background: var(--backgroundCardHover);
+  }
+
   &.input__error {
     border-bottom-color: var(--colorError);
+    box-shadow: inset 0 -2px 0 0 var(--colorError);
   }
 `;
 
 export const Btn = styled.button`
   grid-area: button;
-  padding: 24px 48px;
+  padding: 20px 40px;
   border-radius: 60px;
   background: var(--gradientPrimary);
   border: none;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top: 40px;
-  
+  margin-top: 20px;
+
   &:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadowPrimary);
   }
-  
+
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
