@@ -86,6 +86,21 @@ export const SubtitleHome = styled.h2`
   }
 `;
 
+export const LocationTag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--borderColor);
+  border-radius: 9999px;
+  color: var(--textMuted);
+  background: var(--backgroundCard);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 8px 0 40px;
+`;
+
 export const DescriptionHome = styled.p`
   color: var(--textMuted);
   max-width: 600px;
