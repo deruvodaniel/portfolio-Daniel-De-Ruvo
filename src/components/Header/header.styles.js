@@ -57,7 +57,7 @@ export const Links = styled.li`
   color: var(--textMuted);
   transition: all 0.3s ease;
   position: relative;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -68,13 +68,38 @@ export const Links = styled.li`
     background: var(--colorSecondary);
     transition: width 0.3s ease;
   }
-  
+
   &:hover {
     color: var(--colorPrimary);
     transform: translateY(-2px);
   }
-  
+
   &:hover::after {
     width: 100%;
   }
+`;
+
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+
+export const ToggleButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--textMuted);
+  border: 1px solid var(--borderColor);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+
+  &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
 `;
