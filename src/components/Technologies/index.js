@@ -68,7 +68,7 @@ export const Technologies = () => {
             const key = (text || '').toLowerCase();
             const Icon = techIconsMap[key] || null;
             return (
-              <TechCard key={id}>
+              <TechCard key={id} style={{ ['--delay']: `${(id % 6) * 0.3}s` }}>
                 {img ? (
                   <img className="tech-icon" src={img} alt={text} />
                 ) : Icon ? (
