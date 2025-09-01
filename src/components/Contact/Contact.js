@@ -12,6 +12,7 @@ import {
 } from "./Contact.styles";
 import { motion } from "framer-motion";
 import useWidth from "hooks/useWidth";
+import { useI18n } from "context/i18nContext";
 
 export const Contact = () => {
   const { refContact } = useRefs();
@@ -19,17 +20,18 @@ export const Contact = () => {
   const [copyPhoneSuccess, setCopyPhoneSuccess] = useState(false);
   const { width } = useWidth();
   const initial = width > 700 ? -500 : 0;
+  const { t } = useI18n();
 
   const copyEmail = (e) => {
     e.target.focus();
     navigator.clipboard.writeText("deruvodaniel@gmail.com");
-    setCopyEmailSuccess("Email copied!");
+    setCopyEmailSuccess(t('contact.copiedEmail'));
   };
 
   const copyPhone = (e) => {
     e.target.focus();
     navigator.clipboard.writeText("+541165911732");
-    setCopyPhoneSuccess("Phone Copied!");
+    setCopyPhoneSuccess(t('contact.copiedPhone'));
   };
 
   useEffect(() => {
@@ -47,16 +49,16 @@ export const Contact = () => {
       transition={{ type: "spring", duration: 2 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <ContactTitle ref={refContact}>Contact</ContactTitle>
+      <ContactTitle ref={refContact}>{t('contact.title')}</ContactTitle>
       <SectionContact>
         <BoxContactInfo>
-          <ContactText>Do you have a project in mind? Let's talk!</ContactText>
+          <ContactText>{t('contact.lead')}</ContactText>
           <ContactInfo>
             <ButtonCopy onClick={copyEmail}>
-              {copyEmailSuccess ? "Email copied" : "Copy email"}
+              {copyEmailSuccess ? t('contact.copiedEmail') : t('contact.copyEmail')}
             </ButtonCopy>
             <ButtonCopy onClick={copyPhone}>
-              {copyPhoneSuccess ? "Phone copied" : "Copy phone"}
+              {copyPhoneSuccess ? t('contact.copiedPhone') : t('contact.copyPhone')}
             </ButtonCopy>
           </ContactInfo>
           {width > 1024 && (
