@@ -28,6 +28,12 @@ export const Projects = () => {
     return subtitle.split(', ').map(tech => tech.trim());
   };
 
+  const getLocalized = (id, fallback) => {
+    const key = `projects.items.${id}.text`;
+    const res = t(key);
+    return res === key ? fallback : res;
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -54,7 +60,7 @@ export const Projects = () => {
 
               <ProjectContent>
                 <ProjectTitle>{title}</ProjectTitle>
-                <ProjectDescription>{text}</ProjectDescription>
+                <ProjectDescription>{getLocalized(id, text)}</ProjectDescription>
                 <ProjectLinks>
                   <ProjectLink href={link} target="_blank" rel="noopener noreferrer">
                     {t('projects.live')}
