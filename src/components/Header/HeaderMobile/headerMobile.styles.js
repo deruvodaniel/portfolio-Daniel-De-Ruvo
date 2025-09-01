@@ -35,6 +35,32 @@ export const LogoMenu = styled.img`
   cursor: pointer;
 `;
 
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const ToggleButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--textMuted);
+  border: 1px solid var(--borderColor);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  margin-right: 0;
+
+  &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
+`;
+
 export const ListLinks = styled.ul`
   margin: 30px 0 60vh;
   display: flex;
