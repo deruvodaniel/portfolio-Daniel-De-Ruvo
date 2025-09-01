@@ -121,19 +121,19 @@ export const DescriptionHome = styled.p`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 32px;
+  gap: 24px;
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeInUp 1s ease-out 1s forwards;
-  margin-bottom: 120px;
-  
+  margin-bottom: 80px;
+
   ${mediaQueries.mobile} {
     flex-direction: column;
     width: 100%;
   }
 
   ${mediaQueries.tablet} {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 `;
 
