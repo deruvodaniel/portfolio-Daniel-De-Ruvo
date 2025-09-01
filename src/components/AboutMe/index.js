@@ -112,7 +112,7 @@ export const AboutMe = () => {
 
           <SkillsContainer>
             <SkillCard>
-              <div className="icon"><FiZap /></div>
+              <div className="icon"><GradientZap /></div>
               <h3 className="title">{t('about.skillFrontend')}</h3>
               <p className="description">
                 {t('about.skillFrontendDesc')}
@@ -120,7 +120,7 @@ export const AboutMe = () => {
             </SkillCard>
 
             <SkillCard>
-              <div className="icon"><FiLayout /></div>
+              <div className="icon"><GradientLayout /></div>
               <h3 className="title">{t('about.skillDesign')}</h3>
               <p className="description">
                 {t('about.skillDesignDesc')}
@@ -128,7 +128,7 @@ export const AboutMe = () => {
             </SkillCard>
 
             <SkillCard>
-              <div className="icon"><FiTrendingUp /></div>
+              <div className="icon"><GradientTrendingUp /></div>
               <h3 className="title">{t('about.skillPerf')}</h3>
               <p className="description">
                 {t('about.skillPerfDesc')}
