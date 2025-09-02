@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { ContainerApp, ContainerSections } from './app.styles';
 import { RefsContextProvider } from './context/refsContext';
 import { ThemeProvider } from './context/themeContext';
@@ -7,7 +7,6 @@ import { Header } from './components/Header';
 import { Home } from './components/Home/Index';
 import { AboutMe } from './components/AboutMe';
 import { Technologies } from './components/Technologies';
-import { Projects } from './components/Projects';
 import { Courses } from './components/Courses';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
@@ -15,6 +14,8 @@ import { Experience } from './components/Experience';
 import AnimatedSection from './components/AnimatedSection';
 import { ParallaxBackground } from './components/Parallax';
 import './index.css';
+
+const Projects = lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })));
 
 function App() {
   useEffect(() => {
@@ -51,7 +52,9 @@ function App() {
               <AnimatedSection as="section"><AboutMe /></AnimatedSection>
               <AnimatedSection as="section"><Experience /></AnimatedSection>
               <AnimatedSection as="section"><Technologies /></AnimatedSection>
-              <AnimatedSection as="section"><Projects /></AnimatedSection>
+              <Suspense fallback={null}>
+                <AnimatedSection as="section" $cv="visible" $cis="auto 3200px"><Projects /></AnimatedSection>
+              </Suspense>
               <AnimatedSection as="section"><Courses /></AnimatedSection>
               <AnimatedSection as="section"><Contact /></AnimatedSection>
               <Footer />

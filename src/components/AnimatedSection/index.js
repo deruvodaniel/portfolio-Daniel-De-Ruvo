@@ -4,16 +4,19 @@ import styled from 'styled-components';
 const Wrapper = styled.section`
   opacity: 0;
   transform: translateY(24px);
-  filter: blur(4px);
-  transition: opacity 420ms ease-out, transform 420ms ease-out, filter 420ms ease-out;
+  filter: blur(2px);
   will-change: opacity, transform, filter;
   display: block;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1200px;
+  content-visibility: ${({ $cv }) => $cv || 'auto'};
+  contain-intrinsic-size: ${({ $cis }) => $cis || 'auto 1200px'};
+
+  @media (max-width: 767px) {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
 
   &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeInUp 1s ease-out forwards;
     filter: none;
   }
 `;
@@ -21,7 +24,7 @@ const Wrapper = styled.section`
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export const AnimatedSection = ({ children, as = 'section', className }) => {
+export const AnimatedSection = ({ children, as = 'section', className, ...rest }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(prefersReducedMotion());
 
@@ -50,7 +53,7 @@ export const AnimatedSection = ({ children, as = 'section', className }) => {
   }, []);
 
   return (
-    <Wrapper as={as} ref={ref} className={`${className || ''} ${visible ? 'is-visible' : ''}`.trim()}>
+    <Wrapper as={as} ref={ref} className={`${className || ''} ${visible ? 'is-visible' : ''}`.trim()} {...rest}>
       {children}
     </Wrapper>
   );

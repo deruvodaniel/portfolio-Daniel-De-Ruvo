@@ -22,10 +22,17 @@ export function initLenis() {
     return () => {};
   }
 
+  // Disable smooth scrolling on touch devices / small screens to improve mobile performance
+  const isCoarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  const isSmallViewport = window.innerWidth && window.innerWidth < 768;
+  if (isCoarsePointer || isSmallViewport) {
+    return () => {};
+  }
+
   const lenis = new Lenis({
     duration: 0.75,
     smoothWheel: true,
-    smoothTouch: true,
+    smoothTouch: false,
     easing: (t) => 1 - Math.pow(1 - t, 4),
   });
 

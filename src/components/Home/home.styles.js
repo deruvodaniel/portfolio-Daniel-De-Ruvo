@@ -47,10 +47,10 @@ export const TextHome = styled.p`
 `;
 
 export const TitleHome = styled.h1`
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 900;
-  margin: 0 0 32px;
-  line-height: 0.9;
+  margin: 0 0 28px;
+  line-height: 0.92;
   background: var(--gradientPrimary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -58,28 +58,28 @@ export const TitleHome = styled.h1`
   opacity: 0;
   animation: fadeInUp 1.2s ease-out 0.4s forwards;
   letter-spacing: -2px;
-  
+
   ${mediaQueries.tablet} {
-    font-size: 7rem;
+    font-size: 6rem;
     letter-spacing: -3px;
   }
-  
+
   ${mediaQueries.desktop} {
-    font-size: 10rem;
+    font-size: 9rem;
     margin: 0 0 40px;
     letter-spacing: -5px;
   }
 `;
 
 export const SubtitleHome = styled.h2`
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 300;
   color: var(--textSecondary);
-  margin-bottom: 48px;
+  margin-bottom: 40px;
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.6s forwards;
-  letter-spacing: 1px;
-  
+  letter-spacing: 0.5px;
+
   ${mediaQueries.desktop} {
     font-size: 3rem;
     margin-bottom: 64px;
@@ -104,13 +104,19 @@ export const LocationTag = styled.span`
 export const DescriptionHome = styled.p`
   color: var(--textMuted);
   max-width: 600px;
-  font-size: 1.4rem;
+  width: 100%;
+  font-size: 1.2rem;
   line-height: 1.7;
   font-weight: 400;
-  margin-bottom: 64px;
+  margin-bottom: 56px;
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.8s forwards;
-  
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+    font-size: 1.1rem;
+  }
+
   ${mediaQueries.desktop} {
     font-size: 1.6rem;
     line-height: 1.8;
@@ -193,7 +199,8 @@ export const SecondaryButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+  gap: 10px;
+  padding: 16px 28px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
   border-radius: 40px;
@@ -206,7 +213,9 @@ export const SecondaryButton = styled.button`
   transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  min-width: 180px;
+  min-width: 190px;
+
+  svg { width: 18px; height: 18px; }
 
   &:hover {
     background: var(--backgroundCardHover);
@@ -217,8 +226,8 @@ export const SecondaryButton = styled.button`
 
   ${mediaQueries.desktop} {
     font-size: 1.05rem;
-    padding: 16px 28px;
-    min-width: 200px;
+    padding: 18px 32px;
+    min-width: 210px;
     border-radius: 44px;
   }
 `;

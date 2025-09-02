@@ -29,8 +29,8 @@ export const AboutMeContent = styled.div`
 export const AboutMeTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 4rem;
-  margin-bottom: 40px;
+  font-size: 2.6rem;
+  margin-bottom: 28px;
   line-height: 0.9;
   letter-spacing: -2px;
   transform: translateY(calc(var(--scrollY, 0) * 0.02px));

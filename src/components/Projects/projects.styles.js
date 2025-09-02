@@ -9,9 +9,9 @@ export const SectionProjects = styled.section`
   scroll-margin-top: 120px;
   
   & > h2 {
-    font-size: 4rem;
+    font-size: 2.6rem;
     font-weight: 900;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
     text-align: center;
     color: var(--colorPrimary);
     letter-spacing: -2px;
@@ -19,7 +19,7 @@ export const SectionProjects = styled.section`
     position: relative;
     transform: translateY(calc(var(--scrollY, 0) * 0.016px));
     will-change: transform;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -62,19 +62,14 @@ export const ProjectItem = styled.div`
   
   &:last-child {}
   
-  &:hover {
-    background: var(--backgroundCard);
-    border-radius: 20px;
-    padding: 40px 32px;
-    margin: 0 -32px;
-  }
-
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 2fr;
     gap: 64px;
     padding: 64px 0;
 
     &:hover {
+      background: var(--backgroundCard);
+      border-radius: 20px;
       padding: 64px 48px;
       margin: 0 -48px;
     }
@@ -193,23 +188,27 @@ export const ProjectLink = styled.a`
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;
-  
+
   &::after {
     content: '→';
     margin-left: 10px;
     transition: transform 0.3s ease;
   }
-  
+
   &:hover {
     border-bottom-color: var(--colorSecondary);
     transform: translateY(-4px);
   }
-  
+
   &:hover::after {
     transform: translateX(8px);
   }
-  
+
   ${mediaQueries.desktop} {
     font-size: 1.05rem;
   }
+`;
+
+export const LinkPreviewWrapper = styled.div`
+  margin: 8px 0 16px;
 `;
