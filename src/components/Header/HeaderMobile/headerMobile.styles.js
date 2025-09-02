@@ -29,7 +29,7 @@ export const Main = styled.header`
     max-height: 0;
     opacity: 0;
     transform: translateY(-8px);
-    transition: max-height 320ms ease, opacity 220ms ease, transform 220ms ease;
+    transition: max-height 360ms cubic-bezier(0.22,1,0.36,1), opacity 260ms ease, transform 260ms ease;
   }
 
   &.open > nav {
