@@ -62,6 +62,12 @@ export const RoleHeader = styled.div`
   align-items: baseline;
   justify-content: space-between;
   gap: 20px;
+
+  ${mediaQueries.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 `;
 
 export const RoleCompany = styled.span`
@@ -73,9 +79,15 @@ export const RoleCompany = styled.span`
 `;
 
 export const RolePeriod = styled.span`
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--textMuted);
   letter-spacing: 1px;
+  white-space: nowrap;
+
+  ${mediaQueries.mobile} {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
 `;
 
 export const BulletList = styled.ul`
