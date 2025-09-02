@@ -2,10 +2,10 @@ import Lenis from 'lenis';
 
 export function initLenis() {
   const lenis = new Lenis({
-    duration: 1.1,
+    duration: 0.75,
     smoothWheel: true,
-    smoothTouch: false,
-    easing: (t) => 1 - Math.pow(1 - t, 3),
+    smoothTouch: true,
+    easing: (t) => 1 - Math.pow(1 - t, 4),
   });
 
   let rafId;
