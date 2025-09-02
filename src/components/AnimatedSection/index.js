@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.section`
   opacity: 0;
   transform: translateY(24px);
-  filter: blur(4px);
+  filter: blur(2px);
   will-change: opacity, transform, filter;
   display: block;
   content-visibility: ${({ $cv }) => $cv || 'auto'};
@@ -17,6 +17,7 @@ const Wrapper = styled.section`
 
   &.is-visible {
     animation: fadeInUp 1s ease-out forwards;
+    filter: none;
   }
 `;
 
