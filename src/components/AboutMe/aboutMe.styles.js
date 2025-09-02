@@ -115,6 +115,10 @@ export const AboutMeBoxLinks = styled.div`
         height: 24px;
         filter: brightness(1.2);
       }
+
+      :root[data-theme='light'] & > img {
+        filter: invert(1) brightness(0.2) contrast(1.2);
+      }
     }
   }
   
