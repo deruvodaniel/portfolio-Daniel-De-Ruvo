@@ -20,7 +20,7 @@ export const Experience = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <SectionExperience ref={refExperience}>
-        <ParallaxText As={ExperienceTitle} amount={28} fade={0.12}>{t('experience.title')}</ParallaxText>
+        <ParallaxText As={ExperienceTitle} amount={48} fade={0.2}>{t('experience.title')}</ParallaxText>
         <Timeline>
           {roles.map((r, idx) => (
             <RoleItem key={idx} index={idx + 1}>
