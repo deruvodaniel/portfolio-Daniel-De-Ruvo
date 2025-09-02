@@ -18,9 +18,7 @@ export const FooterStyle = styled.footer`
     cursor: pointer;
     transition: all 0.3s ease;
 
-    &:hover {
-      transform: translateY(-4px);
-    }
+    &:hover { transform: translateY(-4px); }
 
     .logo-text {
       font-size: 2.2rem;
@@ -30,6 +28,7 @@ export const FooterStyle = styled.footer`
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -1px;
+      line-height: 1;
     }
   }
 

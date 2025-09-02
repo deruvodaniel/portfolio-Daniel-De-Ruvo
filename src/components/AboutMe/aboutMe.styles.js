@@ -93,7 +93,7 @@ export const AboutMeBoxLinks = styled.div`
       transform: translateY(-4px);
     }
     
-    &:first-child, &:nth-child(2) {
+    &:first-child, &:nth-child(2), &:nth-child(3) {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -104,14 +104,19 @@ export const AboutMeBoxLinks = styled.div`
       border: 1px solid var(--borderColor);
       border-radius: 50%;
       padding: 0;
-      
+      border-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--colorPrimary);
+
       &:hover {
         background: var(--backgroundCardHover);
         border-color: var(--colorSecondary);
         transform: translateY(-8px);
         box-shadow: var(--shadowPrimary);
       }
-      
+
       & > img {
         width: 24px;
         height: 24px;
@@ -126,10 +131,10 @@ export const AboutMeBoxLinks = styled.div`
     & > a {
       font-size: 1.3rem;
       
-      &:first-child, &:nth-child(2) {
+      &:first-child, &:nth-child(2), &:nth-child(3) {
         width: 70px;
         height: 70px;
-        
+
         & > img {
           width: 28px;
           height: 28px;

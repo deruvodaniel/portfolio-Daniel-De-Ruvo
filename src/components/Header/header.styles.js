@@ -30,11 +30,9 @@ export const LogoContainer = styled.div`
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-2px);
-  }
-  
+
+  &:hover { transform: translateY(-2px); }
+
   .logo-text {
     font-size: 2.5rem;
     font-weight: 900;
@@ -43,6 +41,7 @@ export const LogoContainer = styled.div`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -1px;
+    line-height: 1;
   }
 `;
 

@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Daniel De Ruvo — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live: https://portfolio-daniel-de-ruvo.vercel.app/
 
-## Available Scripts
+A fast, accessible, and visually rich single‑page portfolio built with React and styled‑components. The site emphasizes smooth but efficient motion, excellent responsiveness, and strong technical foundations for SEO, a11y and performance.
 
-In the project directory, you can run:
+## Tech stack
+- React 18, Create React App 5
+- styled-components (design tokens via CSS variables, light/dark themes)
+- Framer Motion (micro‑interactions)
+- Lenis (smooth scrolling)
+- IntersectionObserver (IO) for lazy motion and counting
+- Sentry SDK (errors + performance tracing)
 
-### `npm start`
+## Architecture overview
+```
+src/
+  components/       // UI sections (Header, Home, About, Technologies, Projects, Courses, Contact, Footer)
+  context/          // Theme, i18n and shared refs providers
+  hooks/            // useWidth, useHeight, useDateYear
+  lib/              // lenis init, smoothScrollTo helper
+  assets/           // SVG decorative elements
+  styles/           // media queries and global CSS variables
+```
+Key providers are mounted in App (ThemeProvider, I18nProvider, RefsContextProvider). Sections are wrapped by AnimatedSection for non‑janky reveal on view.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Notable implementation details
+- Smooth scroll: lib/lenis.js initializes a singleton Lenis instance (paused when tab is hidden; respects prefers‑reduced‑motion). lib/scrollTo.js offers a unified helper used by nav/CTA.
+- Parallax: GPU‑accelerated transforms only on desktop; disabled on reduced‑motion.
+- Animated reveal: components/AnimatedSection uses IO + CSS transitions (no timers) for cheap "fade & lift". Removed content‑visibility issues to avoid scroll traps.
+- CountUp: components/CountUp animates only when visible (IO) and skips animation when reduced‑motion.
+- Translations: context/i18nContext with tiny runtime dictionary (EN/ES) and persistent language toggle.
+- Theming: context/themeContext toggles data‑theme on <html> to switch CSS variables; persistent across sessions.
+- Error/Perf monitoring: Sentry initialized in src/index.js with browserTracingIntegration and configurable tracesSampleRate.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Accessibility (a11y)
+- Semantic headings and landmarks; Header nav has aria‑labels and keyboard access.
+- Focus styles via :focus-visible with sufficient contrast.
+- Reduced motion honored across animations and parallax.
+- Skip link to main content; accessible link text and external links use rel="noopener noreferrer".
 
-### `npm test`
+## Performance
+- Motion work minimized: requestAnimationFrame throttling and IO gating.
+- Heavy visuals only on desktop; mobile avoids background parallax.
+- Images and social icons load lazily (loading="lazy", decoding="async").
+- CSS transforms/opacity only; no layout‑thrashing properties.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## SEO
+- Descriptive <title> and meta description, OpenGraph and Twitter cards in public/index.html.
+- Clean URLs with anchors for in‑page navigation.
+- i18n content for EN/ES.
 
-### `npm run build`
+## Recent improvements
+- Unified smooth scrolling and removed duplicated window.scrollTo calls.
+- Lenis hardened (singleton, visibility pause, reduced‑motion).
+- Parallax and text effects tuned; disabled for reduced‑motion.
+- CountUp runs only when visible; avoids offscreen work.
+- Projects: removed year and source‑code link; kept single "Live Site" action.
+- Technologies grid: clearer states in light theme, unnecessary hovers removed on request.
+- Skills cards: icon to the left; title above description.
+- Header logo: subtle gradient badge and accent.
+- Fixed scroll trap past the Projects section.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Responsiveness
+- Mobile‑first styles with breakpoints from styles/index.js (mobile, tablet, desktop, bigScreen).
+- Layouts use grid/flex and fluid spacing; headings clamp across viewports.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Local development
+- Node 22.x
+- Install: `npm install`
+- Start: `npm start`
+- Build: `npm run build`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configuration
+- Theme persists in localStorage; default follows system preference.
+- Language persists in localStorage; default inferred from navigator.language.
+- Sentry: set `REACT_APP_SENTRY_DSN` as an environment variable for runtime initialization.
 
-### `npm run eject`
+## Deployment
+Any static host (Netlify, Vercel) works. Build with `npm run build` and deploy the build/ directory.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+If you spot an accessibility or performance issue, please open an issue with the URL and reproduction steps.
