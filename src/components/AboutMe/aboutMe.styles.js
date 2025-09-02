@@ -17,7 +17,7 @@ export const SectionAboutMe = styled.section`
 export const AboutMeContent = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: start;
 
   ${mediaQueries.desktop} {
