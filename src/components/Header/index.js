@@ -27,7 +27,7 @@ export const Header = () => {
   return (
     <Main className={height > 70 && "withBackground"}>
       <LogoContainer onClick={() => scrollToSection(refHome)}>
-        <div className="logo-mark" aria-hidden>
+        <div className="logo-mark" aria-label="Home" role="img">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="logoGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
@@ -40,7 +40,6 @@ export const Header = () => {
             <path d="M9 9h2m2 0h2M9 12h3m2 0h1M10 15h2" stroke="url(#logoGrad)" strokeWidth="1.6" strokeLinecap="round"/>
           </svg>
         </div>
-        <div className="logo-text">DR</div>
       </LogoContainer>
 
       <nav role="navigation" aria-label="main">
