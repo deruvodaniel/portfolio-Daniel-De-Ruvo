@@ -12,6 +12,8 @@ export const ContactTitle = styled.h2`
   position: relative;
   letter-spacing: -2px;
   line-height: 0.9;
+  transform: translateY(calc(var(--scrollY, 0) * 0.015px));
+  will-change: transform;
 
   ${mediaQueries.desktop} {
     margin-top: 100px;
