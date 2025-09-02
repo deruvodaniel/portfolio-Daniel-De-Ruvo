@@ -102,12 +102,8 @@ export const ContactLinks = styled.div`
     & > img {
       width: 22px;
       height: 22px;
-      filter: brightness(1.2);
+      filter: var(--socialIconFilter);
       transition: all 0.3s ease;
-    }
-
-    :root[data-theme='light'] & > img {
-      filter: brightness(0) saturate(100%);
     }
 
     &:hover > img {
