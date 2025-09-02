@@ -52,7 +52,7 @@ function App() {
               <AnimatedSection as="section"><Experience /></AnimatedSection>
               <AnimatedSection as="section"><Technologies /></AnimatedSection>
               <Suspense fallback={null}>
-                <AnimatedSection as="section" $cis="auto 3200px"><Projects /></AnimatedSection>
+                <AnimatedSection as="section" $cv="visible" $cis="auto 3200px"><Projects /></AnimatedSection>
               </Suspense>
               <AnimatedSection as="section"><Courses /></AnimatedSection>
               <AnimatedSection as="section"><Contact /></AnimatedSection>
