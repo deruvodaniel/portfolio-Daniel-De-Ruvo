@@ -60,6 +60,13 @@ export const ContainerApp = styled.div`
   @media (prefers-reduced-motion: reduce) {
     &::before, &::after { animation: none; transform: none; }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before, &::after {
+      animation: none;
+      transform: none;
+    }
+  }
 `;
 
 export const ContainerSections = styled.div`
