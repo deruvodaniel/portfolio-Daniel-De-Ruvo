@@ -27,7 +27,7 @@ export const Courses = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <SectionCourses>
-          <ParallaxText As={CoursesTitle} amount={22} fade={0.1}>{t('courses.title')}</ParallaxText>
+          <ParallaxText As={CoursesTitle} amount={40} fade={0.18}>{t('courses.title')}</ParallaxText>
           <ContainerCourses>
             {courses.map(({ id, name, text, academy }) => {
               return (
