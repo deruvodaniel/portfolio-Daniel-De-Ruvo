@@ -17,6 +17,8 @@ export const SectionProjects = styled.section`
     letter-spacing: -2px;
     line-height: 0.9;
     position: relative;
+    transform: translateY(calc(var(--scrollY, 0) * 0.016px));
+    will-change: transform;
     
     &::after {
       content: '';
