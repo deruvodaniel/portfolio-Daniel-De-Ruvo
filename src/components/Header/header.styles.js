@@ -35,40 +35,16 @@ export const LogoContainer = styled.div`
     transform: translateY(-2px);
   }
   
-  .logo-text {
-    position: relative;
-    font-size: 2.5rem;
-    font-weight: 900;
-    background: var(--gradientPrimary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -1px;
-  }
-
-  .logo-text::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -14px;
-    width: 42px;
-    height: 42px;
+  .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: radial-gradient(closest-side, rgba(0,229,255,0.18), transparent 70%);
-    filter: blur(10px);
-    z-index: -1;
-  }
-
-  .logo-text::after {
-    content: '';
-    position: absolute;
-    right: -10px;
-    top: -6px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--colorSecondary);
-    box-shadow: 0 0 12px var(--colorSecondary);
+    background: var(--backgroundCard);
+    border: 1px solid var(--borderColor);
+    backdrop-filter: blur(12px);
   }
 `;
 
