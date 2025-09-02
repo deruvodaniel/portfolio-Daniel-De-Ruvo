@@ -23,13 +23,13 @@ function App() {
           <ContainerApp>
             <Header />
             <ContainerSections>
-              <Home />
-              <AboutMe />
-              <Experience />
-              <Technologies />
-              <Projects />
-              <Courses />
-              <Contact />
+              <AnimatedSection as="section"><Home /></AnimatedSection>
+              <AnimatedSection as="section"><AboutMe /></AnimatedSection>
+              <AnimatedSection as="section"><Experience /></AnimatedSection>
+              <AnimatedSection as="section"><Technologies /></AnimatedSection>
+              <AnimatedSection as="section"><Projects /></AnimatedSection>
+              <AnimatedSection as="section"><Courses /></AnimatedSection>
+              <AnimatedSection as="section"><Contact /></AnimatedSection>
               <Footer />
             </ContainerSections>
           </ContainerApp>
