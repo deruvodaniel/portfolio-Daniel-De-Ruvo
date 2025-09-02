@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   will-change: opacity, transform, filter;
   display: block;
   content-visibility: auto;
-  contain-intrinsic-size: 1px 800px;
+  contain-intrinsic-size: auto 1200px;
 
   &.is-visible {
     opacity: 1;
