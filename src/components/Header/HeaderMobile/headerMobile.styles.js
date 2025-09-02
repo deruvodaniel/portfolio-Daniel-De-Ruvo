@@ -8,7 +8,7 @@ export const Main = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  background: var(--background);
+  background: var(--headerBackground);
   border-bottom: 1px solid var(--borderColor);
   backdrop-filter: blur(20px);
   z-index: 100;
