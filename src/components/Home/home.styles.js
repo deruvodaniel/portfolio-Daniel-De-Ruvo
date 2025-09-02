@@ -131,6 +131,7 @@ export const ButtonsContainer = styled.div`
 
   ${mediaQueries.desktop} {
     flex-direction: row;
+    align-items: flex-start;
     gap: 16px;
     width: auto;
     margin-bottom: 56px;
