@@ -16,6 +16,7 @@ import {
 import { useRefs } from "../../context/refsContext";
 import ParallaxText from "components/ParallaxText";
 import { useI18n } from "context/i18nContext";
+import { FiExternalLink } from 'react-icons/fi';
 
 export const Home = () => {
   const { refHome, refProjects, refContact } = useRefs();
