@@ -50,7 +50,7 @@ export const Contact = () => {
       transition={{ type: "spring", duration: 2 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <ParallaxText As={ContactTitle} amount={20} fade={0.08} ref={refContact}>{t('contact.title')}</ParallaxText>
+      <ParallaxText As={ContactTitle} amount={36} fade={0.16} ref={refContact}>{t('contact.title')}</ParallaxText>
       <SectionContact>
         <BoxContactInfo>
           <ContactText>{t('contact.lead')}</ContactText>
