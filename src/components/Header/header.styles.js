@@ -36,6 +36,7 @@ export const LogoContainer = styled.div`
   }
   
   .logo-text {
+    position: relative;
     font-size: 2.5rem;
     font-weight: 900;
     background: var(--gradientPrimary);
@@ -43,6 +44,31 @@ export const LogoContainer = styled.div`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -1px;
+  }
+
+  .logo-text::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -14px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(0,229,255,0.18), transparent 70%);
+    filter: blur(10px);
+    z-index: -1;
+  }
+
+  .logo-text::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: -6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--colorSecondary);
+    box-shadow: 0 0 12px var(--colorSecondary);
   }
 `;
 
