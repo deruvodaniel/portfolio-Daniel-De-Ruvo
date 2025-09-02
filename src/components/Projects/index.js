@@ -13,7 +13,6 @@ import {
   ProjectDescription,
   ProjectLinks,
   ProjectLink,
-  ProjectLink,
   LinkPreviewWrapper,
 } from "./projects.styles";
 import { motion } from "framer-motion";
