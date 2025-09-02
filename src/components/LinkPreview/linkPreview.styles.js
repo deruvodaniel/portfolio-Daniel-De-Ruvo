@@ -28,7 +28,7 @@ export const PreviewCard = styled.a`
   }
 
   ${mediaQueries.desktop} {
-    max-width: 520px;
+    max-width: 480px;
     .loader { height: 200px; }
   }
 `;
