@@ -68,13 +68,13 @@ export const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
                 title="Resume"
+                aria-label="Open resume in a new tab"
               >
-                <img
-                  alt="Resume"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653408217/portfolio%20daniel/logog_udsccl.svg"
-                  width="45px"
-                  height="40px"
-                />
+                <svg width="45" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                  <path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                  <path d="M8 12h8M8 16h8" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
               </a>
               <a
                 href="https://github.com/deruvodaniel"
