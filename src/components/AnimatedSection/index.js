@@ -50,7 +50,7 @@ export const AnimatedSection = ({ children, as = 'section', className, ...rest }
   }, []);
 
   return (
-    <Wrapper as={as} ref={ref} className={`${className || ''} ${visible ? 'is-visible' : ''}`.trim()}>
+    <Wrapper as={as} ref={ref} className={`${className || ''} ${visible ? 'is-visible' : ''}`.trim()} {...rest}>
       {children}
     </Wrapper>
   );
