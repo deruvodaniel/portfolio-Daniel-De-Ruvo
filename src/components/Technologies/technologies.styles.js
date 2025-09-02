@@ -9,9 +9,9 @@ export const SectionTechnologies = styled.section`
   scroll-margin-top: 120px;
 
   & > h2 {
-    font-size: 3.2rem;
+    font-size: 2.6rem;
     font-weight: 900;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     text-align: center;
     color: var(--colorPrimary);
     letter-spacing: -2px;
