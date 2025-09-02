@@ -9,9 +9,9 @@ export const SectionProjects = styled.section`
   scroll-margin-top: 120px;
   
   & > h2 {
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 900;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     text-align: center;
     color: var(--colorPrimary);
     letter-spacing: -2px;
@@ -19,7 +19,7 @@ export const SectionProjects = styled.section`
     position: relative;
     transform: translateY(calc(var(--scrollY, 0) * 0.016px));
     will-change: transform;
-    
+
     &::after {
       content: '';
       position: absolute;
