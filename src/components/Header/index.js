@@ -43,7 +43,7 @@ export const Header = () => {
       </nav>
 
       <Controls>
-        <ToggleButton aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'dark' ? '🌙' : '☀️'}</ToggleButton>
+        <ToggleButton id="theme-toggle" aria-label="Toggle theme" aria-pressed={theme === 'dark'} onClick={() => { toggleTheme(); const btn = document.getElementById('theme-toggle'); if (btn) { btn.classList.remove('theme-animate'); void btn.offsetWidth; btn.classList.add('theme-animate'); } }}>{theme === 'dark' ? '🌙' : '☀️'}</ToggleButton>
         <ToggleButton aria-label="Switch language" onClick={toggleLang}>{lang.toUpperCase()}</ToggleButton>
       </Controls>
     </Main>
