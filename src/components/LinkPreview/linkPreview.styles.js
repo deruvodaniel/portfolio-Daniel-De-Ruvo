@@ -4,6 +4,7 @@ import { mediaQueries } from 'styles';
 export const PreviewCard = styled.a`
   display: block;
   width: 100%;
+  max-width: 520px;
   background: var(--backgroundCard);
   border: 1px solid var(--borderColor);
   border-radius: 16px;
@@ -19,16 +20,17 @@ export const PreviewCard = styled.a`
     border-color: var(--colorSecondary);
   }
 
-  .loader { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    height: 180px; 
+  .loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
     background: var(--backgroundCard);
   }
 
   ${mediaQueries.desktop} {
-    .loader { height: 240px; }
+    max-width: 520px;
+    .loader { height: 200px; }
   }
 `;
 
