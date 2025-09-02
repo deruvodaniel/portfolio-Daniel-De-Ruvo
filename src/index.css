@@ -34,6 +34,10 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
   --gradientPrimary: linear-gradient(90deg, #06b6d4, #22c55e 60%, #a7f37d);
   --shadowPrimary: 0 20px 40px rgba(14, 165, 233, 0.25);
   --colorError: #e11d48;
+  --buttonOnGradientText: #081016;
+  --successBg: #0ea5e9;
+  --errorBg: #e11d48;
+  --alertText: #081016;
 }
 
 /* Typography */
