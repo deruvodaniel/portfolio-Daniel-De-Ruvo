@@ -64,9 +64,6 @@ export const Projects = () => {
                   <ProjectLink href={link} target="_blank" rel="noopener noreferrer">
                     {t('projects.live')}
                   </ProjectLink>
-                  <ProjectLink href={github} target="_blank" rel="noopener noreferrer">
-                    {t('projects.source')}
-                  </ProjectLink>
                 </ProjectLinks>
               </ProjectContent>
             </ProjectItem>
