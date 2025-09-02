@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 600ms ease, transform 600ms ease;
-  will-change: opacity, transform;
+  transform: translateY(24px);
+  filter: blur(4px);
+  transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+  will-change: opacity, transform, filter;
   display: block;
 
   &.is-visible {
