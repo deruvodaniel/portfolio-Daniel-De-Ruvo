@@ -18,9 +18,8 @@ export const Header = () => {
     const el = section?.current;
     if (!el) return;
     const headerOffset = 110;
-    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    const { smoothScrollTo } = require('lib/scrollTo');
+    smoothScrollTo(el, { offset: headerOffset });
   };
 
   if (width < 1024) return <HeaderMobile refs={refs} />;
