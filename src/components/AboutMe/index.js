@@ -8,6 +8,7 @@ import {
   SkillCard,
 } from "./aboutMe.styles";
 import { motion } from "framer-motion";
+import ParallaxText from "components/ParallaxText";
 import useWidth from "../../hooks/useWidth";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
@@ -69,7 +70,7 @@ export const AboutMe = () => {
       <SectionAboutMe ref={refAboutMe}>
         <AboutMeContent>
           <div>
-            <AboutMeTitle>{t('about.title')}</AboutMeTitle>
+            <ParallaxText As={AboutMeTitle} amount={30} fade={0.12}>{t('about.title')}</ParallaxText>
             <AboutMeDescription>
               {t('about.p1')}
             </AboutMeDescription>
