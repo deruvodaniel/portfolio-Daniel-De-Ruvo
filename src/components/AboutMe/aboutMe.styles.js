@@ -151,7 +151,8 @@ export const SkillsContainer = styled.div`
 
 export const SkillCard = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
   gap: 20px;
   padding: 0;
 
@@ -160,14 +161,15 @@ export const SkillCard = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    margin-bottom: 16px;
+    margin: 0 12px 0 0;
+    flex: 0 0 auto;
   }
 
   .title {
     font-size: 2rem;
     font-weight: 700;
     color: var(--colorPrimary);
-    margin-bottom: 16px;
+    margin: 0 0 6px 0;
     letter-spacing: -1px;
   }
 
@@ -180,6 +182,7 @@ export const SkillCard = styled.div`
   ${mediaQueries.desktop} {
     .icon {
       font-size: 3.5rem;
+      margin-right: 16px;
     }
 
     .title {
