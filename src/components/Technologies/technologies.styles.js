@@ -16,6 +16,8 @@ export const SectionTechnologies = styled.section`
     color: var(--colorPrimary);
     letter-spacing: -2px;
     line-height: 0.9;
+    transform: translateY(calc(var(--scrollY, 0) * 0.016px));
+    will-change: transform;
   }
 
   ${mediaQueries.desktop} {
