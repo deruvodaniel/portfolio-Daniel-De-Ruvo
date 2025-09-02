@@ -30,6 +30,9 @@ const Blob3 = styled(Blob)`
   background: radial-gradient(closest-side, rgba(0,229,255,0.15), transparent 70%);
 `;
 
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export const ParallaxBackground = () => {
   const { width } = useWidth();
   const scroll = useMotionValue(0);
@@ -57,7 +60,7 @@ export const ParallaxBackground = () => {
   const r3 = useTransform(smooth, [0, 1200], [0, 6]);
   const s3 = useTransform(smooth, [0, 1200], [1, 1.02]);
 
-  if (width < 768) return null;
+  if (width < 768 || prefersReducedMotion()) return null;
 
   return (
     <Layer aria-hidden>
