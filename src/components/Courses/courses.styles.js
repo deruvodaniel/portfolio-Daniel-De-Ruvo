@@ -22,6 +22,8 @@ export const CoursesTitle = styled.h2`
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
+  transform: translateY(calc(var(--scrollY, 0) * 0.016px));
+  will-change: transform;
 
   ${mediaQueries.desktop} {
     font-size: 7rem;
