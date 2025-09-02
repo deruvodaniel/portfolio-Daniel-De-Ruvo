@@ -101,6 +101,7 @@ export const Controls = styled.div`
 `;
 
 export const ToggleButton = styled.button`
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -114,11 +115,30 @@ export const ToggleButton = styled.button`
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease;
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
+  overflow: hidden;
 
   &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
 
   &.theme-animate { animation: themePop 380ms ease; }
+  &.theme-animate::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at center, var(--colorSecondary) 0%, transparent 60%);
+    opacity: 0.18;
+    transform: scale(0);
+    animation: themeRipple 520ms ease-out forwards;
+    pointer-events: none;
+  }
 
   @keyframes themePop { 0% { transform: scale(1) rotate(0deg); } 50% { transform: scale(0.88) rotate(-18deg); } 100% { transform: scale(1) rotate(0deg); } }
+  @keyframes themeRipple { from { transform: scale(0); opacity: 0.22; } to { transform: scale(2.2); opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: background 0.01s linear, color 0.01s linear, border-color 0.01s linear;
+    &.theme-animate { animation: none; }
+    &.theme-animate::after { animation: none; opacity: 0; }
+  }
 `;
