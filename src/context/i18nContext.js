@@ -39,7 +39,7 @@ const dict = {
       skillPerfDesc: 'WCAG 2.1 AA, semantic HTML, lighthouse tuning, analytics-driven improvements.',
     },
     tech: { title: 'Technologies' },
-    projects: { title: 'Selected Work', live: 'Live Site', source: 'Source Code', category: 'Web Application', year: '2024',
+    projects: { title: 'Personal Projects', live: 'Live Site', source: 'Source Code', category: 'Web Application', year: '2024',
       items: {
         1: { text: 'App that connects to external API with theme switching and translations. Mobile-first responsive design with modern UI components.' },
         2: { text: 'Comprehensive nutrition app with questionnaires, meal plans, and AI-generated recipes using Gemini API. Advanced UX with personalized recommendations.' },
