@@ -13,6 +13,8 @@ import {
   ProjectDescription,
   ProjectLinks,
   ProjectLink,
+  ProjectLink,
+  LinkPreviewWrapper,
 } from "./projects.styles";
 import { motion } from "framer-motion";
 import { projects } from "../../arrays/arrayProjects";
@@ -45,10 +47,10 @@ export const Projects = () => {
         <ParallaxText As="h2" amount={44} fade={0.18}>{t('projects.title')}</ParallaxText>
         <ContainerProjects>
           {(() => {
-            const PIN_ID = 13;
-            const pinned = projects.find(p => p.id === PIN_ID);
-            const rest = projects.filter(p => p.id !== PIN_ID).slice().reverse();
-            return [pinned, ...rest].filter(Boolean);
+            const orderedIds = [13, 1, 2, 3, 4, 5];
+            return orderedIds
+              .map(id => projects.find(p => p.id === id))
+              .filter(Boolean);
           })().map(({ id, title, subtitle, text, link, github, img }, index) => (
             <ProjectItem key={id} index={index + 1}>
               <ProjectMeta>
@@ -67,9 +69,9 @@ export const Projects = () => {
                 <ProjectTitle>{title}</ProjectTitle>
                 <div>
                   {link && (
-                    <div style={{ margin: '8px 0 16px' }}>
+                    <LinkPreviewWrapper>
                       <LinkPreview url={link} title={title} fallbackImage={img} />
-                    </div>
+                    </LinkPreviewWrapper>
                   )}
                 </div>
                 <ProjectDescription>{getLocalized(id, text)}</ProjectDescription>
