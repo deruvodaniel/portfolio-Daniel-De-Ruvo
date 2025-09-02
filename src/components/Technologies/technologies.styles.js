@@ -83,26 +83,12 @@ export const TechCard = styled.div`
     100% { left: 140%; }
   }
 
-  &:hover {
-    background: var(--backgroundCardHover);
-    transform: translateY(-4px);
-    box-shadow: var(--shadowPrimary);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: background 200ms ease;
-    &:hover { transform: none; box-shadow: none; }
-  }
-
   .tech-icon {
     width: 40px;
     height: 40px;
     margin-bottom: 14px;
     filter: brightness(1.2);
-    transition: transform 240ms ease;
   }
-
-  &:hover .tech-icon { transform: scale(1.06); }
 
   .tech-fallback {
     width: 56px;
