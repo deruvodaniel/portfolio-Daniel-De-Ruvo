@@ -16,6 +16,10 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
   --gradientPrimary: linear-gradient(90deg, #00E5FF, #00FFA3 60%, #7CFFCB);
   --shadowPrimary: 0 20px 40px rgba(0, 229, 255, 0.25);
   --colorError: #ff6b6b;
+  --buttonOnGradientText: #081016;
+  --successBg: #64ffda;
+  --errorBg: #ff6b6b;
+  --alertText: #081016;
 }
 
 :root[data-theme='light'] {
