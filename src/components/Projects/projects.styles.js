@@ -65,18 +65,18 @@ export const ProjectItem = styled.div`
   &:hover {
     background: var(--backgroundCard);
     border-radius: 20px;
-    padding: 40px 24px;
-    margin: 0 -24px;
+    padding: 40px 32px;
+    margin: 0 -32px;
   }
-  
+
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 2fr;
     gap: 64px;
     padding: 64px 0;
-    
+
     &:hover {
-      padding: 64px 36px;
-      margin: 0 -36px;
+      padding: 64px 48px;
+      margin: 0 -48px;
     }
   }
 `;
