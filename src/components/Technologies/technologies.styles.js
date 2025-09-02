@@ -59,6 +59,13 @@ export const TechCard = styled.div`
   position: relative;
   overflow: hidden;
   min-height: 140px;
+  transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+
+  &:hover {
+    background: var(--backgroundCardHover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadowPrimary);
+  }
 
   /* subtle looping sheen */
   &::after {
