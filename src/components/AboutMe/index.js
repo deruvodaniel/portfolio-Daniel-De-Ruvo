@@ -70,7 +70,7 @@ export const AboutMe = () => {
       <SectionAboutMe ref={refAboutMe}>
         <AboutMeContent>
           <div>
-            <ParallaxText As={AboutMeTitle} amount={30} fade={0.12}>{t('about.title')}</ParallaxText>
+            <ParallaxText As={AboutMeTitle} amount={50} fade={0.2}>{t('about.title')}</ParallaxText>
             <AboutMeDescription>
               {t('about.p1')}
             </AboutMeDescription>
