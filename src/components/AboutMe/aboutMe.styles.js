@@ -22,7 +22,7 @@ export const AboutMeContent = styled.div`
 
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    gap: 80px;
   }
 `;
 
