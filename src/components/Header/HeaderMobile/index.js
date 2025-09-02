@@ -44,6 +44,11 @@ export const HeaderMobile = ({ refs }) => {
         <LogoMenu
           alt="menu"
           aria-label="menu"
+          role="button"
+          tabIndex={0}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); handleMenu(); } }}
           onClick={handleMenu}
           width="35px"
           height="35px"
@@ -51,7 +56,7 @@ export const HeaderMobile = ({ refs }) => {
         />
       </Controls>
       {menuOpen && (
-        <nav role="navigation" aria-label="main">
+        <nav id="mobile-nav" role="navigation" aria-label="main">
           <ListLinks>
             <Links onClick={() => scrollToSection(refHome)}>{t('header.home')}</Links>
             <Links onClick={() => scrollToSection(refAboutMe)}>{t('header.about')}</Links>
