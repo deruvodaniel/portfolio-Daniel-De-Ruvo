@@ -7,7 +7,6 @@ import { Header } from './components/Header';
 import { Home } from './components/Home/Index';
 import { AboutMe } from './components/AboutMe';
 import { Technologies } from './components/Technologies';
-const Projects = lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })));
 import { Courses } from './components/Courses';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
@@ -15,6 +14,8 @@ import { Experience } from './components/Experience';
 import AnimatedSection from './components/AnimatedSection';
 import { ParallaxBackground } from './components/Parallax';
 import './index.css';
+
+const Projects = lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })));
 
 function App() {
   useEffect(() => {
