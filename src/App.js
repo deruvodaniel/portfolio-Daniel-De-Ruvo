@@ -43,6 +43,7 @@ function App() {
       <I18nProvider>
         <RefsContextProvider>
           <ContainerApp>
+            <ParallaxBackground />
             <a href="#main" className="skip-link">Skip to content</a>
             <Header />
             <ContainerSections id="main">
