@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from '../CountUp';
 import {
   ContainerHome,
   TextHome,
