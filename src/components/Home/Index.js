@@ -45,7 +45,7 @@ export const Home = () => {
           {t('home.viewProjects')}
         </ButtonHome>
         <SecondaryButton onClick={() => window.open('https://cdn.builder.io/o/assets%2Feb9edba76d874a5385833a00b6be2b6e%2F44c199474638431da9d1c7d8d0e28707?alt=media&token=1af667d8-3632-4777-b419-39ad015be4eb&apiKey=eb9edba76d874a5385833a00b6be2b6e','_blank','noopener') } aria-label="Open resume in a new tab">
-          {t('about.resume')}
+          {t('about.resume')} <FiExternalLink aria-hidden />
         </SecondaryButton>
       </ButtonsContainer>
 
