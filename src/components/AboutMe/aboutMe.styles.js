@@ -113,11 +113,7 @@ export const AboutMeBoxLinks = styled.div`
       & > img {
         width: 24px;
         height: 24px;
-        filter: brightness(1.2);
-      }
-
-      :root[data-theme='light'] & > img {
-        filter: brightness(0) saturate(100%);
+        filter: var(--socialIconFilter);
       }
     }
   }
