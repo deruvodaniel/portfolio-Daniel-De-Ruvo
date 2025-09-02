@@ -38,6 +38,7 @@ export const ContainerApp = styled.div`
     animation: ${floatOne} 16s ease-in-out infinite;
     right: 5%;
     top: 10%;
+    transform: translateY(calc(var(--scrollY, 0) * 0.05px));
   }
 
   &::after {
@@ -45,6 +46,7 @@ export const ContainerApp = styled.div`
     animation: ${floatTwo} 20s ease-in-out infinite;
     left: 10%;
     bottom: 10%;
+    transform: translateY(calc(var(--scrollY, 0) * -0.03px));
   }
 `;
 
