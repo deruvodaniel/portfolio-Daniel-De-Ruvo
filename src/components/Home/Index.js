@@ -24,9 +24,8 @@ export const Home = () => {
   const scrollToSection = (section) => {
     if (section && section.current) {
       const headerOffset = window.innerWidth < 1024 ? 80 : 110;
-      const elementPosition = section.current.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      const { smoothScrollTo } = require('lib/scrollTo');
+      smoothScrollTo(section.current, { offset: headerOffset });
     }
   };
 
