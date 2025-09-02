@@ -17,8 +17,8 @@ export const SectionCourses = styled.section`
 export const CoursesTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 3.2rem;
-  margin-bottom: 32px;
+  font-size: 2.6rem;
+  margin-bottom: 28px;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
