@@ -188,23 +188,27 @@ export const ProjectLink = styled.a`
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;
-  
+
   &::after {
     content: '→';
     margin-left: 10px;
     transition: transform 0.3s ease;
   }
-  
+
   &:hover {
     border-bottom-color: var(--colorSecondary);
     transform: translateY(-4px);
   }
-  
+
   &:hover::after {
     transform: translateX(8px);
   }
-  
+
   ${mediaQueries.desktop} {
     font-size: 1.05rem;
   }
+`;
+
+export const LinkPreviewWrapper = styled.div`
+  margin: 8px 0 16px;
 `;
