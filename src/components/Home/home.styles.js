@@ -122,7 +122,7 @@ export const DescriptionHome = styled.p`
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   width: 100%;
   opacity: 0;
