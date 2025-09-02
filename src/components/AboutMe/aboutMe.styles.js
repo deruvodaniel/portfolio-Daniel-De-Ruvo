@@ -73,7 +73,7 @@ export const AboutMeBoxLinks = styled.div`
   align-items: center;
   gap: 40px;
   flex-wrap: wrap;
-  margin-top: 60px;
+  margin-top: 40px;
   
   & > a {
     color: var(--colorSecondary);
