@@ -42,8 +42,9 @@ function App() {
       <I18nProvider>
         <RefsContextProvider>
           <ContainerApp>
+            <a href="#main" className="skip-link">Skip to content</a>
             <Header />
-            <ContainerSections>
+            <ContainerSections id="main">
               <AnimatedSection as="section"><Home /></AnimatedSection>
               <AnimatedSection as="section"><AboutMe /></AnimatedSection>
               <AnimatedSection as="section"><Experience /></AnimatedSection>
