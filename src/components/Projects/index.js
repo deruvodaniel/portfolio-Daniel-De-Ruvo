@@ -43,7 +43,7 @@ export const Projects = () => {
       <SectionProjects ref={refProjects}>
         <ParallaxText As="h2" amount={44} fade={0.18}>{t('projects.title')}</ParallaxText>
         <ContainerProjects>
-          {projects.map(({ id, title, subtitle, text, link, github }, index) => (
+          {projects.map(({ id, title, subtitle, text, link, github, img }, index) => (
             <ProjectItem key={id} index={index + 1}>
               <ProjectMeta>
                 <ProjectCategory>{t('projects.category')}</ProjectCategory>
@@ -59,6 +59,15 @@ export const Projects = () => {
 
               <ProjectContent>
                 <ProjectTitle>{title}</ProjectTitle>
+                <div>
+                  <span className="sr-only">Preview</span>
+                  {/* URL-based preview with fallback to provided image */}
+                  {link && (
+                    <div style={{ margin: '8px 0 16px' }}>
+                      {require('react').createElement(require('components/LinkPreview').default, { url: link, title, fallbackImage: img })}
+                    </div>
+                  )}
+                </div>
                 <ProjectDescription>{getLocalized(id, text)}</ProjectDescription>
                 <ProjectLinks>
                   <ProjectLink href={link} target="_blank" rel="noopener noreferrer">
