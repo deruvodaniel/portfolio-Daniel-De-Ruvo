@@ -50,15 +50,15 @@ export const Home = () => {
 
       <StatsContainer>
         <StatItem>
-          <span className="number">{t('home.yearsNumber')}</span>
+          <CountUp to={parseInt(t('home.yearsNumber')) || 6} suffix="+" />
           <span className="label">{t('home.years')}</span>
         </StatItem>
         <StatItem>
-          <span className="number">{t('home.projectsNumber')}</span>
+          <CountUp to={parseInt(t('home.projectsNumber')) || 15} suffix="+" />
           <span className="label">{t('home.projects')}</span>
         </StatItem>
         <StatItem>
-          <span className="number">{t('home.satisfactionNumber')}</span>
+          <CountUp to={parseInt(t('home.satisfactionNumber')) || 60} suffix="+" />
           <span className="label">{t('home.satisfaction')}</span>
         </StatItem>
       </StatsContainer>
