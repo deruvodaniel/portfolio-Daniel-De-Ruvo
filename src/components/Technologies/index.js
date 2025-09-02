@@ -63,7 +63,7 @@ export const Technologies = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <SectionTechnologies ref={refTechnologies}>
-        <ParallaxText As="h2" amount={24} fade={0.1}>{t('tech.title')}</ParallaxText>
+        <ParallaxText As="h2" amount={44} fade={0.18}>{t('tech.title')}</ParallaxText>
         <ContainerTechnologies>
           {technologies.map(({ id, img, text }) => {
             const key = (text || '').toLowerCase();
