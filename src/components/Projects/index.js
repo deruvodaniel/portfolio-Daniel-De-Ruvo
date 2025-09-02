@@ -42,7 +42,7 @@ export const Projects = () => {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <SectionProjects ref={refProjects}>
-        <ParallaxText As="h2" amount={24} fade={0.1}>{t('projects.title')}</ParallaxText>
+        <ParallaxText As="h2" amount={44} fade={0.18}>{t('projects.title')}</ParallaxText>
         <ContainerProjects>
           {projects.map(({ id, title, subtitle, text, link, github }, index) => (
             <ProjectItem key={id} index={index + 1}>
