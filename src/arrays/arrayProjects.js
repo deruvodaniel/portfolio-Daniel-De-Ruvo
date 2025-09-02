@@ -107,4 +107,13 @@ export const projects = [
     link: "https://deruvodaniel.github.io/GDLWEBCAMP/",
     github: "https://github.com/deruvodaniel/GDLWEBCAMP",
   },
+  {
+    id: 13,
+    img: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?w=1200&h=630&fit=crop",
+    title: "Production‑Ready UI (Atomic Design)",
+    subtitle: "Next.js 13 App Router, Tailwind, TypeScript, Storybook, Jest/RTL",
+    text: "Starter de Next.js 13 (App Router) + Tailwind + TypeScript, listo para producción, con arquitectura atómica (atoms/molecules/organisms) y ThemeProvider con design tokens personalizables. Componentes accesibles estilo Radix/shadcn, Storybook con documentación y ejemplos (build servido en /storybook), tests con Jest/RTL y utilidades para UI consistente. Mejoras aplicadas para SEO/Performance/A11y.",
+    link: "https://production-ready-ui-atomic-design.vercel.app/",
+    github: "https://github.com/deruvodaniel/production-ready-ui-atomic-design",
+  },
 ];
