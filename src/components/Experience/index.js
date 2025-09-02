@@ -1,5 +1,6 @@
 import { SectionExperience, ExperienceTitle, Timeline, RoleItem, RoleHeader, RoleCompany, RolePeriod, BulletList, BulletItem } from './experience.styles';
 import { motion } from 'framer-motion';
+import ParallaxText from 'components/ParallaxText';
 import useWidth from 'hooks/useWidth';
 import { useRefs } from 'context/refsContext';
 import { useI18n } from 'context/i18nContext';
@@ -19,7 +20,7 @@ export const Experience = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <SectionExperience ref={refExperience}>
-        <ExperienceTitle>{t('experience.title')}</ExperienceTitle>
+        <ParallaxText As={ExperienceTitle} amount={28} fade={0.12}>{t('experience.title')}</ParallaxText>
         <Timeline>
           {roles.map((r, idx) => (
             <RoleItem key={idx} index={idx + 1}>
