@@ -92,7 +92,7 @@ export const FooterLinks = styled.div`
     }
 
     :root[data-theme='light'] & > img {
-      filter: invert(1) brightness(0.2) contrast(1.2);
+      filter: brightness(0) saturate(100%);
     }
 
     &:hover > img {
