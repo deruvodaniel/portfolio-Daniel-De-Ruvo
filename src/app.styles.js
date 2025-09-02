@@ -48,6 +48,13 @@ export const ContainerApp = styled.div`
     bottom: 10%;
     transform: translateY(calc(var(--scrollY, 0) * -0.03px));
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before, &::after {
+      animation: none;
+      transform: none;
+    }
+  }
 `;
 
 export const ContainerSections = styled.div`
