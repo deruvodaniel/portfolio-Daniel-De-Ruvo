@@ -4,6 +4,8 @@ import { mediaQueries } from 'styles';
 export const PreviewCard = styled.a`
   display: block;
   width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
   background: var(--backgroundCard);
   border: 1px solid var(--borderColor);
   border-radius: 16px;
@@ -23,12 +25,12 @@ export const PreviewCard = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: clamp(140px, 52vw, 220px);
+    height: clamp(120px, 40vw, 200px);
     background: var(--backgroundCard);
   }
 
   ${mediaQueries.desktop} {
-    max-width: 480px;
+    max-width: 460px;
     .loader { height: 200px; }
   }
 `;
