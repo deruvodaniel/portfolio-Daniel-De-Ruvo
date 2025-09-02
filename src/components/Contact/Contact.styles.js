@@ -65,9 +65,10 @@ export const ContactText = styled.h3`
 
 export const ContactInfo = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 40px 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 16px;
+  margin: 32px 0;
 `;
 
 export const ContactLinks = styled.div`
