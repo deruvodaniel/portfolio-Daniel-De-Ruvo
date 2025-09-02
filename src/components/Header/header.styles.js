@@ -28,23 +28,33 @@ export const Main = styled(motion.header)`
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
+  gap: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-2px);
-  }
-  
+
+  &:hover { transform: translateY(-2px); }
+
   .logo-mark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background: var(--backgroundCard);
     border: 1px solid var(--borderColor);
     backdrop-filter: blur(12px);
+  }
+
+  .logo-text {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: var(--gradientPrimary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+    line-height: 1;
   }
 `;
 
