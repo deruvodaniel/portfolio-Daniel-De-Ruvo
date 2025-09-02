@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 const TYPES = {
-  true: "var(--colorSecondary)",
-  false: "red",
+  true: "var(--successBg)",
+  false: "var(--errorBg)",
 };
 
 export const Modal = styled.div`
@@ -13,11 +13,12 @@ export const Modal = styled.div`
   right: 0;
   background: ${(props) => TYPES[props.type]};
   border-radius: 20px 0 0 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 `;
 
 export const ModalText = styled.p`
-  color: var(--colorPrimary);
-  font-weight: 500;
+  color: var(--alertText);
+  font-weight: 700;
   margin: 0;
   font-size: 15px;
   padding: 15px 20px;
