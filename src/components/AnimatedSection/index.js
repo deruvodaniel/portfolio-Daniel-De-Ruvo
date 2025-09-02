@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   transition: opacity 420ms ease-out, transform 420ms ease-out, filter 420ms ease-out;
   will-change: opacity, transform, filter;
   display: block;
-  content-visibility: auto;
+  content-visibility: ${({ $cv }) => $cv || 'auto'};
   contain-intrinsic-size: ${({ $cis }) => $cis || 'auto 1200px'};
 
   &.is-visible {
