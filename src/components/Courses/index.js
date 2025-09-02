@@ -11,10 +11,12 @@ import {
 import { motion } from "framer-motion";
 import useWidth from "hooks/useWidth";
 import { courses } from "arrays/arrayCourses";
+import { useI18n } from "context/i18nContext";
 
 export const Courses = () => {
   const {width} = useWidth()
-  const initial = width > 700 ? -500 : 0 
+  const initial = width > 700 ? -500 : 0
+  const { t } = useI18n();
   return (
     <>
       <motion.div
@@ -24,11 +26,11 @@ export const Courses = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <SectionCourses>
-          <CoursesTitle>Courses</CoursesTitle>
+          <CoursesTitle>{t('courses.title')}</CoursesTitle>
           <ContainerCourses>
             {courses.map(({ id, name, text, academy }) => {
               return (
-                <ContainerCourse key={id}>
+                <ContainerCourse key={id} style={{ ['--delay']: `${(id % 6) * 0.35}s` }}>
                   <ContainerCourseName>
                     <div></div>
                     <CourseName>{name}</CourseName>

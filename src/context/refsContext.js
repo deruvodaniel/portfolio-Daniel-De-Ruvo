@@ -14,12 +14,14 @@ export const RefsContextProvider = ({ children }) => {
   const refTechnologies = useRef(null);
   const refProjects = useRef(null);
   const refContact = useRef(null);
+  const refExperience = useRef(null);
   const refs = {
     refAboutMe,
     refProjects,
     refContact,
     refHome,
     refTechnologies,
+    refExperience,
   };
 
   return (
@@ -31,6 +33,7 @@ export const RefsContextProvider = ({ children }) => {
         refTechnologies,
         refProjects,
         refContact,
+        refExperience,
       }}
     >
       {children}

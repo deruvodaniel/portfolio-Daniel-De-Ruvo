@@ -2,6 +2,9 @@
   "name": "portfoliodanielderuvo",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@uiball/loaders": "^1.2.6",
@@ -9,6 +12,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.31.3",
+    "react-icons": "^5.2.1",
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.5"
   },

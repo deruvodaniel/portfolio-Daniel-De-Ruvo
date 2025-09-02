@@ -12,6 +12,7 @@ import ModalMessageForm from "components/ModalMessageForm";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import ModalLoading from "components/ModalLoading";
+import { useI18n } from "context/i18nContext";
 
 const dataEmailer = {
   serviceId: process.env.REACT_APP_SERVICE_ID,
@@ -24,6 +25,7 @@ const MyForm = () => {
   const { showModal, ModalMessage, setShowModal } = ModalMessageForm();
   const [showLoading, setShowLoading] = useState(false);
   const form = useRef(null);
+  const { t } = useI18n();
   const {
     register,
     handleSubmit,
@@ -31,21 +33,25 @@ const MyForm = () => {
     reset,
   } = useForm();
 
+  const hasEmailConfig = Boolean(serviceId && templateId && publicKey);
+
   const onSubmit = () => {
+    if (!hasEmailConfig) {
+      setShowModal({ state: "false", text: t('form.sentError') + ' (EmailJS config missing)' });
+      return;
+    }
     setShowLoading(true);
     emailjs
       .sendForm(serviceId, templateId, form.current, publicKey)
       .then(() => {
         reset();
         setShowLoading(false);
-        setShowModal({ state: "true", text: "Message sent successfully" });
+        setShowModal({ state: "true", text: t('form.sentSuccess') });
       })
-      .catch(() => {
+      .catch((err) => {
         setShowLoading(false);
-        setShowModal({
-          state: "false",
-          text: "An error occurred while sending the message",
-        });
+        const reason = err?.text || err?.message || 'EmailJS error';
+        setShowModal({ state: "false", text: `${t('form.sentError')}: ${reason}` });
       });
   };
 
@@ -60,25 +66,25 @@ const MyForm = () => {
               <input
                 autocomplete="off"
                 type="text"
-                placeholder="Name"
+                placeholder={t('form.name')}
                 name="name"
                 className={errors.name && "input__error"}
                 {...register("name", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 3,
-                    message: "The name must be at least 3 characters long",
+                    message: t('form.minName'),
                   },
                   maxLength: {
                     value: 20,
-                    message: "Maximum characters reached",
+                    message: t('form.maxName'),
                   },
                   pattern: {
                     value: /^[ a-zA-Z0]+$/,
-                    message: "You can only enter letters",
+                    message: t('form.lettersOnly'),
                   },
                 })}
               />
@@ -90,19 +96,19 @@ const MyForm = () => {
                 type="tel"
                 name="phone"
                 className={errors.phone && "input__error"}
-                placeholder="Cellphone"
+                placeholder={t('form.phone')}
                 {...register("phone", {
                   maxLength: {
                     value: 20,
-                    message: "The maximum number of characters is 20",
+                    message: t('form.maxPhone'),
                   },
                   minLength: {
                     value: 10,
-                    message: "The minimum number of characters is 10",
+                    message: t('form.minPhone'),
                   },
                   pattern: {
                     value: /^\d+$/,
-                    message: "You can only enter numbers",
+                    message: t('form.numbersOnly'),
                   },
                 })}
               />
@@ -114,23 +120,23 @@ const MyForm = () => {
                 className={errors.email && "input__error"}
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder={t('form.email')}
                 {...register("email", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 10,
-                    message: "The minimum number of characters is 10",
+                    message: t('form.minEmail'),
                   },
                   maxLength: {
                     value: 40,
-                    message: "The maximum number of characters is 40",
+                    message: t('form.maxEmail'),
                   },
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                    message: "You must enter a valid email address",
+                    message: t('form.invalidEmail'),
                   },
                 })}
               />
@@ -141,25 +147,24 @@ const MyForm = () => {
                 autoComplete="off"
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder={t('form.subject')}
                 className={errors.subject && "input__error"}
                 {...register("subject", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 6,
-                    message:
-                      "The subject line must be at least 6 characters long",
+                    message: t('form.minSubject'),
                   },
                   maxLength: {
                     value: 30,
-                    message: "Maximum characters reached",
+                    message: t('form.maxSubject'),
                   },
                   pattern: {
                     value: /^[ a-zA-Z0-9]+$/,
-                    message: "You can only enter letters and numbers",
+                    message: t('form.lettersNumbers'),
                   },
                 })}
               />
@@ -167,27 +172,27 @@ const MyForm = () => {
             </BoxInput>
             <ContainerTextArea>
               <Textarea
-                placeholder="Message"
+                placeholder={t('form.message')}
                 name="message"
                 className={errors.message && "input__error"}
                 {...register("message", {
                   required: {
                     value: true,
-                    message: "Field is required",
+                    message: t('form.required'),
                   },
                   minLength: {
                     value: 10,
-                    message: "The message must be at least 10 characters long",
+                    message: t('form.minMessage'),
                   },
                   maxLength: {
                     value: 500,
-                    message: "Maximum characters reached",
+                    message: t('form.maxMessage'),
                   },
                 })}
               />
             </ContainerTextArea>
             <ErrorMessage> {errors?.message?.message} </ErrorMessage>
-            <Btn type="submit">SEND</Btn>
+            <Btn type="submit" disabled={!hasEmailConfig}>{t('form.send')}</Btn>
           </Form>
         )}
       </SectionForm>

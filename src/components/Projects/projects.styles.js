@@ -2,15 +2,16 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionProjects = styled.section`
-  margin: 200px 0;
-  padding: 150px 0;
+  margin: 40px 0;
+  padding: 30px 0;
   z-index: 40;
   position: relative;
+  scroll-margin-top: 120px;
   
   & > h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 900;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     text-align: center;
     color: var(--colorPrimary);
     letter-spacing: -2px;
@@ -20,10 +21,10 @@ export const SectionProjects = styled.section`
     &::after {
       content: '';
       position: absolute;
-      bottom: -20px;
+      bottom: -16px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
+      width: 60px;
       height: 4px;
       background: var(--gradientPrimary);
       border-radius: 2px;
@@ -31,13 +32,13 @@ export const SectionProjects = styled.section`
   }
   
   ${mediaQueries.desktop} {
-    margin: 300px 0;
-    padding: 200px 0;
+    margin: 100px 0;
+    padding: 60px 0;
     
     & > h2 {
-      font-size: 8rem;
-      margin-bottom: 150px;
-      letter-spacing: -4px;
+      font-size: 7rem;
+      margin-bottom: 100px;
+      letter-spacing: -5px;
     }
   }
 `;
@@ -51,56 +52,29 @@ export const ContainerProjects = styled.div`
 export const ProjectItem = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
-  padding: 80px 0;
-  border-bottom: 1px solid var(--borderColor);
+  gap: 32px;
+  padding: 40px 0;
+  border-bottom: none;
   position: relative;
   transition: all 0.3s ease;
   
-  &:last-child {
-    border-bottom: none;
-  }
-  
-  &::before {
-    content: '${props => String(props.index).padStart(2, '0')}';
-    position: absolute;
-    top: 40px;
-    left: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--colorSecondary);
-    letter-spacing: 2px;
-  }
+  &:last-child {}
   
   &:hover {
     background: var(--backgroundCard);
-    border-radius: 24px;
-    padding: 80px 40px;
-    margin: 0 -40px;
+    border-radius: 20px;
+    padding: 40px 24px;
+    margin: 0 -24px;
   }
   
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 2fr;
-    gap: 120px;
-    padding: 120px 0;
+    gap: 64px;
+    padding: 64px 0;
     
     &:hover {
-      padding: 120px 60px;
-      margin: 0 -60px;
-    }
-    
-    &:nth-child(even) {
-      grid-template-columns: 2fr 1fr;
-      direction: rtl;
-      
-      & > * {
-        direction: ltr;
-      }
-    }
-    
-    &::before {
-      font-size: 1.4rem;
-      top: 60px;
+      padding: 64px 36px;
+      margin: 0 -36px;
     }
   }
 `;
@@ -108,11 +82,11 @@ export const ProjectItem = styled.div`
 export const ProjectMeta = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 `;
 
 export const ProjectYear = styled.span`
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--colorSecondary);
   text-transform: uppercase;
@@ -120,7 +94,7 @@ export const ProjectYear = styled.span`
 `;
 
 export const ProjectCategory = styled.span`
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--textMuted);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -130,23 +104,23 @@ export const ProjectCategory = styled.span`
 export const TechStack = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 40px;
+  gap: 12px;
+  margin-top: 20px;
 `;
 
 export const TechStackTitle = styled.h4`
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--textMuted);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 `;
 
 export const TechList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 `;
 
 export const TechTag = styled.span`
@@ -157,7 +131,7 @@ export const TechTag = styled.span`
   
   &:not(:last-child)::after {
     content: '•';
-    margin-left: 12px;
+    margin-left: 10px;
     color: var(--textMuted);
   }
 `;
@@ -165,43 +139,43 @@ export const TechTag = styled.span`
 export const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
 `;
 
 export const ProjectTitle = styled.h3`
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: var(--colorPrimary);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   letter-spacing: -1px;
   line-height: 1.1;
   
   ${mediaQueries.tablet} {
-    font-size: 4rem;
+    font-size: 3.2rem;
     letter-spacing: -2px;
   }
   
   ${mediaQueries.desktop} {
-    font-size: 5rem;
+    font-size: 4rem;
     letter-spacing: -3px;
   }
 `;
 
 export const ProjectDescription = styled.p`
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   color: var(--textSecondary);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   
   ${mediaQueries.desktop} {
-    font-size: 1.6rem;
+    font-size: 1.35rem;
     line-height: 1.8;
   }
 `;
 
 export const ProjectLinks = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 24px;
   align-items: center;
   flex-wrap: wrap;
 `;
@@ -209,18 +183,18 @@ export const ProjectLinks = styled.div`
 export const ProjectLink = styled.a`
   color: var(--colorSecondary);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 12px 0;
+  padding: 8px 0;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;
   
   &::after {
     content: '→';
-    margin-left: 12px;
+    margin-left: 10px;
     transition: transform 0.3s ease;
   }
   
@@ -234,6 +208,6 @@ export const ProjectLink = styled.a`
   }
   
   ${mediaQueries.desktop} {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 `;

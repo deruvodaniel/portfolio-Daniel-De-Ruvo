@@ -7,12 +7,12 @@ export const ContainerHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 200px 0 100px;
+  padding: 140px 0 80px;
   position: relative;
   z-index: 50;
   
   ${mediaQueries.desktop} {
-    padding: 250px 0 150px;
+    padding: 180px 0 100px;
   }
 `;
 
@@ -65,9 +65,9 @@ export const TitleHome = styled.h1`
   }
   
   ${mediaQueries.desktop} {
-    font-size: 9rem;
+    font-size: 10rem;
     margin: 0 0 40px;
-    letter-spacing: -4px;
+    letter-spacing: -5px;
   }
 `;
 
@@ -84,6 +84,21 @@ export const SubtitleHome = styled.h2`
     font-size: 3rem;
     margin-bottom: 64px;
   }
+`;
+
+export const LocationTag = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--borderColor);
+  border-radius: 9999px;
+  color: var(--textMuted);
+  background: var(--backgroundCard);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 8px 0 40px;
 `;
 
 export const DescriptionHome = styled.p`
@@ -106,35 +121,39 @@ export const DescriptionHome = styled.p`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
   opacity: 0;
   animation: fadeInUp 1s ease-out 1s forwards;
-  margin-bottom: 120px;
-  
-  ${mediaQueries.mobile} {
-    flex-direction: column;
-    width: 100%;
+  margin-bottom: 40px;
+
+  ${mediaQueries.desktop} {
+    flex-direction: row;
+    gap: 16px;
+    width: auto;
+    margin-bottom: 56px;
   }
 `;
 
 export const ButtonHome = styled.button`
   position: relative;
-  padding: 24px 48px;
+  padding: 14px 24px;
   background: var(--gradientPrimary);
   border: none;
-  border-radius: 60px;
+  border-radius: 40px;
   color: white;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  min-width: 240px;
-  
+  letter-spacing: 1.5px;
+  min-width: 180px;
+
   &::before {
     content: '';
     position: absolute;
@@ -142,45 +161,46 @@ export const ButtonHome = styled.button`
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.8s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    transition: left 0.6s;
   }
-  
+
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 
-      0 30px 60px rgba(100, 255, 218, 0.4),
-      0 0 60px rgba(100, 255, 218, 0.3);
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 24px rgba(100, 255, 218, 0.25),
+      0 0 24px rgba(100, 255, 218, 0.2);
   }
-  
+
   &:hover::before {
     left: 100%;
   }
-  
+
   ${mediaQueries.desktop} {
-    font-size: 1.3rem;
-    padding: 28px 56px;
-    min-width: 280px;
+    font-size: 1.05rem;
+    padding: 16px 28px;
+    min-width: 200px;
+    border-radius: 44px;
   }
 `;
 
 export const SecondaryButton = styled.button`
   position: relative;
-  padding: 24px 48px;
+  padding: 14px 24px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
-  border-radius: 60px;
+  border-radius: 40px;
   color: var(--colorSecondary);
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  min-width: 240px;
-  
+  letter-spacing: 1.5px;
+  min-width: 180px;
+
   &::before {
     content: '';
     position: absolute;
@@ -189,45 +209,45 @@ export const SecondaryButton = styled.button`
     width: 0;
     height: 100%;
     background: var(--gradientPrimary);
-    transition: width 0.5s ease;
+    transition: width 0.4s ease;
     z-index: -1;
   }
-  
+
   &:hover {
     color: white;
     border-color: transparent;
-    transform: translateY(-8px);
+    transform: translateY(-2px);
     box-shadow: var(--shadowPrimary);
   }
-  
+
   &:hover::before {
     width: 100%;
   }
-  
+
   ${mediaQueries.desktop} {
-    font-size: 1.3rem;
-    padding: 28px 56px;
-    min-width: 280px;
+    font-size: 1.05rem;
+    padding: 16px 28px;
+    min-width: 200px;
+    border-radius: 44px;
   }
 `;
 
 export const StatsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 28px;
   width: 100%;
-  max-width: 800px;
   opacity: 0;
   animation: fadeInUp 1s ease-out 1.2s forwards;
-  
+
   ${mediaQueries.mobile} {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
   }
-  
+
   ${mediaQueries.desktop} {
-    gap: 80px;
-    max-width: 1000px;
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    gap: 40px;
   }
 `;
 

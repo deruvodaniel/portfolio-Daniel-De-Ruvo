@@ -3,29 +3,30 @@ import { mediaQueries } from "styles";
 
 export const SectionCourses = styled.section`
   z-index: 50;
-  padding: 150px 0;
-  margin: 200px 0;
+  padding: 40px 0;
+  margin: 60px 0;
   position: relative;
-  
+  scroll-margin-top: 120px;
+
   ${mediaQueries.desktop} {
-    margin: 300px 0;
-    padding: 200px 0;
+    margin: 120px 0;
+    padding: 60px 0;
   }
 `;
 
 export const CoursesTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 5rem;
-  margin-bottom: 100px;
+  font-size: 4rem;
+  margin-bottom: 60px;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
-  
+
   ${mediaQueries.desktop} {
-    font-size: 8rem;
-    margin-bottom: 150px;
-    letter-spacing: -4px;
+    font-size: 7rem;
+    margin-bottom: 100px;
+    letter-spacing: -5px;
   }
 `;
 
@@ -48,35 +49,35 @@ export const ContainerCourses = styled.div`
 
 export const ContainerCourse = styled.div`
   background: var(--background);
-  padding: 60px 40px;
-  transition: all 0.4s ease;
-  cursor: pointer;
+  padding: 40px 28px;
+  transition: background 0.4s ease;
+  cursor: default;
   position: relative;
   overflow: hidden;
-  
-  &::before {
+
+  /* subtle looping sheen, not hover-based */
+  &::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: -120%;
+    width: 40%;
     height: 100%;
-    background: var(--gradientPrimary);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+    transform: skewX(-12deg);
+    animation: sheen 5s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+    pointer-events: none;
   }
-  
-  &:hover {
-    transform: scale(1.02);
+
+  @keyframes sheen {
+    0% { left: -120%; }
+    60% { left: 140%; }
+    100% { left: 140%; }
   }
-  
-  &:hover::before {
-    opacity: 0.05;
-  }
-  
+
   ${mediaQueries.desktop} {
-    padding: 80px 60px;
+    padding: 56px 40px;
   }
 `;
 
@@ -110,13 +111,13 @@ export const CourseName = styled.h3`
 `;
 
 export const CourseText = styled.p`
-  margin: 24px 0;
-  font-size: 1.1rem;
+  margin: 16px 0;
+  font-size: 1.05rem;
   line-height: 1.6;
   color: var(--textSecondary);
-  
+
   ${mediaQueries.desktop} {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.7;
   }
 `;

@@ -1,39 +1,40 @@
 import React from 'react';
+import { ContainerApp, ContainerSections } from './app.styles';
 import { RefsContextProvider } from './context/refsContext';
-import { Container, Main } from './app.styles';
-import Header from './components/Header';
-import Home from './components/Home/Index';
-import AboutMe from './components/AboutMe';
-import Technologies from './components/Technologies';
-import Projects from './components/Projects';
-import Courses from './components/Courses';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-import SvgContainer from './components/SvgContainer/SvgContainer';
-import ModalLoading from './components/ModalLoading';
-import ModalMessageForm from './components/ModalMessageForm';
+import { ThemeProvider } from './context/themeContext';
+import { I18nProvider } from './context/i18nContext';
+import { Header } from './components/Header';
+import { Home } from './components/Home/Index';
+import { AboutMe } from './components/AboutMe';
+import { Technologies } from './components/Technologies';
+import { Projects } from './components/Projects';
+import { Courses } from './components/Courses';
+import { Contact } from './components/Contact/Contact';
+import { Footer } from './components/Footer/Footer';
+import { Experience } from './components/Experience';
+import './index.css';
 
 function App() {
   return (
-    <RefsContextProvider>
-      <Container>
-        <Header />
-        <Main>
-          <Home />
-          <AboutMe />
-          <Technologies />
-          <Projects />
-          <Courses />
-          <Contact />
-        </Main>
-        <Footer />
-        <SvgContainer />
-        <ModalLoading />
-        <ModalMessageForm />
-        <div id="modal-loading-root"></div>
-        <div id="modal-message-form-root"></div>
-      </Container>
-    </RefsContextProvider>
+    <ThemeProvider>
+      <I18nProvider>
+        <RefsContextProvider>
+          <ContainerApp>
+            <Header />
+            <ContainerSections>
+              <Home />
+              <AboutMe />
+              <Experience />
+              <Technologies />
+              <Projects />
+              <Courses />
+              <Contact />
+              <Footer />
+            </ContainerSections>
+          </ContainerApp>
+        </RefsContextProvider>
+      </I18nProvider>
+    </ThemeProvider>
   );
 }
 

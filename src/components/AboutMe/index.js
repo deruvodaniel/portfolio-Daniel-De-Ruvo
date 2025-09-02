@@ -10,11 +10,54 @@ import {
 import { motion } from "framer-motion";
 import useWidth from "../../hooks/useWidth";
 import { useRefs } from "../../context/refsContext";
+import { useI18n } from "context/i18nContext";
+const GradientZap = () => (
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <defs>
+      <linearGradient id="gZap" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#00E5FF" />
+        <stop offset="60%" stopColor="#00FFA3" />
+        <stop offset="100%" stopColor="#7CFFCB" />
+      </linearGradient>
+    </defs>
+    <path d="M13 2L3 14h7l-1 8 12-14h-8l1-6z" stroke="url(#gZap)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+  </svg>
+);
+
+const GradientLayout = () => (
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <defs>
+      <linearGradient id="gLayout" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#00E5FF" />
+        <stop offset="60%" stopColor="#00FFA3" />
+        <stop offset="100%" stopColor="#7CFFCB" />
+      </linearGradient>
+    </defs>
+    <rect x="3" y="4" width="18" height="16" rx="2" stroke="url(#gLayout)" strokeWidth="2" />
+    <line x1="3" y1="10" x2="21" y2="10" stroke="url(#gLayout)" strokeWidth="2" />
+    <line x1="10" y1="10" x2="10" y2="20" stroke="url(#gLayout)" strokeWidth="2" />
+  </svg>
+);
+
+const GradientTrendingUp = () => (
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <defs>
+      <linearGradient id="gTrend" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#00E5FF" />
+        <stop offset="60%" stopColor="#00FFA3" />
+        <stop offset="100%" stopColor="#7CFFCB" />
+      </linearGradient>
+    </defs>
+    <polyline points="3,17 9,11 13,15 21,7" stroke="url(#gTrend)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <polyline points="15,7 21,7 21,13" stroke="url(#gTrend)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  </svg>
+);
 
 export const AboutMe = () => {
   const { refAboutMe } = useRefs();
   const { width } = useWidth();
   const initial = width > 700 ? -500 : 0;
+  const { t } = useI18n();
 
   return (
     <motion.div
@@ -26,15 +69,12 @@ export const AboutMe = () => {
       <SectionAboutMe ref={refAboutMe}>
         <AboutMeContent>
           <div>
-            <AboutMeTitle>About</AboutMeTitle>
+            <AboutMeTitle>{t('about.title')}</AboutMeTitle>
             <AboutMeDescription>
-              I'm a <strong>Senior Frontend Developer</strong> with over 3 years of experience 
-              crafting exceptional digital experiences. I specialize in modern JavaScript frameworks, 
-              responsive design, and performance optimization.
+              {t('about.p1')}
             </AboutMeDescription>
             <AboutMeDescription>
-              My passion lies in transforming complex problems into simple, beautiful, and intuitive solutions. 
-              I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.
+              {t('about.p2')}
             </AboutMeDescription>
             <AboutMeBoxLinks>
               <a
@@ -60,40 +100,38 @@ export const AboutMe = () => {
                 />
               </a>
               <a
-                href="mailto:deruvodaniel@gmail.com"
+                href="https://cdn.builder.io/o/assets%2Feb9edba76d874a5385833a00b6be2b6e%2F44c199474638431da9d1c7d8d0e28707?alt=media&token=1af667d8-3632-4777-b419-39ad015be4eb&apiKey=eb9edba76d874a5385833a00b6be2b6e"
                 target="_blank"
                 rel="noreferrer"
+                title="Resume"
               >
-                Resume
+                {t('about.resume')}
               </a>
             </AboutMeBoxLinks>
           </div>
-          
+
           <SkillsContainer>
             <SkillCard>
-              <div className="icon">⚡</div>
-              <h3 className="title">Frontend Development</h3>
+              <div className="icon"><GradientZap /></div>
+              <h3 className="title">{t('about.skillFrontend')}</h3>
               <p className="description">
-                Building responsive, performant web applications with modern frameworks 
-                like React, Vue.js, and cutting-edge CSS techniques.
+                {t('about.skillFrontendDesc')}
               </p>
             </SkillCard>
-            
+
             <SkillCard>
-              <div className="icon">🎨</div>
-              <h3 className="title">UI/UX Design</h3>
+              <div className="icon"><GradientLayout /></div>
+              <h3 className="title">{t('about.skillDesign')}</h3>
               <p className="description">
-                Creating intuitive user interfaces with attention to detail, 
-                accessibility, and user experience best practices.
+                {t('about.skillDesignDesc')}
               </p>
             </SkillCard>
-            
+
             <SkillCard>
-              <div className="icon">🚀</div>
-              <h3 className="title">Performance</h3>
+              <div className="icon"><GradientTrendingUp /></div>
+              <h3 className="title">{t('about.skillPerf')}</h3>
               <p className="description">
-                Optimizing applications for speed, SEO, and scalability using 
-                modern build tools and performance monitoring.
+                {t('about.skillPerfDesc')}
               </p>
             </SkillCard>
           </SkillsContainer>

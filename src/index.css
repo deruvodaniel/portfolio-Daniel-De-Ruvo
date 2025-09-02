@@ -1,34 +1,45 @@
-/* Global CSS Variables */
+/* Global resets */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; color: var(--colorPrimary); background: var(--background); overflow-x: hidden; }
+
+/* Theme variables */
 :root {
-  --colorPrimary: #ffffff;
+  --background: radial-gradient(1200px 800px at 10% 10%, rgba(0, 229, 255, 0.06), transparent 60%), radial-gradient(1000px 600px at 90% 20%, rgba(34, 197, 94, 0.06), transparent 60%), #0b0b16;
+  --backgroundCard: rgba(255, 255, 255, 0.02);
+  --backgroundCardHover: rgba(255, 255, 255, 0.05);
+  --colorPrimary: #e6edf3;
   --colorSecondary: #64ffda;
-  --textSecondary: #8892b0;
-  --textMuted: #495670;
-  --background: #0a192f;
-  --backgroundCard: rgba(100, 255, 218, 0.05);
-  --borderColor: rgba(100, 255, 218, 0.1);
-  --gradientPrimary: linear-gradient(135deg, #64ffda 0%, #4fc3f7 100%);
+  --textSecondary: #a1a8b3;
+  --textMuted: #7b8496;
+  --borderColor: rgba(255, 255, 255, 0.08);
+  --gradientPrimary: linear-gradient(90deg, #00E5FF, #00FFA3 60%, #7CFFCB);
+  --shadowPrimary: 0 20px 40px rgba(0, 229, 255, 0.25);
+  --colorError: #ff6b6b;
 }
 
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root[data-theme='light'] {
+  --background: radial-gradient(1200px 800px at 10% 10%, rgba(6, 182, 212, 0.18), transparent 60%), radial-gradient(1000px 600px at 90% 20%, rgba(34, 197, 94, 0.12), transparent 60%), #f8fafc;
+  --backgroundCard: rgba(0, 0, 0, 0.03);
+  --backgroundCardHover: rgba(0, 0, 0, 0.06);
+  --colorPrimary: #0f172a;
+  --colorSecondary: #0ea5e9;
+  --textSecondary: #334155;
+  --textMuted: #475569;
+  --borderColor: rgba(15, 23, 42, 0.12);
+  --gradientPrimary: linear-gradient(90deg, #06b6d4, #22c55e 60%, #a7f37d);
+  --shadowPrimary: 0 20px 40px rgba(14, 165, 233, 0.25);
+  --colorError: #e11d48;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background);
-  color: var(--colorPrimary);
-  line-height: 1.6;
-}
+/* Typography */
+h1, h2, h3, h4 { margin: 0; font-family: 'Sora', 'Inter', sans-serif; }
+p { margin: 0; }
+a { color: inherit; }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* Animations */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: translateX(0); } }
+
+/* Focus styles for accessibility */
+:focus-visible { outline: 2px dashed var(--colorSecondary); outline-offset: 3px; border-radius: 6px; }
