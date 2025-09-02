@@ -102,7 +102,25 @@ export const Links = styled.li`
   margin-bottom: 8px;
   margin-right: 0;
   border-radius: 10px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+  transform: translateY(-6px);
+
+  ${Main}.open & {
+    animation: navItemIn 260ms ease forwards;
+  }
+
+  &:nth-child(1) { animation-delay: 40ms; }
+  &:nth-child(2) { animation-delay: 80ms; }
+  &:nth-child(3) { animation-delay: 120ms; }
+  &:nth-child(4) { animation-delay: 160ms; }
+  &:nth-child(5) { animation-delay: 200ms; }
+  &:nth-child(6) { animation-delay: 240ms; }
+
+  @keyframes navItemIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
   &:hover { color: var(--colorPrimary); }
 
