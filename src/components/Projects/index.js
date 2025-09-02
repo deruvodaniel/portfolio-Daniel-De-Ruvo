@@ -17,6 +17,7 @@ import {
 import { motion } from "framer-motion";
 import { projects } from "../../arrays/arrayProjects";
 import ParallaxText from "components/ParallaxText";
+import LinkPreview from "components/LinkPreview";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
 
@@ -61,10 +62,9 @@ export const Projects = () => {
                 <ProjectTitle>{title}</ProjectTitle>
                 <div>
                   <span className="sr-only">Preview</span>
-                  {/* URL-based preview with fallback to provided image */}
                   {link && (
                     <div style={{ margin: '8px 0 16px' }}>
-                      {require('react').createElement(require('components/LinkPreview').default, { url: link, title, fallbackImage: img })}
+                      <LinkPreview url={link} title={title} fallbackImage={img} />
                     </div>
                   )}
                 </div>
