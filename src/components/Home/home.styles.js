@@ -143,7 +143,7 @@ export const ButtonHome = styled.button`
   background: var(--gradientPrimary);
   border: none;
   border-radius: 40px;
-  color: white;
+  color: var(--buttonOnGradientText);
   font-weight: 700;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
@@ -214,7 +214,7 @@ export const SecondaryButton = styled.button`
   }
 
   &:hover {
-    color: white;
+    color: var(--buttonOnGradientText);
     border-color: transparent;
     transform: translateY(-2px);
     box-shadow: var(--shadowPrimary);
