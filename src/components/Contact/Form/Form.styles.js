@@ -127,7 +127,7 @@ export const Btn = styled.button`
   border-radius: 60px;
   background: var(--gradientPrimary);
   border: none;
-  color: white;
+  color: var(--buttonOnGradientText);
   font-size: 1.1rem;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
