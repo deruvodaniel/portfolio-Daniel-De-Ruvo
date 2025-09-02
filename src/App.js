@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { ContainerApp, ContainerSections } from './app.styles';
 import { RefsContextProvider } from './context/refsContext';
 import { ThemeProvider } from './context/themeContext';
@@ -7,7 +7,7 @@ import { Header } from './components/Header';
 import { Home } from './components/Home/Index';
 import { AboutMe } from './components/AboutMe';
 import { Technologies } from './components/Technologies';
-import { Projects } from './components/Projects';
+const Projects = lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })));
 import { Courses } from './components/Courses';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
