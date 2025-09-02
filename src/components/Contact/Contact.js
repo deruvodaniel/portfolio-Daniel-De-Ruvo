@@ -53,7 +53,7 @@ export const Contact = () => {
       <SectionContact>
         <BoxContactInfo>
           <ContactText>{t('contact.lead')}</ContactText>
-          <ContactInfo>
+          <ContactInfo aria-live="polite" aria-atomic="true">
             <ButtonCopy onClick={copyEmail}>
               {copyEmailSuccess ? t('contact.copiedEmail') : t('contact.copyEmail')}
             </ButtonCopy>
