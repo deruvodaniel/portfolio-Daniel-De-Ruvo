@@ -140,6 +140,9 @@ export const ButtonsContainer = styled.div`
 
 export const ButtonHome = styled.button`
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 24px;
   background: var(--gradientPrimary);
   border: none;
@@ -187,6 +190,9 @@ export const ButtonHome = styled.button`
 
 export const SecondaryButton = styled.button`
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 24px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
@@ -202,27 +208,11 @@ export const SecondaryButton = styled.button`
   letter-spacing: 1.5px;
   min-width: 180px;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--gradientPrimary);
-    transition: width 0.4s ease;
-    z-index: -1;
-  }
-
   &:hover {
-    color: var(--buttonOnGradientText);
-    border-color: transparent;
+    background: var(--backgroundCardHover);
+    border-color: var(--colorSecondary);
     transform: translateY(-2px);
-    box-shadow: var(--shadowPrimary);
-  }
-
-  &:hover::before {
-    width: 100%;
+    box-shadow: none;
   }
 
   ${mediaQueries.desktop} {
