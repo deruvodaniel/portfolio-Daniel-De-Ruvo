@@ -16,8 +16,8 @@ export const SectionExperience = styled.section`
 export const ExperienceTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 4rem;
-  margin-bottom: 40px;
+  font-size: 3.2rem;
+  margin-bottom: 32px;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
