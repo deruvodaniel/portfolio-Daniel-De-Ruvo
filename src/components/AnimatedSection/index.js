@@ -5,9 +5,11 @@ const Wrapper = styled.section`
   opacity: 0;
   transform: translateY(24px);
   filter: blur(4px);
-  transition: opacity 700ms ease, transform 700ms ease, filter 700ms ease;
+  transition: opacity 420ms ease-out, transform 420ms ease-out, filter 420ms ease-out;
   will-change: opacity, transform, filter;
   display: block;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1200px;
 
   &.is-visible {
     opacity: 1;

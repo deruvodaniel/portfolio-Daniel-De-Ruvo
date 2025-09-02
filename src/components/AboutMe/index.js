@@ -86,6 +86,8 @@ export const AboutMe = () => {
               >
                 <img
                   alt="GitHub"
+                  loading="lazy"
+                  decoding="async"
                   src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logogblanco_imqksz.svg"
                 />
               </a>
@@ -97,6 +99,8 @@ export const AboutMe = () => {
               >
                 <img
                   alt="LinkedIn"
+                  loading="lazy"
+                  decoding="async"
                   src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logoinblanco_isyvzt.svg"
                 />
               </a>

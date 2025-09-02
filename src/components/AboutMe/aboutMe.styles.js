@@ -150,9 +150,12 @@ export const SkillsContainer = styled.div`
 `;
 
 export const SkillCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: auto;
+  align-items: start;
+  column-gap: 20px;
+  row-gap: 8px;
   padding: 0;
 
   .icon {
@@ -160,24 +163,28 @@ export const SkillCard = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    margin-bottom: 16px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
   }
 
   .title {
+    grid-column: 2;
     font-size: 2rem;
     font-weight: 700;
     color: var(--colorPrimary);
-    margin-bottom: 16px;
+    margin: 0;
     letter-spacing: -1px;
   }
 
   .description {
+    grid-column: 2;
     font-size: 1.3rem;
     color: var(--textMuted);
     line-height: 1.7;
   }
 
   ${mediaQueries.desktop} {
+    column-gap: 24px;
     .icon {
       font-size: 3.5rem;
     }

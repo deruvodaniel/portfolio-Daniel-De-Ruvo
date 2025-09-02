@@ -56,12 +56,11 @@ export const TechCard = styled.div`
   justify-content: center;
   padding: 28px 20px;
   background: var(--background);
-  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: default;
   position: relative;
   overflow: hidden;
   min-height: 140px;
-  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 240ms ease, transform 240ms ease, box-shadow 240ms ease;
 
   /* subtle looping sheen */
   &::after {
@@ -71,7 +70,7 @@ export const TechCard = styled.div`
     left: -120%;
     width: 40%;
     height: 100%;
-    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
     transform: skewX(-12deg);
     animation: sheen 4.5s ease-in-out infinite;
     animation-delay: var(--delay, 0s);
