@@ -61,7 +61,6 @@ export const Projects = () => {
               <ProjectContent>
                 <ProjectTitle>{title}</ProjectTitle>
                 <div>
-                  <span className="sr-only">Preview</span>
                   {link && (
                     <div style={{ margin: '8px 0 16px' }}>
                       <LinkPreview url={link} title={title} fallbackImage={img} />
