@@ -14,6 +14,7 @@ import {
   LocationTag,
 } from "./home.styles";
 import { useRefs } from "../../context/refsContext";
+import ParallaxText from "components/ParallaxText";
 import { useI18n } from "context/i18nContext";
 
 export const Home = () => {
