@@ -21,7 +21,7 @@ const Wrapper = styled.section`
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export const AnimatedSection = ({ children, as = 'section', className }) => {
+export const AnimatedSection = ({ children, as = 'section', className, ...rest }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(prefersReducedMotion());
 
