@@ -91,6 +91,10 @@ export const FooterLinks = styled.div`
       transition: all 0.3s ease;
     }
 
+    :root[data-theme='light'] & > img {
+      filter: invert(1) brightness(0.2) contrast(1.2);
+    }
+
     &:hover > img {
       filter: brightness(1.5);
       transform: scale(1.05);
