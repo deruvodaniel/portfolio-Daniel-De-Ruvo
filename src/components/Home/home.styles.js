@@ -193,7 +193,8 @@ export const SecondaryButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+  gap: 10px;
+  padding: 16px 28px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
   border-radius: 40px;
@@ -206,7 +207,9 @@ export const SecondaryButton = styled.button`
   transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  min-width: 180px;
+  min-width: 190px;
+
+  svg { width: 18px; height: 18px; }
 
   &:hover {
     background: var(--backgroundCardHover);
@@ -217,8 +220,8 @@ export const SecondaryButton = styled.button`
 
   ${mediaQueries.desktop} {
     font-size: 1.05rem;
-    padding: 16px 28px;
-    min-width: 200px;
+    padding: 18px 32px;
+    min-width: 210px;
     border-radius: 44px;
   }
 `;
