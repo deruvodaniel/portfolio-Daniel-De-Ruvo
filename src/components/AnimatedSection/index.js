@@ -3,9 +3,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
   opacity: 0;
-  transform: translateY(18px);
-  filter: blur(2px);
-  transition: opacity 680ms cubic-bezier(0.22, 1, 0.36, 1), transform 680ms cubic-bezier(0.22, 1, 0.36, 1), filter 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(24px);
+  filter: blur(4px);
   will-change: opacity, transform, filter;
   display: block;
   content-visibility: ${({ $cv }) => $cv || 'auto'};
@@ -17,9 +16,7 @@ const Wrapper = styled.section`
   }
 
   &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    filter: none;
+    animation: fadeInUp 1s ease-out forwards;
   }
 `;
 
