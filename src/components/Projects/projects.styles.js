@@ -62,19 +62,14 @@ export const ProjectItem = styled.div`
   
   &:last-child {}
   
-  &:hover {
-    background: var(--backgroundCard);
-    border-radius: 20px;
-    padding: 40px 32px;
-    margin: 0 -32px;
-  }
-
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 2fr;
     gap: 64px;
     padding: 64px 0;
 
     &:hover {
+      background: var(--backgroundCard);
+      border-radius: 20px;
       padding: 64px 48px;
       margin: 0 -48px;
     }
