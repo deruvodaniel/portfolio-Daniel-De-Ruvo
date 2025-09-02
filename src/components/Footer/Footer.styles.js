@@ -14,12 +14,23 @@ export const FooterStyle = styled.footer`
   .logo-container {
     display: flex;
     align-items: center;
+    gap: 10px;
     margin-bottom: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
 
-    &:hover {
-      transform: translateY(-4px);
+    &:hover { transform: translateY(-4px); }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--backgroundCard);
+      border: 1px solid var(--borderColor);
+      backdrop-filter: blur(12px);
     }
 
     .logo-text {
@@ -30,6 +41,7 @@ export const FooterStyle = styled.footer`
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -1px;
+      line-height: 1;
     }
   }
 
