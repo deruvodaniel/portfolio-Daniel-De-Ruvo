@@ -41,6 +41,7 @@ export const Controls = styled.div`
 `;
 
 export const ToggleButton = styled.button`
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -56,10 +57,29 @@ export const ToggleButton = styled.button`
   text-transform: uppercase;
   transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease;
   margin-right: 0;
+  overflow: hidden;
 
   &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
   &.theme-animate { animation: themePop 360ms ease; }
+  &.theme-animate::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at center, var(--colorSecondary) 0%, transparent 60%);
+    opacity: 0.18;
+    transform: scale(0);
+    animation: themeRipple 520ms ease-out forwards;
+    pointer-events: none;
+  }
+
   @keyframes themePop { 0% { transform: scale(1) rotate(0deg); } 50% { transform: scale(0.9) rotate(-18deg); } 100% { transform: scale(1) rotate(0deg); } }
+  @keyframes themeRipple { from { transform: scale(0); opacity: 0.22; } to { transform: scale(2.2); opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    &.theme-animate { animation: none; }
+    &.theme-animate::after { animation: none; opacity: 0; }
+  }
 `;
 
 export const LogoText = styled.div`
