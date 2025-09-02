@@ -64,7 +64,7 @@ const MyForm = () => {
           <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <BoxInput className="input__name">
               <input
-                autocomplete="off"
+                autoComplete="off"
                 type="text"
                 placeholder={t('form.name')}
                 name="name"
@@ -92,7 +92,7 @@ const MyForm = () => {
             </BoxInput>
             <BoxInput className="input__phone">
               <input
-                autocomplete="off"
+                autoComplete="off"
                 type="tel"
                 name="phone"
                 className={errors.phone && "input__error"}
@@ -116,7 +116,7 @@ const MyForm = () => {
             </BoxInput>
             <BoxInput className="input__email">
               <input
-                autocomplete="off"
+                autoComplete="off"
                 className={errors.email && "input__error"}
                 type="email"
                 name="email"
