@@ -16,6 +16,27 @@ import AnimatedSection from './components/AnimatedSection';
 import './index.css';
 
 function App() {
+  useEffect(() => {
+    const { initLenis } = require('./lib/lenis');
+    const cleanupLenis = initLenis();
+
+    let rAF;
+    const onScroll = () => {
+      if (rAF) return;
+      rAF = requestAnimationFrame(() => {
+        document.documentElement.style.setProperty('--scrollY', String(window.scrollY || 0));
+        rAF = null;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cleanupLenis && cleanupLenis();
+    };
+  }, []);
+
   return (
     <ThemeProvider>
       <I18nProvider>
