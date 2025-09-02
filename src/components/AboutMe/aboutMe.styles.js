@@ -2,27 +2,27 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionAboutMe = styled.section`
-  margin: 60px 0;
-  padding: 40px 0;
+  margin: 40px 0;
+  padding: 30px 0;
   z-index: 50;
   position: relative;
   scroll-margin-top: 120px;
 
   ${mediaQueries.desktop} {
-    margin: 120px 0;
-    padding: 60px 0;
+    margin: 90px 0;
+    padding: 50px 0;
   }
 `;
 
 export const AboutMeContent = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: start;
 
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    gap: 80px;
   }
 `;
 
@@ -33,6 +33,8 @@ export const AboutMeTitle = styled.h2`
   margin-bottom: 40px;
   line-height: 0.9;
   letter-spacing: -2px;
+  transform: translateY(calc(var(--scrollY, 0) * 0.02px));
+  will-change: transform;
 
   ${mediaQueries.tablet} {
     font-size: 6rem;
@@ -73,7 +75,7 @@ export const AboutMeBoxLinks = styled.div`
   align-items: center;
   gap: 40px;
   flex-wrap: wrap;
-  margin-top: 60px;
+  margin-top: 40px;
   
   & > a {
     color: var(--colorSecondary);
@@ -113,7 +115,7 @@ export const AboutMeBoxLinks = styled.div`
       & > img {
         width: 24px;
         height: 24px;
-        filter: brightness(1.2);
+        filter: var(--socialIconFilter);
       }
     }
   }

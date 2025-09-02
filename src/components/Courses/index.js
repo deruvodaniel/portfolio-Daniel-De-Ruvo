@@ -9,6 +9,7 @@ import {
   SectionCourses,
 } from "./courses.styles";
 import { motion } from "framer-motion";
+import ParallaxText from "components/ParallaxText";
 import useWidth from "hooks/useWidth";
 import { courses } from "arrays/arrayCourses";
 import { useI18n } from "context/i18nContext";
@@ -26,7 +27,7 @@ export const Courses = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <SectionCourses>
-          <CoursesTitle>{t('courses.title')}</CoursesTitle>
+          <ParallaxText As={CoursesTitle} amount={40} fade={0.18}>{t('courses.title')}</ParallaxText>
           <ContainerCourses>
             {courses.map(({ id, name, text, academy }) => {
               return (

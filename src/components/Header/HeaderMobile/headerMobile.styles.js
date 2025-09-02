@@ -8,7 +8,7 @@ export const Main = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  background: var(--background);
+  background: var(--headerBackground);
   border-bottom: 1px solid var(--borderColor);
   backdrop-filter: blur(20px);
   z-index: 100;
@@ -23,7 +23,7 @@ export const Main = styled.header`
     right: 0;
     left: 0;
     z-index: 20;
-    background: var(--background);
+    background: var(--headerBackground);
     border-bottom: 1px solid var(--borderColor);
   }
 `;
@@ -54,10 +54,12 @@ export const ToggleButton = styled.button`
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease;
   margin-right: 0;
 
   &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
+  &.theme-animate { animation: themePop 360ms ease; }
+  @keyframes themePop { 0% { transform: scale(1) rotate(0deg); } 50% { transform: scale(0.9) rotate(-18deg); } 100% { transform: scale(1) rotate(0deg); } }
 `;
 
 export const LogoText = styled.div`

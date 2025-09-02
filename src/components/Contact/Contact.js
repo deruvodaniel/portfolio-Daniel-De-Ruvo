@@ -11,6 +11,7 @@ import {
   ButtonCopy,
 } from "./Contact.styles";
 import { motion } from "framer-motion";
+import ParallaxText from "components/ParallaxText";
 import useWidth from "hooks/useWidth";
 import { useI18n } from "context/i18nContext";
 
@@ -49,15 +50,17 @@ export const Contact = () => {
       transition={{ type: "spring", duration: 2 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <ContactTitle ref={refContact}>{t('contact.title')}</ContactTitle>
+      <ParallaxText As={ContactTitle} amount={36} fade={0.16} ref={refContact}>{t('contact.title')}</ParallaxText>
       <SectionContact>
         <BoxContactInfo>
           <ContactText>{t('contact.lead')}</ContactText>
-          <ContactInfo>
-            <ButtonCopy onClick={copyEmail}>
+          <ContactInfo aria-live="polite" aria-atomic="true">
+            <ButtonCopy onClick={copyEmail} aria-label={t('contact.copyEmail')}>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z" opacity="0.2"/><path d="M4 8l8 6 8-6"/></svg>
               {copyEmailSuccess ? t('contact.copiedEmail') : t('contact.copyEmail')}
             </ButtonCopy>
-            <ButtonCopy onClick={copyPhone}>
+            <ButtonCopy onClick={copyPhone} aria-label={t('contact.copyPhone')}>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.57 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.14a2 2 0 0 1 2.11-.45c.74.27 1.53.45 2.34.57A2 2 0 0 1 22 16.92z"/></svg>
               {copyPhoneSuccess ? t('contact.copiedPhone') : t('contact.copyPhone')}
             </ButtonCopy>
           </ContactInfo>
@@ -68,13 +71,13 @@ export const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
                 title="Resume"
+                aria-label="Open resume in a new tab"
               >
-                <img
-                  alt="Resume"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653408217/portfolio%20daniel/logog_udsccl.svg"
-                  width="45px"
-                  height="40px"
-                />
+                <svg width="45" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                  <path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                  <path d="M8 12h8M8 16h8" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
               </a>
               <a
                 href="https://github.com/deruvodaniel"

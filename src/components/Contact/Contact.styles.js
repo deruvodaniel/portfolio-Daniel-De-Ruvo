@@ -12,17 +12,19 @@ export const ContactTitle = styled.h2`
   position: relative;
   letter-spacing: -2px;
   line-height: 0.9;
+  transform: translateY(calc(var(--scrollY, 0) * 0.015px));
+  will-change: transform;
 
   ${mediaQueries.desktop} {
-    margin-top: 120px;
+    margin-top: 100px;
     font-size: 7rem;
     letter-spacing: -4px;
   }
 `;
 
 export const SectionContact = styled.section`
-  margin: 40px 0 60px;
-  padding: 40px 0;
+  margin: 30px 0 50px;
+  padding: 30px 0;
   z-index: 50;
   scroll-margin-top: 120px;
   color: var(--colorPrimary);
@@ -35,8 +37,8 @@ export const SectionContact = styled.section`
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    margin: 80px 0 120px;
-    padding: 60px 0;
+    margin: 70px 0 100px;
+    padding: 50px 0;
   }
 `;
 
@@ -65,9 +67,10 @@ export const ContactText = styled.h3`
 
 export const ContactInfo = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 40px 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 16px;
+  margin: 32px 0;
 `;
 
 export const ContactLinks = styled.div`
@@ -101,7 +104,7 @@ export const ContactLinks = styled.div`
     & > img {
       width: 22px;
       height: 22px;
-      filter: brightness(1.2);
+      filter: var(--socialIconFilter);
       transition: all 0.3s ease;
     }
 
@@ -113,27 +116,33 @@ export const ContactLinks = styled.div`
 `;
 
 export const ButtonCopy = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: transparent;
   border: 1px solid var(--borderColor);
   border-radius: 12px;
-  padding: 16px 24px;
+  padding: 14px 20px;
   color: var(--colorPrimary);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   text-align: left;
-  width: 100%;
+  flex: 1 1 260px;
 
   &:hover {
     background: var(--backgroundCardHover);
     border-color: var(--colorSecondary);
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     color: var(--colorSecondary);
   }
 
+  svg { width: 18px; height: 18px; }
+
   ${mediaQueries.desktop} {
-    font-size: 1.1rem;
-    padding: 20px 28px;
+    font-size: 1.05rem;
+    padding: 16px 22px;
+    flex: 0 0 auto;
   }
 `;

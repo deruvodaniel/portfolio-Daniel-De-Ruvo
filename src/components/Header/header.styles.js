@@ -15,7 +15,7 @@ export const Main = styled(motion.header)`
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &.withBackground {
-    background: rgba(15, 15, 35, 0.95);
+    background: var(--headerBackground);
     backdrop-filter: blur(30px);
     border-bottom: 1px solid var(--borderColor);
   }
@@ -114,7 +114,11 @@ export const ToggleButton = styled.button`
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease;
 
   &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
+
+  &.theme-animate { animation: themePop 380ms ease; }
+
+  @keyframes themePop { 0% { transform: scale(1) rotate(0deg); } 50% { transform: scale(0.88) rotate(-18deg); } 100% { transform: scale(1) rotate(0deg); } }
 `;

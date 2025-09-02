@@ -122,7 +122,7 @@ export const DescriptionHome = styled.p`
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   width: 100%;
   opacity: 0;
@@ -131,6 +131,7 @@ export const ButtonsContainer = styled.div`
 
   ${mediaQueries.desktop} {
     flex-direction: row;
+    align-items: flex-start;
     gap: 16px;
     width: auto;
     margin-bottom: 56px;
@@ -139,17 +140,20 @@ export const ButtonsContainer = styled.div`
 
 export const ButtonHome = styled.button`
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 24px;
   background: var(--gradientPrimary);
   border: none;
   border-radius: 40px;
-  color: white;
+  color: var(--buttonOnGradientText);
   font-weight: 700;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 180px;
@@ -186,6 +190,9 @@ export const ButtonHome = styled.button`
 
 export const SecondaryButton = styled.button`
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 24px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
@@ -196,32 +203,16 @@ export const SecondaryButton = styled.button`
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 180px;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--gradientPrimary);
-    transition: width 0.4s ease;
-    z-index: -1;
-  }
-
   &:hover {
-    color: white;
-    border-color: transparent;
+    background: var(--backgroundCardHover);
+    border-color: var(--colorSecondary);
     transform: translateY(-2px);
-    box-shadow: var(--shadowPrimary);
-  }
-
-  &:hover::before {
-    width: 100%;
+    box-shadow: none;
   }
 
   ${mediaQueries.desktop} {
