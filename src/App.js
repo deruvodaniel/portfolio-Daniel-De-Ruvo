@@ -51,7 +51,9 @@ function App() {
               <AnimatedSection as="section"><AboutMe /></AnimatedSection>
               <AnimatedSection as="section"><Experience /></AnimatedSection>
               <AnimatedSection as="section"><Technologies /></AnimatedSection>
-              <AnimatedSection as="section"><Projects /></AnimatedSection>
+              <Suspense fallback={null}>
+                <AnimatedSection as="section"><Projects /></AnimatedSection>
+              </Suspense>
               <AnimatedSection as="section"><Courses /></AnimatedSection>
               <AnimatedSection as="section"><Contact /></AnimatedSection>
               <Footer />
