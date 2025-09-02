@@ -15,7 +15,7 @@ export const Main = styled(motion.header)`
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &.withBackground {
-    background: rgba(15, 15, 35, 0.95);
+    background: var(--headerBackground);
     backdrop-filter: blur(30px);
     border-bottom: 1px solid var(--borderColor);
   }
