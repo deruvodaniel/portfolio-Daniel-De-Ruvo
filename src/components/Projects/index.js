@@ -17,6 +17,7 @@ import {
 } from "./projects.styles";
 import { motion } from "framer-motion";
 import { projects } from "../../arrays/arrayProjects";
+import ParallaxText from "components/ParallaxText";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
 
@@ -41,7 +42,7 @@ export const Projects = () => {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <SectionProjects ref={refProjects}>
-        <h2>{t('projects.title')}</h2>
+        <ParallaxText As="h2" amount={24} fade={0.1}>{t('projects.title')}</ParallaxText>
         <ContainerProjects>
           {projects.map(({ id, title, subtitle, text, link, github }, index) => (
             <ProjectItem key={id} index={index + 1}>
