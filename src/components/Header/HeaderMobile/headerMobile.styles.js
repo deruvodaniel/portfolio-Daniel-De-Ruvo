@@ -23,7 +23,7 @@ export const Main = styled.header`
     right: 0;
     left: 0;
     z-index: 20;
-    background: var(--background);
+    background: var(--headerBackground);
     border-bottom: 1px solid var(--borderColor);
   }
 `;
