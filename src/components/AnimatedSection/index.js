@@ -11,6 +11,11 @@ const Wrapper = styled.section`
   content-visibility: ${({ $cv }) => $cv || 'auto'};
   contain-intrinsic-size: ${({ $cis }) => $cis || 'auto 1200px'};
 
+  @media (max-width: 767px) {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
+  }
+
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
