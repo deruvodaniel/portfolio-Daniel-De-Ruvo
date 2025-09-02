@@ -4,6 +4,7 @@ import {
   TechCard,
 } from "./technologies.styles";
 import { motion } from "framer-motion";
+import ParallaxText from "components/ParallaxText";
 import useWidth from "../../hooks/useWidth";
 import { technologies } from "../../arrays/arrayTechnologies";
 import { useRefs } from "../../context/refsContext";
@@ -62,7 +63,7 @@ export const Technologies = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <SectionTechnologies ref={refTechnologies}>
-        <h2>{t('tech.title')}</h2>
+        <ParallaxText As="h2" amount={24} fade={0.1}>{t('tech.title')}</ParallaxText>
         <ContainerTechnologies>
           {technologies.map(({ id, img, text }) => {
             const key = (text || '').toLowerCase();
