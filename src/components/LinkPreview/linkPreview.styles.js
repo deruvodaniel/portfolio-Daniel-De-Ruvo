@@ -23,8 +23,13 @@ export const PreviewCard = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: clamp(140px, 50vw, 240px);
+    height: clamp(140px, 52vw, 220px);
     background: var(--backgroundCard);
+  }
+
+  ${mediaQueries.desktop} {
+    max-width: 520px;
+    .loader { height: 200px; }
   }
 `;
 
