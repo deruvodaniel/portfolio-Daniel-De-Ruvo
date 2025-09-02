@@ -153,7 +153,7 @@ export const ButtonHome = styled.button`
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 180px;
@@ -203,7 +203,7 @@ export const SecondaryButton = styled.button`
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 180px;
