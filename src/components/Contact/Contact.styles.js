@@ -118,27 +118,33 @@ export const ContactLinks = styled.div`
 `;
 
 export const ButtonCopy = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: transparent;
   border: 1px solid var(--borderColor);
   border-radius: 12px;
-  padding: 16px 24px;
+  padding: 14px 20px;
   color: var(--colorPrimary);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   text-align: left;
-  width: 100%;
+  flex: 1 1 260px;
 
   &:hover {
     background: var(--backgroundCardHover);
     border-color: var(--colorSecondary);
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     color: var(--colorSecondary);
   }
 
+  svg { width: 18px; height: 18px; }
+
   ${mediaQueries.desktop} {
-    font-size: 1.1rem;
-    padding: 20px 28px;
+    font-size: 1.05rem;
+    padding: 16px 22px;
+    flex: 0 0 auto;
   }
 `;
