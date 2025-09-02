@@ -3,14 +3,14 @@ import { mediaQueries } from "styles";
 
 export const SectionCourses = styled.section`
   z-index: 50;
-  padding: 40px 0;
-  margin: 60px 0;
+  padding: 30px 0;
+  margin: 40px 0;
   position: relative;
   scroll-margin-top: 120px;
 
   ${mediaQueries.desktop} {
-    margin: 120px 0;
-    padding: 60px 0;
+    margin: 90px 0;
+    padding: 50px 0;
   }
 `;
 
@@ -18,14 +18,14 @@ export const CoursesTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
   font-size: 4rem;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
 
   ${mediaQueries.desktop} {
     font-size: 7rem;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     letter-spacing: -5px;
   }
 `;

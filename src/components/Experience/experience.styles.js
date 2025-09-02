@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { mediaQueries } from 'styles';
 
 export const SectionExperience = styled.section`
-  margin: 100px 0;
-  padding: 60px 0;
+  margin: 60px 0;
+  padding: 40px 0;
   position: relative;
   z-index: 50;
 
   ${mediaQueries.desktop} {
-    margin: 160px 0;
-    padding: 100px 0;
+    margin: 120px 0;
+    padding: 70px 0;
   }
 `;
 
@@ -17,14 +17,14 @@ export const ExperienceTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
   font-size: 4rem;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;
 
   ${mediaQueries.desktop} {
     font-size: 7rem;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     letter-spacing: -5px;
   }
 `;

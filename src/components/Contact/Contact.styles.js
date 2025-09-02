@@ -14,15 +14,15 @@ export const ContactTitle = styled.h2`
   line-height: 0.9;
 
   ${mediaQueries.desktop} {
-    margin-top: 120px;
+    margin-top: 100px;
     font-size: 7rem;
     letter-spacing: -4px;
   }
 `;
 
 export const SectionContact = styled.section`
-  margin: 40px 0 60px;
-  padding: 40px 0;
+  margin: 30px 0 50px;
+  padding: 30px 0;
   z-index: 50;
   scroll-margin-top: 120px;
   color: var(--colorPrimary);
@@ -35,8 +35,8 @@ export const SectionContact = styled.section`
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    margin: 80px 0 120px;
-    padding: 60px 0;
+    margin: 70px 0 100px;
+    padding: 50px 0;
   }
 `;
 

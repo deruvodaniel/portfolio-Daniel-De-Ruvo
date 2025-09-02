@@ -24,24 +24,24 @@ export const ContainerApp = styled.div`
     content: "";
     position: fixed;
     inset: -20% -10% auto auto;
-    width: 60vmax;
-    height: 60vmax;
+    width: 70vmax;
+    height: 70vmax;
     pointer-events: none;
-    filter: blur(60px);
+    filter: blur(80px);
     z-index: -1;
     border-radius: 50%;
-    opacity: 0.3;
+    opacity: 0.5;
   }
 
   &::before {
-    background: radial-gradient(closest-side, rgba(0,229,255,0.12), transparent 60%);
+    background: radial-gradient(closest-side, rgba(0,229,255,0.18), transparent 60%);
     animation: ${floatOne} 16s ease-in-out infinite;
     right: 5%;
     top: 10%;
   }
 
   &::after {
-    background: radial-gradient(closest-side, rgba(34,197,94,0.10), transparent 60%);
+    background: radial-gradient(closest-side, rgba(34,197,94,0.16), transparent 60%);
     animation: ${floatTwo} 20s ease-in-out infinite;
     left: 10%;
     bottom: 10%;

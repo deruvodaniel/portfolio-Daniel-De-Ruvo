@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionTechnologies = styled.section`
-  margin: 60px 0;
-  padding: 40px 0;
+  margin: 40px 0;
+  padding: 30px 0;
   z-index: 50;
   position: relative;
   scroll-margin-top: 120px;
@@ -11,7 +11,7 @@ export const SectionTechnologies = styled.section`
   & > h2 {
     font-size: 4rem;
     font-weight: 900;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     text-align: center;
     color: var(--colorPrimary);
     letter-spacing: -2px;
@@ -19,12 +19,12 @@ export const SectionTechnologies = styled.section`
   }
 
   ${mediaQueries.desktop} {
-    margin: 120px 0;
-    padding: 60px 0;
+    margin: 90px 0;
+    padding: 50px 0;
 
     & > h2 {
       font-size: 7rem;
-      margin-bottom: 100px;
+      margin-bottom: 80px;
       letter-spacing: -5px;
     }
   }

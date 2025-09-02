@@ -5,6 +5,8 @@ const Wrapper = styled.section`
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+  display: block;
 
   &.is-visible {
     opacity: 1;
@@ -30,14 +32,13 @@ export const AnimatedSection = ({ children, as = 'section', className }) => {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting || entry.intersectionRatio > 0) {
             setVisible(true);
-            // Unobserve to keep it simple, fade-in once
             io.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
     );
 
     io.observe(node);
