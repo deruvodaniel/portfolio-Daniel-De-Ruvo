@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ContainerApp, ContainerSections } from './app.styles';
 import { RefsContextProvider } from './context/refsContext';
 import { ThemeProvider } from './context/themeContext';
