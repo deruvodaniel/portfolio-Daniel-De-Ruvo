@@ -14,7 +14,7 @@ useEffect(() => {
 
   function ModalStructure({ state, children }) {
     return (
-      <Modal type={state}>
+      <Modal type={state} role="status" aria-live="polite" aria-atomic="true">
           <ModalText>{children}</ModalText>
       </Modal>
     );
