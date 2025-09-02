@@ -4,7 +4,6 @@ import { mediaQueries } from 'styles';
 export const PreviewCard = styled.a`
   display: block;
   width: 100%;
-  max-width: 520px;
   background: var(--backgroundCard);
   border: 1px solid var(--borderColor);
   border-radius: 16px;
@@ -24,13 +23,8 @@ export const PreviewCard = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: clamp(140px, 50vw, 240px);
     background: var(--backgroundCard);
-  }
-
-  ${mediaQueries.desktop} {
-    max-width: 520px;
-    .loader { height: 200px; }
   }
 `;
 
