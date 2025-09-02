@@ -131,10 +131,10 @@ export const AboutMeBoxLinks = styled.div`
     & > a {
       font-size: 1.3rem;
       
-      &:first-child, &:nth-child(2) {
+      &:first-child, &:nth-child(2), &:nth-child(3) {
         width: 70px;
         height: 70px;
-        
+
         & > img {
           width: 28px;
           height: 28px;
