@@ -27,33 +27,38 @@ export const ContainerApp = styled.div`
     width: 70vmax;
     height: 70vmax;
     pointer-events: none;
-    filter: blur(80px);
     z-index: -1;
     border-radius: 50%;
-    opacity: 0.5;
+    display: none;
   }
 
-  &::before {
-    background: radial-gradient(closest-side, rgba(0,229,255,0.18), transparent 60%);
-    animation: ${floatOne} 16s ease-in-out infinite;
-    right: 5%;
-    top: 10%;
-    transform: translateY(calc(var(--scrollY, 0) * 0.05px));
-  }
+  ${mediaQueries.desktop} {
+    &::before,
+    &::after {
+      display: block;
+      filter: blur(60px);
+      opacity: 0.45;
+    }
 
-  &::after {
-    background: radial-gradient(closest-side, rgba(34,197,94,0.16), transparent 60%);
-    animation: ${floatTwo} 20s ease-in-out infinite;
-    left: 10%;
-    bottom: 10%;
-    transform: translateY(calc(var(--scrollY, 0) * -0.03px));
+    &::before {
+      background: radial-gradient(closest-side, rgba(0,229,255,0.16), transparent 60%);
+      animation: ${floatOne} 20s ease-in-out infinite;
+      right: 5%;
+      top: 10%;
+      transform: translateY(calc(var(--scrollY, 0) * 0.05px));
+    }
+
+    &::after {
+      background: radial-gradient(closest-side, rgba(34,197,94,0.14), transparent 60%);
+      animation: ${floatTwo} 24s ease-in-out infinite;
+      left: 10%;
+      bottom: 10%;
+      transform: translateY(calc(var(--scrollY, 0) * -0.03px));
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    &::before, &::after {
-      animation: none;
-      transform: none;
-    }
+    &::before, &::after { animation: none; transform: none; }
   }
 `;
 
