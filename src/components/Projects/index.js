@@ -44,7 +44,7 @@ export const Projects = () => {
       <SectionProjects ref={refProjects}>
         <ParallaxText As="h2" amount={44} fade={0.18}>{t('projects.title')}</ParallaxText>
         <ContainerProjects>
-          {projects.map(({ id, title, subtitle, text, link, github, img }, index) => (
+          {[...projects].sort((a, b) => b.id - a.id).map(({ id, title, subtitle, text, link, github, img }, index) => (
             <ProjectItem key={id} index={index + 1}>
               <ProjectMeta>
                 <ProjectCategory>{t('projects.category')}</ProjectCategory>
