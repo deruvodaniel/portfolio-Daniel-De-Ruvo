@@ -46,7 +46,6 @@ export const Projects = () => {
           {projects.map(({ id, title, subtitle, text, link, github }, index) => (
             <ProjectItem key={id} index={index + 1}>
               <ProjectMeta>
-                <ProjectYear>{t('projects.year')}</ProjectYear>
                 <ProjectCategory>{t('projects.category')}</ProjectCategory>
                 <TechStack>
                   <TechStackTitle>Tech Stack</TechStackTitle>
