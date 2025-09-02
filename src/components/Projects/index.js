@@ -3,7 +3,6 @@ import {
   ContainerProjects,
   ProjectItem,
   ProjectMeta,
-  ProjectYear,
   ProjectCategory,
   TechStack,
   TechStackTitle,
