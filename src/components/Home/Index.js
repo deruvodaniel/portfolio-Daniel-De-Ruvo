@@ -33,8 +33,8 @@ export const Home = () => {
   return (
     <ContainerHome ref={refHome}>
       <TextHome>{t('home.kicker')}</TextHome>
-      <TitleHome>{t('home.name')}</TitleHome>
-      <SubtitleHome>{t('home.subtitle')}</SubtitleHome>
+      <ParallaxText As={TitleHome} amount={36} fade={0.1}>{t('home.name')}</ParallaxText>
+      <ParallaxText As={SubtitleHome} amount={20} fade={0.06}>{t('home.subtitle')}</ParallaxText>
       <LocationTag>{t('home.location')}</LocationTag>
       <DescriptionHome>
         {t('home.description')}
