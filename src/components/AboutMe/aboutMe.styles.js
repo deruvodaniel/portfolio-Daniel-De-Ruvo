@@ -33,6 +33,8 @@ export const AboutMeTitle = styled.h2`
   margin-bottom: 40px;
   line-height: 0.9;
   letter-spacing: -2px;
+  transform: translateY(calc(var(--scrollY, 0) * 0.02px));
+  will-change: transform;
 
   ${mediaQueries.tablet} {
     font-size: 6rem;
