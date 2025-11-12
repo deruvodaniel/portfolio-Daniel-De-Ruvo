@@ -3,7 +3,7 @@ import { mediaQueries } from "styles";
 
 export const SectionTechnologies = styled.section`
   
-  padding: 30px 0;
+  padding: 30px 0 80px;
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
@@ -11,7 +11,7 @@ export const SectionTechnologies = styled.section`
   & > h2 {
     font-size: 2rem;
     font-weight: 900;
-    margin-bottom: 28px;
+    margin: 28px 0;
     text-align: center;
     color: var(--colorPrimary);
     letter-spacing: -2px;

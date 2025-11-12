@@ -3,7 +3,7 @@ import { mediaQueries } from "styles";
 
 export const SectionAboutMe = styled.section`
   
-  padding: 30px 0;
+  padding: 30px 0 80px;
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
@@ -22,9 +22,10 @@ export const AboutMeContent = styled.div`
 
 export const AboutMeTitle = styled.h2`
   color: var(--colorPrimary);
+  text-align: center;
   font-weight: 900;
   font-size: 2rem;
-  margin-bottom: 28px;
+  margin: 28px 0;
   line-height: 0.9;
   letter-spacing: -2px;
   transform: translateY(calc(var(--scrollY, 0) * 0.02px));

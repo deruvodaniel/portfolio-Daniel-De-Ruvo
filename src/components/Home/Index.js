@@ -6,28 +6,16 @@ import {
   TitleHome,
   SubtitleHome,
   DescriptionHome,
-  ButtonsContainer,
-  ButtonHome,
-  SecondaryButton,
   StatsContainer,
   StatItem,
-  LocationTag,
 } from "./home.styles";
 import { useRefs } from "../../context/refsContext";
 import ParallaxText from "components/ParallaxText";
 import { useI18n } from "context/i18nContext";
 
 export const Home = () => {
-  const { refHome, refProjects } = useRefs();
+  const { refHome } = useRefs();
   const { t } = useI18n();
-
-  const scrollToSection = (section) => {
-    if (section && section.current) {
-      const headerOffset = window.innerWidth < 1024 ? 80 : 110;
-      const { smoothScrollTo } = require('lib/scrollTo');
-      smoothScrollTo(section.current, { offset: headerOffset });
-    }
-  };
 
   return (
     <ContainerHome ref={refHome}>
@@ -38,7 +26,7 @@ export const Home = () => {
         {t('home.description')}
       </DescriptionHome>
 
-      <ButtonsContainer>
+      {/* <ButtonsContainer>
         <ButtonHome onClick={() => scrollToSection(refProjects)}>
           {t('home.viewProjects')}
         </ButtonHome>
@@ -51,7 +39,7 @@ export const Home = () => {
             <path d="M3 10v11h11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </SecondaryButton>
-      </ButtonsContainer>
+      </ButtonsContainer> */}
 
       <StatsContainer>
         <StatItem>

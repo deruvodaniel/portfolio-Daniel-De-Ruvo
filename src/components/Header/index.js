@@ -9,7 +9,7 @@ import { smoothScrollTo } from "lib/scrollTo";
 
 export const Header = () => {
   const { refs } = useRefs();
-  const { refAboutMe, refProjects, refContact, refTechnologies, refExperience, refCourses } = refs;
+  const { refAboutMe, refProjects, refContact, refHome, refTechnologies, refExperience, refCourses } = refs;
   const { width } = useWidth();
   const { height } = useHeight();
   const { toggleTheme, theme } = useTheme();
@@ -26,7 +26,7 @@ export const Header = () => {
 
   return (
     <Main className={height > 70 && "withBackground"}>
-      <LogoContainer onClick={() => scrollToSection(refAboutMe)}>
+      <LogoContainer onClick={() => scrollToSection(refHome)}>
         <div className="logo-text">DR</div>
       </LogoContainer>
 

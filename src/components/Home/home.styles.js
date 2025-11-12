@@ -6,15 +6,15 @@ export const ContainerHome = styled.div`
   max-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding: 140px 0 60px;
+  padding: 160px 0 60px;
   position: relative;
   z-index: 50;
   overflow: hidden;
   
   ${mediaQueries.desktop} {
-    padding: 150px 0 80px;
+    padding: 130px 0 80px;
   }
 `;
 
@@ -81,11 +81,6 @@ export const SubtitleHome = styled.h2`
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.6s forwards;
   letter-spacing: 0.5px;
-
-  ${mediaQueries.desktop} {
-    font-size: 3rem;
-    margin-bottom: 64px;
-  }
 `;
 
 export const LocationTag = styled.span`
@@ -105,7 +100,6 @@ export const LocationTag = styled.span`
 
 export const DescriptionHome = styled.p`
   color: var(--textMuted);
-  max-width: 600px;
   width: 100%;
   font-size: 1.2rem;
   line-height: 1.7;
@@ -122,7 +116,6 @@ export const DescriptionHome = styled.p`
   ${mediaQueries.desktop} {
     font-size: 1.6rem;
     line-height: 1.8;
-    max-width: 700px;
     margin-bottom: 80px;
   }
 `;

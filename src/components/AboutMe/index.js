@@ -3,7 +3,6 @@ import {
   AboutMeContent,
   AboutMeTitle,
   AboutMeDescription,
-  AboutMeBoxLinks,
   SkillsContainer,
   SkillCard,
 } from "./aboutMe.styles";
@@ -71,13 +70,13 @@ export const AboutMe = () => {
         <AboutMeContent>
           <div>
             <ParallaxText As={AboutMeTitle} amount={50} fade={0.2}>{t('about.title')}</ParallaxText>
-            <AboutMeDescription>
+            {/* <AboutMeDescription>
               {t('about.p1')}
-            </AboutMeDescription>
+            </AboutMeDescription> */}
             <AboutMeDescription>
               {t('about.p2')}
             </AboutMeDescription>
-            <AboutMeBoxLinks>
+            {/* <AboutMeBoxLinks>
               <a
                 href="https://github.com/deruvodaniel"
                 target="_blank"
@@ -117,7 +116,7 @@ export const AboutMe = () => {
                   <path d="M8 12h8M8 16h8" stroke="currentColor" strokeWidth="1.6"/>
                 </svg>
               </a>
-            </AboutMeBoxLinks>
+            </AboutMeBoxLinks> */}
           </div>
 
           <SkillsContainer>

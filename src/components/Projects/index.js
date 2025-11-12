@@ -1,6 +1,7 @@
 import {
   SectionProjects,
   ContainerProjects,
+  ProjectsTitle,
 } from "./projects.styles";
 import { projects } from "../../arrays/arrayProjects";
 import SimpleProjectCard from "components/SimpleProjectCard";
@@ -14,7 +15,7 @@ export const Projects = () => {
   return (
     <div>
       <SectionProjects ref={refProjects}>
-        <h2>{t('projects.title')}</h2>
+        <ProjectsTitle>{t('projects.title')}</ProjectsTitle>
         <ContainerProjects>
           {projects.map((project) => (
             <SimpleProjectCard key={project.id} project={project} />

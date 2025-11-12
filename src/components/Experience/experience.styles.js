@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mediaQueries } from 'styles';
 
 export const SectionExperience = styled.section`
-  padding: 30px 0;
+  padding: 30px 0 80px;
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
@@ -12,7 +12,7 @@ export const ExperienceTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
   font-size: 2rem;
-  margin-bottom: 28px;
+  margin: 28px 0;
   text-align: center;
   letter-spacing: -2px;
   line-height: 0.9;

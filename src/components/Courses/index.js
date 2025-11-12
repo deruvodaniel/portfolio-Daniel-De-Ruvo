@@ -28,8 +28,8 @@ export const Courses = () => {
         transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <SectionCourses>
-          <ParallaxText As={CoursesTitle} amount={40} fade={0.18} ref={refCourses}>{t('courses.title')}</ParallaxText>
+        <SectionCourses ref={refCourses}>
+          <ParallaxText As={CoursesTitle} amount={40} fade={0.18}>{t('courses.title')}</ParallaxText>
           <ContainerCourses>
             {courses.map(({ id, name, text, academy }) => {
               return (
