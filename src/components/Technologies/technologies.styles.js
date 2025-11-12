@@ -9,7 +9,7 @@ export const SectionTechnologies = styled.section`
   scroll-margin-top: 70px;
 
   & > h2 {
-    font-size: 2.6rem;
+    font-size: 2rem;
     font-weight: 900;
     margin-bottom: 28px;
     text-align: center;
@@ -25,9 +25,9 @@ export const SectionTechnologies = styled.section`
     padding: 30px 0;
 
     & > h2 {
-      font-size: 7rem;
+      font-size: 4.5rem;
       margin-bottom: 80px;
-      letter-spacing: -5px;
+      letter-spacing: -3px;
     }
   }
 `;

@@ -8,13 +8,13 @@ export const ContainerHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 100px 0 60px;
+  padding: 120px 0 60px;
   position: relative;
   z-index: 50;
   overflow: hidden;
   
   ${mediaQueries.desktop} {
-    padding: 100px 0 80px;
+    padding: 130px 0 80px;
   }
 `;
 

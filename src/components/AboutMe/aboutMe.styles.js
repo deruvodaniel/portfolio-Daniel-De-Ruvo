@@ -23,7 +23,7 @@ export const AboutMeContent = styled.div`
 export const AboutMeTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 2.6rem;
+  font-size: 2rem;
   margin-bottom: 28px;
   line-height: 0.9;
   letter-spacing: -2px;
@@ -31,14 +31,14 @@ export const AboutMeTitle = styled.h2`
   will-change: transform;
 
   ${mediaQueries.tablet} {
-    font-size: 6rem;
+    font-size: 4rem;
     letter-spacing: -3px;
   }
 
   ${mediaQueries.desktop} {
-    font-size: 7.5rem;
+    font-size: 4.5rem;
     margin-bottom: 60px;
-    letter-spacing: -5px;
+    letter-spacing: -3px;
   }
 `;
 

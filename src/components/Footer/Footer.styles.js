@@ -47,7 +47,7 @@ export const FooterStyle = styled.footer`
       margin-bottom: 28px;
 
       .logo-text {
-        font-size: 2.6rem;
+        font-size: 2rem;
       }
     }
 

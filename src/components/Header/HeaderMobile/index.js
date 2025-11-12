@@ -8,7 +8,7 @@ const iconMenu = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379488/
 const iconClose = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379624/portfolio%20daniel/cerrar_zhp6o1.png";
 
 export const HeaderMobile = ({ refs }) => {
-  const { refAboutMe, refProjects, refContact, refHome, refTechnologies, refExperience, refCourses } = refs;
+  const { refAboutMe, refProjects, refContact, refTechnologies, refExperience, refCourses } = refs;
   const [menuOpen, setMenuOpen] = useState(false);
   const menu = useRef(null);
   const { toggleTheme, theme } = useTheme();
@@ -57,7 +57,6 @@ export const HeaderMobile = ({ refs }) => {
       {menuOpen && (
         <nav id="mobile-nav" role="navigation" aria-label="main">
           <ListLinks>
-            <Links onClick={() => scrollToSection(refHome)}>{t('header.home')}</Links>
             <Links onClick={() => scrollToSection(refAboutMe)}>{t('header.about')}</Links>
             <Links onClick={() => scrollToSection(refExperience)}>{t('header.experience')}</Links>
             <Links onClick={() => scrollToSection(refTechnologies)}>

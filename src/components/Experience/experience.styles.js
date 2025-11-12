@@ -11,7 +11,7 @@ export const SectionExperience = styled.section`
 export const ExperienceTitle = styled.h2`
   color: var(--colorPrimary);
   font-weight: 900;
-  font-size: 2.6rem;
+  font-size: 2rem;
   margin-bottom: 28px;
   text-align: center;
   letter-spacing: -2px;
@@ -20,9 +20,9 @@ export const ExperienceTitle = styled.h2`
   will-change: transform;
 
   ${mediaQueries.desktop} {
-    font-size: 7rem;
+    font-size: 4.5rem;
     margin-bottom: 80px;
-    letter-spacing: -5px;
+    letter-spacing: -3px;
   }
 `;
 

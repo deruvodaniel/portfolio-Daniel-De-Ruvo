@@ -6,6 +6,26 @@ export const SectionProjects = styled.section`
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
+
+  & > h2 {
+    color: var(--colorPrimary);
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 28px;
+    text-align: center;
+    letter-spacing: -2px;
+    line-height: 0.9;
+    transform: translateY(calc(var(--scrollY, 0) * 0.016px));
+    will-change: transform;
+  }
+
+  ${mediaQueries.desktop} {
+    & > h2 {
+      font-size: 4.5rem;
+      margin-bottom: 40px;
+      letter-spacing: -3px;
+    }
+  }
 `;
 
 export const ContainerProjects = styled.div`
@@ -119,7 +139,7 @@ export const ProjectTitle = styled.h3`
   }
   
   ${mediaQueries.desktop} {
-    font-size: 2.6rem;
+    font-size: 2rem;
     letter-spacing: -2px;
   }
 `;

@@ -5,7 +5,7 @@ export const ContactTitle = styled.h2`
   margin-top: 60px;
   padding-top: 40px;
   color: var(--colorPrimary);
-  font-size: 4rem;
+  font-size: 2.8rem;
   font-weight: 900;
   text-align: center;
   z-index: 55;
@@ -17,8 +17,8 @@ export const ContactTitle = styled.h2`
 
   ${mediaQueries.desktop} {
     margin-top: 50px;
-    font-size: 7rem;
-    letter-spacing: -4px;
+    font-size: 4.5rem;
+    letter-spacing: -3px;
   }
 `;
 
@@ -55,7 +55,7 @@ export const ContactText = styled.h3`
   letter-spacing: -1px;
 
   ${mediaQueries.tablet} {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
 
   ${mediaQueries.desktop} {
