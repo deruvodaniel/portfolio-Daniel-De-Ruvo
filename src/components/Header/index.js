@@ -5,10 +5,11 @@ import { ListLinks, Main, Links, LogoContainer, Controls, ToggleButton } from ".
 import { HeaderMobile } from "./HeaderMobile";
 import { useTheme } from "context/themeContext";
 import { useI18n } from "context/i18nContext";
+import { smoothScrollTo } from "lib/scrollTo";
 
 export const Header = () => {
   const { refs } = useRefs();
-  const { refAboutMe, refProjects, refContact, refHome, refTechnologies, refExperience } = refs;
+  const { refAboutMe, refProjects, refContact, refHome, refTechnologies, refExperience, refCourses } = refs;
   const { width } = useWidth();
   const { height } = useHeight();
   const { toggleTheme, theme } = useTheme();
@@ -18,8 +19,7 @@ export const Header = () => {
     const el = section?.current;
     if (!el) return;
     const headerOffset = 110;
-    const { smoothScrollTo } = require('lib/scrollTo');
-    smoothScrollTo(el, { offset: headerOffset });
+    smoothScrollTo(el, { offset: headerOffset, duration: 800 });
   };
 
   if (width < 1024) return <HeaderMobile refs={refs} />;
@@ -37,6 +37,7 @@ export const Header = () => {
           <Links tabIndex={0} onKeyDown={(e)=> (e.key==='Enter'||e.key===' ') && scrollToSection(refExperience)} onClick={() => scrollToSection(refExperience)} role="link" aria-label="Navigate to Experience section">{t('header.experience')}</Links>
           <Links tabIndex={0} onKeyDown={(e)=> (e.key==='Enter'||e.key===' ') && scrollToSection(refTechnologies)} onClick={() => scrollToSection(refTechnologies)} role="link" aria-label="Navigate to Technologies section">{t('header.skills')}</Links>
           <Links tabIndex={0} onKeyDown={(e)=> (e.key==='Enter'||e.key===' ') && scrollToSection(refProjects)} onClick={() => scrollToSection(refProjects)} role="link" aria-label="Navigate to Projects section">{t('header.projects')}</Links>
+          <Links tabIndex={0} onKeyDown={(e)=> (e.key==='Enter'||e.key===' ') && scrollToSection(refCourses)} onClick={() => scrollToSection(refCourses)} role="link" aria-label="Navigate to Courses section">{t('courses.title')}</Links>
           <Links tabIndex={0} onKeyDown={(e)=> (e.key==='Enter'||e.key===' ') && scrollToSection(refContact)} onClick={() => scrollToSection(refContact)} role="link" aria-label="Navigate to Contact section">{t('header.contact')}</Links>
         </ListLinks>
       </nav>

@@ -29,7 +29,7 @@ const dict = {
     },
     about: {
       title: 'About',
-      p1: "I'm a Senior UX Frontend Developer with 5+ years leveraging AI to accelerate development workflows, from rapid prototyping to automated testing and process optimization.",
+      p1: "I'm a Senior UX Frontend Developer with 6+ years leveraging AI to accelerate development workflows, from rapid prototyping to automated testing and process optimization.",
       p2: 'I integrate AI tools and methodologies to reduce MVP development time by 40%, while maintaining high standards in performance, accessibility (WCAG 2.1 AA), and user experience design.',
       resume: 'Resume',
       skillFrontend: 'AI-Powered Development',
@@ -132,7 +132,7 @@ const dict = {
       name: 'Daniel De Ruvo',
       subtitle: 'Creando experiencias digitales',
       location: 'Argentina',
-      description: 'Senior UX Frontend Developer (5+ años) especializado en workflows de desarrollo impulsados por IA para acelerar MVPs y optimizar experiencias de usuario. Experto en React, Next.js, design systems e integración de IA para prototipado rápido y automatización de procesos.',
+      description: 'Senior UX Frontend Developer (6+ años) especializado en workflows de desarrollo impulsados por IA para acelerar MVPs y optimizar experiencias de usuario. Experto en React, Next.js, design systems e integración de IA para prototipado rápido y automatización de procesos.',
       viewProjects: 'Ver Proyectos',
       getInTouch: 'Contacto',
       resume: 'CV',
@@ -145,7 +145,7 @@ const dict = {
     },
     about: {
       title: 'Sobre mí',
-      p1: 'Soy Senior UX Frontend Developer con 5+ años aprovechando IA para acelerar workflows de desarrollo, desde prototipado rápido hasta testing automatizado y optimización de procesos.',
+      p1: 'Soy Senior UX Frontend Developer con 6+ años aprovechando IA para acelerar workflows de desarrollo, desde prototipado rápido hasta testing automatizado y optimización de procesos.',
       p2: 'Integro herramientas y metodologías de IA para reducir el tiempo de desarrollo de MVPs en 40%, manteniendo altos estándares en performance, accesibilidad (WCAG 2.1 AA) y diseño de experiencia de usuario.',
       resume: 'CV',
       skillFrontend: 'Desarrollo con IA',

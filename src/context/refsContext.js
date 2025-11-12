@@ -15,6 +15,7 @@ export const RefsContextProvider = ({ children }) => {
   const refProjects = useRef(null);
   const refContact = useRef(null);
   const refExperience = useRef(null);
+  const refCourses = useRef(null);
   const refs = {
     refAboutMe,
     refProjects,
@@ -22,6 +23,7 @@ export const RefsContextProvider = ({ children }) => {
     refHome,
     refTechnologies,
     refExperience,
+    refCourses,
   };
 
   return (
@@ -34,6 +36,7 @@ export const RefsContextProvider = ({ children }) => {
         refProjects,
         refContact,
         refExperience,
+        refCourses,
       }}
     >
       {children}

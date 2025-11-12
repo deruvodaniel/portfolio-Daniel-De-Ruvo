@@ -2,12 +2,13 @@ import { useRef, useState } from "react";
 import { Links, ListLinks, LogoMenu, Main, Controls, ToggleButton, LogoText } from "./headerMobile.styles";
 import { useTheme } from "context/themeContext";
 import { useI18n } from "context/i18nContext";
+import { smoothScrollTo } from "lib/scrollTo";
 
 const iconMenu = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379488/portfolio%20daniel/menu_uw4rjt.png";
 const iconClose = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379624/portfolio%20daniel/cerrar_zhp6o1.png";
 
 export const HeaderMobile = ({ refs }) => {
-  const { refAboutMe, refProjects, refContact, refHome, refTechnologies, refExperience } = refs;
+  const { refAboutMe, refProjects, refContact, refHome, refTechnologies, refExperience, refCourses } = refs;
   const [menuOpen, setMenuOpen] = useState(false);
   const menu = useRef(null);
   const { toggleTheme, theme } = useTheme();
@@ -27,9 +28,7 @@ export const HeaderMobile = ({ refs }) => {
     const el = section?.current;
     if (el) {
       const headerOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      smoothScrollTo(el, { offset: headerOffset, duration: 800 });
     }
     if (menu.current) menu.current.classList.remove("open");
     setMenuOpen(false);
@@ -65,6 +64,7 @@ export const HeaderMobile = ({ refs }) => {
               {t('header.skills')}
             </Links>
             <Links onClick={() => scrollToSection(refProjects)}>{t('header.projects')}</Links>
+            <Links onClick={() => scrollToSection(refCourses)}>{t('courses.title')}</Links>
             <Links onClick={() => scrollToSection(refContact)}>{t('header.contact')}</Links>
           </ListLinks>
         </nav>
