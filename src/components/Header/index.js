@@ -26,7 +26,7 @@ export const Header = () => {
 
   return (
     <Main className={height > 70 && "withBackground"}>
-      <LogoContainer onClick={() => scrollToSection(refHome)}>
+      <LogoContainer onClick={() => scrollToSection(refAboutMe)}>
         <div className="logo-text">DR</div>
       </LogoContainer>
 

@@ -8,13 +8,13 @@ export const ContainerHome = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 120px 0 60px;
+  padding: 140px 0 60px;
   position: relative;
   z-index: 50;
   overflow: hidden;
   
   ${mediaQueries.desktop} {
-    padding: 130px 0 80px;
+    padding: 150px 0 80px;
   }
 `;
 
@@ -24,7 +24,7 @@ export const TextHome = styled.p`
   font-weight: 600;
   letter-spacing: 6px;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin: 20px 0 24px;
   position: relative;
   opacity: 0;
   animation: slideInLeft 1s ease-out 0.2s forwards;
@@ -51,7 +51,7 @@ export const TextHome = styled.p`
 export const TitleHome = styled.h1`
   font-size: 4rem;
   font-weight: 900;
-  margin: 0 0 28px;
+  margin: 10px 0 28px;
   line-height: 0.92;
   background: var(--gradientPrimary);
   -webkit-background-clip: text;
@@ -68,7 +68,7 @@ export const TitleHome = styled.h1`
 
   ${mediaQueries.desktop} {
     font-size: 9rem;
-    margin: 0 0 40px;
+    margin: 10px 0 40px;
     letter-spacing: -5px;
   }
 `;

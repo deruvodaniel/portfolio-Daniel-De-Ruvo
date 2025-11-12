@@ -36,7 +36,7 @@ export const HeaderMobile = ({ refs }) => {
 
   return (
     <Main ref={menu}>
-      <LogoText onClick={() => scrollToSection(refHome)} aria-label="logo Daniel">DR</LogoText>
+      <LogoText onClick={() => scrollToSection(refAboutMe)} aria-label="logo Daniel">DR</LogoText>
       <Controls>
         <ToggleButton id="theme-toggle-mobile" aria-label="Toggle theme" aria-pressed={theme === 'dark'} onClick={() => { toggleTheme(); const btn = document.getElementById('theme-toggle-mobile'); if (btn) { btn.classList.remove('theme-animate'); void btn.offsetWidth; btn.classList.add('theme-animate'); } }}>{theme === 'dark' ? '🌙' : '☀️'}</ToggleButton>
         <ToggleButton aria-label="Switch language" onClick={toggleLang}>{lang.toUpperCase()}</ToggleButton>
