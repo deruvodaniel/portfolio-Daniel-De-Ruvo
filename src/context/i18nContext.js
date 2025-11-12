@@ -130,7 +130,7 @@ const dict = {
     home: {
       kicker: 'Senior UX Frontend Developer',
       name: 'Daniel De Ruvo',
-      subtitle: 'Agilizando Procesos con IA',
+      subtitle: 'Creando experiencias digitales',
       location: 'Argentina',
       description: 'Senior UX Frontend Developer (5+ años) especializado en workflows de desarrollo impulsados por IA para acelerar MVPs y optimizar experiencias de usuario. Experto en React, Next.js, design systems e integración de IA para prototipado rápido y automatización de procesos.',
       viewProjects: 'Ver Proyectos',
