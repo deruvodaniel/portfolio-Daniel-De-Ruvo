@@ -9,9 +9,7 @@ export const useTheme = () => {
 };
 
 const getInitialTheme = () => {
-  const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-  if (stored === 'light' || stored === 'dark') return stored;
-  // Always default to dark theme
+  // Force dark theme as default always
   return 'dark';
 };
 
