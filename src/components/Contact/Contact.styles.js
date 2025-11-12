@@ -26,7 +26,7 @@ export const SectionContact = styled.section`
   margin: 30px 0 50px;
   padding: 30px 0;
   z-index: 50;
-  scroll-margin-top: 120px;
+  scroll-margin-top: 70px;
   color: var(--colorPrimary);
   display: grid;
   grid-template-columns: 1fr;

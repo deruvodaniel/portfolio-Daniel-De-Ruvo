@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { mediaQueries } from 'styles';
 
 export const SectionExperience = styled.section`
-  margin: 30px 0;
-  padding: 40px 0;
-  position: relative;
+  padding: 30px 0;
   z-index: 50;
+  position: relative;
+  scroll-margin-top: 70px;
 `;
 
 export const ExperienceTitle = styled.h2`

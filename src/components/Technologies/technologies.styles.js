@@ -6,7 +6,7 @@ export const SectionTechnologies = styled.section`
   padding: 30px 0;
   z-index: 50;
   position: relative;
-  scroll-margin-top: 120px;
+  scroll-margin-top: 70px;
 
   & > h2 {
     font-size: 2.6rem;

@@ -2,47 +2,10 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionProjects = styled.section`
-  margin: 24px 0;
-  padding: 24px 0;
-  z-index: 40;
+  padding: 30px 0 60px;
+  z-index: 50;
   position: relative;
-  scroll-margin-top: 120px;
-  
-  & > h2 {
-    font-size: 2.6rem;
-    font-weight: 900;
-    margin-bottom: 28px;
-    text-align: center;
-    color: var(--colorPrimary);
-    letter-spacing: -2px;
-    line-height: 0.9;
-    position: relative;
-    /* transform: translateY(calc(var(--scrollY, 0) * 0.016px)); */
-    /* will-change: transform; */
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: var(--gradientPrimary);
-      border-radius: 2px;
-    }
-  }
-  
-  ${mediaQueries.desktop} {
-    margin: 30px 0;
-    padding: 30px 0;
-    
-    & > h2 {
-      font-size: 7rem;
-      margin-bottom: 80px;
-      letter-spacing: -5px;
-    }
-  }
+  scroll-margin-top: 70px;
 `;
 
 export const ContainerProjects = styled.div`

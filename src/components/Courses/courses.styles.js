@@ -2,11 +2,10 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionCourses = styled.section`
-  z-index: 50;
   padding: 30px 0;
-  
+  z-index: 50;
   position: relative;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 70px;
 `;
 
 export const CoursesTitle = styled.h2`

@@ -6,7 +6,7 @@ export const SectionAboutMe = styled.section`
   padding: 30px 0;
   z-index: 50;
   position: relative;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 70px;
 `;
 
 export const AboutMeContent = styled.div`

@@ -18,7 +18,7 @@ export const Header = () => {
   const scrollToSection = (section) => {
     const el = section?.current;
     if (!el) return;
-    const headerOffset = 110;
+    const headerOffset = 90;
     smoothScrollTo(el, { offset: headerOffset, duration: 800 });
   };
 

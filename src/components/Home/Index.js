@@ -34,7 +34,6 @@ export const Home = () => {
       <TextHome>{t('home.kicker')}</TextHome>
       <ParallaxText As={TitleHome} amount={36} fade={0.1}>{t('home.name')}</ParallaxText>
       <ParallaxText As={SubtitleHome} amount={20} fade={0.06}>{t('home.subtitle')}</ParallaxText>
-      <LocationTag>{t('home.location')}</LocationTag>
       <DescriptionHome>
         {t('home.description')}
       </DescriptionHome>

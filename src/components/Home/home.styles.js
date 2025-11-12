@@ -2,17 +2,19 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const ContainerHome = styled.div`
-  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 140px 0 80px;
+  padding: 100px 0 60px;
   position: relative;
   z-index: 50;
+  overflow: hidden;
   
   ${mediaQueries.desktop} {
-    padding: 130px 0 100px;
+    padding: 100px 0 80px;
   }
 `;
 

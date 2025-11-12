@@ -11,7 +11,7 @@ export const Main = styled(motion.header)`
   align-items: center;
   z-index: 100;
   padding: 0 60px;
-  height: 100px;
+  height: 80px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &.withBackground {

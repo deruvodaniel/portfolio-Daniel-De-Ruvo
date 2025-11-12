@@ -27,7 +27,7 @@ export const HeaderMobile = ({ refs }) => {
   const scrollToSection = (section) => {
     const el = section?.current;
     if (el) {
-      const headerOffset = 80;
+      const headerOffset = 70;
       smoothScrollTo(el, { offset: headerOffset, duration: 800 });
     }
     if (menu.current) menu.current.classList.remove("open");

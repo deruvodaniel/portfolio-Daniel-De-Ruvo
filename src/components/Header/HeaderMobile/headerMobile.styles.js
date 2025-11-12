@@ -14,12 +14,12 @@ export const Main = styled.header`
   z-index: 100;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 60px;
   padding: 0 16px;
 
   & > nav {
     position: absolute;
-    top: 71px;
+    top: 61px;
     right: 0;
     left: 0;
     z-index: 20;
