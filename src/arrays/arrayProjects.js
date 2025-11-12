@@ -32,7 +32,7 @@ export const projects = [
     title: "Monster Game",
     subtitle: "Vue.js Interactive Game made with IA",
     text: "Engaging browser game built with Vue.js featuring dynamic gameplay mechanics and responsive design.",
-    link: "https://deruvodaniel.github.io/Monster-Game/",
+    link: "https://deploy-preview-4--monster-game-vuejs.netlify.app/",
     github: "https://github.com/deruvodaniel/Monster-Game",
   },
   {

@@ -10,14 +10,13 @@ export const SectionAboutMe = styled.section`
 `;
 
 export const AboutMeContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   align-items: start;
 
   ${mediaQueries.desktop} {
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
   }
 `;
 
@@ -144,6 +143,11 @@ export const SkillsContainer = styled.div`
   flex-direction: column;
   gap: 40px;
   
+  ${mediaQueries.tablet} {
+    flex-direction: row;
+    gap: 30px;
+  }
+  
   ${mediaQueries.desktop} {
     gap: 60px;
   }
@@ -157,6 +161,7 @@ export const SkillCard = styled.div`
   column-gap: 20px;
   row-gap: 8px;
   padding: 0;
+  flex: 1;
 
   .icon {
     display: inline-flex;
@@ -169,7 +174,7 @@ export const SkillCard = styled.div`
 
   .title {
     grid-column: 2;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--colorPrimary);
     margin: 0;
@@ -178,23 +183,48 @@ export const SkillCard = styled.div`
 
   .description {
     grid-column: 2;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--textMuted);
     line-height: 1.7;
   }
 
+  ${mediaQueries.tablet} {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 16px;
+    
+    .icon {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+    }
+    
+    .title {
+      grid-column: 1;
+      grid-row: 2;
+      font-size: 1.9rem;
+    }
+    
+    .description {
+      grid-column: 1;
+      grid-row: 3;
+      font-size: 1.3rem;
+    }
+  }
+
   ${mediaQueries.desktop} {
     column-gap: 24px;
+    
     .icon {
       font-size: 3.5rem;
     }
 
     .title {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
 
     .description {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
   }
 `;
