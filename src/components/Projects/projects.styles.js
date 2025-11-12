@@ -45,7 +45,7 @@ export const SectionProjects = styled.section`
   ${mediaQueries.desktop} {
     & > h2 {
       font-size: 4.5rem;
-      margin-bottom: 40px;
+      margin-bottom: 80px;
       letter-spacing: -3px;
     }
   }

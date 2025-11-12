@@ -147,6 +147,7 @@ export const SkillsContainer = styled.div`
   ${mediaQueries.tablet} {
     flex-direction: row;
     gap: 30px;
+    align-items: stretch;
   }
   
   ${mediaQueries.desktop} {
@@ -163,6 +164,7 @@ export const SkillCard = styled.div`
   row-gap: 8px;
   padding: 0;
   flex: 1;
+  min-height: 140px;
 
   .icon {
     display: inline-flex;
@@ -171,6 +173,7 @@ export const SkillCard = styled.div`
     font-size: 3rem;
     grid-column: 1;
     grid-row: 1 / span 2;
+    align-self: start;
   }
 
   .title {
@@ -180,6 +183,7 @@ export const SkillCard = styled.div`
     color: var(--colorPrimary);
     margin: 0;
     letter-spacing: -1px;
+    align-self: start;
   }
 
   .description {
@@ -187,34 +191,40 @@ export const SkillCard = styled.div`
     font-size: 1.2rem;
     color: var(--textMuted);
     line-height: 1.7;
+    align-self: start;
   }
 
   ${mediaQueries.tablet} {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 16px;
+    min-height: 180px;
     
     .icon {
       grid-column: 1;
       grid-row: 1;
       justify-self: center;
+      align-self: start;
     }
     
     .title {
       grid-column: 1;
       grid-row: 2;
       font-size: 1.9rem;
+      align-self: start;
     }
     
     .description {
       grid-column: 1;
       grid-row: 3;
       font-size: 1.3rem;
+      align-self: start;
     }
   }
 
   ${mediaQueries.desktop} {
     column-gap: 24px;
+    min-height: 160px;
     
     .icon {
       font-size: 3.5rem;
