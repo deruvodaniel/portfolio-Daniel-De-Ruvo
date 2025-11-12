@@ -16,7 +16,7 @@ export const ContactTitle = styled.h2`
   will-change: transform;
 
   ${mediaQueries.desktop} {
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 7rem;
     letter-spacing: -4px;
   }
@@ -38,7 +38,7 @@ export const SectionContact = styled.section`
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     margin: 70px 0 100px;
-    padding: 50px 0;
+    padding: 30px 0;
   }
 `;
 

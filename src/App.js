@@ -19,24 +19,25 @@ const Projects = lazy(() => import('./components/Projects').then(m => ({ default
 
 function App() {
   useEffect(() => {
-    const { initLenis } = require('./lib/lenis');
-    const cleanupLenis = initLenis();
+    // Temporalmente deshabilitado para debugging de scroll
+    // const { initLenis } = require('./lib/lenis');
+    // const cleanupLenis = initLenis();
 
-    let rAF;
-    const onScroll = () => {
-      if (rAF) return;
-      rAF = requestAnimationFrame(() => {
-        document.documentElement.style.setProperty('--scrollY', String(window.scrollY || 0));
-        rAF = null;
-      });
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    // let rAF;
+    // const onScroll = () => {
+    //   if (rAF) return;
+    //   rAF = requestAnimationFrame(() => {
+    //     document.documentElement.style.setProperty('--scrollY', String(window.scrollY || 0));
+    //     rAF = null;
+    //   });
+    // };
+    // window.addEventListener('scroll', onScroll, { passive: true });
+    // onScroll();
 
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      cleanupLenis && cleanupLenis();
-    };
+    // return () => {
+    //   window.removeEventListener('scroll', onScroll);
+    //   cleanupLenis && cleanupLenis();
+    // };
   }, []);
 
   return (

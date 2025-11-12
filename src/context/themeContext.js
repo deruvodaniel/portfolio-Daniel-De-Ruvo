@@ -11,9 +11,7 @@ export const useTheme = () => {
 const getInitialTheme = () => {
   const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
   if (stored === 'light' || stored === 'dark') return stored;
-  if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    return 'light';
-  }
+  // Always default to dark theme
   return 'dark';
 };
 

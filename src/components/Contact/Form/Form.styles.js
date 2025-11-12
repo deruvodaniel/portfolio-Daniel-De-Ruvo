@@ -124,7 +124,7 @@ export const Textarea = styled.textarea`
 export const Btn = styled.button`
   grid-area: button;
   padding: 20px 40px;
-  border-radius: 60px;
+  border-radius: 8px;
   background: var(--gradientPrimary);
   border: none;
   color: var(--buttonOnGradientText);

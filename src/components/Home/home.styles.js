@@ -12,7 +12,7 @@ export const ContainerHome = styled.div`
   z-index: 50;
   
   ${mediaQueries.desktop} {
-    padding: 180px 0 100px;
+    padding: 130px 0 100px;
   }
 `;
 
@@ -149,10 +149,10 @@ export const ButtonHome = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
+  padding: 16px 24px;
   background: var(--gradientPrimary);
   border: none;
-  border-radius: 40px;
+  border-radius: 8px;
   color: var(--buttonOnGradientText);
   font-weight: 700;
   font-size: 1rem;
@@ -163,6 +163,7 @@ export const ButtonHome = styled.button`
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 180px;
+  height: 56px;
 
   &::before {
     content: '';
@@ -188,9 +189,10 @@ export const ButtonHome = styled.button`
 
   ${mediaQueries.desktop} {
     font-size: 1.05rem;
-    padding: 16px 28px;
+    padding: 18px 28px;
     min-width: 200px;
-    border-radius: 44px;
+    border-radius: 10px;
+    height: 60px;
   }
 `;
 
@@ -200,10 +202,10 @@ export const SecondaryButton = styled.button`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 16px 28px;
+  padding: 14px 26px;
   background: transparent;
   border: 2px solid var(--colorSecondary);
-  border-radius: 40px;
+  border-radius: 8px;
   color: var(--colorSecondary);
   font-weight: 600;
   font-size: 1rem;
@@ -214,6 +216,7 @@ export const SecondaryButton = styled.button`
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 190px;
+  height: 56px;
 
   svg { width: 18px; height: 18px; }
 
@@ -226,9 +229,10 @@ export const SecondaryButton = styled.button`
 
   ${mediaQueries.desktop} {
     font-size: 1.05rem;
-    padding: 18px 32px;
+    padding: 16px 30px;
     min-width: 210px;
-    border-radius: 44px;
+    border-radius: 10px;
+    height: 60px;
   }
 `;
 

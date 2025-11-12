@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mediaQueries } from "styles";
 
 export const SectionTechnologies = styled.section`
-  margin: 40px 0;
+  
   padding: 30px 0;
   z-index: 50;
   position: relative;
@@ -21,8 +21,8 @@ export const SectionTechnologies = styled.section`
   }
 
   ${mediaQueries.desktop} {
-    margin: 90px 0;
-    padding: 50px 0;
+    
+    padding: 30px 0;
 
     & > h2 {
       font-size: 7rem;

@@ -17,8 +17,8 @@ export const SectionProjects = styled.section`
     letter-spacing: -2px;
     line-height: 0.9;
     position: relative;
-    transform: translateY(calc(var(--scrollY, 0) * 0.016px));
-    will-change: transform;
+    /* transform: translateY(calc(var(--scrollY, 0) * 0.016px)); */
+    /* will-change: transform; */
 
     &::after {
       content: '';
@@ -34,8 +34,8 @@ export const SectionProjects = styled.section`
   }
   
   ${mediaQueries.desktop} {
-    margin: 80px 0;
-    padding: 50px 0;
+    margin: 30px 0;
+    padding: 30px 0;
     
     & > h2 {
       font-size: 7rem;
@@ -46,40 +46,42 @@ export const SectionProjects = styled.section`
 `;
 
 export const ContainerProjects = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  
+  ${mediaQueries.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  ${mediaQueries.desktop} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
 `;
 
 export const ProjectItem = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-  padding: 40px 0;
-  border-bottom: none;
-  position: relative;
-  transition: all 0.3s ease;
-  
-  &:last-child {}
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--backgroundCard);
+  border: 1px solid var(--colorBorder);
+  height: fit-content;
   
   ${mediaQueries.desktop} {
-    grid-template-columns: 1fr 2fr;
-    gap: 64px;
-    padding: 64px 0;
-
-    &:hover {
-      background: var(--backgroundCard);
-      border-radius: 20px;
-      padding: 64px 48px;
-      margin: 0 -48px;
-    }
+    padding: 28px;
+    gap: 18px;
   }
 `;
 
 export const ProjectMeta = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+  order: 3;
 `;
 
 export const ProjectYear = styled.span`
@@ -101,8 +103,8 @@ export const ProjectCategory = styled.span`
 export const TechStack = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 12px;
 `;
 
 export const TechStackTitle = styled.h4`
@@ -136,37 +138,45 @@ export const TechTag = styled.span`
 export const ProjectContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
+  order: 2;
 `;
 
 export const ProjectTitle = styled.h3`
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 900;
   color: var(--colorPrimary);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   letter-spacing: -1px;
   line-height: 1.1;
   
   ${mediaQueries.tablet} {
-    font-size: 3.2rem;
-    letter-spacing: -2px;
+    font-size: 2.2rem;
+    letter-spacing: -1.5px;
   }
   
   ${mediaQueries.desktop} {
-    font-size: 4rem;
-    letter-spacing: -3px;
+    font-size: 2.6rem;
+    letter-spacing: -2px;
   }
 `;
 
 export const ProjectDescription = styled.p`
-  font-size: 1.2rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.5;
   color: var(--textSecondary);
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+  
+  /* Limitar a 3 líneas para ahorrar espacio */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   
   ${mediaQueries.desktop} {
-    font-size: 1.35rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    -webkit-line-clamp: 4;
   }
 `;
 
@@ -210,5 +220,13 @@ export const ProjectLink = styled.a`
 `;
 
 export const LinkPreviewWrapper = styled.div`
-  margin: 8px 0 16px;
+  margin: 0 0 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  order: 1;
+  
+  ${mediaQueries.desktop} {
+    margin: 0 0 16px;
+  }
 `;

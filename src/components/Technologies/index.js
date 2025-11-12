@@ -14,6 +14,7 @@ import {
   SiNextdotjs,
   SiVuedotjs,
   SiJavascript,
+  SiTypescript,
   SiStorybook,
   SiMui,
   SiStyledcomponents,
@@ -26,6 +27,9 @@ import {
   SiGithubactions,
   SiFigma,
   SiGoogleanalytics,
+  SiTailwindcss,
+  SiRadixui,
+  SiOpenai,
 } from 'react-icons/si';
 
 const techIconsMap = {
@@ -35,6 +39,10 @@ const techIconsMap = {
   'vue.js': SiVuedotjs,
   'vue': SiVuedotjs,
   'javascript': SiJavascript,
+  'typescript': SiTypescript,
+  'ai tools': SiOpenai,
+  'tailwind css': SiTailwindcss,
+  'radix ui': SiRadixui,
   'storybook': SiStorybook,
   'mui': SiMui,
   'styled components': SiStyledcomponents,
@@ -69,7 +77,7 @@ export const Technologies = () => {
             const key = (text || '').toLowerCase();
             const Icon = techIconsMap[key] || null;
             return (
-              <TechCard key={id} style={{ ['--delay']: `${(id % 6) * 0.3}s` }}>
+              <TechCard key={id} style={{ '--delay': `${(id % 6) * 0.3}s` }}>
                 {img ? (
                   <img className="tech-icon" src={img} alt={text} />
                 ) : Icon ? (

@@ -4,14 +4,9 @@ import { mediaQueries } from "styles";
 export const SectionCourses = styled.section`
   z-index: 50;
   padding: 30px 0;
-  margin: 40px 0;
+  
   position: relative;
-  scroll-margin-top: 120px;
-
-  ${mediaQueries.desktop} {
-    margin: 90px 0;
-    padding: 50px 0;
-  }
+  scroll-margin-top: 80px;
 `;
 
 export const CoursesTitle = styled.h2`

@@ -29,9 +29,18 @@ const MyForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
-  } = useForm();
+  } = useForm({ 
+    mode: 'onChange',
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      subject: '',
+      message: ''
+    }
+  });
 
   const hasEmailConfig = Boolean(serviceId && templateId && publicKey);
 
@@ -75,15 +84,15 @@ const MyForm = () => {
                     message: t('form.required'),
                   },
                   minLength: {
-                    value: 3,
+                    value: 2,
                     message: t('form.minName'),
                   },
                   maxLength: {
-                    value: 20,
+                    value: 50,
                     message: t('form.maxName'),
                   },
                   pattern: {
-                    value: /^[ a-zA-Z0]+$/,
+                    value: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/,
                     message: t('form.lettersOnly'),
                   },
                 })}
@@ -98,18 +107,13 @@ const MyForm = () => {
                 className={errors.phone && "input__error"}
                 placeholder={t('form.phone')}
                 {...register("phone", {
-                  maxLength: {
-                    value: 20,
-                    message: t('form.maxPhone'),
-                  },
-                  minLength: {
-                    value: 10,
-                    message: t('form.minPhone'),
-                  },
-                  pattern: {
-                    value: /^\d+$/,
-                    message: t('form.numbersOnly'),
-                  },
+                  validate: (value) => {
+                    if (!value || value === '') return true; // Field is optional
+                    if (value.length < 10) return t('form.minPhone');
+                    if (value.length > 20) return t('form.maxPhone');
+                    if (!/^\d+$/.test(value)) return t('form.numbersOnly');
+                    return true;
+                  }
                 })}
               />
               <ErrorMessage> {errors?.phone?.message} </ErrorMessage>
@@ -155,15 +159,15 @@ const MyForm = () => {
                     message: t('form.required'),
                   },
                   minLength: {
-                    value: 6,
+                    value: 3,
                     message: t('form.minSubject'),
                   },
                   maxLength: {
-                    value: 30,
+                    value: 100,
                     message: t('form.maxSubject'),
                   },
                   pattern: {
-                    value: /^[ a-zA-Z0-9]+$/,
+                    value: /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s0-9.,!?()-]+$/,
                     message: t('form.lettersNumbers'),
                   },
                 })}
@@ -192,7 +196,9 @@ const MyForm = () => {
               />
             </ContainerTextArea>
             <ErrorMessage> {errors?.message?.message} </ErrorMessage>
-            <Btn type="submit" disabled={!hasEmailConfig}>{t('form.send')}</Btn>
+            <Btn type="submit" disabled={!isValid}>
+              {!hasEmailConfig ? 'Email Config Missing' : t('form.send')}
+            </Btn>
           </Form>
         )}
       </SectionForm>
