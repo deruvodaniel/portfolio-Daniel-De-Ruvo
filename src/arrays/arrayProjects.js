@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 1,
-    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop",
+    img: "",
     title: "FuelCore AI",
     subtitle: "AI-Powered Nutrition App",
     text: "Comprehensive nutrition app with questionnaires, meal plans, and AI-generated recipes using Gemini API. Advanced UX with personalized recommendations.",
@@ -13,13 +13,13 @@ export const projects = [
     img: "https://i.postimg.cc/hGn33GSV/Captura-de-pantalla-2025-11-12-150847.png",
     title: "UX dev Game",
     subtitle: "Coder vs IA game",
-    text: "gamified coding/tech learning experience where developers battle against programming-related enemies in a card-based RPG system.",
+    text: "Gamified coding/tech learning experience where developers battle against programming-related enemies in a card-based RPG system.",
     link: "https://ux-dev-game-lemon.vercel.app/",
     github: "https://github.com/deruvodaniel/ux-dev-game",
   },
   {
     id: 3,
-    img: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+    img: "",
     title: "Dragon Ball API App",
     subtitle: "React, API Integration, Mobile First",
     text: "App that connects to external API with theme switching and translations. Mobile-first responsive design with modern UI components.",
@@ -28,7 +28,7 @@ export const projects = [
   },
   {
     id: 8,
-    img: "https://i.postimg.cc/GtDTcLJb/Screenshot-1.png",
+    img: "",
     title: "Monster Game",
     subtitle: "Vue.js Interactive Game made with IA",
     text: "Engaging browser game built with Vue.js featuring dynamic gameplay mechanics and responsive design.",
@@ -37,7 +37,7 @@ export const projects = [
   },
   {
     id: 4,
-    img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    img: "",
     title: "Modern Ecommerce",
     subtitle: "Next.js, Shopify Integration",
     text: "Full-featured ecommerce platform with modern design, payment integration, and inventory management. Built with Next.js and Shopify.",
@@ -46,7 +46,7 @@ export const projects = [
   },
   {
     id: 11,
-    img: "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?w=1200&h=630&fit=crop",
+    img: "",
     title: "Production‑Ready UI (Atomic Design)",
     subtitle: "Next.js 13 App Router, Tailwind, TypeScript, Storybook, Jest/RTL",
     text: "Starter de Next.js 13 (App Router) + Tailwind + TypeScript, listo para producción, con arquitectura atómica (atoms/molecules/organisms) y ThemeProvider con design tokens personalizables. Componentes accesibles estilo Radix/shadcn, Storybook con documentación y ejemplos (build servido en /storybook), tests con Jest/RTL y utilidades para UI consistente. Mejoras aplicadas para SEO/Performance/A11y.",

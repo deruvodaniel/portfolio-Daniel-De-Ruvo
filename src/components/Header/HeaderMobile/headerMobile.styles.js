@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
+import { gradientText } from 'styles/mixins';
 
 export const Main = styled.header`
   display: flex;
@@ -76,10 +77,7 @@ export const ToggleButton = styled.button`
 export const LogoText = styled.div`
   font-size: 2rem;
   font-weight: 900;
-  background: var(--gradientPrimary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  ${gradientText}
   letter-spacing: -1px;
   padding-left: 8px;
 `

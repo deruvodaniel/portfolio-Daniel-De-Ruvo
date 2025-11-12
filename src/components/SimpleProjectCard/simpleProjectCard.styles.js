@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from "../../styles";
+import { gradientButton, gradientText } from '../../styles/mixins';
 
 export const SimpleCard = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export const SimpleContent = styled.div`
 export const SimpleTitle = styled.h3`
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--colorPrimary);
+  ${gradientText}
   margin: 0;
   line-height: 1.3;
 `;
@@ -67,15 +68,12 @@ export const PrimaryButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  background: var(--gradientPrimary);
-  border: none;
+  ${gradientButton}
   border-radius: 8px;
-  color: var(--buttonOnGradientText);
   font-weight: 600;
   font-size: 0.9rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: all 0.22s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -90,11 +88,6 @@ export const PrimaryButton = styled.button`
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(100, 255, 218, 0.25);
   }
 
   &:hover::before {

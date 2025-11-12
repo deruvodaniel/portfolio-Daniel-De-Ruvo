@@ -1,31 +1,13 @@
 import styled from "styled-components";
 import { mediaQueries } from "styles";
+import { sectionTitle } from "styles/mixins";
 
 export const ProjectsTitle = styled.h2`
-  color: var(--colorPrimary);
-  text-align: center;
-  font-weight: 900;
-  font-size: 2rem;
-  margin: 28px 0;
-  line-height: 0.9;
-  letter-spacing: -2px;
-  transform: translateY(calc(var(--scrollY, 0) * 0.02px));
-  will-change: transform;
-
-  ${mediaQueries.tablet} {
-    font-size: 4rem;
-    letter-spacing: -3px;
-  }
-
-  ${mediaQueries.desktop} {
-    font-size: 4.5rem;
-    margin-bottom: 60px;
-    letter-spacing: -3px;
-  }
+  ${sectionTitle}
 `;
 
 export const SectionProjects = styled.section`
-  padding: 30px 0 80px;
+  padding: 30px 0;
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;

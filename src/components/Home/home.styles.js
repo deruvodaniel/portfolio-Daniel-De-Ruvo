@@ -1,20 +1,19 @@
 import styled from "styled-components";
 import { mediaQueries } from "styles";
+import { gradientButton, gradientText } from 'styles/mixins';
 
 export const ContainerHome = styled.div`
-  height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 160px 0 60px;
+  padding: 160px 0 120px;
   position: relative;
   z-index: 50;
-  overflow: hidden;
   
   ${mediaQueries.desktop} {
-    padding: 130px 0 80px;
+    padding: 180px 0 140px;
   }
 `;
 
@@ -27,7 +26,8 @@ export const TextHome = styled.p`
   margin: 20px 0 24px;
   position: relative;
   opacity: 0;
-  animation: slideInLeft 1s ease-out 0.2s forwards;
+  animation: slideInLeft 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+  will-change: transform, opacity;
   
   &::after {
     content: '';
@@ -38,7 +38,8 @@ export const TextHome = styled.p`
     height: 2px;
     background: var(--gradientPrimary);
     border-radius: 1px;
-    animation: slideInLeft 1s ease-out 0.8s forwards;
+    animation: slideInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+    will-change: transform, opacity;
   }
   
   ${mediaQueries.desktop} {
@@ -53,13 +54,11 @@ export const TitleHome = styled.h1`
   font-weight: 900;
   margin: 10px 0 28px;
   line-height: 0.92;
-  background: var(--gradientPrimary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  ${gradientText}
   opacity: 0;
-  animation: fadeInUp 1.2s ease-out 0.4s forwards;
+  animation: fadeInUp 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
   letter-spacing: -2px;
+  will-change: transform, opacity;
 
   ${mediaQueries.tablet} {
     font-size: 6rem;
@@ -79,8 +78,9 @@ export const SubtitleHome = styled.h2`
   color: var(--textSecondary);
   margin-bottom: 40px;
   opacity: 0;
-  animation: fadeInUp 1s ease-out 0.6s forwards;
+  animation: fadeInUp 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
   letter-spacing: 0.5px;
+  will-change: transform, opacity;
 `;
 
 export const LocationTag = styled.span`
@@ -106,7 +106,8 @@ export const DescriptionHome = styled.p`
   font-weight: 400;
   margin-bottom: 56px;
   opacity: 0;
-  animation: fadeInUp 1s ease-out 0.8s forwards;
+  animation: fadeInUp 1.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
+  will-change: transform, opacity;
 
   @media (max-width: 767px) {
     max-width: 100%;
@@ -116,7 +117,7 @@ export const DescriptionHome = styled.p`
   ${mediaQueries.desktop} {
     font-size: 1.6rem;
     line-height: 1.8;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -145,16 +146,13 @@ export const ButtonHome = styled.button`
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
-  background: var(--gradientPrimary);
-  border: none;
+  ${gradientButton}
   border-radius: 8px;
-  color: var(--buttonOnGradientText);
   font-weight: 700;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
-  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 180px;
@@ -237,7 +235,8 @@ export const StatsContainer = styled.div`
   gap: 28px;
   width: 100%;
   opacity: 0;
-  animation: fadeInUp 1s ease-out 1.2s forwards;
+  animation: fadeInUp 1s ease-out 1.5s forwards;
+  margin-top: 20px;
 
   ${mediaQueries.mobile} {
     grid-template-columns: 1fr;

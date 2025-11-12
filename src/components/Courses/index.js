@@ -1,19 +1,18 @@
 import {
+  SectionCourses,
+  CoursesTitle,
+  ContainerCourses,
   ContainerCourse,
   ContainerCourseName,
-  ContainerCourses,
-  CourseAcademy,
   CourseName,
-  CoursesTitle,
   CourseText,
-  SectionCourses,
+  CourseAcademy,
 } from "./courses.styles";
+import { courses } from "../../arrays/arrayCourses";
 import { motion } from "framer-motion";
-import ParallaxText from "components/ParallaxText";
-import useWidth from "hooks/useWidth";
-import { courses } from "arrays/arrayCourses";
+import useWidth from "../../hooks/useWidth";
+import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
-import { useRefs } from "context/refsContext";
 
 export const Courses = () => {
   const { refCourses } = useRefs();
@@ -28,8 +27,8 @@ export const Courses = () => {
         transition={{ type: "spring", bounce: 0.4, duration: 0.8 }}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <SectionCourses ref={refCourses}>
-          <ParallaxText As={CoursesTitle} amount={40} fade={0.18}>{t('courses.title')}</ParallaxText>
+                <SectionCourses ref={refCourses}>
+          <CoursesTitle>{t('courses.title')}</CoursesTitle>
           <ContainerCourses>
             {courses.map(({ id, name, text, academy }) => {
               return (

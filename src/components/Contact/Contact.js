@@ -4,6 +4,7 @@ import { useRefs } from "context/refsContext";
 import {
   SectionContact,
   ContactTitle,
+  ContactContainer,
   ContactText,
   ContactInfo,
   ContactLinks,
@@ -11,7 +12,6 @@ import {
   ButtonCopy,
 } from "./Contact.styles";
 import { motion } from "framer-motion";
-import ParallaxText from "components/ParallaxText";
 import useWidth from "hooks/useWidth";
 import { useI18n } from "context/i18nContext";
 
@@ -50,11 +50,12 @@ export const Contact = () => {
       transition={{ type: "spring", duration: 2 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <ParallaxText As={ContactTitle} amount={36} fade={0.16}>{t('contact.title')}</ParallaxText>
       <SectionContact ref={refContact}>
-        <BoxContactInfo>
-          <ContactText>{t('contact.lead')}</ContactText>
-          <ContactInfo aria-live="polite" aria-atomic="true">
+        <ContactTitle>{t('contact.title')}</ContactTitle>
+        <ContactContainer>
+          <BoxContactInfo>
+            <ContactText>{t('contact.lead')}</ContactText>
+            <ContactInfo aria-live="polite" aria-atomic="true">
             <ButtonCopy onClick={copyEmail} aria-label={t('contact.copyEmail')}>
               <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z" opacity="0.2"/><path d="M4 8l8 6 8-6"/></svg>
               {copyEmailSuccess ? t('contact.copiedEmail') : t('contact.copyEmail')}
@@ -109,6 +110,7 @@ export const Contact = () => {
           )}
         </BoxContactInfo>
         <MyForm />
+        </ContactContainer>
       </SectionContact>
     </motion.div>
   );

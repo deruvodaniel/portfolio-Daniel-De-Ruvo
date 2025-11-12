@@ -57,7 +57,7 @@ export const HeaderMobile = ({ refs }) => {
       {menuOpen && (
         <nav id="mobile-nav" role="navigation" aria-label="main">
           <ListLinks>
-            <Links onClick={() => scrollToSection(refAboutMe)}>{t('header.about')}</Links>
+            <Links onClick={() => scrollToSection(refHome)}>{t('header.about')}</Links>
             <Links onClick={() => scrollToSection(refExperience)}>{t('header.experience')}</Links>
             <Links onClick={() => scrollToSection(refTechnologies)}>
               {t('header.skills')}

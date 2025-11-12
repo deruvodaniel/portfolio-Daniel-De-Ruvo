@@ -33,50 +33,40 @@ const SimpleProjectCard = ({ project }) => {
 
   // Generar preview URL usando WordPress mshots
   const getPreviewUrl = (url) => {
-    if (!url) return getFallbackImage();
+    if (!url) return null;
     const previewUrl = `https://s0.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=600&h=400`;
     return previewUrl;
   };
 
-  // Imágenes de fallback profesionales sin logos
-  const getFallbackImage = () => {
-    const fallbackImages = [
-      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop&q=80', // Code screen
-      'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop&q=80', // Tech setup
-      'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&h=400&fit=crop&q=80', // Code editor
-      'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=600&h=400&fit=crop&q=80', // Programming
-      'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&h=400&fit=crop&q=80', // Dashboard
-    ];
-    
-    // Seleccionar imagen basada en el ID del proyecto
-    const index = (project.id - 1) % fallbackImages.length;
-    return fallbackImages[index];
+  const getImageSource = () => {
+    // Si el proyecto tiene una imagen específica (no string vacío), usarla
+    if (project.img && project.img.trim() !== '') {
+      return project.img;
+    }
+    // Si no tiene imagen específica, usar preview URL
+    return getPreviewUrl(project.link);
   };
 
   if (isLoading) {
     return <ProjectCardSkeleton />;
   }
 
+  const imageSource = getImageSource();
+
   return (
     <SimpleCard>
-      <SimpleImage 
-        src={imageError ? getFallbackImage() : getPreviewUrl(project.link)} 
-        alt={project.title}
-        loading="lazy"
-        onError={(e) => {
-          if (!imageError) {
+      {imageSource ? (
+        <SimpleImage 
+          src={imageSource}
+          alt={project.title}
+          loading="lazy"
+          onError={() => {
             setImageError(true);
-            e.target.src = getFallbackImage();
-          }
-        }}
-        onLoad={(e) => {
-          // Si la imagen carga pero es muy pequeña (placeholder de servicio), usar fallback
-          if (e?.target?.naturalWidth < 100 || e?.target?.naturalHeight < 100) {
-            setImageError(true);
-            e.target.src = getFallbackImage();
-          }
-        }}
-      />
+          }}
+        />
+      ) : (
+        <ProjectCardSkeleton />
+      )}
       
       <SimpleContent>
         <SimpleTitle>{project.title}</SimpleTitle>

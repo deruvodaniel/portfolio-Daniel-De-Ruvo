@@ -3,7 +3,7 @@ import { mediaQueries } from "styles";
 
 export const SectionAboutMe = styled.section`
   
-  padding: 30px 0 80px;
+  padding: 30px 0;
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
@@ -142,100 +142,16 @@ export const AboutMeBoxLinks = styled.div`
 export const SkillsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 24px;
   
   ${mediaQueries.tablet} {
     flex-direction: row;
-    gap: 30px;
-    align-items: stretch;
+    gap: 24px;
   }
   
   ${mediaQueries.desktop} {
-    gap: 60px;
+    gap: 32px;
   }
 `;
 
-export const SkillCard = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-auto-rows: auto;
-  align-items: start;
-  column-gap: 20px;
-  row-gap: 8px;
-  padding: 0;
-  flex: 1;
-  min-height: 140px;
-
-  .icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    align-self: start;
-  }
-
-  .title {
-    grid-column: 2;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--colorPrimary);
-    margin: 0;
-    letter-spacing: -1px;
-    align-self: start;
-  }
-
-  .description {
-    grid-column: 2;
-    font-size: 1.2rem;
-    color: var(--textMuted);
-    line-height: 1.7;
-    align-self: start;
-  }
-
-  ${mediaQueries.tablet} {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 16px;
-    min-height: 180px;
-    
-    .icon {
-      grid-column: 1;
-      grid-row: 1;
-      justify-self: center;
-      align-self: start;
-    }
-    
-    .title {
-      grid-column: 1;
-      grid-row: 2;
-      font-size: 1.9rem;
-      align-self: start;
-    }
-    
-    .description {
-      grid-column: 1;
-      grid-row: 3;
-      font-size: 1.3rem;
-      align-self: start;
-    }
-  }
-
-  ${mediaQueries.desktop} {
-    column-gap: 24px;
-    min-height: 160px;
-    
-    .icon {
-      font-size: 3.5rem;
-    }
-
-    .title {
-      font-size: 2.2rem;
-    }
-
-    .description {
-      font-size: 1.4rem;
-    }
-  }
-`;
+// Removed SkillCard styled component as it's now a separate component

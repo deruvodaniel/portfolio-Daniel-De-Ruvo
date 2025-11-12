@@ -5,11 +5,10 @@ const prefersReducedMotion = () =>
   window.matchMedia &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export const CountUp = ({ to = 0, duration = 1200, suffix = '+' }) => {
+export const CountUp = ({ to = 0, duration = 2500, suffix = '+' }) => {
   const [value, setValue] = useState(0);
-  const startTs = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
-  const done = useRef(false);
 
   useEffect(() => {
     if (prefersReducedMotion()) {
@@ -18,33 +17,46 @@ export const CountUp = ({ to = 0, duration = 1200, suffix = '+' }) => {
     }
 
     const el = ref.current;
-    if (!el) return;
+    if (!el || hasAnimated) return;
 
-    let raf;
-    const animate = (ts) => {
-      if (!startTs.current) startTs.current = ts;
-      const p = Math.min(1, (ts - startTs.current) / duration);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setValue(Math.round(to * eased));
-      if (p < 1) raf = requestAnimationFrame(animate); else done.current = true;
+    const animate = () => {
+      setHasAnimated(true);
+      const startTime = Date.now();
+      
+      const updateValue = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.round(to * eased);
+        
+        setValue(currentValue);
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateValue);
+        }
+      };
+      
+      requestAnimationFrame(updateValue);
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting && !done.current) {
-          raf = requestAnimationFrame(animate);
-          observer.unobserve(e.target);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          animate();
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15 });
+    }, { 
+      threshold: 0.1,
+      rootMargin: '50px 0px'
+    });
 
     observer.observe(el);
 
     return () => {
       observer.disconnect();
-      if (raf) cancelAnimationFrame(raf);
     };
-  }, [to, duration]);
+  }, [to, duration, hasAnimated]);
 
   return <span ref={ref} className="number">{value}{suffix}</span>;
 };

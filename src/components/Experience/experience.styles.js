@@ -1,98 +1,72 @@
 import styled from 'styled-components';
 import { mediaQueries } from 'styles';
+import { sectionPadding, sectionTitle, spacing } from 'styles/mixins';
 
 export const SectionExperience = styled.section`
-  padding: 30px 0 80px;
+  ${sectionPadding}
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
 `;
 
 export const ExperienceTitle = styled.h2`
-  color: var(--colorPrimary);
-  font-weight: 900;
-  font-size: 2rem;
-  margin: 28px 0;
-  text-align: center;
-  letter-spacing: -2px;
-  line-height: 0.9;
-  transform: translateY(calc(var(--scrollY, 0) * 0.018px));
-  will-change: transform;
-
-  ${mediaQueries.desktop} {
-    font-size: 4.5rem;
-    margin-bottom: 80px;
-    letter-spacing: -3px;
-  }
+  ${sectionTitle}
 `;
 
 export const Timeline = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-export const RoleItem = styled.div`
-  padding: 28px 0;
-  border-bottom: 1px solid var(--borderColor);
-  position: relative;
-
-  &:last-child { border-bottom: none; }
-
-  h3 {
-    font-size: 1.6rem;
-    color: var(--colorPrimary);
-    margin: 8px 0 12px;
-    letter-spacing: -0.5px;
-  }
+  gap: ${spacing.md};
 
   ${mediaQueries.desktop} {
-    padding: 48px 0;
-    &::before { top: 48px; }
-    h3 { font-size: 2rem; }
+    gap: ${spacing.lg};
   }
 `;
 
-export const RoleHeader = styled.div`
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 20px;
-
-  ${mediaQueries.mobile} {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  }
-`;
-
-export const RoleCompany = styled.span`
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--colorSecondary);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-`;
-
-export const RolePeriod = styled.span`
-  font-size: 0.95rem;
-  color: var(--textMuted);
-  letter-spacing: 1px;
-  white-space: nowrap;
-
-  ${mediaQueries.mobile} {
-    font-size: 0.9rem;
-    opacity: 0.9;
-  }
-`;
-
+// Only keep styles that are actually used
 export const BulletList = styled.ul`
   margin: 0;
-  padding-left: 20px;
-  color: var(--textSecondary);
+  padding: 0;
+  list-style: none;
 `;
 
 export const BulletItem = styled.li`
-  margin: 6px 0;
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 20px;
   line-height: 1.6;
-  font-size: 1.05rem;
+  font-size: 1rem;
+  color: var(--textSecondary);
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background: var(--colorPrimary);
+    border-radius: 50%;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  ${mediaQueries.tablet} {
+    margin-bottom: 10px;
+    padding-left: 24px;
+    font-size: 1.05rem;
+    
+    &:before {
+      top: 8px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  ${mediaQueries.desktop} {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+  }
 `;

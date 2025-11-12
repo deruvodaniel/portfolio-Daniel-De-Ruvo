@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { gradientText } from 'styles/mixins';
 
 export const Main = styled(motion.header)`
   position: fixed;
@@ -36,10 +37,7 @@ export const LogoContainer = styled.div`
   .logo-text {
     font-size: 2.5rem;
     font-weight: 900;
-    background: var(--gradientPrimary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    ${gradientText}
     letter-spacing: -1px;
     line-height: 1;
   }

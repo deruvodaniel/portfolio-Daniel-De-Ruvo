@@ -4,10 +4,9 @@ import {
   AboutMeTitle,
   AboutMeDescription,
   SkillsContainer,
-  SkillCard,
 } from "./aboutMe.styles";
+import SkillCard from "components/SkillCard";
 import { motion } from "framer-motion";
-import ParallaxText from "components/ParallaxText";
 import useWidth from "../../hooks/useWidth";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
@@ -69,13 +68,13 @@ export const AboutMe = () => {
       <SectionAboutMe ref={refAboutMe}>
         <AboutMeContent>
           <div>
-            <ParallaxText As={AboutMeTitle} amount={50} fade={0.2}>{t('about.title')}</ParallaxText>
+            {/* <ParallaxText As={AboutMeTitle} amount={50} fade={0.2}>{t('about.title')}</ParallaxText> */}
             {/* <AboutMeDescription>
               {t('about.p1')}
             </AboutMeDescription> */}
-            <AboutMeDescription>
+            {/* <AboutMeDescription>
               {t('about.p2')}
-            </AboutMeDescription>
+            </AboutMeDescription> */}
             {/* <AboutMeBoxLinks>
               <a
                 href="https://github.com/deruvodaniel"
@@ -120,29 +119,23 @@ export const AboutMe = () => {
           </div>
 
           <SkillsContainer>
-            <SkillCard>
-              <div className="icon"><GradientZap /></div>
-              <h3 className="title">{t('about.skillFrontend')}</h3>
-              <p className="description">
-                {t('about.skillFrontendDesc')}
-              </p>
-            </SkillCard>
+            <SkillCard
+              icon={<GradientZap />}
+              title={t('about.skillFrontend')}
+              description={t('about.skillFrontendDesc')}
+            />
 
-            <SkillCard>
-              <div className="icon"><GradientLayout /></div>
-              <h3 className="title">{t('about.skillDesign')}</h3>
-              <p className="description">
-                {t('about.skillDesignDesc')}
-              </p>
-            </SkillCard>
+            <SkillCard
+              icon={<GradientLayout />}
+              title={t('about.skillDesign')}
+              description={t('about.skillDesignDesc')}
+            />
 
-            <SkillCard>
-              <div className="icon"><GradientTrendingUp /></div>
-              <h3 className="title">{t('about.skillPerf')}</h3>
-              <p className="description">
-                {t('about.skillPerfDesc')}
-              </p>
-            </SkillCard>
+            <SkillCard
+              icon={<GradientTrendingUp />}
+              title={t('about.skillPerf')}
+              description={t('about.skillPerfDesc')}
+            />
           </SkillsContainer>
         </AboutMeContent>
       </SectionAboutMe>

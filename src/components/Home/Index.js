@@ -17,6 +17,11 @@ export const Home = () => {
   const { refHome } = useRefs();
   const { t } = useI18n();
 
+  // Parse numbers safely from translations
+  const yearsCount = parseInt(t('home.yearsNumber').replace(/[^0-9]/g, '')) || 6;
+  const projectsCount = parseInt(t('home.projectsNumber').replace(/[^0-9]/g, '')) || 15;
+  const satisfactionCount = parseInt(t('home.satisfactionNumber').replace(/[^0-9]/g, '')) || 60;
+
   return (
     <ContainerHome ref={refHome}>
       <TextHome>{t('home.kicker')}</TextHome>
@@ -43,15 +48,15 @@ export const Home = () => {
 
       <StatsContainer>
         <StatItem>
-          <CountUp to={parseInt(t('home.yearsNumber')) || 6} suffix="+" />
+          <CountUp to={yearsCount} duration={2500} suffix="+" />
           <span className="label">{t('home.years')}</span>
         </StatItem>
         <StatItem>
-          <CountUp to={parseInt(t('home.projectsNumber')) || 15} suffix="+" />
+          <CountUp to={projectsCount} duration={2800} suffix="+" />
           <span className="label">{t('home.projects')}</span>
         </StatItem>
         <StatItem>
-          <CountUp to={parseInt(t('home.satisfactionNumber')) || 60} suffix="+" />
+          <CountUp to={satisfactionCount} duration={3000} suffix="+" />
           <span className="label">{t('home.satisfaction')}</span>
         </StatItem>
       </StatsContainer>

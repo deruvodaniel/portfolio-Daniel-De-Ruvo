@@ -1,33 +1,18 @@
 import styled from "styled-components";
 import { mediaQueries } from "styles";
+import { sectionTitle } from "styles/mixins";
 
 export const ContactTitle = styled.h2`
+  ${sectionTitle}
   margin-top: 60px;
   padding-top: 40px;
-  color: var(--colorPrimary);
-  font-size: 2.8rem;
-  font-weight: 900;
-  text-align: center;
-  z-index: 55;
-  position: relative;
-  letter-spacing: -2px;
-  line-height: 0.9;
-  transform: translateY(calc(var(--scrollY, 0) * 0.015px));
-  will-change: transform;
 
   ${mediaQueries.desktop} {
     margin-top: 50px;
-    font-size: 4.5rem;
-    letter-spacing: -3px;
   }
 `;
 
-export const SectionContact = styled.section`
-  margin: 30px 0 50px;
-  padding: 30px 0;
-  z-index: 50;
-  scroll-margin-top: 70px;
-  color: var(--colorPrimary);
+export const ContactContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 60px;
@@ -37,6 +22,18 @@ export const SectionContact = styled.section`
   ${mediaQueries.desktop} {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+  }
+`;
+
+export const SectionContact = styled.section`
+  margin: 30px 0 50px;
+  padding: 30px 0;
+  z-index: 50;
+  scroll-margin-top: 70px;
+  color: var(--colorPrimary);
+  position: relative;
+
+  ${mediaQueries.desktop} {
     margin: 70px 0 100px;
     padding: 30px 0;
   }

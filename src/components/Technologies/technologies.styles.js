@@ -1,35 +1,16 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
+import { sectionPadding, sectionTitle } from 'styles/mixins';
 
 export const SectionTechnologies = styled.section`
-  
-  padding: 30px 0 80px;
+  ${sectionPadding}
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
+`;
 
-  & > h2 {
-    font-size: 2rem;
-    font-weight: 900;
-    margin: 28px 0;
-    text-align: center;
-    color: var(--colorPrimary);
-    letter-spacing: -2px;
-    line-height: 0.9;
-    transform: translateY(calc(var(--scrollY, 0) * 0.016px));
-    will-change: transform;
-  }
-
-  ${mediaQueries.desktop} {
-    
-    padding: 30px 0;
-
-    & > h2 {
-      font-size: 4.5rem;
-      margin-bottom: 80px;
-      letter-spacing: -3px;
-    }
-  }
+export const TechnologiesTitle = styled.h2`
+  ${sectionTitle}
 `;
 
 export const ContainerTechnologies = styled.div`

@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
+import { gradientButton } from 'styles/mixins';
 
 export const SectionForm = styled.section`
   display: flex;
@@ -125,29 +126,21 @@ export const Btn = styled.button`
   grid-area: button;
   padding: 20px 40px;
   border-radius: 8px;
-  background: var(--gradientPrimary);
-  border: none;
-  color: var(--buttonOnGradientText);
+  ${gradientButton}
   font-size: 1.1rem;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 20px;
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadowPrimary);
-  }
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
   }
-`;
+`;;
 
 export const ErrorMessage = styled.span`
   color: var(--colorError);

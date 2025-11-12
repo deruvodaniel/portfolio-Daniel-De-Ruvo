@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mediaQueries } from "styles";
+import { gradientText } from 'styles/mixins';
 
 export const FooterStyle = styled.footer`
   margin-top: 40px;
@@ -23,10 +24,7 @@ export const FooterStyle = styled.footer`
     .logo-text {
       font-size: 2.2rem;
       font-weight: 900;
-      background: var(--gradientPrimary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      ${gradientText}
       letter-spacing: -1px;
       line-height: 1;
     }
