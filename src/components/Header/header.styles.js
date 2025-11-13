@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { gradientText } from 'styles/mixins';
 
 export const Main = styled(motion.header)`
   position: fixed;
@@ -34,12 +33,8 @@ export const LogoContainer = styled.div`
 
   &:hover { transform: translateY(-2px); }
 
-  .logo-text {
-    font-size: 2.5rem;
-    font-weight: 900;
-    ${gradientText}
-    letter-spacing: -1px;
-    line-height: 1;
+  .logo-image {
+    transition: all 0.3s ease;
   }
 `;
 
@@ -108,6 +103,7 @@ export const ToggleButton = styled.button`
   border: 1px solid var(--borderColor);
   cursor: pointer;
   font-size: 0.95rem;
+  font-family: var(--fontBody);
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;

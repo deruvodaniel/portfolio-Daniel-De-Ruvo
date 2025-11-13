@@ -1,9 +1,18 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
-import { sectionTitle } from "styles/mixins";
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
 
 export const ProjectsTitle = styled.h2`
-  ${sectionTitle}
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  font-family: var(--fontHeading);
+  color: var(--colorPrimary);
+
+  ${mediaQueries.tablet} {
+    font-size: 4rem;
+  }
 `;
 
 export const SectionProjects = styled.section`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from 'styles';
-import { baseCard, cardPadding, focusStyles, spacing, fontSize, textStyles } from 'styles/mixins';
+import { baseCard, cardPadding, focusStyles, fontSize, textStyles } from 'styles/mixins';
 
 export const AccordionContainer = styled.div`
   ${baseCard}

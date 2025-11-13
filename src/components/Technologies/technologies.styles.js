@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from 'styles';
-import { sectionPadding, sectionTitle } from 'styles/mixins';
+import { sectionPadding, sectionTitlePlain } from 'styles/mixins';
 
 export const SectionTechnologies = styled.section`
   ${sectionPadding}
@@ -10,7 +10,7 @@ export const SectionTechnologies = styled.section`
 `;
 
 export const TechnologiesTitle = styled.h2`
-  ${sectionTitle}
+  ${sectionTitlePlain}
 `;
 
 export const ContainerTechnologies = styled.div`

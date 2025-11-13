@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from 'styles';
-import { sectionPadding, sectionTitle, spacing } from 'styles/mixins';
+import { sectionPadding, sectionTitlePlain, spacing } from 'styles/mixins';
 
 export const SectionExperience = styled.section`
   ${sectionPadding}
@@ -10,7 +10,7 @@ export const SectionExperience = styled.section`
 `;
 
 export const ExperienceTitle = styled.h2`
-  ${sectionTitle}
+  ${sectionTitlePlain}
 `;
 
 export const Timeline = styled.div`

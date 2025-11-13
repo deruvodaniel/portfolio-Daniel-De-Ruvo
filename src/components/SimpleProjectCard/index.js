@@ -15,7 +15,6 @@ import {
 const SimpleProjectCard = ({ project }) => {
   const { t } = useI18n();
   const [isLoading, setIsLoading] = useState(true);
-  const [imageError, setImageError] = useState(false);
   
   useEffect(() => {
     // Simular tiempo de carga mínimo para mostrar skeleton
@@ -60,9 +59,6 @@ const SimpleProjectCard = ({ project }) => {
           src={imageSource}
           alt={project.title}
           loading="lazy"
-          onError={() => {
-            setImageError(true);
-          }}
         />
       ) : (
         <ProjectCardSkeleton />

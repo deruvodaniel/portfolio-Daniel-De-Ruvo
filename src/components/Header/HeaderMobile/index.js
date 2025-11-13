@@ -8,7 +8,7 @@ const iconMenu = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379488/
 const iconClose = "https://res.cloudinary.com/dn7qsxzdf/image/upload/v1652379624/portfolio%20daniel/cerrar_zhp6o1.png";
 
 export const HeaderMobile = ({ refs }) => {
-  const { refAboutMe, refProjects, refContact, refHome, refTechnologies, refExperience, refCourses } = refs;
+  const { refProjects, refContact, refHome, refTechnologies, refExperience, refCourses } = refs;
   const [menuOpen, setMenuOpen] = useState(false);
   const menu = useRef(null);
   const { toggleTheme, theme } = useTheme();
@@ -36,7 +36,9 @@ export const HeaderMobile = ({ refs }) => {
 
   return (
     <Main ref={menu}>
-                <LogoText onClick={() => scrollToSection(refHome)}>DR</LogoText>
+                <LogoText onClick={() => scrollToSection(refHome)}>
+                  <img src="/DR-Logo.png" alt="Daniel De Ruvo" width="50" height="50" />
+                </LogoText>
       <Controls>
         <ToggleButton id="theme-toggle-mobile" aria-label="Toggle theme" aria-pressed={theme === 'dark'} onClick={() => { toggleTheme(); const btn = document.getElementById('theme-toggle-mobile'); if (btn) { btn.classList.remove('theme-animate'); void btn.offsetWidth; btn.classList.add('theme-animate'); } }}>{theme === 'dark' ? '🌙' : '☀️'}</ToggleButton>
         <ToggleButton aria-label="Switch language" onClick={toggleLang}>{lang.toUpperCase()}</ToggleButton>

@@ -11,6 +11,19 @@ export const spacing = {
   xxl: '64px'
 };
 
+// Font family mixins
+export const fontHeading = css`
+  font-family: var(--fontHeading);
+`;
+
+export const fontBody = css`
+  font-family: var(--fontBody);
+`;
+
+export const fontUI = css`
+  font-family: var(--fontUI);
+`;
+
 // Gradient mixins for consistent branding
 export const gradientText = css`
   background: var(--gradientPrimary);
@@ -28,6 +41,38 @@ export const gradientButton = css`
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadowPrimary);
+  }
+`;
+
+// New flat button styles
+export const primaryButton = css`
+  background: var(--buttonPrimary);
+  color: var(--buttonPrimaryText);
+  border: none;
+  font-family: var(--fontBody);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: var(--buttonPrimaryHover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+`;
+
+export const secondaryButton = css`
+  background: var(--buttonSecondary);
+  border: 2px solid var(--buttonSecondaryBorder);
+  color: var(--buttonSecondaryText);
+  font-family: var(--fontBody);
+  font-weight: 600;
+  transition: all 0.22s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  &:hover {
+    background: var(--buttonSecondaryHover);
+    transform: translateY(-2px);
   }
 `;
 
@@ -67,6 +112,24 @@ export const sectionTitle = css`
   margin: 28px 0 40px 0;
   transform: translateY(calc(var(--scrollY, 0) * 0.018px));
   will-change: transform;
+
+  ${mediaQueries.desktop} {
+    font-size: 4.5rem;
+    margin: 40px 0 60px 0;
+    letter-spacing: -3px;
+  }
+`;
+
+// Section title without gradient (for regular headings)
+export const sectionTitlePlain = css`
+  color: var(--colorPrimary);
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 0.9;
+  margin: 28px 0 40px 0;
+  font-family: var(--fontHeading);
 
   ${mediaQueries.desktop} {
     font-size: 4.5rem;
@@ -139,14 +202,17 @@ export const textStyles = {
   primary: css`
     color: var(--textPrimary);
     font-weight: 600;
+    ${fontBody}
   `,
   secondary: css`
     color: var(--textSecondary);
     font-weight: 400;
+    ${fontBody}
   `,
   muted: css`
     color: var(--textMuted);
     font-weight: 400;
+    ${fontBody}
   `
 };
 

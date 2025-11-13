@@ -63,7 +63,7 @@ export const CardTitle = styled.h3`
   margin: 0;
   letter-spacing: -1px;
   line-height: 1.2;
-    text-align: left;
+  text-align: left;
 
   ${mediaQueries.tablet} {
     font-size: 2rem;

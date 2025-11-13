@@ -17,11 +17,23 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
   --shadowPrimary: 0 20px 40px rgba(0, 229, 255, 0.25);
   --colorError: #ff6b6b;
   --buttonOnGradientText: #081016;
+  --buttonPrimary: var(--colorSecondary);
+  --buttonPrimaryHover: #7dd3fc;
+  --buttonPrimaryText: #081016;
+  --buttonSecondary: transparent;
+  --buttonSecondaryBorder: var(--colorSecondary);
+  --buttonSecondaryText: var(--colorSecondary);
+  --buttonSecondaryHover: rgba(100, 255, 218, 0.15);
   --successBg: #64ffda;
   --errorBg: #ff6b6b;
   --alertText: #081016;
   --headerBackground: rgba(15, 15, 35, 0.95);
   --socialIconFilter: brightness(1.2);
+  
+  /* Font stacks - cambiar aquí para probar diferentes fuentes */
+  --fontHeading: 'Sora', 'Inter', sans-serif;
+  --fontBody: 'Roboto Condensed', 'Inter', system-ui, sans-serif; /* Prueba: cambiar a 'Inter' para comparar */
+  --fontUI: 'Inter', system-ui, sans-serif;
 }
 
 :root[data-theme='light'] {
@@ -33,21 +45,35 @@ body { margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Robo
   --textSecondary: #334155;
   --textMuted: #475569;
   --borderColor: rgba(15, 23, 42, 0.12);
-  --gradientPrimary: linear-gradient(90deg, #00E5FF, #00FFA3 60%, #7CFFCB);
+  --gradientPrimary: linear-gradient(90deg, #0891b2, #06b6d4 60%, #22d3ee);
   --shadowPrimary: 0 20px 40px rgba(14, 165, 233, 0.25);
   --colorError: #e11d48;
   --buttonOnGradientText: #081016;
+  --buttonPrimary: var(--colorSecondary);
+  --buttonPrimaryHover: #0369a1;
+  --buttonPrimaryText: #ffffff;
+  --buttonSecondary: transparent;
+  --buttonSecondaryBorder: var(--colorSecondary);
+  --buttonSecondaryText: var(--colorSecondary);
+  --buttonSecondaryHover: rgba(14, 165, 233, 0.15);
   --successBg: #0ea5e9;
   --errorBg: #e11d48;
   --alertText: #081016;
   --headerBackground: rgba(255, 255, 255, 0.88);
-  --socialIconFilter: brightness(0) saturate(100%);
+    --socialIconFilter: brightness(0.8);
+  
+  /* Font stacks - cambiar aquí para probar diferentes fuentes */
+  --fontHeading: 'Sora', 'Inter', sans-serif;
+  --fontBody: 'Roboto Condensed', 'Inter', system-ui, sans-serif; /* Prueba: cambiar a 'Inter' para comparar */
+  --fontUI: 'Inter', system-ui, sans-serif;
 }
 
 /* Typography */
-h1, h2, h3, h4 { margin: 0; font-family: 'Sora', 'Inter', sans-serif; }
-p { margin: 0; }
-a { color: inherit; }
+h1, h2, h3, h4 { margin: 0; font-family: var(--fontHeading); }
+p { margin: 0; font-family: var(--fontBody); }
+a { color: inherit; font-family: var(--fontBody); }
+span { font-family: var(--fontBody); }
+div { font-family: var(--fontBody); }
 
 /* Animations */
 @keyframes fadeInUp {

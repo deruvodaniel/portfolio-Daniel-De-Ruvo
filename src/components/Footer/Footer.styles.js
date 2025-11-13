@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
-import { gradientText } from 'styles/mixins';
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
 
 export const FooterStyle = styled.footer`
   margin-top: 40px;
@@ -21,12 +20,12 @@ export const FooterStyle = styled.footer`
 
     &:hover { transform: translateY(-4px); }
 
-    .logo-text {
-      font-size: 2.2rem;
-      font-weight: 900;
-      ${gradientText}
-      letter-spacing: -1px;
-      line-height: 1;
+        .logo-image {
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -66,8 +65,8 @@ export const FooterLinks = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 70px;
+    height: 70px;
     background: var(--backgroundCard);
     backdrop-filter: blur(14px);
     border: 1px solid var(--borderColor);

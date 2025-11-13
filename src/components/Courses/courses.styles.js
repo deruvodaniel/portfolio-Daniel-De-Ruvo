@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
-import { sectionTitle } from "styles/mixins";
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
+import { sectionTitlePlain } from 'styles/mixins';
 
 export const SectionCourses = styled.section`
   padding: 30px 0;
@@ -10,7 +10,7 @@ export const SectionCourses = styled.section`
 `;
 
 export const CoursesTitle = styled.h2`
-  ${sectionTitle}
+  ${sectionTitlePlain}
 `;
 
 export const ContainerCourses = styled.div`

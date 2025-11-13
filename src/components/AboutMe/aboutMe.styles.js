@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
 
 export const SectionAboutMe = styled.section`
   
@@ -21,47 +21,49 @@ export const AboutMeContent = styled.div`
 `;
 
 export const AboutMeTitle = styled.h2`
-  color: var(--colorPrimary);
-  text-align: center;
+  font-size: 3.5rem;
   font-weight: 900;
-  font-size: 2rem;
-  margin: 28px 0;
-  line-height: 0.9;
-  letter-spacing: -2px;
-  transform: translateY(calc(var(--scrollY, 0) * 0.02px));
-  will-change: transform;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 48px;
+  font-family: var(--fontHeading);
+  color: var(--colorPrimary);
 
   ${mediaQueries.tablet} {
     font-size: 4rem;
-    letter-spacing: -3px;
-  }
-
-  ${mediaQueries.desktop} {
-    font-size: 4.5rem;
-    margin-bottom: 60px;
-    letter-spacing: -3px;
   }
 `;
 
-export const AboutMeDescription = styled.p`
+export const AboutMeDescription = styled.div`
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: var(--textSecondary);
-  font-size: 1.4rem;
-  line-height: 1.8;
-  font-weight: 400;
   margin-bottom: 40px;
+  font-family: var(--fontBody);
   
-  strong {
-    background: var(--gradientPrimary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
+  ${mediaQueries.tablet} {
+    font-size: 1.2rem;
+    line-height: 1.8;
   }
   
   ${mediaQueries.desktop} {
-    font-size: 1.6rem;
-    line-height: 1.9;
-    margin-bottom: 48px;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 60px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  strong {
+    color: var(--colorPrimary);
+    font-weight: 600;
   }
 `;
 

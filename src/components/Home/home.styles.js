@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { mediaQueries } from "styles";
-import { gradientButton, gradientText } from 'styles/mixins';
+import { primaryButton, gradientText } from 'styles/mixins';
 
 export const ContainerHome = styled.div`
   min-height: 100vh;
@@ -146,17 +146,15 @@ export const ButtonHome = styled.button`
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
-  ${gradientButton}
   border-radius: 8px;
-  font-weight: 700;
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
   cursor: pointer;
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   min-width: 180px;
   height: 56px;
+  ${primaryButton}
 
   &::before {
     content: '';

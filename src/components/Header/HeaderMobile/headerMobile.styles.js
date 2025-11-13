@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { mediaQueries } from 'styles';
-import { gradientText } from 'styles/mixins';
 
 export const Main = styled.header`
   display: flex;
@@ -64,23 +63,38 @@ export const ToggleButton = styled.button`
   cursor: pointer;
   font-size: 0.75rem;
   font-weight: 600;
+  font-family: var(--fontBody);
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease;
   margin-right: 0;
 
-  &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-1px); }
-  &.theme-animate { animation: themePop 360ms ease; }
-  @keyframes themePop { 0% { transform: scale(1) rotate(0deg); } 50% { transform: scale(0.94) rotate(-12deg); } 100% { transform: scale(1) rotate(0deg); } }
+  &:hover { 
+    color: var(--colorPrimary); 
+    border-color: var(--colorSecondary); 
+    transform: translateY(-1px); 
+  }
+  
+  &.theme-animate { 
+    animation: themePop 360ms ease; 
+  }
+  
+  @keyframes themePop { 
+    0% { transform: scale(1) rotate(0deg); } 
+    50% { transform: scale(0.94) rotate(-12deg); } 
+    100% { transform: scale(1) rotate(0deg); } 
+  }
 `;
 
 export const LogoText = styled.div`
-  font-size: 2rem;
-  font-weight: 900;
-  ${gradientText}
-  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
   padding-left: 8px;
-`
+  
+  img {
+    transition: all 0.3s ease;
+  }
+`;
 
 export const ListLinks = styled.ul`
   margin: 12px 0 16px;

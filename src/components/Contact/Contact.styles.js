@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { mediaQueries } from "styles";
-import { sectionTitle } from "styles/mixins";
+import styled from 'styled-components';
+import { mediaQueries } from 'styles';
+import { secondaryButton, sectionTitlePlain } from 'styles/mixins';
 
 export const ContactTitle = styled.h2`
-  ${sectionTitle}
+  ${sectionTitlePlain}
   margin-top: 60px;
   padding-top: 40px;
 
@@ -50,6 +50,7 @@ export const ContactText = styled.h3`
   line-height: 1.2;
   margin-bottom: 40px;
   letter-spacing: -1px;
+  font-family: var(--fontBody);
 
   ${mediaQueries.tablet} {
     font-size: 2rem;
@@ -72,42 +73,72 @@ export const ContactInfo = styled.div`
 
 export const ContactLinks = styled.div`
   display: flex;
-  gap: 28px;
+  gap: 20px;
   margin-top: 40px;
 
   ${mediaQueries.desktop} {
     justify-content: flex-start;
+    gap: 24px;
   }
 
   & > a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: 70px;
+    height: 70px;
     background: var(--backgroundCard);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(14px);
     border: 1px solid var(--borderColor);
     border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
 
     &:hover {
-      transform: translateY(-8px);
+      transform: translateY(-4px);
       background: var(--backgroundCardHover);
       border-color: var(--colorSecondary);
       box-shadow: var(--shadowPrimary);
     }
 
     & > img {
-      width: 22px;
-      height: 22px;
+      width: 18px;
+      height: 18px;
       filter: var(--socialIconFilter);
       transition: all 0.3s ease;
     }
 
     &:hover > img {
       filter: brightness(1.5);
-      transform: scale(1.1);
+      transform: scale(1.05);
+    }
+
+    & > svg {
+      width: 20px;
+      height: 20px;
+      color: var(--textMuted);
+      transition: all 0.3s ease;
+    }
+
+    &:hover > svg {
+      color: var(--colorSecondary);
+      transform: scale(1.05);
+    }
+  }
+
+  ${mediaQueries.desktop} {
+    & > a {
+      width: 50px;
+      height: 50px;
+
+      & > img {
+        width: 20px;
+        height: 20px;
+      }
+
+      & > svg {
+        width: 22px;
+        height: 22px;
+      }
     }
   }
 `;
@@ -116,24 +147,13 @@ export const ButtonCopy = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: transparent;
-  border: 1px solid var(--borderColor);
   border-radius: 12px;
   padding: 14px 20px;
-  color: var(--colorPrimary);
   font-size: 1rem;
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s ease;
   text-align: left;
   flex: 1 1 260px;
-
-  &:hover {
-    background: var(--backgroundCardHover);
-    border-color: var(--colorSecondary);
-    transform: translateY(-2px);
-    color: var(--colorSecondary);
-  }
+  ${secondaryButton}
 
   svg { width: 18px; height: 18px; }
 

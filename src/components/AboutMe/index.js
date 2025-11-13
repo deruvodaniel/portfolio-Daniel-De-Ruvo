@@ -1,8 +1,6 @@
 import {
   SectionAboutMe,
   AboutMeContent,
-  AboutMeTitle,
-  AboutMeDescription,
   SkillsContainer,
 } from "./aboutMe.styles";
 import SkillCard from "components/SkillCard";
@@ -14,9 +12,9 @@ const GradientZap = () => (
   <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
     <defs>
       <linearGradient id="gZap" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#00E5FF" />
-        <stop offset="60%" stopColor="#00FFA3" />
-        <stop offset="100%" stopColor="#7CFFCB" />
+        <stop offset="0%" stopColor="#0891b2" />
+        <stop offset="50%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#22d3ee" />
       </linearGradient>
     </defs>
     <path d="M13 2L3 14h7l-1 8 12-14h-8l1-6z" stroke="url(#gZap)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
@@ -27,9 +25,9 @@ const GradientLayout = () => (
   <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
     <defs>
       <linearGradient id="gLayout" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#00E5FF" />
-        <stop offset="60%" stopColor="#00FFA3" />
-        <stop offset="100%" stopColor="#7CFFCB" />
+        <stop offset="0%" stopColor="#0891b2" />
+        <stop offset="50%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#22d3ee" />
       </linearGradient>
     </defs>
     <rect x="3" y="4" width="18" height="16" rx="2" stroke="url(#gLayout)" strokeWidth="2" />
@@ -42,9 +40,9 @@ const GradientTrendingUp = () => (
   <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
     <defs>
       <linearGradient id="gTrend" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#00E5FF" />
-        <stop offset="60%" stopColor="#00FFA3" />
-        <stop offset="100%" stopColor="#7CFFCB" />
+        <stop offset="0%" stopColor="#0891b2" />
+        <stop offset="50%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#22d3ee" />
       </linearGradient>
     </defs>
     <polyline points="3,17 9,11 13,15 21,7" stroke="url(#gTrend)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />

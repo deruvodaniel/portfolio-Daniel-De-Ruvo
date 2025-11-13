@@ -22,7 +22,7 @@ export const Footer = () => {
   return (
     <FooterStyle>
       <div className="logo-container" onClick={() => goToTop(refHome)}>
-        <div className="logo-text">DR</div>
+        <img src="/DR-Logo.png" alt="Daniel De Ruvo" className="logo-image" width="70" height="70" />
       </div>
       
       <FooterLinks>

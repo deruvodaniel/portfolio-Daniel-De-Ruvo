@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { mediaQueries } from "../../styles";
-import { gradientButton, gradientText } from '../../styles/mixins';
+import { primaryButton, secondaryButton } from '../../styles/mixins';
 
 export const SimpleCard = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ export const SimpleContent = styled.div`
 export const SimpleTitle = styled.h3`
   font-size: 1.3rem;
   font-weight: 700;
-  ${gradientText}
+  color: var(--colorPrimary);
   margin: 0;
   line-height: 1.3;
 `;
@@ -48,6 +48,7 @@ export const SimpleDescription = styled.p`
   color: var(--textMuted);
   margin: 0;
   flex: 1;
+  font-family: var(--fontBody);
   
   /* Limitar a 4 líneas */
   display: -webkit-box;
@@ -68,16 +69,14 @@ export const PrimaryButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  ${gradientButton}
   border-radius: 8px;
-  font-weight: 600;
   font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
+  ${primaryButton}
 
   &::before {
     content: '';
@@ -107,22 +106,10 @@ export const SecondaryButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
-  background: transparent;
-  border: 2px solid var(--colorSecondary);
   border-radius: 8px;
-  color: var(--colorSecondary);
-  font-weight: 600;
   font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
   cursor: pointer;
-  transition: all 0.22s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  &:hover {
-    background: var(--backgroundCardHover);
-    transform: translateY(-2px);
-  }
+  ${secondaryButton}
 
   ${mediaQueries.desktop} {
     padding: 14px 24px;

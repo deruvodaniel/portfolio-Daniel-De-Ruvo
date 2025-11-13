@@ -82,6 +82,7 @@ export const ActionButton = styled.button`
   color: white;
   font-size: 0.8rem;
   font-weight: 500;
+  font-family: var(--fontBody);
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;

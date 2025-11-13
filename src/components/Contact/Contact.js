@@ -57,7 +57,9 @@ export const Contact = () => {
             <ContactText>{t('contact.lead')}</ContactText>
             <ContactInfo aria-live="polite" aria-atomic="true">
             <ButtonCopy onClick={copyEmail} aria-label={t('contact.copyEmail')}>
-              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v16H4z" opacity="0.2"/><path d="M4 8l8 6 8-6"/></svg>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
               {copyEmailSuccess ? t('contact.copiedEmail') : t('contact.copyEmail')}
             </ButtonCopy>
             <ButtonCopy onClick={copyPhone} aria-label={t('contact.copyPhone')}>
@@ -74,10 +76,10 @@ export const Contact = () => {
                 title="Resume"
                 aria-label="Open resume in a new tab"
               >
-                <svg width="45" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" fill="none"/>
-                  <path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" fill="none"/>
-                  <path d="M8 12h8M8 16h8" stroke="currentColor" stroke-width="1.6"/>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" strokeWidth="1.6" fill="none"/>
+                  <path d="M14 3v5h5" stroke="currentColor" strokeWidth="1.6" fill="none"/>
+                  <path d="M8 12h8M8 16h8" stroke="currentColor" strokeWidth="1.6"/>
                 </svg>
               </a>
               <a
@@ -88,9 +90,9 @@ export const Contact = () => {
               >
                 <img
                   alt="GitHub"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logogblanco_imqksz.svg"
-                  width="45px"
-                  height="40px"
+                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653408217/portfolio%20daniel/logog_udsccl.svg"
+                  width="18px"
+                  height="18px"
                 />
               </a>
               <a
@@ -101,9 +103,9 @@ export const Contact = () => {
               >
                 <img
                   alt="Linkedin"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logoinblanco_isyvzt.svg"
-                  width="45px"
-                  height="40px"
+                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653403777/portfolio%20daniel/logoin_brxiyb.svg"
+                  width="18px"
+                  height="18px"
                 />
               </a>
             </ContactLinks>
