@@ -17,7 +17,6 @@ export const CardContainer = styled.div`
   &:hover {
     background: var(--backgroundCardHover);
     border-color: var(--colorSecondary);
-    transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   }
 

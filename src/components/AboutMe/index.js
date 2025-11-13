@@ -50,6 +50,53 @@ const GradientTrendingUp = () => (
   </svg>
 );
 
+const GradientUsers = () => (
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <defs>
+      <linearGradient id="gUsers" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#0891b2" />
+        <stop offset="50%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#22d3ee" />
+      </linearGradient>
+    </defs>
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="url(#gUsers)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <circle cx="9" cy="7" r="4" stroke="url(#gUsers)" strokeWidth="2" fill="none" />
+    <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7Z" stroke="url(#gUsers)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  </svg>
+);
+
+const GradientHeart = () => (
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <defs>
+      <linearGradient id="gHeart" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#0891b2" />
+        <stop offset="50%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#22d3ee" />
+      </linearGradient>
+    </defs>
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z" stroke="url(#gHeart)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M12 5L8 21l4-7 4 7-4-16" stroke="url(#gHeart)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  </svg>
+);
+
+const GradientBulb = () => (
+  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+    <defs>
+      <linearGradient id="gBulb" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#0891b2" />
+        <stop offset="50%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#22d3ee" />
+      </linearGradient>
+    </defs>
+    <path d="M9 21h6" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M12 17v4" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <circle cx="12" cy="9" r="7" stroke="url(#gBulb)" strokeWidth="2" fill="none" />
+    <path d="M12 2v2" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="m4.22 4.22 1.42 1.42" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="m18.36 5.64 1.42-1.42" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  </svg>
+);
+
 export const AboutMe = () => {
   const { refAboutMe } = useRefs();
   const { width } = useWidth();
@@ -117,6 +164,7 @@ export const AboutMe = () => {
           </div>
 
           <SkillsContainer>
+            {/* Technical Focus */}
             <SkillCard
               icon={<GradientZap />}
               title={t('about.skillFrontend')}
@@ -133,6 +181,25 @@ export const AboutMe = () => {
               icon={<GradientTrendingUp />}
               title={t('about.skillPerf')}
               description={t('about.skillPerfDesc')}
+            />
+
+            {/* Human Focus */}
+            <SkillCard
+              icon={<GradientUsers />}
+              title={t('about.skillLeadership')}
+              description={t('about.skillLeadershipDesc')}
+            />
+
+            <SkillCard
+              icon={<GradientHeart />}
+              title={t('about.skillCollaboration')}
+              description={t('about.skillCollaborationDesc')}
+            />
+
+            <SkillCard
+              icon={<GradientBulb />}
+              title={t('about.skillCreativity')}
+              description={t('about.skillCreativityDesc')}
             />
           </SkillsContainer>
         </AboutMeContent>

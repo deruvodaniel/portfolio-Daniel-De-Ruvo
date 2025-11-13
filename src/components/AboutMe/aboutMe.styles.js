@@ -3,7 +3,7 @@ import { mediaQueries } from 'styles';
 
 export const SectionAboutMe = styled.section`
   
-  padding: 30px 0;
+  padding: 50px 0;
   z-index: 50;
   position: relative;
   scroll-margin-top: 70px;
@@ -142,16 +142,17 @@ export const AboutMeBoxLinks = styled.div`
 `;
 
 export const SkillsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 24px;
   
   ${mediaQueries.tablet} {
-    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
   
   ${mediaQueries.desktop} {
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
 `;

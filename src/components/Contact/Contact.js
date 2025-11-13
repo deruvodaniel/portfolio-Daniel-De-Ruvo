@@ -57,13 +57,27 @@ export const Contact = () => {
             <ContactText>{t('contact.lead')}</ContactText>
             <ContactInfo aria-live="polite" aria-atomic="true">
             <ButtonCopy onClick={copyEmail} aria-label={t('contact.copyEmail')}>
-              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <defs>
+                  <linearGradient id="emailGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="var(--colorSecondary)" />
+                    <stop offset="100%" stopColor="var(--colorPrimary)" />
+                  </linearGradient>
+                </defs>
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="url(#emailGradient)" strokeWidth="2"/>
               </svg>
               {copyEmailSuccess ? t('contact.copiedEmail') : t('contact.copyEmail')}
             </ButtonCopy>
             <ButtonCopy onClick={copyPhone} aria-label={t('contact.copyPhone')}>
-              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.57 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.14a2 2 0 0 1 2.11-.45c.74.27 1.53.45 2.34.57A2 2 0 0 1 22 16.92z"/></svg>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <defs>
+                  <linearGradient id="phoneGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="var(--colorSecondary)" />
+                    <stop offset="100%" stopColor="var(--colorPrimary)" />
+                  </linearGradient>
+                </defs>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.1 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.57 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.14a2 2 0 0 1 2.11-.45c.74.27 1.53.45 2.34.57A2 2 0 0 1 22 16.92z" stroke="url(#phoneGradient)" strokeWidth="2"/>
+              </svg>
               {copyPhoneSuccess ? t('contact.copiedPhone') : t('contact.copyPhone')}
             </ButtonCopy>
           </ContactInfo>
@@ -77,9 +91,15 @@ export const Contact = () => {
                 aria-label="Open resume in a new tab"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" strokeWidth="1.6" fill="none"/>
-                  <path d="M14 3v5h5" stroke="currentColor" strokeWidth="1.6" fill="none"/>
-                  <path d="M8 12h8M8 16h8" stroke="currentColor" strokeWidth="1.6"/>
+                  <defs>
+                    <linearGradient id="resumeGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="var(--colorSecondary)" />
+                      <stop offset="100%" stopColor="var(--colorPrimary)" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="url(#resumeGradient)" strokeWidth="1.6" fill="none"/>
+                  <path d="M14 3v5h5" stroke="url(#resumeGradient)" strokeWidth="1.6" fill="none"/>
+                  <path d="M8 12h8M8 16h8" stroke="url(#resumeGradient)" strokeWidth="1.6"/>
                 </svg>
               </a>
               <a

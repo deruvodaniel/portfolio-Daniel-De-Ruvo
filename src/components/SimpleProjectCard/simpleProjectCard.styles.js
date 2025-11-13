@@ -13,7 +13,6 @@ export const SimpleCard = styled.div`
   backdrop-filter: blur(10px);
   
   &:hover {
-    transform: translateY(-4px);
     background: var(--backgroundCardHover);
     box-shadow: var(--shadowPrimary);
   }

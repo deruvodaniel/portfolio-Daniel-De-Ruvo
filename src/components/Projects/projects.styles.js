@@ -204,7 +204,6 @@ export const ProjectLink = styled.a`
 
   &:hover {
     border-bottom-color: var(--colorSecondary);
-    transform: translateY(-4px);
   }
 
   &:hover::after {
