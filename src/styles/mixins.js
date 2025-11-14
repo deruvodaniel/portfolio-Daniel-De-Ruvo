@@ -138,32 +138,38 @@ export const sectionTitlePlain = css`
   }
 `;
 
-// Common card styling mixin
-export const baseCard = css`
-  background: var(--cardBackground);
+// Common card styling mixin - NO HOVER for static cards
+export const cardStyle = css`
+  background: var(--backgroundCard);
   border: 1px solid var(--borderColor);
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border-color: var(--colorPrimary);
-  }
 
   [data-theme="dark"] & {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    
-    &:hover {
-      box-shadow: 0 8px 25px rgba(0, 229, 255, 0.2);
-    }
-  }
-
-  ${mediaQueries.tablet} {
-    border-radius: 16px;
   }
 `;
+
+// Interactive card variant - use ONLY for clickable cards
+export const cardStyleInteractive = css`
+  ${cardStyle}
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--backgroundCardHover);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    border-color: var(--colorSecondary);
+  }
+
+  [data-theme="dark"] &:hover {
+    box-shadow: 0 12px 35px rgba(0, 229, 255, 0.2);
+  }
+`;
+
+// Legacy alias for backwards compatibility
+export const baseCard = cardStyle;
 
 // Common responsive padding for cards
 export const cardPadding = css`

@@ -14,9 +14,9 @@ const dict = {
     home: {
       kicker: 'Senior UX Frontend Developer',
       name: 'Daniel De Ruvo',
-      subtitle: 'Creating Digital Experiences',
+      subtitle: 'Crafting Pixel-Perfect Digital Products with AI-Powered Workflows',
       location: 'Argentina',
-      description: 'Specializing in AI-driven development workflows to accelerate MVPs and optimize user experiences.',
+      description: 'Shipping high-impact MVPs in record time using intelligent automation, AI-assisted development, and modern tooling. From design to deployment—fast, precise, ready to scale.',
       viewProjects: 'View Projects',
       getInTouch: 'Get In Touch',
       resume: 'Resume',
@@ -29,21 +29,21 @@ const dict = {
     },
     about: {
       title: 'About',
-      p1: "I'm a Senior UX Frontend Developer with 6+ years leveraging AI to accelerate development workflows, from rapid prototyping to automated testing and process optimization.",
-      p2: 'I integrate AI tools and methodologies to reduce MVP development time by 40%, while maintaining high standards in performance, accessibility (WCAG 2.1 AA), and user experience design.',
+      p1: "I'm a Senior UX Frontend Developer obsessed with speed, precision, and product quality. I ship pixel-perfect interfaces fast—leveraging AI-powered workflows, intelligent automation, and modern frameworks to turn ideas into production-ready MVPs in record time.",
+      p2: 'My approach combines strong visual craft, scalable architecture (React/Next.js), and cutting-edge AI tooling: from AI-assisted code generation and design systems to performance optimization and team collaboration. Whether building, mentoring, or staffing teams—I deliver with speed and intelligence.',
       resume: 'Resume',
-      skillFrontend: 'AI Development',
-      skillFrontendDesc: 'React and Next.js with AI integration, automated workflows, intelligent code generation, and AI-assisted testing.',
-      skillDesign: 'Smart UI/UX',
-      skillDesignDesc: 'AI-enhanced design systems, automated component generation, intelligent design tokens, and rapid prototyping with AI tools.',
-      skillPerf: 'Automation',
-      skillPerfDesc: 'AI-driven optimization, automated accessibility testing, intelligent performance monitoring, and data-driven improvements.',
+      skillFrontend: 'AI-Powered Development',
+      skillFrontendDesc: 'React & Next.js turbocharged with AI code generation, intelligent workflows, automated testing, and rapid prototyping. Ship MVPs in record time without sacrificing quality.',
+      skillDesign: 'Visual Precision',
+      skillDesignDesc: 'Pixel-perfect UI/UX, scalable design systems, design tokens, component libraries, and seamless designer-developer handoff.',
+      skillPerf: 'Optimization',
+      skillPerfDesc: 'Lighthouse 95+ scores, automated testing, performance monitoring, accessibility audits, and data-driven improvements.',
       skillLeadership: 'Leadership',
-      skillLeadershipDesc: 'Team mentoring, cross-functional collaboration, technical decision making, and fostering innovation culture.',
+      skillLeadershipDesc: 'Team mentoring, technical roadmaps, recruitment & staffing, fostering innovation culture, and driving product decisions.',
       skillCollaboration: 'Collaboration',
-      skillCollaborationDesc: 'Stakeholder communication, agile methodologies, code review excellence, and building consensus across teams.',
-      skillCreativity: 'Creativity',
-      skillCreativityDesc: 'Innovative problem solving, design thinking, user-centered solutions, and exploring emerging technologies.',
+      skillCollaborationDesc: 'Cross-functional alignment, stakeholder communication, agile rituals, code reviews, and building consensus across teams.',
+      skillCreativity: 'Problem Solving',
+      skillCreativityDesc: 'Creative solutions, design thinking, user-centered approach, exploring cutting-edge tools, and turning constraints into opportunities.',
     },
     tech: { title: 'Stack' },
     projects: { 
@@ -83,11 +83,11 @@ const dict = {
           role: 'Senior Frontend UX Developer',
           period: 'Jul 2022 – Present',
           bullets: [
-            'Led React/Next.js platforms and design systems for 10+ global clients using AI-enhanced workflows.',
-            'Implemented AI tools for code generation and testing, reducing development time by 40%.',
-            'Pioneered AI-driven UI/UX processes for rapid prototyping and user research automation.',
-            'Mentored teams on AI integration, accessibility (WCAG 2.1 AA), and performance optimization.',
-            'Drove architecture decisions integrating AI tools for automated testing and deployment.'
+            'Led React/Next.js platforms and design systems for 10+ global clients, delivering pixel-perfect, production-ready UIs ahead of schedule.',
+            'Reduced MVP development cycles by 40% using intelligent workflows, automated testing, and modern tooling (TypeScript, Storybook, Playwright).',
+            'Drove UX/UI excellence: design tokens, component libraries, accessibility compliance (WCAG 2.1 AA), and Lighthouse 95+ performance scores.',
+            'Mentored cross-functional teams on frontend architecture, modern practices, and rapid delivery strategies.',
+            'Contributed to recruitment & staffing: interviewed 30+ candidates, built onboarding processes, and fostered engineering culture.'
           ]
         },
         {
@@ -95,8 +95,8 @@ const dict = {
           role: 'Web Development Professor',
           period: 'Feb 2023 – Jul 2024',
           bullets: [
-            'Taught HTML/CSS/JS/React/Git to 60+ students with high satisfaction.',
-            'Guided multiple capstone projects from idea to deployment.'
+            'Taught HTML/CSS/JS/React/Git to 60+ students with 95%+ satisfaction ratings.',
+            'Guided 20+ capstone projects from wireframes to deployment, mentoring on best practices and professional workflows.'
           ]
         },
         {
@@ -104,7 +104,7 @@ const dict = {
           role: 'Frontend Developer',
           period: 'Apr 2022 – Jul 2022',
           bullets: [
-            'Executed 25+ A/B tests for a Fintech/Bank client improving CTR and UX.'
+            'Executed 25+ A/B tests for Fintech client, improving CTR by 18% and optimizing conversion funnels.'
           ]
         },
         {
@@ -112,14 +112,14 @@ const dict = {
           role: 'Frontend Developer',
           period: 'Mar 2020 – Apr 2022',
           bullets: [
-            'Built an internal Vue.js SPA that reduced campaign setup time by 35%.'
+            'Built internal Vue.js SPA that reduced campaign setup time by 35%, streamlining workflows for 50+ team members.'
           ]
         }
       ]
     },
     contact: {
       title: 'Contact',
-      lead: "Do you have a project in mind? Let's talk!",
+      lead: "Have a project in mind? Let's build something great together.",
       copyEmail: 'Copy email',
       copiedEmail: 'Email copied',
       copyPhone: 'Copy phone',
@@ -141,9 +141,9 @@ const dict = {
     home: {
       kicker: 'Senior UX Frontend Developer',
       name: 'Daniel De Ruvo',
-      subtitle: 'Creando experiencias digitales',
+      subtitle: 'Creando Productos Digitales Pixel-Perfect con Workflows Potenciados por IA',
       location: 'Argentina',
-      description: 'Especializado en workflows de desarrollo impulsados por IA para acelerar MVPs y optimizar experiencias de usuario.',
+      description: 'Entregando MVPs de alto impacto en tiempo récord usando automatización inteligente, desarrollo asistido por IA y tooling moderno. Del diseño al deployment—rápido, preciso, listo para escalar.',
       viewProjects: 'Ver Proyectos',
       getInTouch: 'Contacto',
       resume: 'CV',
@@ -156,21 +156,21 @@ const dict = {
     },
     about: {
       title: 'Sobre mí',
-      p1: 'Soy Senior UX Frontend Developer con 6+ años aprovechando IA para acelerar workflows de desarrollo, desde prototipado rápido hasta testing automatizado y optimización de procesos.',
-      p2: 'Integro herramientas y metodologías de IA para reducir el tiempo de desarrollo de MVPs en 40%, manteniendo altos estándares en performance, accesibilidad (WCAG 2.1 AA) y diseño de experiencia de usuario.',
+      p1: 'Soy Senior UX Frontend Developer obsesionado con velocidad, precisión y calidad de producto. Entrego interfaces pixel-perfect rápido—aprovechando workflows potenciados por IA, automatización inteligente y frameworks modernos para convertir ideas en MVPs listos para producción en tiempo récord.',
+      p2: 'Mi enfoque combina craft visual fuerte, arquitectura escalable (React/Next.js) y tooling de vanguardia con IA: desde generación de código asistida por IA y design systems hasta optimización de performance y colaboración en equipo. Ya sea construyendo, mentoreando o armando equipos—entrego con velocidad e inteligencia.',
       resume: 'CV',
       skillFrontend: 'Desarrollo con IA',
-      skillFrontendDesc: 'React y Next.js con integración de Inteligencia Artificial, workflows automatizados, generación inteligente de código y testing.',
-      skillDesign: 'UI/UX Inteligente',
-      skillDesignDesc: 'Design systems, generación automatizada de componentes, tokens de diseño y prototipado rápido con herramientas de IA.',
-      skillPerf: 'Automatización',
-      skillPerfDesc: 'Optimización, testing automatizado, SEO accesibilidad, monitoreo inteligente de performance y mejoras basadas en datos.',
+      skillFrontendDesc: 'React y Next.js potenciados con generación de código por IA, workflows inteligentes, testing automatizado y prototipado rápido. Entrego MVPs en tiempo récord sin sacrificar calidad.',
+      skillDesign: 'Precisión Visual',
+      skillDesignDesc: 'UI/UX pixel-perfect, design systems escalables, tokens de diseño, librerías de componentes y handoff fluido diseñador-desarrollador.',
+      skillPerf: 'Optimización',
+      skillPerfDesc: 'Lighthouse 95+, testing automatizado, monitoreo de performance, auditorías de accesibilidad y mejoras basadas en datos.',
       skillLeadership: 'Liderazgo',
-      skillLeadershipDesc: 'Mentoría de equipos, colaboración interfuncional, toma de decisiones técnicas y fomento de cultura de innovación.',
+      skillLeadershipDesc: 'Mentoría de equipos, roadmaps técnicos, reclutamiento y staffing, cultura de innovación y decisiones de producto.',
       skillCollaboration: 'Colaboración',
-      skillCollaborationDesc: 'Comunicación con stakeholders, metodologías ágiles, excelencia en code review y construcción de consenso entre equipos.',
-      skillCreativity: 'Creatividad',
-      skillCreativityDesc: 'Resolución innovadora de problemas, design thinking, soluciones centradas en el usuario y exploración de tecnologías emergentes.',
+      skillCollaborationDesc: 'Alineación interfuncional, comunicación con stakeholders, rituales ágiles, code reviews y consenso entre equipos.',
+      skillCreativity: 'Resolución de Problemas',
+      skillCreativityDesc: 'Soluciones creativas, design thinking, enfoque centrado en el usuario, exploración de herramientas de vanguardia y convertir restricciones en oportunidades.',
     },
     tech: { title: 'Stack' },
     projects: { 
@@ -210,11 +210,11 @@ const dict = {
           role: 'Senior Frontend UX Developer',
           period: 'Jul 2022 – Presente',
           bullets: [
-            'Lideré plataformas en React/Next.js y design systems para 10+ clientes globales usando workflows potenciados por IA.',
-            'Implementé herramientas de IA para generación de código y testing, reduciendo tiempos de desarrollo en 40%.',
-            'Pionero en procesos de UI/UX dirigidos por IA para prototipado rápido y automatización de research.',
-            'Mentoría en integración de IA, accesibilidad (WCAG 2.1 AA) y optimización de performance.',
-            'Decisiones de arquitectura integrando herramientas de IA para testing y deployment automatizado.'
+            'Lideré plataformas React/Next.js y design systems para 10+ clientes globales, entregando UIs pixel-perfect listas para producción antes de lo previsto.',
+            'Reduje ciclos de desarrollo de MVPs en 40% usando workflows inteligentes, testing automatizado y tooling moderno (TypeScript, Storybook, Playwright).',
+            'Impulsé excelencia en UX/UI: tokens de diseño, librerías de componentes, accesibilidad (WCAG 2.1 AA) y performance Lighthouse 95+.',
+            'Mentoría a equipos cross-funcionales en arquitectura frontend, prácticas modernas y estrategias de entrega rápida.',
+            'Contribuí a reclutamiento y staffing: entrevisté 30+ candidatos, armé procesos de onboarding y fomenté cultura de ingeniería.'
           ]
         },
         {
@@ -222,8 +222,8 @@ const dict = {
           role: 'Profesor de Desarrollo Web',
           period: 'Feb 2023 – Jul 2024',
           bullets: [
-            'Enseñé HTML/CSS/JS/React/Git a 60+ estudiantes con alta satisfacción.',
-            'Guié múltiples proyectos finales de idea a producción.'
+            'Enseñé HTML/CSS/JS/React/Git a 60+ estudiantes con 95%+ de satisfacción.',
+            'Guié 20+ proyectos finales desde wireframes hasta deployment, mentoreando en mejores prácticas y workflows profesionales.'
           ]
         },
         {
@@ -231,7 +231,7 @@ const dict = {
           role: 'Frontend Developer',
           period: 'Abr 2022 – Jul 2022',
           bullets: [
-            'Ejecución de 25+ tests A/B para cliente Fintech/Banco mejorando CTR y UX.'
+            'Ejecuté 25+ tests A/B para cliente Fintech, mejorando CTR en 18% y optimizando funnels de conversión.'
           ]
         },
         {
@@ -239,14 +239,14 @@ const dict = {
           role: 'Frontend Developer',
           period: 'Mar 2020 – Abr 2022',
           bullets: [
-            'SPA interna en Vue.js que redujo tiempos de setup de campañas en 35%.'
+            'SPA interna en Vue.js que redujo tiempos de setup de campañas en 35%, optimizando workflows para 50+ miembros del equipo.'
           ]
         }
       ]
     },
     contact: {
       title: 'Contacto',
-      lead: '¿Tenés un proyecto en mente? ¡Conversemos!',
+      lead: '¿Tenés un proyecto en mente? Construyamos algo increíble juntos.',
       copyEmail: 'Copiar email',
       copiedEmail: 'Email copiado',
       copyPhone: 'Copiar teléfono',

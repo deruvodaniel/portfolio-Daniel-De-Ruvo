@@ -1,5 +1,7 @@
 export const smoothScrollTo = (target, options = {}) => {
-  const o = { offset: 0, duration: 900, easing: (t) => 1 - Math.pow(1 - t, 4), ...options };
+  // Default offset: 80px for header on mobile, 100px on desktop
+  const defaultOffset = window.innerWidth < 768 ? 80 : 100;
+  const o = { offset: defaultOffset, duration: 900, easing: (t) => 1 - Math.pow(1 - t, 4), ...options };
   const el = typeof target === 'number' ? null : target;
   const top = typeof target === 'number'
     ? target

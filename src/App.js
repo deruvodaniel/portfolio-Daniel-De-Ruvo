@@ -3,17 +3,12 @@ import { ContainerApp, ContainerSections } from './app.styles';
 import { RefsContextProvider } from './context/refsContext';
 import { ThemeProvider } from './context/themeContext';
 import { I18nProvider } from './context/i18nContext';
-import { Header } from './components/Header';
-import { Home } from './components/Home/Index';
-import { AboutMe } from './components/AboutMe';
-import { Contact } from './components/Contact/Contact';
-import { Footer } from './components/Footer/Footer';
-import { Experience } from './components/Experience';
-import AnimatedSection from './components/AnimatedSection';
-import { ParallaxBackground } from './components/Parallax';
+import { Header, Footer } from './components/layout';
+import { Home, AboutMe, Contact, Experience } from './components/sections';
+import { AnimatedSection, ParallaxBackground } from './components/ui';
 import './index.css';
 
-const Projects = lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })));
+const Projects = lazy(() => import('./components/sections').then(m => ({ default: m.Projects })));
 
 function App() {
   useEffect(() => {
