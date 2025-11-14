@@ -43,6 +43,24 @@ export const SectionProjects = styled.section`
 `;
 
 export const ContainerProjects = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  
+  ${mediaQueries.tablet} {
+    gap: 50px;
+  }
+  
+  ${mediaQueries.desktop} {
+    gap: 60px;
+  }
+`;
+
+export const FeaturedContainer = styled.div`
+  width: 100%;
+`;
+
+export const RegularGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;

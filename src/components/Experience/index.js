@@ -1,9 +1,28 @@
-import { SectionExperience, ExperienceTitle, Timeline, BulletList, BulletItem } from './experience.styles';
+import { useState } from 'react';
+import { 
+  SectionExperience, 
+  ExperienceTitle, 
+  Timeline, 
+  BulletList, 
+  BulletItem,
+  TabContainer,
+  TabButton,
+  TabContent
+} from './experience.styles';
 import Accordion from 'components/Accordion';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import useWidth from 'hooks/useWidth';
 import { useRefs } from 'context/refsContext';
 import { useI18n } from 'context/i18nContext';
+import { courses } from '../../arrays/arrayCourses';
+import { 
+  ContainerCourses,
+  ContainerCourse,
+  ContainerCourseName,
+  CourseName,
+  CourseText,
+  CourseAcademy,
+} from '../Courses/courses.styles';
 
 // Experience title component for better organization
 const ExperienceRoleTitle = ({ role, company }) => (
@@ -38,6 +57,7 @@ export const Experience = () => {
   const initial = width > 700 ? -500 : 0;
   const { t } = useI18n();
   const roles = t('experience.roles') || [];
+  const [activeTab, setActiveTab] = useState('experience');
 
   return (
     <motion.div
@@ -48,22 +68,73 @@ export const Experience = () => {
     >
       <SectionExperience ref={refExperience}>
         <ExperienceTitle>{t('experience.title')}</ExperienceTitle>
-        <Timeline>
-          {roles.map((role, idx) => (
-            <Accordion
-              key={`role-${idx}`}
-              title={<ExperienceRoleTitle role={role.role} company={role.company} />}
-              defaultOpen={idx === 0}
+        
+        <TabContainer>
+          <TabButton 
+            $active={activeTab === 'experience'}
+            onClick={() => setActiveTab('experience')}
+          >
+            {t('experience.tabs.experience') || 'Experience'}
+          </TabButton>
+          <TabButton 
+            $active={activeTab === 'courses'}
+            onClick={() => setActiveTab('courses')}
+          >
+            {t('experience.tabs.courses') || 'Courses & Certifications'}
+          </TabButton>
+        </TabContainer>
+
+        <AnimatePresence mode="wait">
+          {activeTab === 'experience' ? (
+            <TabContent
+              key="experience"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="period">{role.period}</div>
-              <BulletList>
-                {(role.bullets || []).map((bullet, i) => (
-                  <BulletItem key={`bullet-${idx}-${i}`}>{bullet}</BulletItem>
+              <Timeline>
+                {roles.map((role, idx) => (
+                  <Accordion
+                    key={`role-${idx}`}
+                    title={<ExperienceRoleTitle role={role.role} company={role.company} />}
+                    defaultOpen={idx === 0}
+                  >
+                    <div className="period">{role.period}</div>
+                    <BulletList>
+                      {(role.bullets || []).map((bullet, i) => (
+                        <BulletItem key={`bullet-${idx}-${i}`}>{bullet}</BulletItem>
+                      ))}
+                    </BulletList>
+                  </Accordion>
                 ))}
-              </BulletList>
-            </Accordion>
-          ))}
-        </Timeline>
+              </Timeline>
+            </TabContent>
+          ) : (
+            <TabContent
+              key="courses"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ContainerCourses>
+                {courses.map(({ id, name, text, academy }) => {
+                  return (
+                    <ContainerCourse key={id} style={{ '--delay': `${(id % 6) * 0.35}s` }}>
+                      <ContainerCourseName>
+                        <div></div>
+                        <CourseName>{name}</CourseName>
+                      </ContainerCourseName>
+                      <CourseText>{text}</CourseText>
+                      <CourseAcademy>{academy}</CourseAcademy>
+                    </ContainerCourse>
+                  );
+                })}
+              </ContainerCourses>
+            </TabContent>
+          )}
+        </AnimatePresence>
       </SectionExperience>
     </motion.div>
   );

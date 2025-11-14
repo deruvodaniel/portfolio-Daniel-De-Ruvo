@@ -109,7 +109,11 @@ export const ToggleButton = styled.button`
   text-transform: uppercase;
   transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease;
 
-  &:hover { color: var(--colorPrimary); border-color: var(--colorSecondary); transform: translateY(-2px); }
+  &:hover { 
+    color: var(--colorPrimary); 
+    border-color: var(--colorSecondary); 
+    transform: translateY(-2px); 
+  }
 
   &.theme-animate { animation: themePop 380ms ease; }
 

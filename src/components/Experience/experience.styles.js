@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { mediaQueries } from 'styles';
 import { sectionPadding, sectionTitlePlain, spacing } from 'styles/mixins';
+import { motion } from 'framer-motion';
 
 export const SectionExperience = styled.section`
   ${sectionPadding}
@@ -11,6 +12,44 @@ export const SectionExperience = styled.section`
 
 export const ExperienceTitle = styled.h2`
   ${sectionTitlePlain}
+`;
+
+export const TabContainer = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--borderColor);
+  
+  ${mediaQueries.tablet} {
+    gap: 16px;
+  }
+`;
+
+export const TabButton = styled.button`
+  background: none;
+  border: none;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: ${props => props.$active ? 'var(--colorSecondary)' : 'var(--textSecondary)'};
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid ${props => props.$active ? 'var(--colorSecondary)' : 'transparent'};
+  margin-bottom: -2px;
+  
+  &:hover {
+    color: var(--colorSecondary);
+  }
+  
+  ${mediaQueries.tablet} {
+    font-size: 1.2rem;
+    padding: 18px 32px;
+  }
+`;
+
+export const TabContent = styled(motion.div)`
+  min-height: 300px;
 `;
 
 export const Timeline = styled.div`

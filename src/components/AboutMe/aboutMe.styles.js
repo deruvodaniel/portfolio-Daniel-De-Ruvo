@@ -142,17 +142,69 @@ export const AboutMeBoxLinks = styled.div`
 `;
 
 export const SkillsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  width: 100%;
+  
+  ${mediaQueries.desktop} {
+    gap: 72px;
+  }
+`;
+
+export const SkillSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+`;
+
+export const SkillSectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 4px;
+  
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--colorPrimary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--fontHeading);
+    white-space: nowrap;
+    
+    ${mediaQueries.tablet} {
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+    }
+    
+    ${mediaQueries.desktop} {
+      font-size: 1.7rem;
+    }
+  }
+  
+  &::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: var(--gradientPrimary);
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+`;
+
+export const SkillGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 20px;
   
   ${mediaQueries.tablet} {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
   
   ${mediaQueries.desktop} {
-    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
 `;

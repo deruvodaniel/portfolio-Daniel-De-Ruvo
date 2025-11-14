@@ -9,12 +9,28 @@ export const SimpleCard = styled.div`
   border-radius: 16px;
   border: 1px solid var(--borderColor);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   
   &:hover {
     background: var(--backgroundCardHover);
-    box-shadow: var(--shadowPrimary);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    border-color: var(--colorSecondary);
+  }
+
+  [data-theme="dark"] & {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      box-shadow: 0 12px 35px rgba(0, 229, 255, 0.25);
+    }
+  }
+
+  ${mediaQueries.tablet} {
+    border-radius: 18px;
   }
 `;
 
@@ -23,6 +39,15 @@ export const SimpleImage = styled.img`
   height: 200px;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  ${SimpleCard}:hover & {
+    transform: scale(1.05);
+  }
+
+  ${mediaQueries.tablet} {
+    height: 220px;
+  }
 `;
 
 export const SimpleContent = styled.div`

@@ -8,9 +8,13 @@ export const ContainerHome = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 160px 0 120px;
+  padding: 100px 0 80px;
   position: relative;
   z-index: 50;
+  
+  ${mediaQueries.tablet} {
+    padding: 140px 0 100px;
+  }
   
   ${mediaQueries.desktop} {
     padding: 180px 0 140px;

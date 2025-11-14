@@ -6,8 +6,6 @@ import { I18nProvider } from './context/i18nContext';
 import { Header } from './components/Header';
 import { Home } from './components/Home/Index';
 import { AboutMe } from './components/AboutMe';
-import { Technologies } from './components/Technologies';
-import { Courses } from './components/Courses';
 import { Contact } from './components/Contact/Contact';
 import { Footer } from './components/Footer/Footer';
 import { Experience } from './components/Experience';
@@ -52,11 +50,9 @@ function App() {
               <AnimatedSection as="section"><Home /></AnimatedSection>
               <AnimatedSection as="section"><AboutMe /></AnimatedSection>
               <AnimatedSection as="section"><Experience /></AnimatedSection>
-              <AnimatedSection as="section"><Technologies /></AnimatedSection>
               <Suspense fallback={null}>
                 <AnimatedSection as="section" $cv="visible" $cis="auto 3200px"><Projects /></AnimatedSection>
               </Suspense>
-              <AnimatedSection as="section"><Courses /></AnimatedSection>
               <AnimatedSection as="section"><Contact /></AnimatedSection>
               <Footer />
             </ContainerSections>

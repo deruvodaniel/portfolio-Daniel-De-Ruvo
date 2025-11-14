@@ -2,12 +2,89 @@ import {
   SectionAboutMe,
   AboutMeContent,
   SkillsContainer,
+  SkillSection,
+  SkillSectionHeader,
+  SkillGrid,
 } from "./aboutMe.styles";
 import SkillCard from "components/SkillCard";
+import TechCarousel from "components/TechCarousel";
 import { motion } from "framer-motion";
 import useWidth from "../../hooks/useWidth";
 import { useRefs } from "../../context/refsContext";
 import { useI18n } from "context/i18nContext";
+import { ParallaxText } from "components/ParallaxText";
+import { technologies } from "../../arrays/arrayTechnologies";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiJavascript,
+  SiTypescript,
+  SiStorybook,
+  SiMui,
+  SiStyledcomponents,
+  SiSass,
+  SiCss3,
+  SiCypress,
+  SiJest,
+  SiGit,
+  SiDocker,
+  SiGithubactions,
+  SiFigma,
+  SiGoogleanalytics,
+  SiTailwindcss,
+  SiRadixui,
+  SiOpenai,
+} from 'react-icons/si';
+
+const techIconsMap = {
+  'react': SiReact,
+  'next.js': SiNextdotjs,
+  'nextjs': SiNextdotjs,
+  'vue.js': SiVuedotjs,
+  'vue': SiVuedotjs,
+  'javascript': SiJavascript,
+  'typescript': SiTypescript,
+  'ai tools': SiOpenai,
+  'tailwind css': SiTailwindcss,
+  'radix ui': SiRadixui,
+  'storybook': SiStorybook,
+  'mui': SiMui,
+  'styled components': SiStyledcomponents,
+  'sass': SiSass,
+  'css modules': SiCss3,
+  'cypress': SiCypress,
+  'jest': SiJest,
+  'git': SiGit,
+  'docker': SiDocker,
+  'ci/cd': SiGithubactions,
+  'figma': SiFigma,
+  'a11y / seo / analytics': SiGoogleanalytics,
+};
+
+// Tech icon mapping utility
+const createTechIcon = (Icon, text) => {
+  if (Icon) {
+    return <Icon color="var(--colorPrimary)" />;
+  }
+  
+  return (
+    <span style={{ 
+      fontSize: '24px', 
+      fontWeight: 'bold', 
+      color: 'var(--colorPrimary)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '32px',
+      height: '32px',
+      background: 'var(--borderColor)',
+      borderRadius: '8px'
+    }}>
+      {(text || '').slice(0, 2).toUpperCase()}
+    </span>
+  );
+};
 const GradientZap = () => (
   <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
     <defs>
@@ -98,10 +175,22 @@ const GradientBulb = () => (
 );
 
 export const AboutMe = () => {
-  const { refAboutMe } = useRefs();
+  const { refAboutMe, refTechnologies } = useRefs();
   const { width } = useWidth();
   const initial = width > 700 ? -500 : 0;
   const { t } = useI18n();
+
+  // Transform technologies data to include icons
+  const techsWithIcons = technologies.map(tech => {
+    const key = (tech.text || '').toLowerCase();
+    const Icon = techIconsMap[key] || null;
+    
+    return {
+      ...tech,
+      name: tech.text,
+      icon: createTechIcon(Icon, tech.text)
+    };
+  });
 
   return (
     <motion.div
@@ -164,43 +253,145 @@ export const AboutMe = () => {
           </div>
 
           <SkillsContainer>
-            {/* Technical Focus */}
-            <SkillCard
-              icon={<GradientZap />}
-              title={t('about.skillFrontend')}
-              description={t('about.skillFrontendDesc')}
-            />
+            {/* Technical Focus Section */}
+            <SkillSection>
+              <ParallaxText amount={20} fade={0.15}>
+                <SkillSectionHeader>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden style={{ flexShrink: 0 }}>
+                  <defs>
+                    <linearGradient id="gCode" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="var(--colorSecondary)" />
+                      <stop offset="100%" stopColor="var(--colorSecondary)" stopOpacity="0.6" />
+                    </linearGradient>
+                  </defs>
+                  <polyline points="16 18 22 12 16 6" stroke="url(#gCode)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <polyline points="8 6 2 12 8 18" stroke="url(#gCode)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                  <h3>Technical Focus</h3>
+                </SkillSectionHeader>
+              </ParallaxText>
+              <SkillGrid>
+                <motion.div
+                  initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <SkillCard
+                    icon={<GradientZap />}
+                    title={t('about.skillFrontend')}
+                    description={t('about.skillFrontendDesc')}
+                  />
+                </motion.div>
 
-            <SkillCard
-              icon={<GradientLayout />}
-              title={t('about.skillDesign')}
-              description={t('about.skillDesignDesc')}
-            />
+                <motion.div
+                  initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <SkillCard
+                    icon={<GradientLayout />}
+                    title={t('about.skillDesign')}
+                    description={t('about.skillDesignDesc')}
+                  />
+                </motion.div>
 
-            <SkillCard
-              icon={<GradientTrendingUp />}
-              title={t('about.skillPerf')}
-              description={t('about.skillPerfDesc')}
-            />
+                <motion.div
+                  initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <SkillCard
+                    icon={<GradientTrendingUp />}
+                    title={t('about.skillPerf')}
+                    description={t('about.skillPerfDesc')}
+                  />
+                </motion.div>
+              </SkillGrid>
+            </SkillSection>
 
-            {/* Human Focus */}
-            <SkillCard
-              icon={<GradientUsers />}
-              title={t('about.skillLeadership')}
-              description={t('about.skillLeadershipDesc')}
-            />
+            {/* Human Focus Section */}
+            <SkillSection>
+              <ParallaxText amount={20} fade={0.15}>
+                <SkillSectionHeader>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden style={{ flexShrink: 0 }}>
+                    <defs>
+                      <linearGradient id="gPeople" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="var(--colorSecondary)" />
+                        <stop offset="100%" stopColor="var(--colorSecondary)" stopOpacity="0.6" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="url(#gPeople)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="9" cy="7" r="4" stroke="url(#gPeople)" strokeWidth="2" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="url(#gPeople)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#gPeople)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <h3>Human Focus</h3>
+                </SkillSectionHeader>
+              </ParallaxText>
+              <SkillGrid>
+                <motion.div
+                  initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <SkillCard
+                    icon={<GradientUsers />}
+                    title={t('about.skillLeadership')}
+                    description={t('about.skillLeadershipDesc')}
+                  />
+                </motion.div>
 
-            <SkillCard
-              icon={<GradientHeart />}
-              title={t('about.skillCollaboration')}
-              description={t('about.skillCollaborationDesc')}
-            />
+                <motion.div
+                  initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <SkillCard
+                    icon={<GradientHeart />}
+                    title={t('about.skillCollaboration')}
+                    description={t('about.skillCollaborationDesc')}
+                  />
+                </motion.div>
 
-            <SkillCard
-              icon={<GradientBulb />}
-              title={t('about.skillCreativity')}
-              description={t('about.skillCreativityDesc')}
-            />
+                <motion.div
+                  initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  <SkillCard
+                    icon={<GradientBulb />}
+                    title={t('about.skillCreativity')}
+                    description={t('about.skillCreativityDesc')}
+                  />
+                </motion.div>
+              </SkillGrid>
+            </SkillSection>
+
+            {/* Tech Stack Section */}
+            <SkillSection ref={refTechnologies}>
+              <ParallaxText amount={20} fade={0.15}>
+                <SkillSectionHeader>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden style={{ flexShrink: 0 }}>
+                    <defs>
+                      <linearGradient id="gStack" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stopColor="var(--colorSecondary)" />
+                        <stop offset="100%" stopColor="var(--colorSecondary)" stopOpacity="0.6" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="url(#gStack)" strokeWidth="2" fill="none"/>
+                    <path d="M3 9h18M9 21V9" stroke="url(#gStack)" strokeWidth="2"/>
+                  </svg>
+                  <h3>{t('tech.title')}</h3>
+                </SkillSectionHeader>
+              </ParallaxText>
+              <TechCarousel technologies={techsWithIcons} />
+            </SkillSection>
           </SkillsContainer>
         </AboutMeContent>
       </SectionAboutMe>

@@ -69,27 +69,66 @@ export const FooterLinks = styled.div`
     height: 70px;
     background: var(--backgroundCard);
     backdrop-filter: blur(14px);
-    border: 1px solid var(--borderColor);
+    border: 2px solid var(--borderColor);
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 
     &:hover {
-      transform: translateY(-4px);
+      transform: scale(1.1);
       background: var(--backgroundCardHover);
-      border-color: var(--colorSecondary);
+      border-color: transparent;
       box-shadow: var(--shadowPrimary);
+      
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      padding: 2px;
+      background: var(--gradientPrimary);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     & > img {
       width: 18px;
       height: 18px;
-      filter: var(--socialIconFilter);
+      filter: brightness(0) saturate(100%) invert(45%) sepia(84%) saturate(2270%) hue-rotate(160deg) brightness(95%) contrast(101%);
       transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
     }
 
     &:hover > img {
-      filter: brightness(1.5);
+      filter: brightness(0) saturate(100%) invert(82%) sepia(55%) saturate(3345%) hue-rotate(138deg) brightness(102%) contrast(101%);
       transform: scale(1.05);
+    }
+
+    & > svg {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      z-index: 1;
+      
+      path, line, rect, polyline {
+        stroke: var(--colorPrimary);
+        transition: all 0.3s ease;
+      }
+    }
+
+    &:hover > svg {
+      path, line, rect, polyline {
+        stroke: var(--colorSecondary);
+      }
     }
   }
 
@@ -103,6 +142,11 @@ export const FooterLinks = styled.div`
       & > img {
         width: 20px;
         height: 20px;
+      }
+
+      & > svg {
+        width: 22px;
+        height: 22px;
       }
     }
   }

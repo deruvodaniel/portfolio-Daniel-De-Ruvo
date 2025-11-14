@@ -48,6 +48,7 @@ const dict = {
     tech: { title: 'Stack' },
     projects: { 
       title: 'Personal Projects', 
+      featured: 'Featured Project',
       live: 'Live Demo', 
       source: 'Source Code',
       viewCode: 'View Code', 
@@ -72,6 +73,10 @@ const dict = {
     courses: { title: 'Courses' },
     experience: {
       title: 'Experience',
+      tabs: {
+        experience: 'Experience',
+        courses: 'Certifications'
+      },
       roles: [
         {
           company: 'Making Sense',
@@ -170,6 +175,7 @@ const dict = {
     tech: { title: 'Stack' },
     projects: { 
       title: 'Proyectos personales', 
+      featured: 'Proyecto Destacado',
       live: 'Demo en Vivo', 
       source: 'Código',
       viewCode: 'Ver Código', 
@@ -194,6 +200,10 @@ const dict = {
     courses: { title: 'Formación' },
     experience: {
       title: 'Experiencia',
+      tabs: {
+        experience: 'Experiencia',
+        courses: 'Formación'
+      },
       roles: [
         {
           company: 'Making Sense',

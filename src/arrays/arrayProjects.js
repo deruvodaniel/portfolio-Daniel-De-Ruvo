@@ -63,15 +63,6 @@ export const projects = [
     github: "https://github.com/deruvodaniel/forkify",
   },
   {
-    id: 6,
-    img: "https://i.postimg.cc/NjsFn7Vs/Screenshot-4.png",
-    title: "Vue Landing Page",
-    subtitle: "Vue.js, SASS, Responsive",
-    text: "Professional landing page developed with Vue.js, featuring modern animations and responsive design patterns.",
-    link: "https://ibis-dev-challenge.vercel.app/",
-    github: "https://github.com/deruvodaniel/ibisDev-Challenge",
-  },
-  {
     id: 7,
     img: "https://i.postimg.cc/JhjVVWdq/Screenshot-9.png",
     title: "Social Media Dashboard",

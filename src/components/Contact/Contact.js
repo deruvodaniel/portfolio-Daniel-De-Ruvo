@@ -91,15 +91,9 @@ export const Contact = () => {
                 aria-label="Open resume in a new tab"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="resumeGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="var(--colorSecondary)" />
-                      <stop offset="100%" stopColor="var(--colorPrimary)" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="url(#resumeGradient)" strokeWidth="1.6" fill="none"/>
-                  <path d="M14 3v5h5" stroke="url(#resumeGradient)" strokeWidth="1.6" fill="none"/>
-                  <path d="M8 12h8M8 16h8" stroke="url(#resumeGradient)" strokeWidth="1.6"/>
+                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" strokeWidth="1.6" fill="none"/>
+                  <path d="M14 3v5h5" strokeWidth="1.6" fill="none"/>
+                  <path d="M8 12h8M8 16h8" strokeWidth="1.6"/>
                 </svg>
               </a>
               <a
