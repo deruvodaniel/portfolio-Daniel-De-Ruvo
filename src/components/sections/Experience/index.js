@@ -10,11 +10,13 @@ import {
   TabContent
 } from './experience.styles';
 import Accordion from 'components/ui/Accordion';
+import ClientsCarousel from 'components/ui/ClientsCarousel';
 import { motion, AnimatePresence } from 'framer-motion';
 import useWidth from 'hooks/useWidth';
 import { useRefs } from 'context/refsContext';
 import { useI18n } from 'context/i18nContext';
 import { courses } from '../../../arrays/arrayCourses';
+import { clients } from '../../../arrays/arrayClients';
 import { 
   ContainerCourses,
   ContainerCourse,
@@ -82,6 +84,12 @@ export const Experience = () => {
           >
             {t('experience.tabs.courses') || 'Courses & Certifications'}
           </TabButton>
+          <TabButton 
+            $active={activeTab === 'clients'}
+            onClick={() => setActiveTab('clients')}
+          >
+            {t('experience.tabs.clients') || 'Clients'}
+          </TabButton>
         </TabContainer>
 
         <AnimatePresence mode="wait">
@@ -110,7 +118,7 @@ export const Experience = () => {
                 ))}
               </Timeline>
             </TabContent>
-          ) : (
+          ) : activeTab === 'courses' ? (
             <TabContent
               key="courses"
               initial={{ opacity: 0, y: 20 }}
@@ -132,6 +140,16 @@ export const Experience = () => {
                   );
                 })}
               </ContainerCourses>
+            </TabContent>
+          ) : (
+            <TabContent
+              key="clients"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ClientsCarousel clients={clients} />
             </TabContent>
           )}
         </AnimatePresence>

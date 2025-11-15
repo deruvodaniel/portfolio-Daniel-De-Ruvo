@@ -75,7 +75,8 @@ const dict = {
       title: 'Experience',
       tabs: {
         experience: 'Experience',
-        courses: 'Certifications'
+        courses: 'Certifications',
+        clients: 'Clients'
       },
       roles: [
         {
@@ -202,7 +203,8 @@ const dict = {
       title: 'Experiencia',
       tabs: {
         experience: 'Experiencia',
-        courses: 'Formación'
+        courses: 'Formación',
+        clients: 'Clientes'
       },
       roles: [
         {

@@ -1,6 +1,7 @@
 // UI Components - Reusable components
 export { default as Accordion } from './Accordion';
 export { default as AnimatedSection } from './AnimatedSection';
+export { default as ClientsCarousel } from './ClientsCarousel';
 export { default as CountUp } from './CountUp';
 export { default as FeaturedProjectCard } from './FeaturedProjectCard';
 export { default as LinkPreview } from './LinkPreview';
