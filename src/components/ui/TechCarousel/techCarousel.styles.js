@@ -94,7 +94,7 @@ export const CarouselContainer = styled.div`
     width: 100%;
     padding: 20px 10px 50px 10px;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 
     ${mediaQueries.tablet} {
       padding: 20px 40px 50px 40px;

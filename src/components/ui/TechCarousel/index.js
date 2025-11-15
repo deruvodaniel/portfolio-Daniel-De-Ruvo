@@ -23,10 +23,12 @@ const TechCarousel = ({ technologies = [] }) => {
           speed={600}
           allowTouchMove={true}
           grabCursor={true}
+          preventInteractionOnTransition={true}
+          watchSlidesProgress={true}
           autoplay={{
             delay: 2500,
-            disableOnInteraction: true,
-            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
           }}
           pagination={{
             clickable: true,

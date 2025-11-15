@@ -71,19 +71,6 @@ export const ContainerCourseName = styled.div`
   
   & > div {
     display: none;
-    width: 8px;
-    height: 8px;
-    margin-right: 16px;
-    margin-top: 12px;
-    border-radius: 50%;
-    background: var(--colorSecondary);
-    flex-shrink: 0;
-  }
-  
-  ${mediaQueries.tablet} {
-    & > div {
-      display: block;
-    }
   }
 `;
 

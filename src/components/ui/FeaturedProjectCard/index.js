@@ -71,7 +71,7 @@ const FeaturedProjectCard = ({ project }) => {
       </FeaturedImageContainer>
       
       <FeaturedContent>
-        <FeaturedBadge>⭐ {t('projects.featured') || 'Featured Project'}</FeaturedBadge>
+        <FeaturedBadge>{t('projects.featured') || 'Featured Project'}</FeaturedBadge>
         <FeaturedTitle>{project.title}</FeaturedTitle>
         <FeaturedSubtitle>{project.subtitle}</FeaturedSubtitle>
         <FeaturedDescription>{project.text}</FeaturedDescription>

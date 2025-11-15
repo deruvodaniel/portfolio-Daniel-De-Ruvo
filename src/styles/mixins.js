@@ -46,17 +46,16 @@ export const gradientButton = css`
 
 // New flat button styles
 export const primaryButton = css`
-  background: var(--buttonPrimary);
-  color: var(--buttonPrimaryText);
+  background: var(--gradientPrimary);
+  color: var(--buttonOnGradientText);
   border: none;
   font-family: var(--fontBody);
   font-weight: 600;
   transition: all 0.3s ease;
   
   &:hover {
-    background: var(--buttonPrimaryHover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.4);
   }
 `;
 

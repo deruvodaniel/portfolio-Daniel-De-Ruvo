@@ -20,6 +20,24 @@ export const projects = [
   {
     id: 3,
     img: "",
+    title: "UX Developer Challenge",
+    subtitle: "Technical Interview Assessment",
+    text: "This is a technical interview challenge designed to assess UX Developer candidates' skills in building responsive, accessible, and well-architected user interfaces. I developed this challenge to evaluate candidates during the interview process for senior UX Developer positions.",
+    link: "https://ux-dev-candidates-challenge.vercel.app/",
+    github: "",
+  },
+  {
+    id: 4,
+    img: "",
+    title: "AI Sticker Generator",
+    subtitle: "OpenAI, Supabase & n8n Integration",
+    text: "The app generates AI stickers (OpenAI), optionally integrates a selfie via image edits, composites overlays on the client, uploads final images to Supabase storage, and notifies workflows via n8n webhooks.",
+    link: "https://sticker-generator-tan.vercel.app/",
+    github: "",
+  },
+  {
+    id: 5,
+    img: "",
     title: "Dragon Ball API App",
     subtitle: "React, API Integration, Mobile First",
     text: "App that connects to external API with theme switching and translations. Mobile-first responsive design with modern UI components.",
@@ -27,7 +45,7 @@ export const projects = [
     github: "https://github.com/deruvodaniel/dragon-ball-api-app",
   },
   {
-    id: 8,
+    id: 6,
     img: "",
     title: "Monster Game",
     subtitle: "Vue.js Interactive Game made with IA",
@@ -36,7 +54,7 @@ export const projects = [
     github: "https://github.com/deruvodaniel/Monster-Game",
   },
   {
-    id: 4,
+    id: 7,
     img: "",
     title: "Modern Ecommerce",
     subtitle: "Next.js, Shopify Integration",
@@ -45,7 +63,7 @@ export const projects = [
     github: "https://github.com/deruvodaniel/modern-ecommerce",
   },
   {
-    id: 11,
+    id: 8,
     img: "",
     title: "Production‑Ready UI (Atomic Design)",
     subtitle: "Next.js 13 App Router, Tailwind, TypeScript, Storybook, Jest/RTL",
@@ -54,7 +72,7 @@ export const projects = [
     github: "https://github.com/deruvodaniel/production-ready-ui-atomic-design",
   },
   {
-    id: 5,
+    id: 9,
     img: "https://i.postimg.cc/jdrLHr4J/Screenshot-7.png",
     title: "Forkify App",
     subtitle: "Search 10000+ Recipes",
@@ -63,7 +81,7 @@ export const projects = [
     github: "https://github.com/deruvodaniel/forkify",
   },
   {
-    id: 7,
+    id: 10,
     img: "https://i.postimg.cc/JhjVVWdq/Screenshot-9.png",
     title: "Social Media Dashboard",
     subtitle: "HTML, SASS, JavaScript",
@@ -72,7 +90,7 @@ export const projects = [
     github: "https://github.com/deruvodaniel/MakingSenseChallenge",
   },
   {
-    id: 9,
+    id: 11,
     img: "https://i.postimg.cc/ht2vRQW9/Screenshot-6.png",
     title: "GDLWEBCAMP",
     subtitle: "Event Management App",
