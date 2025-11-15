@@ -8,77 +8,7 @@ import useWidth from "../../../hooks/useWidth";
 import { technologies } from "../../../arrays/arrayTechnologies";
 import { useRefs } from "../../../context/refsContext";
 import { useI18n } from "context/i18nContext";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiVuedotjs,
-  SiJavascript,
-  SiTypescript,
-  SiStorybook,
-  SiMui,
-  SiStyledcomponents,
-  SiSass,
-  SiCss3,
-  SiCypress,
-  SiJest,
-  SiGit,
-  SiDocker,
-  SiGithubactions,
-  SiFigma,
-  SiGoogleanalytics,
-  SiTailwindcss,
-  SiRadixui,
-  SiOpenai,
-} from 'react-icons/si';
-
-const techIconsMap = {
-  'react': SiReact,
-  'next.js': SiNextdotjs,
-  'nextjs': SiNextdotjs,
-  'vue.js': SiVuedotjs,
-  'vue': SiVuedotjs,
-  'javascript': SiJavascript,
-  'typescript': SiTypescript,
-  'ai tools': SiOpenai,
-  'tailwind css': SiTailwindcss,
-  'radix ui': SiRadixui,
-  'storybook': SiStorybook,
-  'mui': SiMui,
-  'styled components': SiStyledcomponents,
-  'sass': SiSass,
-  'css modules': SiCss3,
-  'cypress': SiCypress,
-  'jest': SiJest,
-  'git': SiGit,
-  'docker': SiDocker,
-  'ci/cd': SiGithubactions,
-  'figma': SiFigma,
-  'a11y / seo / analytics': SiGoogleanalytics,
-};
-
-// Tech icon mapping utility
-const createTechIcon = (Icon, text) => {
-  if (Icon) {
-    return <Icon color="var(--colorPrimary)" />;
-  }
-  
-  return (
-    <span style={{ 
-      fontSize: '24px', 
-      fontWeight: 'bold', 
-      color: 'var(--colorPrimary)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '32px',
-      height: '32px',
-      background: 'var(--borderColor)',
-      borderRadius: '8px'
-    }}>
-      {(text || '').slice(0, 2).toUpperCase()}
-    </span>
-  );
-};
+import { addIconsToTechnologies } from "../../../utils/techIcons";
 
 export const Technologies = () => {
   const { refTechnologies } = useRefs();
@@ -87,16 +17,7 @@ export const Technologies = () => {
   const { t } = useI18n();
 
   // Transform technologies data to include icons
-  const techsWithIcons = technologies.map(tech => {
-    const key = (tech.text || '').toLowerCase();
-    const Icon = techIconsMap[key] || null;
-    
-    return {
-      ...tech,
-      name: tech.text,
-      icon: createTechIcon(Icon, tech.text)
-    };
-  });
+  const techsWithIcons = addIconsToTechnologies(technologies);
 
   return (
     <motion.div

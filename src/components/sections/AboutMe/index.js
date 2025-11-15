@@ -14,165 +14,15 @@ import useWidth from "../../../hooks/useWidth";
 import { useRefs } from "../../../context/refsContext";
 import { useI18n } from "context/i18nContext";
 import { technologies } from "../../../arrays/arrayTechnologies";
+import { addIconsToTechnologies } from "../../../utils/techIcons";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiVuedotjs,
-  SiJavascript,
-  SiTypescript,
-  SiStorybook,
-  SiMui,
-  SiStyledcomponents,
-  SiSass,
-  SiCss3,
-  SiCypress,
-  SiJest,
-  SiGit,
-  SiDocker,
-  SiGithubactions,
-  SiFigma,
-  SiGoogleanalytics,
-  SiTailwindcss,
-  SiRadixui,
-  SiOpenai,
-} from 'react-icons/si';
-
-const techIconsMap = {
-  'react': SiReact,
-  'next.js': SiNextdotjs,
-  'nextjs': SiNextdotjs,
-  'vue.js': SiVuedotjs,
-  'vue': SiVuedotjs,
-  'javascript': SiJavascript,
-  'typescript': SiTypescript,
-  'ai tools': SiOpenai,
-  'tailwind css': SiTailwindcss,
-  'radix ui': SiRadixui,
-  'storybook': SiStorybook,
-  'mui': SiMui,
-  'styled components': SiStyledcomponents,
-  'sass': SiSass,
-  'css modules': SiCss3,
-  'cypress': SiCypress,
-  'jest': SiJest,
-  'git': SiGit,
-  'docker': SiDocker,
-  'ci/cd': SiGithubactions,
-  'figma': SiFigma,
-  'a11y / seo / analytics': SiGoogleanalytics,
-};
-
-// Tech icon mapping utility
-const createTechIcon = (Icon, text) => {
-  if (Icon) {
-    return <Icon color="var(--colorPrimary)" />;
-  }
-  
-  return (
-    <span style={{ 
-      fontSize: '24px', 
-      fontWeight: 'bold', 
-      color: 'var(--colorPrimary)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '32px',
-      height: '32px',
-      background: 'var(--borderColor)',
-      borderRadius: '8px'
-    }}>
-      {(text || '').slice(0, 2).toUpperCase()}
-    </span>
-  );
-};
-const GradientZap = () => (
-  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-    <defs>
-      <linearGradient id="gZap" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#0891b2" />
-        <stop offset="50%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#22d3ee" />
-      </linearGradient>
-    </defs>
-    <path d="M13 2L3 14h7l-1 8 12-14h-8l1-6z" stroke="url(#gZap)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-  </svg>
-);
-
-const GradientLayout = () => (
-  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-    <defs>
-      <linearGradient id="gLayout" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#0891b2" />
-        <stop offset="50%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#22d3ee" />
-      </linearGradient>
-    </defs>
-    <rect x="3" y="4" width="18" height="16" rx="2" stroke="url(#gLayout)" strokeWidth="2" />
-    <line x1="3" y1="10" x2="21" y2="10" stroke="url(#gLayout)" strokeWidth="2" />
-    <line x1="10" y1="10" x2="10" y2="20" stroke="url(#gLayout)" strokeWidth="2" />
-  </svg>
-);
-
-const GradientTrendingUp = () => (
-  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-    <defs>
-      <linearGradient id="gTrend" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#0891b2" />
-        <stop offset="50%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#22d3ee" />
-      </linearGradient>
-    </defs>
-    <polyline points="3,17 9,11 13,15 21,7" stroke="url(#gTrend)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <polyline points="15,7 21,7 21,13" stroke="url(#gTrend)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-  </svg>
-);
-
-const GradientUsers = () => (
-  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-    <defs>
-      <linearGradient id="gUsers" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#0891b2" />
-        <stop offset="50%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#22d3ee" />
-      </linearGradient>
-    </defs>
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="url(#gUsers)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <circle cx="9" cy="7" r="4" stroke="url(#gUsers)" strokeWidth="2" fill="none" />
-    <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7Z" stroke="url(#gUsers)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-  </svg>
-);
-
-const GradientHeart = () => (
-  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-    <defs>
-      <linearGradient id="gHeart" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#0891b2" />
-        <stop offset="50%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#22d3ee" />
-      </linearGradient>
-    </defs>
-    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z" stroke="url(#gHeart)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M12 5L8 21l4-7 4 7-4-16" stroke="url(#gHeart)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-  </svg>
-);
-
-const GradientBulb = () => (
-  <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-    <defs>
-      <linearGradient id="gBulb" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#0891b2" />
-        <stop offset="50%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#22d3ee" />
-      </linearGradient>
-    </defs>
-    <path d="M9 21h6" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M12 17v4" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <circle cx="12" cy="9" r="7" stroke="url(#gBulb)" strokeWidth="2" fill="none" />
-    <path d="M12 2v2" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="m4.22 4.22 1.42 1.42" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="m18.36 5.64 1.42-1.42" stroke="url(#gBulb)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-  </svg>
-);
+  GradientZap,
+  GradientLayout,
+  GradientTrendingUp,
+  GradientUsers,
+  GradientHeart,
+  GradientBulb,
+} from "../../../assets/icons/GradientIcons";
 
 export const AboutMe = () => {
   const { refAboutMe, refTechnologies } = useRefs();
@@ -181,16 +31,7 @@ export const AboutMe = () => {
   const { t } = useI18n();
 
   // Transform technologies data to include icons
-  const techsWithIcons = technologies.map(tech => {
-    const key = (tech.text || '').toLowerCase();
-    const Icon = techIconsMap[key] || null;
-    
-    return {
-      ...tech,
-      name: tech.text,
-      icon: createTechIcon(Icon, tech.text)
-    };
-  });
+  const techsWithIcons = addIconsToTechnologies(technologies);
 
   return (
     <motion.div

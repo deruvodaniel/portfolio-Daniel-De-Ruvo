@@ -19,7 +19,7 @@ export const TechSlide = styled.div`
   padding: ${spacing.md};
   width: 100%;
   height: 110px;
-  opacity: 0.65;
+  opacity: 1;
   cursor: grab;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   user-select: none;
@@ -103,7 +103,6 @@ export const CarouselContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     
     ${mediaQueries.tablet} {
       width: 150px !important;
@@ -111,27 +110,6 @@ export const CarouselContainer = styled.div`
 
     ${mediaQueries.desktop} {
       width: 160px !important;
-    }
-  }
-
-  /* Center slide gets highlighted */
-  .swiper-slide-active {
-    transform: scale(1.1);
-    z-index: 2;
-
-    ${TechSlide} {
-      opacity: 1;
-      box-shadow: 0 8px 24px rgba(8, 145, 178, 0.25);
-      border-color: var(--colorPrimary);
-    }
-
-    ${TechIcon} svg {
-      transform: scale(1.05);
-    }
-
-    ${TechName} {
-      color: var(--colorPrimary);
-      font-weight: 600;
     }
   }
 
