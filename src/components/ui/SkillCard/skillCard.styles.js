@@ -5,17 +5,14 @@ import { cardStyle } from 'styles/mixins';
 export const CardContainer = styled.div`
   ${cardStyle}
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  text-align: left;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 16px;
   padding: 24px 20px;
   height: 100%;
 
   ${mediaQueries.tablet} {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     gap: 0;
     padding: 32px 24px;
   }
@@ -26,7 +23,7 @@ export const CardContainer = styled.div`
 `;
 
 export const CardIcon = styled.div`
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 0;
   flex-shrink: 0;
   display: flex;
@@ -61,11 +58,10 @@ export const CardTitle = styled.h3`
   margin: 0;
   letter-spacing: -0.5px;
   line-height: 1.2;
-  text-align: left;
+  text-align: center;
 
   ${mediaQueries.tablet} {
     font-size: 2rem;
-    text-align: center;
     letter-spacing: -1px;
   }
 
@@ -80,15 +76,11 @@ export const CardDescription = styled.p`
   line-height: 1.6;
   margin: 0;
   flex: 1;
-  text-align: left;
+  text-align: center;
 
   ${mediaQueries.tablet} {
     font-size: 1.2rem;
     line-height: 1.7;
-    text-align: center;
-  }
-    font-size: 1.3rem;
-    line-height: 1.6;
   }
 
   ${mediaQueries.desktop} {

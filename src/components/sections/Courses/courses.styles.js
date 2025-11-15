@@ -32,7 +32,7 @@ export const ContainerCourses = styled.div`
 
 export const ContainerCourse = styled.div`
   background: var(--background);
-  padding: 40px 28px;
+  padding: 28px 20px;
   transition: background 0.4s ease;
   cursor: default;
   position: relative;
@@ -70,6 +70,7 @@ export const ContainerCourseName = styled.div`
   margin-bottom: 24px;
   
   & > div {
+    display: none;
     width: 8px;
     height: 8px;
     margin-right: 16px;
@@ -77,6 +78,12 @@ export const ContainerCourseName = styled.div`
     border-radius: 50%;
     background: var(--colorSecondary);
     flex-shrink: 0;
+  }
+  
+  ${mediaQueries.tablet} {
+    & > div {
+      display: block;
+    }
   }
 `;
 

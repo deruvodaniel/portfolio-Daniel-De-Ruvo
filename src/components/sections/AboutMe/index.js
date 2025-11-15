@@ -209,47 +209,6 @@ export const AboutMe = () => {
             {/* <AboutMeDescription>
               {t('about.p2')}
             </AboutMeDescription> */}
-            {/* <AboutMeBoxLinks>
-              <a
-                href="https://github.com/deruvodaniel"
-                target="_blank"
-                rel="noreferrer"
-                title="GitHub"
-              >
-                <img
-                  alt="GitHub"
-                  loading="lazy"
-                  decoding="async"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logogblanco_imqksz.svg"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/deruvodaniel/"
-                target="_blank"
-                rel="noreferrer"
-                title="LinkedIn"
-              >
-                <img
-                  alt="LinkedIn"
-                  loading="lazy"
-                  decoding="async"
-                  src="https://res.cloudinary.com/dn7qsxzdf/image/upload/v1653917728/portfolio%20daniel/logoinblanco_isyvzt.svg"
-                />
-              </a>
-              <a
-                href="https://cdn.builder.io/o/assets%2Feb9edba76d874a5385833a00b6be2b6e%2F44c199474638431da9d1c7d8d0e28707?alt=media&token=1af667d8-3632-4777-b419-39ad015be4eb&apiKey=eb9edba76d874a5385833a00b6be2b6e"
-                target="_blank"
-                rel="noreferrer"
-                title="Resume"
-                aria-label="Open resume in a new tab"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" strokeWidth="1.6" fill="none"/>
-                  <path d="M14 3v5h5" stroke="currentColor" strokeWidth="1.6" fill="none"/>
-                  <path d="M8 12h8M8 16h8" stroke="currentColor" strokeWidth="1.6"/>
-                </svg>
-              </a>
-            </AboutMeBoxLinks> */}
           </div>
 
           <SkillsContainer>

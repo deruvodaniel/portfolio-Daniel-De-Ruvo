@@ -64,8 +64,13 @@ export const SimpleDescription = styled.p`
 
 export const SimpleActions = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 12px;
   margin-top: auto;
+
+  @media (min-width: 480px) {
+    flex-direction: row;
+  }
 `;
 
 export const PrimaryButton = styled.button`

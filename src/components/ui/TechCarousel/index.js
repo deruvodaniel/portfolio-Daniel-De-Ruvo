@@ -35,6 +35,11 @@ const TechCarousel = ({ technologies = [] }) => {
           breakpoints={{
             320: {
               slidesPerView: 'auto',
+              spaceBetween: 12,
+              centeredSlides: true
+            },
+            480: {
+              slidesPerView: 2,
               spaceBetween: 16,
               centeredSlides: true
             },

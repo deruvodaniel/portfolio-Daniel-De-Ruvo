@@ -26,8 +26,8 @@ export const TechSlide = styled.div`
   justify-content: center;
   padding: ${spacing.md};
   width: 100%;
-  height: 120px;
-  opacity: 0.5;
+  height: 110px;
+  opacity: 0.65;
   cursor: grab;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   user-select: none;
@@ -92,7 +92,7 @@ export const TechName = styled.span`
 export const CarouselContainer = styled.div`
   .swiper {
     width: 100%;
-    padding: 20px 20px 50px 20px;
+    padding: 20px 10px 50px 10px;
     position: relative;
     overflow: visible;
 
@@ -106,7 +106,7 @@ export const CarouselContainer = styled.div`
   }
 
   .swiper-slide {
-    width: 140px !important;
+    width: 120px !important;
     height: auto;
     display: flex;
     justify-content: center;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { mediaQueries } from "styles";
-import { primaryButton, gradientText } from 'styles/mixins';
+import { gradientText } from 'styles/mixins';
 
 export const ContainerHome = styled.div`
   min-height: 100vh;
@@ -8,7 +8,7 @@ export const ContainerHome = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 100px 0 80px;
+  padding: 60px 0 40px;
   position: relative;
   z-index: 50;
   
@@ -122,112 +122,6 @@ export const DescriptionHome = styled.p`
     font-size: 1.6rem;
     line-height: 1.8;
     margin-bottom: 60px;
-  }
-`;
-
-export const ButtonsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  opacity: 0;
-  animation: fadeInUp 1s ease-out 1s forwards;
-  margin-bottom: 40px;
-
-  ${mediaQueries.desktop} {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 16px;
-    width: auto;
-    margin-bottom: 56px;
-  }
-`;
-
-export const ButtonHome = styled.button`
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  overflow: hidden;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  min-width: 180px;
-  height: 56px;
-  ${primaryButton}
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-    transition: left 0.6s;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 12px 24px rgba(100, 255, 218, 0.25),
-      0 0 24px rgba(100, 255, 218, 0.2);
-  }
-
-  &:hover::before {
-    left: 100%;
-  }
-
-  ${mediaQueries.desktop} {
-    font-size: 1.05rem;
-    padding: 18px 28px;
-    min-width: 200px;
-    border-radius: 10px;
-    height: 60px;
-  }
-`;
-
-export const SecondaryButton = styled.button`
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 26px;
-  background: transparent;
-  border: 2px solid var(--colorSecondary);
-  border-radius: 8px;
-  color: var(--colorSecondary);
-  font-weight: 600;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  cursor: pointer;
-  overflow: hidden;
-  transition: background 220ms ease, color 220ms ease, border-color 220ms ease, transform 180ms ease, box-shadow 220ms ease;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  min-width: 190px;
-  height: 56px;
-
-  svg { width: 18px; height: 18px; }
-
-  &:hover {
-    background: var(--backgroundCardHover);
-    border-color: var(--colorSecondary);
-    transform: translateY(-2px);
-    box-shadow: none;
-  }
-
-  ${mediaQueries.desktop} {
-    font-size: 1.05rem;
-    padding: 16px 30px;
-    min-width: 210px;
-    border-radius: 10px;
-    height: 60px;
   }
 `;
 

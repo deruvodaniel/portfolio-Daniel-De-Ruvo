@@ -72,20 +72,13 @@ export const BulletList = styled.ul`
 export const BulletItem = styled.li`
   position: relative;
   margin-bottom: 8px;
-  padding-left: 20px;
+  padding-left: 0;
   line-height: 1.6;
   font-size: 1rem;
   color: var(--textSecondary);
 
   &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 6px;
-    height: 6px;
-    background: var(--colorPrimary);
-    border-radius: 50%;
+    display: none;
   }
 
   &:last-child {
@@ -98,9 +91,15 @@ export const BulletItem = styled.li`
     font-size: 1.05rem;
     
     &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 0;
       top: 8px;
       width: 8px;
       height: 8px;
+      background: var(--colorPrimary);
+      border-radius: 50%;
     }
   }
 

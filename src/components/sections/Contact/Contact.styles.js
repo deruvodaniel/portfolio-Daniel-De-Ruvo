@@ -4,11 +4,12 @@ import { secondaryButton, sectionTitlePlain } from 'styles/mixins';
 
 export const ContactTitle = styled.h2`
   ${sectionTitlePlain}
-  margin-top: 60px;
-  padding-top: 40px;
+  margin-top: 30px;
+  padding-top: 20px;
 
   ${mediaQueries.desktop} {
     margin-top: 50px;
+    padding-top: 40px;
   }
 `;
 

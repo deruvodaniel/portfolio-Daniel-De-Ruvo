@@ -200,9 +200,14 @@ export const FeaturedDescription = styled.p`
 
 export const FeaturedActions = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 12px;
   margin-top: 8px;
-  flex-wrap: wrap;
+
+  @media (min-width: 480px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   ${mediaQueries.tablet} {
     gap: 16px;

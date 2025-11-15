@@ -1,25 +1,7 @@
-import {
-  // SvgVectorCourses,
-  // SvgVectorFooter,
-  SvgVectorHome,
-  // SvgVectorProjects,
-  // TrianglesVectorCourses,
-  // TrianglesVectorHome,
-  // TrianglesVectorProjects,
-} from "./svgContainer.styles";
+import { SvgVectorHome } from "./svgContainer.styles";
 
 export const SvgContainer = () => {
-  return (
-    <>
-      <SvgVectorHome />
-      {/* <TrianglesVectorHome /> */}
-      {/* <SvgVectorCourses />
-      <TrianglesVectorCourses />
-      <SvgVectorProjects />
-      <TrianglesVectorProjects />
-      <SvgVectorFooter /> */}
-    </>
-  );
+  return <SvgVectorHome />;
 };
 
 export default SvgContainer;
