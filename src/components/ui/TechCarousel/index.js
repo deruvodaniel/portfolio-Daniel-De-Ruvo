@@ -17,9 +17,10 @@ const TechCarousel = ({ technologies = [] }) => {
         <Swiper
           modules={[Autoplay, Pagination]}
           spaceBetween={20}
-          slidesPerView="auto"
+          slidesPerView={2}
           centeredSlides={true}
           loop={true}
+          loopAdditionalSlides={3}
           speed={600}
           allowTouchMove={true}
           grabCursor={true}
@@ -36,7 +37,7 @@ const TechCarousel = ({ technologies = [] }) => {
           }}
           breakpoints={{
             320: {
-              slidesPerView: 'auto',
+              slidesPerView: 2,
               spaceBetween: 12,
               centeredSlides: true
             },
@@ -51,6 +52,11 @@ const TechCarousel = ({ technologies = [] }) => {
               centeredSlides: true
             },
             1024: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+              centeredSlides: true
+            },
+            1280: {
               slidesPerView: 5,
               spaceBetween: 24,
               centeredSlides: true

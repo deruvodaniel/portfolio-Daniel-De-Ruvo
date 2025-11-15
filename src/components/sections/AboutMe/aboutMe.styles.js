@@ -198,15 +198,45 @@ export const SkillSectionHeader = styled.div`
 `;
 
 export const SkillGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 8px;
+  /* Mobile: Material 3 Carousel Style */
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 8px 20px 8px 0;
+  margin-left: -20px;
+  padding-left: 20px;
+  
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Cards in carousel */
+  & > div {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
   
   ${mediaQueries.tablet} {
+    /* Tablet+: Grid layout */
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     padding: 12px;
+    margin-left: 0;
+    overflow: visible;
+    scroll-snap-type: none;
+    
+    & > div {
+      flex: unset;
+      scroll-snap-align: unset;
+    }
   }
   
   ${mediaQueries.desktop} {

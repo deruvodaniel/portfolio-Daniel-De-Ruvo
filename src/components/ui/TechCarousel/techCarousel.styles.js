@@ -4,18 +4,10 @@ import { baseCard, spacing, fontSize, textStyles } from 'styles/mixins';
 
 export const CarouselWrapper = styled.div`
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
   padding: 20px 0 40px 0;
-  margin: 0 -20px;
+  margin: 0;
   position: relative;
-
-  ${mediaQueries.tablet} {
-    margin: 0 -40px;
-  }
-
-  ${mediaQueries.desktop} {
-    margin: 0 -60px;
-  }
 `;
 
 export const TechSlide = styled.div`

@@ -4,6 +4,7 @@ import { mediaQueries } from 'styles';
 export const Main = styled.header`
   display: flex;
   width: 100%;
+  max-width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -16,6 +17,7 @@ export const Main = styled.header`
   align-items: center;
   height: 60px;
   padding: 0 16px;
+  overflow: hidden;
 `;
 
 export const LogoText = styled.div`

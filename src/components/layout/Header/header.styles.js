@@ -6,13 +6,21 @@ export const Main = styled(motion.header)`
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  max-width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  padding: 0 60px;
+  padding: 0 20px;
   height: 80px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  ${'' /* Ajuste de padding para diferentes tamaños */}
+  @media (min-width: 768px) {
+    padding: 0 60px;
+  }
 
   &.withBackground {
     background: var(--headerBackground);

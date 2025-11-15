@@ -4,18 +4,16 @@ import { baseCard, spacing } from 'styles/mixins';
 
 export const CarouselWrapper = styled.div`
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
   padding: 30px 0 50px 0;
-  margin: 0 -20px;
+  margin: 0;
   position: relative;
 
   ${mediaQueries.tablet} {
-    margin: 0 -40px;
     padding: 40px 0 60px 0;
   }
 
   ${mediaQueries.desktop} {
-    margin: 0 -60px;
     padding: 50px 0 70px 0;
   }
 `;

@@ -18,6 +18,8 @@ export const ContainerApp = styled.div`
   z-index: 50;
   position: relative;
   isolation: isolate;
+  overflow-x: hidden;
+  width: 100%;
 
   &::before,
   &::after {
@@ -71,10 +73,17 @@ export const ContainerApp = styled.div`
 
 export const ContainerSections = styled.div`
   max-width: 1400px;
+  width: 100%;
   z-index: 50;
   margin: 0 auto;
   padding: 0 20px;
+  overflow-x: hidden;
+  
   ${mediaQueries.tablet} {
+    padding: 0 60px;
+  }
+  
+  ${mediaQueries.desktop} {
     padding: 0 100px;
   }
 `;

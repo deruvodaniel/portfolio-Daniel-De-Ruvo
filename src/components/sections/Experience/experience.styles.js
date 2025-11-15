@@ -19,6 +19,15 @@ export const TabContainer = styled.div`
   gap: 12px;
   margin-bottom: 40px;
   border-bottom: 2px solid var(--borderColor);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
   
   ${mediaQueries.tablet} {
     gap: 16px;
@@ -37,6 +46,8 @@ export const TabButton = styled.button`
   transition: all 0.3s ease;
   border-bottom: 3px solid ${props => props.$active ? 'var(--colorSecondary)' : 'transparent'};
   margin-bottom: -2px;
+  white-space: nowrap;
+  flex-shrink: 0;
   
   &:hover {
     color: var(--colorSecondary);
