@@ -2,11 +2,13 @@ import {
   SectionAboutMe,
   AboutMeContent,
   SkillsContainer,
+  SkillSection,
+  SkillSectionHeader,
   SkillGrid,
 } from "./aboutMe.styles";
 import SkillCard from "components/ui/SkillCard";
 import TechCarousel from "components/ui/TechCarousel";
-import CollapsibleSkillSection from "components/ui/CollapsibleSkillSection";
+import ParallaxText from "components/ui/ParallaxText";
 import { motion } from "framer-motion";
 import useWidth from "../../../hooks/useWidth";
 import { useRefs } from "../../../context/refsContext";
@@ -252,9 +254,8 @@ export const AboutMe = () => {
 
           <SkillsContainer>
             {/* Technical Focus Section */}
-            <CollapsibleSkillSection
-              defaultExpanded={true}
-              icon={
+            <SkillSection>
+              <SkillSectionHeader>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden style={{ flexShrink: 0 }}>
                   <defs>
                     <linearGradient id="gCode" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
@@ -265,9 +266,9 @@ export const AboutMe = () => {
                   <polyline points="16 18 22 12 16 6" stroke="url(#gCode)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <polyline points="8 6 2 12 8 18" stroke="url(#gCode)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              }
-              title="Technical Focus"
-            >
+                <h3>Technical Focus</h3>
+              </SkillSectionHeader>
+
               <SkillGrid>
                 <motion.div
                   initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
@@ -308,12 +309,11 @@ export const AboutMe = () => {
                   />
                 </motion.div>
               </SkillGrid>
-            </CollapsibleSkillSection>
+            </SkillSection>
 
             {/* Human Focus Section */}
-            <CollapsibleSkillSection
-              defaultExpanded={false}
-              icon={
+            <SkillSection>
+              <SkillSectionHeader>
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden style={{ flexShrink: 0 }}>
                   <defs>
                     <linearGradient id="gPeople" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
@@ -326,9 +326,9 @@ export const AboutMe = () => {
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="url(#gPeople)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#gPeople)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              }
-              title="Human Focus"
-            >
+                <h3>Human Focus</h3>
+              </SkillSectionHeader>
+
               <SkillGrid>
                 <motion.div
                   initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
@@ -369,29 +369,26 @@ export const AboutMe = () => {
                   />
                 </motion.div>
               </SkillGrid>
-            </CollapsibleSkillSection>
+            </SkillSection>
 
             {/* Tech Stack Section */}
-            <div ref={refTechnologies}>
-              <CollapsibleSkillSection
-                defaultExpanded={false}
-                icon={
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden style={{ flexShrink: 0 }}>
-                    <defs>
-                      <linearGradient id="gStack" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stopColor="var(--colorSecondary)" />
-                        <stop offset="100%" stopColor="var(--colorSecondary)" stopOpacity="0.6" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="url(#gStack)" strokeWidth="2" fill="none"/>
-                    <path d="M3 9h18M9 21V9" stroke="url(#gStack)" strokeWidth="2"/>
-                  </svg>
-                }
-                title={t('tech.title')}
-              >
-                <TechCarousel technologies={techsWithIcons} />
-              </CollapsibleSkillSection>
-            </div>
+            <SkillSection ref={refTechnologies}>
+              <SkillSectionHeader>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden style={{ flexShrink: 0 }}>
+                  <defs>
+                    <linearGradient id="gStack" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="var(--colorSecondary)" />
+                      <stop offset="100%" stopColor="var(--colorSecondary)" stopOpacity="0.6" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="url(#gStack)" strokeWidth="2" fill="none"/>
+                  <path d="M3 9h18M9 21V9" stroke="url(#gStack)" strokeWidth="2"/>
+                </svg>
+                <ParallaxText As="h3" amount={30} fade={0.1}>{t('tech.title')}</ParallaxText>
+              </SkillSectionHeader>
+              
+              <TechCarousel technologies={techsWithIcons} />
+            </SkillSection>
           </SkillsContainer>
         </AboutMeContent>
       </SectionAboutMe>
