@@ -1,7 +1,7 @@
 // Section Components - Main page sections
-export { AboutMe } from './AboutMe';
+export { AboutMe } from './AboutMe/AboutMe';
 export { Contact } from './Contact/Contact';
-export { Experience } from './Experience';
-export { Home } from './Home/Index';
-export { Projects } from './Projects';
-export { Technologies } from './Technologies';
+export { Experience } from './Experience/Experience';
+export { Home } from './Home/Home';
+export { Projects } from './Projects/Projects';
+export { Technologies } from './Technologies/Technologies';
