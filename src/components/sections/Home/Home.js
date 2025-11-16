@@ -24,25 +24,25 @@ export const Home = () => {
 
   return (
     <ContainerHome ref={refHome}>
-      <TextHome>{t('home.kicker')}</TextHome>
-      <ParallaxText As={TitleHome} amount={36} fade={0.1}>{t('home.name')}</ParallaxText>
+      <TextHome aria-label="Role">{t('home.kicker')}</TextHome>
+      <ParallaxText As={TitleHome} amount={36} fade={0.1} id="home-title">{t('home.name')}</ParallaxText>
       <ParallaxText As={SubtitleHome} amount={20} fade={0.06}>{t('home.subtitle')}</ParallaxText>
       <DescriptionHome>
         {t('home.description')}
       </DescriptionHome>
 
-      <StatsContainer>
+      <StatsContainer role="region" aria-label="Professional statistics">
         <StatItem>
-          <CountUp to={yearsCount} duration={2500} suffix="+" />
-          <span className="label">{t('home.years')}</span>
+          <CountUp to={yearsCount} duration={2500} suffix="+" aria-label={`${yearsCount} years of experience`} />
+          <span className="label" aria-hidden="true">{t('home.years')}</span>
         </StatItem>
         <StatItem>
-          <CountUp to={projectsCount} duration={2800} suffix="+" />
-          <span className="label">{t('home.projects')}</span>
+          <CountUp to={projectsCount} duration={2800} suffix="+" aria-label={`${projectsCount} projects completed`} />
+          <span className="label" aria-hidden="true">{t('home.projects')}</span>
         </StatItem>
         <StatItem>
-          <CountUp to={satisfactionCount} duration={3000} suffix="+" />
-          <span className="label">{t('home.satisfaction')}</span>
+          <CountUp to={satisfactionCount} duration={3000} suffix="+" aria-label={`${satisfactionCount} percent client satisfaction`} />
+          <span className="label" aria-hidden="true">{t('home.satisfaction')}</span>
         </StatItem>
       </StatsContainer>
     </ContainerHome>

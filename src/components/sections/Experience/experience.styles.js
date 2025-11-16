@@ -16,34 +16,49 @@ export const ExperienceTitle = styled.h2`
 
 export const TabContainer = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 8px;
   margin-bottom: 40px;
   border-bottom: 2px solid var(--borderColor);
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--colorSecondary) transparent;
+  scroll-behavior: smooth;
   
   &::-webkit-scrollbar {
-    display: none;
+    height: 4px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--colorSecondary);
+    border-radius: 2px;
   }
   
   ${mediaQueries.tablet} {
     gap: 16px;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
 export const TabButton = styled.button`
   background: none;
   border: none;
-  padding: 16px 24px;
-  font-size: 1.1rem;
+  padding: 12px 16px;
+  font-size: 0.95rem;
   font-weight: 600;
   color: ${props => props.$active ? 'var(--colorSecondary)' : 'var(--textSecondary)'};
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   border-bottom: 3px solid ${props => props.$active ? 'var(--colorSecondary)' : 'transparent'};
   margin-bottom: -2px;
   white-space: nowrap;

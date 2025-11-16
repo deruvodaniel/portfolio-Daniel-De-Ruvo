@@ -5,7 +5,7 @@ const prefersReducedMotion = () =>
   window.matchMedia &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-export const CountUp = ({ to = 0, duration = 2500, suffix = '+' }) => {
+export const CountUp = ({ to = 0, duration = 2500, suffix = '+', 'aria-label': ariaLabel }) => {
   const [value, setValue] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
@@ -58,7 +58,17 @@ export const CountUp = ({ to = 0, duration = 2500, suffix = '+' }) => {
     };
   }, [to, duration, hasAnimated]);
 
-  return <span ref={ref} className="number">{value}{suffix}</span>;
+  return (
+    <span 
+      ref={ref} 
+      className="number"
+      aria-label={ariaLabel}
+      role="status"
+      aria-live="polite"
+    >
+      {value}{suffix}
+    </span>
+  );
 };
 
 export default CountUp;

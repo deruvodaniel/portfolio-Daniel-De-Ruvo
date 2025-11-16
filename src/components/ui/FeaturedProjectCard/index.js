@@ -53,17 +53,18 @@ const FeaturedProjectCard = ({ project }) => {
   const imageSource = getImageSource();
 
   return (
-    <FeaturedCard>
+    <FeaturedCard role="article" aria-labelledby={`featured-project-${project.title.replace(/\s+/g, '-').toLowerCase()}`}>
       <FeaturedImageContainer>
         {imageSource ? (
           <>
             <FeaturedImage 
               src={imageSource}
-              alt={project.title}
+              alt={`Screenshot of ${project.title} project`}
               loading="lazy"
+              decoding="async"
             />
-            <FeaturedOverlay />
-            <FeaturedGradient />
+            <FeaturedOverlay aria-hidden="true" />
+            <FeaturedGradient aria-hidden="true" />
           </>
         ) : (
           <ProjectCardSkeleton />
@@ -71,16 +72,22 @@ const FeaturedProjectCard = ({ project }) => {
       </FeaturedImageContainer>
       
       <FeaturedContent>
-        <FeaturedBadge>{t('projects.featured') || 'Featured Project'}</FeaturedBadge>
-        <FeaturedTitle>{project.title}</FeaturedTitle>
+        <FeaturedBadge aria-label="Featured project badge">{t('projects.featured') || 'Featured Project'}</FeaturedBadge>
+        <FeaturedTitle id={`featured-project-${project.title.replace(/\s+/g, '-').toLowerCase()}`}>{project.title}</FeaturedTitle>
         <FeaturedSubtitle>{project.subtitle}</FeaturedSubtitle>
         <FeaturedDescription>{project.text}</FeaturedDescription>
         
-        <FeaturedActions>
-          <FeaturedPrimaryButton onClick={handleVisitSite}>
+        <FeaturedActions role="group" aria-label="Project actions">
+          <FeaturedPrimaryButton 
+            onClick={handleVisitSite}
+            aria-label={`Visit ${project.title} live site`}
+          >
             {t('projects.live')}
           </FeaturedPrimaryButton>
-          <FeaturedSecondaryButton onClick={handleVisitRepo}>
+          <FeaturedSecondaryButton 
+            onClick={handleVisitRepo}
+            aria-label={`View ${project.title} source code on GitHub`}
+          >
             {t('projects.viewCode')}
           </FeaturedSecondaryButton>
         </FeaturedActions>

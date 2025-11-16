@@ -51,11 +51,24 @@ export const primaryButton = css`
   border: none;
   font-family: var(--fontBody);
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  will-change: transform, box-shadow;
   
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(8, 145, 178, 0.5);
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(8, 145, 178, 0.4);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
   }
 `;
 
@@ -65,13 +78,26 @@ export const secondaryButton = css`
   color: var(--buttonSecondaryText);
   font-family: var(--fontBody);
   font-weight: 600;
-  transition: all 0.22s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
+  will-change: transform, background-color;
   
   &:hover {
     background: var(--buttonSecondaryHover);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    border-color: var(--colorSecondary);
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
   }
 `;
 

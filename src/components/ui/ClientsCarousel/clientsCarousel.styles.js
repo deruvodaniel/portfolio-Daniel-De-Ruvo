@@ -32,9 +32,9 @@ export const ClientSlide = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: ${spacing.lg};
+  padding: 20px 16px;
   width: 100%;
-  min-height: 160px;
+  min-height: 140px;
   opacity: 0.6;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   user-select: none;
@@ -61,12 +61,12 @@ export const ClientSlide = styled.div`
 
 export const ClientLogo = styled.img`
   width: 100%;
-  max-width: 140px;
-  height: 70px;
+  max-width: 110px;
+  height: 55px;
   object-fit: contain;
   filter: grayscale(100%) brightness(0.7) contrast(1.3);
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 
   [data-theme="dark"] & {
     filter: grayscale(100%) brightness(2) contrast(0.85);

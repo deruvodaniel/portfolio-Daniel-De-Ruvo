@@ -29,9 +29,23 @@ export const TextHome = styled.p`
   text-transform: uppercase;
   margin: 20px 0 24px;
   position: relative;
+  visibility: hidden;
   opacity: 0;
   animation: slideInLeft 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
   will-change: transform, opacity;
+  
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+  }
   
   &::after {
     content: '';
@@ -59,10 +73,24 @@ export const TitleHome = styled.h1`
   margin: 10px 0 28px;
   line-height: 0.92;
   ${gradientText}
+  visibility: hidden;
   opacity: 0;
   animation: fadeInUp 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
   letter-spacing: -2px;
   will-change: transform, opacity;
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
 
   ${mediaQueries.tablet} {
     font-size: 6rem;
@@ -81,10 +109,24 @@ export const SubtitleHome = styled.h2`
   font-weight: 300;
   color: var(--textSecondary);
   margin-bottom: 40px;
+  visibility: hidden;
   opacity: 0;
-  animation: fadeInUp 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+  animation: fadeInUpSubtitle 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
   letter-spacing: 0.5px;
   will-change: transform, opacity;
+  
+  @keyframes fadeInUpSubtitle {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
 `;
 
 export const LocationTag = styled.span`
@@ -109,9 +151,23 @@ export const DescriptionHome = styled.p`
   line-height: 1.7;
   font-weight: 400;
   margin-bottom: 56px;
+  visibility: hidden;
   opacity: 0;
-  animation: fadeInUp 1.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
+  animation: fadeInUpDesc 1.3s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
   will-change: transform, opacity;
+  
+  @keyframes fadeInUpDesc {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
 
   @media (max-width: 767px) {
     max-width: 100%;
@@ -130,9 +186,23 @@ export const StatsContainer = styled.div`
   grid-template-columns: repeat(3, minmax(140px, 1fr));
   gap: 28px;
   width: 100%;
+  visibility: hidden;
   opacity: 0;
-  animation: fadeInUp 1s ease-out 1.5s forwards;
+  animation: fadeInUpStats 1s ease-out 1.5s forwards;
   margin-top: 20px;
+  
+  @keyframes fadeInUpStats {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      visibility: visible;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
 
   ${mediaQueries.mobile} {
     grid-template-columns: 1fr;

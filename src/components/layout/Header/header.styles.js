@@ -16,6 +16,7 @@ export const Main = styled(motion.header)`
   height: 80px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  background: transparent;
 
   ${'' /* Ajuste de padding para diferentes tamaños */}
   @media (min-width: 768px) {
@@ -23,13 +24,11 @@ export const Main = styled(motion.header)`
   }
 
   &.withBackground {
-    background: var(--headerBackground);
-    backdrop-filter: blur(30px);
+    background: rgba(var(--headerBackgroundRGB), 0.92);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--borderColor);
-  }
-
-  &.withBackground ${'' /* enhance link contrast when dark header */} {
-
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 `;
 
@@ -38,11 +37,19 @@ export const LogoContainer = styled.div`
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  filter: brightness(1);
 
-  &:hover { transform: translateY(-2px); }
+  &:hover { 
+    transform: translateY(-2px); 
+    filter: brightness(1.1);
+  }
 
   .logo-image {
     transition: all 0.3s ease;
+  }
+
+  ${Main}.withBackground & {
+    filter: brightness(1.2) contrast(1.1);
   }
 `;
 
@@ -83,7 +90,8 @@ export const Links = styled.li`
   }
 
   ${Main}.withBackground & {
-    color: var(--textMuted);
+    color: var(--colorPrimary);
+    font-weight: 600;
   }
   ${Main}.withBackground &:hover {
     color: var(--colorSecondary);
@@ -124,6 +132,17 @@ export const ToggleButton = styled.button`
   }
 
   &.theme-animate { animation: themePop 380ms ease; }
+
+  ${Main}.withBackground & {
+    color: var(--colorPrimary);
+    border-color: var(--colorPrimary);
+    font-weight: 700;
+  }
+
+  ${Main}.withBackground &:hover {
+    background: rgba(var(--colorSecondaryRGB, 100, 255, 218), 0.1);
+    border-color: var(--colorSecondary);
+  }
 
   @keyframes themePop { 0% { transform: scale(1) rotate(0deg); } 50% { transform: scale(0.88) rotate(-18deg); } 100% { transform: scale(1) rotate(0deg); } }
 `;

@@ -25,7 +25,7 @@ export const Header = () => {
   if (width < 1024) return <HeaderMobile refs={refs} />;
 
   return (
-    <Main className={height > 70 && "withBackground"}>
+    <Main className={height > 70 ? "withBackground" : ""}>
       <LogoContainer onClick={() => scrollToSection(refHome)}>
         <img src="/DR-Logo.png" alt="Daniel De Ruvo" className="logo-image" width="70" height="70" />
       </LogoContainer>

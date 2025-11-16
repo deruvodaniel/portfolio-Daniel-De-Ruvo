@@ -19,6 +19,7 @@ export const Experience = () => {
   const initial = width > 700 ? -500 : 0;
   const { t } = useI18n();
   const [activeTab, setActiveTab] = useState('experience');
+  const isMobile = width < 768;
 
   return (
     <motion.div
@@ -41,7 +42,7 @@ export const Experience = () => {
             $active={activeTab === 'courses'}
             onClick={() => setActiveTab('courses')}
           >
-            {t('experience.tabs.courses') || 'Courses & Certifications'}
+            {isMobile ? 'Courses' : (t('experience.tabs.courses') || 'Courses & Certifications')}
           </TabButton>
           <TabButton 
             $active={activeTab === 'clients'}

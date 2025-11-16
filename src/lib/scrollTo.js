@@ -3,9 +3,13 @@ export const smoothScrollTo = (target, options = {}) => {
   const defaultOffset = window.innerWidth < 768 ? 80 : 100;
   const o = { offset: defaultOffset, duration: 900, easing: (t) => 1 - Math.pow(1 - t, 4), ...options };
   const el = typeof target === 'number' ? null : target;
+  
+  // Get scroll position from body (where actual scroll happens)
+  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop || window.scrollY || 0;
+  
   const top = typeof target === 'number'
     ? target
-    : (el?.getBoundingClientRect().top || 0) + (window.pageYOffset || window.scrollY || 0);
+    : (el?.getBoundingClientRect().top || 0) + scrollTop;
   const finalTop = top - (o.offset || 0);
 
   const lenis = window.__lenis;
@@ -13,10 +17,12 @@ export const smoothScrollTo = (target, options = {}) => {
     lenis.scrollTo(finalTop, { duration: o.duration / 1000, easing: o.easing });
     return;
   }
+  
+  // Smooth scroll on body element
   try {
-    window.scrollTo({ top: finalTop, behavior: 'smooth' });
+    document.body.scrollTo({ top: finalTop, behavior: 'smooth' });
   } catch {
-    window.scrollTo(0, finalTop);
+    document.body.scrollTop = finalTop;
   }
 };
 

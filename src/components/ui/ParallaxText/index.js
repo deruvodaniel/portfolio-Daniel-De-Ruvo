@@ -44,9 +44,12 @@ export const ParallaxText = ({ As = 'div', children, amount = 28, fade = 0, clas
     const onResize = () => update();
 
     update();
+    // Listen to body scroll (where actual scroll happens in this app)
+    document.body?.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onResize);
     return () => {
+      document.body?.removeEventListener('scroll', onScroll);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onResize);
       if (raf) cancelAnimationFrame(raf);

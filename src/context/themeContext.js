@@ -9,7 +9,17 @@ export const useTheme = () => {
 };
 
 const getInitialTheme = () => {
-  // Force dark theme as default always
+  // Try to get from localStorage first
+  try {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      return savedTheme;
+    }
+  } catch (e) {
+    // localStorage not available
+  }
+  
+  // Default to dark theme
   return 'dark';
 };
 

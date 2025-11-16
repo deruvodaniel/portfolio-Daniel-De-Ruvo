@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   CardContainer,
   CardIcon,
@@ -6,10 +7,14 @@ import {
   CardTitle,
   CardDescription
 } from './skillCard.styles';
+import { hoverLift } from 'styles/animations';
 
 const SkillCard = ({ icon, title, description }) => {
   return (
-    <CardContainer>
+    <CardContainer
+      as={motion.div}
+      {...hoverLift}
+    >
       <CardIcon>{icon}</CardIcon>
       <CardContent>
         <CardTitle>{title}</CardTitle>

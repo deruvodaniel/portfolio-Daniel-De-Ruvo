@@ -10,13 +10,16 @@ export const FeaturedCard = styled.div`
   overflow: hidden;
   backdrop-filter: blur(10px);
   position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
   
   &:hover {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   }
 
   [data-theme="dark"] &:hover {
-    box-shadow: 0 20px 60px rgba(0, 229, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 229, 255, 0.35);
   }
 
   ${mediaQueries.tablet} {

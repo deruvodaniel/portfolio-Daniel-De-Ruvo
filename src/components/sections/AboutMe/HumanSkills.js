@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import SkillCard from "components/ui/SkillCard";
 import { useI18n } from "context/i18nContext";
+import { staggerContainer, staggerItem } from "styles/animations";
 import {
   GradientUsers,
   GradientHeart,
@@ -29,13 +30,8 @@ const HumanSkills = () => {
         <h3>Human Focus</h3>
       </SkillSectionHeader>
 
-      <SkillGrid>
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
+      <SkillGrid as={motion.div} {...staggerContainer(0.15)}>
+        <motion.div {...staggerItem}>
           <SkillCard
             icon={<GradientUsers />}
             title={t('about.skillLeadership')}
@@ -43,12 +39,7 @@ const HumanSkills = () => {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
+        <motion.div {...staggerItem}>
           <SkillCard
             icon={<GradientHeart />}
             title={t('about.skillCollaboration')}
@@ -56,12 +47,7 @@ const HumanSkills = () => {
           />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true, margin: "-50px" }}
-        >
+        <motion.div {...staggerItem}>
           <SkillCard
             icon={<GradientBulb />}
             title={t('about.skillCreativity')}

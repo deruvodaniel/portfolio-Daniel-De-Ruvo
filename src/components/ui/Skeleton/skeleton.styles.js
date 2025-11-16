@@ -1,12 +1,26 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const shimmer = keyframes`
   0% {
-    background-position: -200px 0;
+    background-position: -400px 0;
   }
   100% {
-    background-position: calc(200px + 100%) 0;
+    background-position: calc(400px + 100%) 0;
   }
+`;
+
+// DRY: Reusable shimmer effect mixin
+const shimmerEffect = css`
+  background: linear-gradient(
+    90deg,
+    var(--backgroundCard) 0%,
+    var(--backgroundCardHover) 20%,
+    var(--borderColor) 40%,
+    var(--backgroundCardHover) 60%,
+    var(--backgroundCard) 100%
+  );
+  background-size: 400px 100%;
+  animation: ${shimmer} 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 `;
 
 export const SkeletonContainer = styled.div`
@@ -21,15 +35,9 @@ export const SkeletonContainer = styled.div`
 export const SkeletonImage = styled.div`
   width: 100%;
   height: 200px;
-  background: linear-gradient(
-    90deg,
-    var(--backgroundCard) 0px,
-    var(--backgroundCardHover) 40px,
-    var(--backgroundCard) 80px
-  );
-  background-size: 200px;
-  animation: ${shimmer} 1.5s ease-in-out infinite;
+  ${shimmerEffect}
   position: relative;
+  border-radius: 8px 8px 0 0;
   
   &::after {
     content: '';
@@ -41,21 +49,14 @@ export const SkeletonImage = styled.div`
     height: 60px;
     background: var(--borderColor);
     border-radius: 8px;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 `;
 
 export const SkeletonText = styled.div`
   width: ${props => props.width || '100%'};
   height: ${props => props.height || '16px'};
-  background: linear-gradient(
-    90deg,
-    var(--backgroundCard) 0px,
-    var(--backgroundCardHover) 40px,
-    var(--backgroundCard) 80px
-  );
-  background-size: 200px;
-  animation: ${shimmer} 1.5s ease-in-out infinite;
+  ${shimmerEffect}
   border-radius: 4px;
   margin: ${props => props.margin || '0'};
 `;
@@ -63,14 +64,7 @@ export const SkeletonText = styled.div`
 export const SkeletonButton = styled.div`
   width: ${props => props.width || '120px'};
   height: 40px;
-  background: linear-gradient(
-    90deg,
-    var(--backgroundCard) 0px,
-    var(--backgroundCardHover) 40px,
-    var(--backgroundCard) 80px
-  );
-  background-size: 200px;
-  animation: ${shimmer} 1.5s ease-in-out infinite;
+  ${shimmerEffect}
   border-radius: 8px;
   margin: ${props => props.margin || '0'};
 `;
